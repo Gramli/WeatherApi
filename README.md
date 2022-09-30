@@ -1,4 +1,6 @@
 # WeatherApi
-Example of REST API using minimal API, Clean Architecture and CQRS pattern.
 
+![Project Clean Architecture Diagram](./doc/img/diagram.png)
+  
+  
 **IN PROGRESS**

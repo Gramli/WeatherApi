@@ -1,6 +1,30 @@
 # WeatherApi
 
-![Project Clean Architecture Diagram](./doc/img/diagram.png)
+### Purpose
+
+### Layers
+#### Onion Diagram
+![Project Clean Architecture Diagram - Onion](./doc/img/cleanArchitectureOnion.jpg)
+#### Horizontal Diagram (references)
+![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
+
+#### API
+#### Infrastructure
+#### Core
+#### Domain
+
+#### WeatherAPI
+
+#### Weather.Infrastructure
+
+#### Weather.Core
+
+#### Weather.Domain
   
-  
-**IN PROGRESS**
+## Tests
+### Horizontal Diagram With Tests
+
+# IN PROGRESS
+
+
+

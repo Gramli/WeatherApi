@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Commands\" />
+    <Folder Include="Configuration\" />
   </ItemGroup>
 
 </Project>

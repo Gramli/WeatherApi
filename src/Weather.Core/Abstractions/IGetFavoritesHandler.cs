@@ -3,7 +3,7 @@ using Weather.Domain.Dtos;
 
 namespace Weather.Core.Abstractions
 {
-    public interface GetFavoritesHandler : IRequestHandler<FavoritesWeatherDto, EmptyRequest>
+    public interface IGetFavoritesHandler : IRequestHandler<FavoritesWeatherDto, EmptyRequest>
     {
     }
 }

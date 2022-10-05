@@ -9,7 +9,8 @@ REST API solution demonstrates how to create clean and modern API (from my point
 - **Reduce the ceremony of creating APIs**
 	- no controllers (but you are still able to organize map methods in files)
 	- injects bussines handlers directly into endpoints map methods
-	- you are able to create single clean start point of the API with minimal hosting model
+- **Minimal Hosting Model**
+	- you are able to create single clean start point of the API
 
 ### Benefits of Clean Architecture
 - **UI/Framework/Database Independent** 
@@ -31,7 +32,7 @@ Solution contains four layers:
 * **Weather.Core** - business logic implementatin of the application
 	*  Request Handlers/Managers/.. - business implementation
 	*  Interfaces - interfaces for Infrastructure layer (Service, Repository, ..)
-* **Weather.Domain** - POCO classes, extensions, all what needs solution
+* **Weather.Domain** - POCO classes, extensions, all what should be shared in all projects in solution
 	* DTOs
 	* Payloads
 	* General Extensions

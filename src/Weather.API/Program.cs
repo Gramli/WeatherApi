@@ -1,4 +1,5 @@
 using Weather.API.Configuration;
+using Weather.API.EndpointBuilders;
 using Weather.API.Middlewares;
 using Weather.Infrastructure.Configuration;
 
@@ -19,6 +20,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseMiddleware<ExceptionMiddleware>();
+
+app.BuildWeatherEndpoints();
 
 app.Run();

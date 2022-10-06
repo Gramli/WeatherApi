@@ -1,14 +1,23 @@
-﻿using Weather.Core.Abstractions;
+﻿using Ardalis.GuardClauses;
+using Weather.Core.Abstractions;
+using Weather.Domain;
 using Weather.Domain.Dtos;
-using Weather.Domain.Payloads;
 
 namespace Weather.Core.Queries
 {
     internal sealed class GetActualWeatherHandler : IGetActualWeatherHandler
     {
-        public Task<ActualWeatherDto> HandleAsync(LocationPayload request, CancellationToken cancellationToken)
+        private readonly ILocationValidator _locationValidator;
+        internal GetActualWeatherHandler(ILocationValidator locationValidator)
         {
-            throw new NotImplementedException();
+            _locationValidator = Guard.Against.Null(locationValidator);
+        }
+        public Task<DataResponse<ActualWeatherDto>> HandleAsync(LocationDto request, CancellationToken cancellationToken)
+        {
+            if(!_locationValidator.IsValid(request))
+            {
+
+            }
         }
     }
 }

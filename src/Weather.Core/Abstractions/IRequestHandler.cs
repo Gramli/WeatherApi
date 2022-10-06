@@ -1,7 +1,9 @@
-﻿namespace Weather.Core.Abstractions
+﻿using Weather.Domain;
+
+namespace Weather.Core.Abstractions
 {
-    public interface IRequestHandler<TResponse, in TRequest>
+    public interface IRequestHandler<TResponse, in TRequest> 
     {
-        Task<TResponse> HandleAsync(TRequest request, CancellationToken cancellationToken);
+        Task<DataResponse<TResponse>> HandleAsync(TRequest request, CancellationToken cancellationToken);
     }
 }

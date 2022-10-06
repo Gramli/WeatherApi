@@ -8,6 +8,6 @@ namespace Weather.Infrastructure.Database.EFContext
         public WeatherContext(DbContextOptions<WeatherContext> options)
             : base(options) { }
 
-        DbSet<FavoriteLocation> FavoriteLocations => Set<FavoriteLocation>();
+        DbSet<FavoriteLocationEntity> FavoriteLocations => Set<FavoriteLocationEntity>();
     }
 }

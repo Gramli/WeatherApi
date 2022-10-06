@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Weather.API.Extensions;
 using Weather.Core.Abstractions;
 using Weather.Domain;
 using Weather.Domain.Dtos;
-using Weather.Domain.Payloads;
 
 namespace Weather.API.EndpointBuilders
 {
@@ -21,8 +21,8 @@ namespace Weather.API.EndpointBuilders
         private static IEndpointRouteBuilder BuildActualWeatherEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
             endpointRouteBuilder.MapGet("weather/actual",
-                async ([FromBody] LocationPayload locationPayload, [FromServices] IGetActualWeatherHandler handler, CancellationToken cancellationToken) =>
-                    await handler.HandleAsync(locationPayload, cancellationToken))
+                async ([FromBody] LocationDto locationDto, [FromServices] IGetActualWeatherHandler handler, CancellationToken cancellationToken) =>
+                    await handler.HandleAsync(locationDto, cancellationToken))
                         .Produces<ActualWeatherDto>()
                         .WithName("GetActualWeather")
                         .WithTags("Getters");
@@ -32,8 +32,8 @@ namespace Weather.API.EndpointBuilders
         private static IEndpointRouteBuilder BuildForecastWeatherEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
             endpointRouteBuilder.MapGet("weather/forecast",
-                async ([FromBody] LocationPayload locationPayload, [FromServices] IForecastWeatherHandler handler, CancellationToken cancellationToken) =>
-                    await handler.HandleAsync(locationPayload, cancellationToken))
+                async ([FromBody] LocationDto locationDto, [FromServices] IForecastWeatherHandler handler, CancellationToken cancellationToken) =>
+                    await handler.HandleAsync(locationDto, cancellationToken))
                         .Produces<ForecastWeatherDto>()
                         .WithName("GetForecastWeather")
                         .WithTags("Getters");
@@ -51,8 +51,8 @@ namespace Weather.API.EndpointBuilders
                         .WithTags("Getters");
 
             endpointRouteBuilder.MapPost("weather/favorite",
-                async ([FromBody] AddFavoritePayload addFavoritePayload, [FromServices] IAddFavoriteHandler handler, CancellationToken cancellationToken) =>
-                    await handler.HandleAsync(addFavoritePayload, cancellationToken))
+                async ([FromBody] LocationDto locationDto, [FromServices] IAddFavoriteHandler handler, CancellationToken cancellationToken) =>
+                    await handler.HandleAsync(locationDto, cancellationToken))
                         .Produces<bool>()
                         .WithName("AddFavorite")
                         .WithTags("Setters");

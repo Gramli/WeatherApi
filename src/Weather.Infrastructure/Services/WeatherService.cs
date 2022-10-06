@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Weather.Domain.Payloads
+namespace Weather.Infrastructure.Services
 {
-    public sealed class LocationPayload
+    internal sealed class WeatherService
     {
     }
 }

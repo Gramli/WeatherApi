@@ -12,7 +12,7 @@ namespace Weather.Core.Queries
         {
             _locationValidator = Guard.Against.Null(locationValidator);
         }
-        public Task<DataResponse<ActualWeatherDto>> HandleAsync(LocationDto request, CancellationToken cancellationToken)
+        public Task<HttpDataResponse<ActualWeatherDto>> HandleAsync(LocationDto request, CancellationToken cancellationToken)
         {
             if(!_locationValidator.IsValid(request))
             {

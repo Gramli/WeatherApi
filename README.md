@@ -1,9 +1,12 @@
 # IN PROGRESS
 
 # WeatherApi
-Example API allows to get actual/forecast/favorite weather data by location and safe favorites locations to memory db.
+Example API allows to get actual/forecast/favorite weather data by location and safe favorites locations to in memory db.
 
 REST API solution demonstrates how to create clean and modern API (from my point of view) with Clean Architecture, minimal API and CQRS, Repository patterns.  
+
+### Motivation
+..
 
 ### Benefits of Minimal API
 - **Reduce the ceremony of creating APIs**
@@ -34,7 +37,6 @@ Solution contains four layers:
 	*  Interfaces - interfaces for Infrastructure layer (Service, Repository, ..)
 * **Weather.Domain** - POCO classes, extensions, all what should be shared in all projects in solution
 	* DTOs
-	* Payloads
 	* General Extensions
 
 #### Onion Diagram

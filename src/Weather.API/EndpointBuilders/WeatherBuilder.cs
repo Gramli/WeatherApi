@@ -22,7 +22,7 @@ namespace Weather.API.EndpointBuilders
         {
             endpointRouteBuilder.MapGet("weather/actual",
                 async ([FromBody] LocationDto locationDto, [FromServices] IGetActualWeatherHandler handler, CancellationToken cancellationToken) =>
-                    await handler.HandleAsync(locationDto, cancellationToken))
+                    await handler.SendAsync(locationDto, cancellationToken))
                         .Produces<ActualWeatherDto>()
                         .WithName("GetActualWeather")
                         .WithTags("Getters");
@@ -33,7 +33,7 @@ namespace Weather.API.EndpointBuilders
         {
             endpointRouteBuilder.MapGet("weather/forecast",
                 async ([FromBody] LocationDto locationDto, [FromServices] IForecastWeatherHandler handler, CancellationToken cancellationToken) =>
-                    await handler.HandleAsync(locationDto, cancellationToken))
+                    await handler.SendAsync(locationDto, cancellationToken))
                         .Produces<ForecastWeatherDto>()
                         .WithName("GetForecastWeather")
                         .WithTags("Getters");
@@ -45,14 +45,14 @@ namespace Weather.API.EndpointBuilders
         {
             endpointRouteBuilder.MapGet("weather/favorites",
                 async ([FromServices] IGetFavoritesHandler handler, CancellationToken cancellationToken) =>
-                    await handler.HandleAsync(EmptyRequest.Instance, cancellationToken))
+                    await handler.SendAsync(EmptyRequest.Instance, cancellationToken))
                         .Produces<FavoritesWeatherDto>()
                         .WithName("GetFavorites")
                         .WithTags("Getters");
 
             endpointRouteBuilder.MapPost("weather/favorite",
                 async ([FromBody] LocationDto locationDto, [FromServices] IAddFavoriteHandler handler, CancellationToken cancellationToken) =>
-                    await handler.HandleAsync(locationDto, cancellationToken))
+                    await handler.SendAsync(locationDto, cancellationToken))
                         .Produces<bool>()
                         .WithName("AddFavorite")
                         .WithTags("Setters");

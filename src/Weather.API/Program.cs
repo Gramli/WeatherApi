@@ -1,12 +1,14 @@
 using Weather.API.Configuration;
 using Weather.API.EndpointBuilders;
 using Weather.API.Middlewares;
+using Weather.Core.Configuration;
 using Weather.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddLogging();
 
+builder.Services.AddCore();
 builder.Services.AddInfrastructure();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -1,4 +1,5 @@
 ﻿using Ardalis.GuardClauses;
+using Validot;
 using Weather.Core.Abstractions;
 using Weather.Domain;
 using Weather.Domain.Dtos;
@@ -7,8 +8,8 @@ namespace Weather.Core.Queries
 {
     internal sealed class GetActualWeatherHandler : IGetActualWeatherHandler
     {
-        private readonly ILocationValidator _locationValidator;
-        internal GetActualWeatherHandler(ILocationValidator locationValidator)
+        private readonly IValidator<LocationDto> _locationValidator;
+        internal GetActualWeatherHandler(IValidator<LocationDto> locationValidator)
         {
             _locationValidator = Guard.Against.Null(locationValidator);
         }
@@ -18,6 +19,8 @@ namespace Weather.Core.Queries
             {
 
             }
+
+            return null;
         }
     }
 }

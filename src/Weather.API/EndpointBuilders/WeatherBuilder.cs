@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Weather.API.Extensions;
 using Weather.Core.Abstractions;
-using Weather.Domain;
 using Weather.Domain.Dtos;
+using Weather.Domain.Http;
 
 namespace Weather.API.EndpointBuilders
 {

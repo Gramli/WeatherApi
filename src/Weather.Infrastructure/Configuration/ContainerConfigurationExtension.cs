@@ -1,22 +1,31 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Weather.Core.Abstractions;
 using Weather.Infrastructure.Database.EFContext;
 using Weather.Infrastructure.Mapping.Profiles;
+using Weather.Infrastructure.Services;
 
 namespace Weather.Infrastructure.Configuration
 {
     public static class ContainerConfigurationExtension
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection serviceCollection)
         {
-            return services
+            return serviceCollection
                 .AddMapping()
-                .AddDatabase();
+                .AddDatabase()
+                .AddServices();
         }
 
-        private static IServiceCollection AddMapping(this IServiceCollection services)
+        private static IServiceCollection AddServices(this IServiceCollection serviceCollection)
         {
-            return services
+            return serviceCollection
+                .AddScoped<IWeatherService, WeatherService>();
+        }
+
+        private static IServiceCollection AddMapping(this IServiceCollection serviceCollection)
+        {
+            return serviceCollection
                 .AddAutoMapper(typeof(WeatherEntitiesProfile));
         }
 

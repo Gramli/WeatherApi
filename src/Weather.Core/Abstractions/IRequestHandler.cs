@@ -1,4 +1,4 @@
-﻿using Weather.Domain;
+﻿using Weather.Domain.Http;
 
 namespace Weather.Core.Abstractions
 {

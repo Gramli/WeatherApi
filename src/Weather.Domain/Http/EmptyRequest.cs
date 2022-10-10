@@ -1,4 +1,4 @@
-﻿namespace Weather.Domain
+﻿namespace Weather.Domain.Http
 {
     public sealed class EmptyRequest
     {
@@ -11,7 +11,7 @@
                 return _instance;
             }
         }
-        
+
         private EmptyRequest()
         {
 

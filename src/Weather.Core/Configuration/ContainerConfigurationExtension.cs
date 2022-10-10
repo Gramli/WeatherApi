@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Validot;
+using Weather.Core.Abstractions;
+using Weather.Core.Queries;
+using Weather.Domain.Extensions;
 
 namespace Weather.Core.Configuration
 {
@@ -8,10 +11,18 @@ namespace Weather.Core.Configuration
         public static IServiceCollection AddCore(this IServiceCollection serviceCollection)
         {
             return serviceCollection
-                .AddValidation();
+                .AddValidation()
+                .AddHandlers();
         }
 
-        internal static IServiceCollection AddValidation(this IServiceCollection serviceCollection) 
+        private static IServiceCollection AddHandlers(this IServiceCollection serviceCollection) 
+        {
+            return serviceCollection
+                .AddScoped<IGetActualWeatherHandler, GetActualWeatherHandler>()
+                .AddScoped<IGetFavoritesHandler, GetFavoritesHandler>();
+        }
+
+        private static IServiceCollection AddValidation(this IServiceCollection serviceCollection) 
         {
             var holderAssemblies = AppDomain.CurrentDomain.GetAssemblies();
             var holders = Validator.Factory.FetchHolders(holderAssemblies)
@@ -21,10 +32,8 @@ namespace Weather.Core.Configuration
                     ValidatorType = s.First().ValidatorType,
                     ValidatorInstance = s.First().CreateValidator()
                 });
-            foreach (var holder in holders)
-            {
-                serviceCollection.AddSingleton(holder.ValidatorType, holder.ValidatorInstance);
-            }
+
+            holders.ForEach((holder) => serviceCollection.AddSingleton(holder.ValidatorType, holder.ValidatorInstance));
 
             return serviceCollection;
         }

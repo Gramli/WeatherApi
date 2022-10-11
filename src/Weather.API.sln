@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Core", "Weather.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Domain", "Weather.Domain\Weather.Domain.csproj", "{E0DE3B29-9CC2-4A5C-B0A4-A2485D03CB36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Infrastructure", "Weather.Infrastructure\Weather.Infrastructure.csproj", "{AED0FC1F-8E88-4B61-AB81-CF2F934549DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Infrastructure", "Weather.Infrastructure\Weather.Infrastructure.csproj", "{AED0FC1F-8E88-4B61-AB81-CF2F934549DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wheaterbit.Client", "Wheaterbit.Client\Wheaterbit.Client.csproj", "{D4AA1812-0615-483D-B1C5-5DFFB2800D5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalClients", "ExternalClients", "{A7E5DDBF-9DF9-4220-9BEA-9FC36FFC659C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{AED0FC1F-8E88-4B61-AB81-CF2F934549DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AED0FC1F-8E88-4B61-AB81-CF2F934549DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AED0FC1F-8E88-4B61-AB81-CF2F934549DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4AA1812-0615-483D-B1C5-5DFFB2800D5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4AA1812-0615-483D-B1C5-5DFFB2800D5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4AA1812-0615-483D-B1C5-5DFFB2800D5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4AA1812-0615-483D-B1C5-5DFFB2800D5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4AA1812-0615-483D-B1C5-5DFFB2800D5D} = {A7E5DDBF-9DF9-4220-9BEA-9FC36FFC659C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75897F3D-1882-40EE-A49D-10503A1CCA69}

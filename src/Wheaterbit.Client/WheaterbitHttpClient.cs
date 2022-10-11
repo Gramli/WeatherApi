@@ -6,8 +6,10 @@ namespace Wheaterbit.Client
     {
         public WheaterbitHttpClient() 
         { 
-        
+            
         }
+
+
 
     }
 }

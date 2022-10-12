@@ -1,12 +1,19 @@
 # IN PROGRESS
 
 # WeatherApi
+REST API solution demonstrates how to create clean and modern API (from my point of view) with Clean Architecture, minimal API and various of design patterns.  
+
 Example API allows to get actual/forecast/favorite weather data by location and safe favorites locations to in memory db.
 
-REST API solution demonstrates how to create clean and modern API (from my point of view) with Clean Architecture, minimal API and CQRS, Repository patterns.  
-
-### Motivation
+## Motivation
 ..
+## Architecture
+
+Projects folows **Clean Architecture**, but application layer is splitted to Core and Domain projects where Core project holds business rules and Domain project contains business entities.
+
+As Minimal API allows to inject handlers into endpoint map methods, I decided to do not use **Mediator**, but still every endpoint has its own handler.
+
+Instead of throwing exceptions, project use Result pattern (using FluentResuls package) and for returning exact http response, every handler returns data wraped into HttpDataResponse object which contains also error messages collection and http response code.
 
 ### Benefits of Minimal API
 - **Reduce the ceremony of creating APIs**

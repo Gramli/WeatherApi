@@ -4,7 +4,7 @@ using Weather.Infrastructure.Database.EFContext.Entities;
 
 namespace Weather.Infrastructure.Mapping.Profiles
 {
-    internal class WeatherEntitiesProfile : Profile
+    internal sealed class WeatherEntitiesProfile : Profile
     {
         internal WeatherEntitiesProfile() 
         {

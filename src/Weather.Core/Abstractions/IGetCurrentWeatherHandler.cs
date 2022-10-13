@@ -3,7 +3,7 @@ using Weather.Domain.Dtos;
 
 namespace Weather.Core.Abstractions
 {
-    public interface IGetActualWeatherHandler : IRequestHandler<ActualWeatherDto, LocationDto>
+    public interface IGetCurrentWeatherHandler : IRequestHandler<CurrentWeatherDto, LocationDto>
     {
     }
 }

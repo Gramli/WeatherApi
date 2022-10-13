@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Weather.Domain.Dtos
 {
-    public sealed class ActualWeatherDto
+    public class ForecastTemperatureDto
     {
+        public double Temperature { get; init; }
+
+        public DateTime DateTime { get; init; }
     }
 }

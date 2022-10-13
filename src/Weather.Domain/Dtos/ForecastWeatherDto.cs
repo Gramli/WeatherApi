@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Weather.Domain.Dtos
+﻿namespace Weather.Domain.Dtos
 {
     public sealed class ForecastWeatherDto
     { 
+        public IReadOnlyCollection<ForecastTemperatureDto> ForecastTemperatures { get; init; }
+
+        public string CityName { get; init; }
     }
 }

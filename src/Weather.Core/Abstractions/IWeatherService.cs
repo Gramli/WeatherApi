@@ -10,6 +10,6 @@ namespace Weather.Core.Abstractions
 {
     public interface IWeatherService
     {
-        Task<Result<ActualWeatherDto>> GetActualWeather(LocationDto locationDto);
+        Task<Result<CurrentWeatherDto>> GetCurrentWeather(LocationDto locationDto);
     }
 }

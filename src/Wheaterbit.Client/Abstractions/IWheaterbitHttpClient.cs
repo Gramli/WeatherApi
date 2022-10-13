@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentResults;
+using Wheaterbit.Client.Dtos;
 
 namespace Wheaterbit.Client.Abstractions
 {
     public interface IWheaterbitHttpClient
     {
+        Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(double latitude, double longitude);
+        Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(double latitude, double longitude);
     }
 }

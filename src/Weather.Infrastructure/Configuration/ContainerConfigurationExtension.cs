@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Weather.Core.Abstractions;
 using Weather.Infrastructure.Database.EFContext;
+using Weather.Infrastructure.Database.Repositories;
 using Weather.Infrastructure.Mapping.Profiles;
 using Weather.Infrastructure.Services;
 
@@ -32,7 +33,9 @@ namespace Weather.Infrastructure.Configuration
         private static IServiceCollection AddDatabase(this IServiceCollection serviceCollection)
         {
             return serviceCollection
-                .AddDbContext<WeatherContext>(opt => opt.UseInMemoryDatabase("Weather"));
+                .AddDbContext<WeatherContext>(opt => opt.UseInMemoryDatabase("Weather"))
+                .AddScoped<IWeatherQueriesRepository, WeatherQueriesRepository>()
+                .AddScoped<IWeatherCommandsRepository, WeatherCommandsRepository>();
         }
     }
 }

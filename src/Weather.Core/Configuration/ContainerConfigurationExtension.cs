@@ -18,7 +18,7 @@ namespace Weather.Core.Configuration
         private static IServiceCollection AddHandlers(this IServiceCollection serviceCollection) 
         {
             return serviceCollection
-                .AddScoped<IGetActualWeatherHandler, GetActualWeatherHandler>()
+                .AddScoped<IGetCurrentWeatherHandler, GetCurrentWeatherHandler>()
                 .AddScoped<IGetFavoritesHandler, GetFavoritesHandler>();
         }
 

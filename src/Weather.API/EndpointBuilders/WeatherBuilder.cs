@@ -20,11 +20,11 @@ namespace Weather.API.EndpointBuilders
 
         private static IEndpointRouteBuilder BuildActualWeatherEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
-            endpointRouteBuilder.MapGet("weather/actual",
-                async ([FromBody] LocationDto locationDto, [FromServices] IGetActualWeatherHandler handler, CancellationToken cancellationToken) =>
+            endpointRouteBuilder.MapGet("weather/current",
+                async ([FromBody] LocationDto locationDto, [FromServices] IGetCurrentWeatherHandler handler, CancellationToken cancellationToken) =>
                     await handler.SendAsync(locationDto, cancellationToken))
-                        .Produces<ActualWeatherDto>()
-                        .WithName("GetActualWeather")
+                        .Produces<CurrentWeatherDto>()
+                        .WithName("GetCurrentWeather")
                         .WithTags("Getters");
             return endpointRouteBuilder;
         }

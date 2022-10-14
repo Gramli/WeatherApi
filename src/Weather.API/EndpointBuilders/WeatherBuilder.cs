@@ -32,7 +32,7 @@ namespace Weather.API.EndpointBuilders
         private static IEndpointRouteBuilder BuildForecastWeatherEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
             endpointRouteBuilder.MapGet("weather/forecast",
-                async ([FromBody] LocationDto locationDto, [FromServices] IForecastWeatherHandler handler, CancellationToken cancellationToken) =>
+                async ([FromBody] LocationDto locationDto, [FromServices] IGetForecastWeatherHandler handler, CancellationToken cancellationToken) =>
                     await handler.SendAsync(locationDto, cancellationToken))
                         .Produces<ForecastWeatherDto>()
                         .WithName("GetForecastWeather")

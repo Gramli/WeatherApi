@@ -18,9 +18,9 @@ namespace Weather.Infrastructure.Services
             _mapper = Guard.Against.Null(mapper);
         }
 
-        public async Task<Result<CurrentWeatherDto>> GetCurrentWeather(LocationDto locationDto)
+        public async Task<Result<CurrentWeatherDto>> GetCurrentWeather(LocationDto locationDto, CancellationToken cancellationToken)
         {
-            var currentWeatherResult = await _wheaterbitHttpClient.GetCurrentWeather(locationDto.Latitude, locationDto.Longitude);
+            var currentWeatherResult = await _wheaterbitHttpClient.GetCurrentWeather(locationDto.Latitude, locationDto.Longitude, cancellationToken);
             if(currentWeatherResult.IsFailed)
             {
                 return Result.Fail(currentWeatherResult.Errors);
@@ -41,9 +41,9 @@ namespace Weather.Infrastructure.Services
             return _mapper.Map<CurrentWeatherDto>(currentWeather);
         }
 
-        public async Task<Result<ForecastWeatherDto>> GetForecastWeather(LocationDto locationDto)
+        public async Task<Result<ForecastWeatherDto>> GetForecastWeather(LocationDto locationDto, CancellationToken cancellationToken)
         {
-            var forecastWeatherResult = await _wheaterbitHttpClient.GetSixteenDayForecast(locationDto.Latitude, locationDto.Longitude);
+            var forecastWeatherResult = await _wheaterbitHttpClient.GetSixteenDayForecast(locationDto.Latitude, locationDto.Longitude, cancellationToken);
             if (forecastWeatherResult.IsFailed)
             {
                 return Result.Fail(forecastWeatherResult.Errors);

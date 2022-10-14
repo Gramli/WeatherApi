@@ -20,10 +20,10 @@ namespace Weather.Core.Queries
         {
             if(!_locationValidator.IsValid(request))
             {
-                return HttpDataResponses.AsBadRequest<CurrentWeatherDto>("Invalid location.");
+                return HttpDataResponses.AsBadRequest<CurrentWeatherDto>(ErrorMessages.InvalidLocation);
             }
 
-            var getActualWeatherResult = await _weatherService.GetCurrentWeather(request);
+            var getActualWeatherResult = await _weatherService.GetCurrentWeather(request, cancellationToken);
             if(getActualWeatherResult.IsFailed)
             {
                 return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(getActualWeatherResult.Errors.ToErrorMessages().ToArray());

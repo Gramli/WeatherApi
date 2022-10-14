@@ -1,5 +1,6 @@
 ﻿using Ardalis.GuardClauses;
 using AutoMapper;
+using FluentResults;
 using Weather.Core.Abstractions;
 using Weather.Domain.Dtos;
 using Weather.Infrastructure.Database.EFContext;
@@ -17,11 +18,12 @@ namespace Weather.Infrastructure.Database.Repositories
             _mapper = Guard.Against.Null(mapper);
         }
 
-        public void AddFavoriteLocation(LocationDto locationDto)
+        public async Task<Result<int>> AddFavoriteLocation(LocationDto locationDto, CancellationToken cancellationToken)
         {
             var locationEntity = _mapper.Map<FavoriteLocationEntity>(locationDto);
-            _weatherContext.Add(locationEntity);
-            _weatherContext.SaveChanges();
+            _weatherContext.FavoriteLocations.Add(locationEntity);
+            var id = await _weatherContext.SaveChangesAsync(cancellationToken);
+            return Result.Ok(id);
         }
     }
 }

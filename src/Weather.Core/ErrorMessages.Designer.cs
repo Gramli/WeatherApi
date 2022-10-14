@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Weather.Infrastructure {
+namespace Weather.Core {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Weather.Infrastructure {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Weather.Infrastructure.ErrorMessages", typeof(ErrorMessages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Weather.Core.ErrorMessages", typeof(ErrorMessages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,20 +61,11 @@ namespace Weather.Infrastructure {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Failed to retrieve data from database..
+        ///   Looks up a localized string similar to Invalid location..
         /// </summary>
-        internal static string DatabaseGetFailed {
+        internal static string InvalidLocation {
             get {
-                return ResourceManager.GetString("DatabaseGetFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t retrieve data properly from external service..
-        /// </summary>
-        internal static string ExternalClientGetDataFailed {
-            get {
-                return ResourceManager.GetString("ExternalClientGetDataFailed", resourceCulture);
+                return ResourceManager.GetString("InvalidLocation", resourceCulture);
             }
         }
     }

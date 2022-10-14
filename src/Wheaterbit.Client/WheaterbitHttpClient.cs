@@ -21,7 +21,7 @@ namespace Wheaterbit.Client
             _options = Guard.Against.Null(options);
         }
 
-        public async Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(double latitude, double longitude)
+        public async Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(double latitude, double longitude, CancellationToken cancellationToken)
         {
             var request = new HttpRequestMessage()
             {
@@ -34,10 +34,10 @@ namespace Wheaterbit.Client
                 }
             };
 
-            return await SendAsyncSave<ForecastWeatherDto?>(request);
+            return await SendAsyncSave<ForecastWeatherDto?>(request, cancellationToken);
         }
 
-        public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(double latitude, double longitude)
+        public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(double latitude, double longitude, CancellationToken cancellationToken)
         {
             var request = new HttpRequestMessage()
             {
@@ -50,14 +50,14 @@ namespace Wheaterbit.Client
                 }
             };
 
-            return await SendAsyncSave<CurrentWeatherDataDto?>(request);
+            return await SendAsyncSave<CurrentWeatherDataDto?>(request, cancellationToken);
         }
 
-        private async Task<Result<T?>> SendAsyncSave<T>(HttpRequestMessage requestMessage)
+        private async Task<Result<T?>> SendAsyncSave<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken)
         {
             try
             {
-                return await SendAsync<T>(requestMessage);
+                return await SendAsync<T>(requestMessage, cancellationToken);
             }
             catch (Exception ex)
             {
@@ -65,9 +65,9 @@ namespace Wheaterbit.Client
             }
         }
 
-        private async Task<Result<T?>> SendAsync<T>(HttpRequestMessage requestMessage)
+        private async Task<Result<T?>> SendAsync<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken)
         {
-            using var response = await _httpClient.SendAsync(requestMessage);
+            using var response = await _httpClient.SendAsync(requestMessage, cancellationToken);
             if (!response.IsSuccessStatusCode)
             {
                 return Result.Fail($"Failed response to {nameof(GetSixteenDayForecast)}");

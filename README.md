@@ -6,7 +6,7 @@ REST API solution demonstrates how to create clean and modern API (from my point
 Example API allows to get actual/forecast/favorite weather data by location and safe favorites locations to in memory db.
 
 ## Motivation
-..
+Main motivation is to write practical example of minimal API, to see it's benefits and disadvantages. Also to create REST API template project using Clean Architecture and various of design patterns.
 ## Architecture
 
 Projects folows **Clean Architecture**, but application layer is splitted to Core and Domain projects where Core project holds business rules and Domain project contains business entities.

@@ -30,5 +30,13 @@ namespace Weather.Domain.Extensions
                 StatusCode = System.Net.HttpStatusCode.OK,
             };
         }
+
+        public static HttpDataResponse<T> AsNoContent<T>()
+        {
+            return new HttpDataResponse<T>
+            {
+                StatusCode = System.Net.HttpStatusCode.NoContent,
+            };
+        }
     }
 }

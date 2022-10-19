@@ -26,13 +26,22 @@ namespace Weather.Core.Queries
                 return HttpDataResponses.AsInternalServerError<FavoritesWeatherDto>(favoriteLocationsResult.Errors.ToErrorMessages().ToArray());
             }
 
+            if(!favoriteLocationsResult.Value.HasAny())
+            {
+                return HttpDataResponses.AsNoContent();
+            }
+
+            var result = new List<CurrentWeatherDto>();
             favoriteLocationsResult.Value.ForEach((location) =>
             {
-                var favoriteWeather = _weatherService.GetCurrentWeather(location, cancellationToken);
-                //...
+                var favoriteWeather = await _weatherService.GetCurrentWeather(location, cancellationToken);
+                result.Add(favoriteWeather);
             });
 
-            throw new NotImplementedException();
+            return HttpDataResponse.AsOK(new FavoriteWeathers
+            {
+                FavoritesWeathers = result,
+            });
 
         }
     }

@@ -9,5 +9,10 @@
                 action(item);
             }
         }
+
+        public static bool HasAny<T>(this IEnumerable<T> values)
+        {
+            return values?.Any() ?? false;
+        }
     }
 }

@@ -4,21 +4,30 @@ namespace Weather.Domain.Extensions
 {
     public static class HttpDataResponses
     {
-        public static HttpDataResponse<T> AsBadRequest<T>(params string[] errorMessages)
+        public static HttpDataResponse<T> AsBadRequest<T>(IEnumerable<string> errorMessages)
         {
             return new HttpDataResponse<T>
             {
                 StatusCode = System.Net.HttpStatusCode.BadRequest,
-                Errors = errorMessages
+                Errors = errorMessages.ToList()
             };
         }
 
-        public static HttpDataResponse<T> AsInternalServerError<T>(params string[] errorMessages)
+        public static HttpDataResponse<T> AsBadRequest<T>(string errorMessages)
+        {
+            return new HttpDataResponse<T>
+            {
+                StatusCode = System.Net.HttpStatusCode.BadRequest,
+                Errors = new List<string> { errorMessages }
+            };
+        }
+
+        public static HttpDataResponse<T> AsInternalServerError<T>(IEnumerable<string> errorMessages)
         {
             return new HttpDataResponse<T>
             {
                 StatusCode = System.Net.HttpStatusCode.InternalServerError,
-                Errors = errorMessages
+                Errors = errorMessages.ToList()
             };
         }
 
@@ -28,6 +37,16 @@ namespace Weather.Domain.Extensions
             {
                 Data = data,
                 StatusCode = System.Net.HttpStatusCode.OK,
+            };
+        }
+
+        public static HttpDataResponse<T> AsOK<T>(T data, IEnumerable<string> errorMessages)
+        {
+            return new HttpDataResponse<T>
+            {
+                Data = data,
+                StatusCode = System.Net.HttpStatusCode.OK,
+                Errors = errorMessages.ToList()
             };
         }
 

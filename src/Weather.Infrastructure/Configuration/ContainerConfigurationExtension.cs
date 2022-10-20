@@ -1,20 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Weather.Core.Abstractions;
 using Weather.Infrastructure.Database.EFContext;
 using Weather.Infrastructure.Database.Repositories;
 using Weather.Infrastructure.Mapping.Profiles;
 using Weather.Infrastructure.Services;
+using Wheaterbit.Client.Configuration;
 
 namespace Weather.Infrastructure.Configuration
 {
     public static class ContainerConfigurationExtension
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection serviceCollection)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection serviceCollection, IConfiguration configuration)
         {
             return serviceCollection
                 .AddMapping()
                 .AddDatabase()
+                .AddExternalHttpServices(configuration)
                 .AddServices();
         }
 
@@ -36,6 +39,12 @@ namespace Weather.Infrastructure.Configuration
                 .AddDbContext<WeatherContext>(opt => opt.UseInMemoryDatabase("Weather"))
                 .AddScoped<IWeatherQueriesRepository, WeatherQueriesRepository>()
                 .AddScoped<IWeatherCommandsRepository, WeatherCommandsRepository>();
+        }
+
+        private static IServiceCollection AddExternalHttpServices(this IServiceCollection serviceCollection, IConfiguration configuration) 
+        {
+            return serviceCollection.AddHttpClient()
+                .AddWeatherbit(configuration);
         }
     }
 }

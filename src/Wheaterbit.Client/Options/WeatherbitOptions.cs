@@ -4,8 +4,8 @@
     {
         public const string Weatherbit = "Weatherbit";
 
-        public string BaseUrl { get; set; }
-        public string XRapidAPIKey { get; set; }
-        public string XRapidAPIHost { get; set; }
+        public string BaseUrl { get; set; } = string.Empty;
+        public string XRapidAPIKey { get; set; } = string.Empty;
+        public string XRapidAPIHost { get; set; } = string.Empty;
     }
 }

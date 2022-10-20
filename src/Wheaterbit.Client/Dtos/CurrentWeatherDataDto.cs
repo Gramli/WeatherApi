@@ -2,6 +2,6 @@
 {
     public class CurrentWeatherDataDto
     {
-        public IReadOnlyCollection<CurrentWeatherDto> Data { get; init; }
+        public IReadOnlyCollection<CurrentWeatherDto> Data { get; init; } = new List<CurrentWeatherDto>();
     }
 }

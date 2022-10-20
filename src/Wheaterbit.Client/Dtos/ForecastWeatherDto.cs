@@ -2,8 +2,8 @@
 {
     public sealed class ForecastWeatherDto
     {
-        public IReadOnlyCollection<ForecastTemperatureDto> Data { get; init; }
+        public IReadOnlyCollection<ForecastTemperatureDto> Data { get; init; } = new List<ForecastTemperatureDto>();
 
-        public string city_name { get; init; }
+        public string city_name { get; init; } = string.Empty;
     }
 }

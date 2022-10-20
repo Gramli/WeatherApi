@@ -27,7 +27,7 @@ namespace Weather.Core.Queries
 
             if(forecastResult.IsFailed)
             {
-                return HttpDataResponses.AsInternalServerError<ForecastWeatherDto>(forecastResult.Errors.ToErrorMessages().ToArray());
+                return HttpDataResponses.AsInternalServerError<ForecastWeatherDto>(forecastResult.Errors.ToErrorMessages());
             }
 
             return HttpDataResponses.AsOK(forecastResult.Value);

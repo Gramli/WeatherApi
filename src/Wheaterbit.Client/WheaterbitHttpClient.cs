@@ -2,6 +2,7 @@
 using FluentResults;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using Validot;
 using Wheaterbit.Client.Abstractions;
 using Wheaterbit.Client.Dtos;
 using Wheaterbit.Client.Options;
@@ -15,10 +16,25 @@ namespace Wheaterbit.Client
 
         private const string XRapidAPIKeyHeader = "X-RapidAPI-Key";
         private const string XRapidAPIHostHeader = "X-RapidAPI-Host";
-        public WheaterbitHttpClient(IOptions<WeatherbitOptions> options) 
-        { 
-            _httpClient = new HttpClient();
+        public WheaterbitHttpClient(IOptions<WeatherbitOptions> options, 
+            IHttpClientFactory httpClientFactory, 
+            IValidator<WeatherbitOptions> optionsValidator) 
+        {
+            Guard.Against.Null(httpClientFactory);
+            _httpClient = httpClientFactory.CreateClient();
             _options = Guard.Against.Null(options);
+
+            ValidateOptions(optionsValidator, options);
+        }
+
+        private static void ValidateOptions(IValidator<WeatherbitOptions> optionsValidator, IOptions<WeatherbitOptions> options)
+        {
+            var validationResult = optionsValidator.Validate(options.Value);
+
+            if(validationResult.AnyErrors)
+            {
+                throw new ArgumentException($"Invalid {nameof(WeatherbitOptions)}: {validationResult}");
+            }
         }
 
         public async Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(double latitude, double longitude, CancellationToken cancellationToken)
@@ -34,7 +50,7 @@ namespace Wheaterbit.Client
                 }
             };
 
-            return await SendAsyncSave<ForecastWeatherDto?>(request, cancellationToken);
+            return await SendAsyncSave<ForecastWeatherDto>(request, cancellationToken);
         }
 
         public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(double latitude, double longitude, CancellationToken cancellationToken)
@@ -50,10 +66,10 @@ namespace Wheaterbit.Client
                 }
             };
 
-            return await SendAsyncSave<CurrentWeatherDataDto?>(request, cancellationToken);
+            return await SendAsyncSave<CurrentWeatherDataDto>(request, cancellationToken);
         }
 
-        private async Task<Result<T?>> SendAsyncSave<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+        private async Task<Result<T>> SendAsyncSave<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken)
         {
             try
             {
@@ -65,7 +81,7 @@ namespace Wheaterbit.Client
             }
         }
 
-        private async Task<Result<T?>> SendAsync<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+        private async Task<Result<T>> SendAsync<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken)
         {
             using var response = await _httpClient.SendAsync(requestMessage, cancellationToken);
             if (!response.IsSuccessStatusCode)
@@ -74,7 +90,14 @@ namespace Wheaterbit.Client
             }
 
             var resultContent = await response.Content.ReadAsStringAsync();
-            return Result.Ok(JsonConvert.DeserializeObject<T>(resultContent));
+
+            var result = JsonConvert.DeserializeObject<T>(resultContent);
+            if(result is null)
+            {
+                return Result.Fail($"Failed to deserialize response.");
+            }
+
+            return Result.Ok(result);
         }
 
     }

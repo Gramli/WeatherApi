@@ -12,9 +12,9 @@ namespace Weather.Core.Queries
     {
         private readonly IWeatherQueriesRepository _weatherQueriesRepository;
         private readonly IWeatherService _weatherService;
-        private readonly ILogger<GetFavoritesHandler> _logger;
+        private readonly ILogger<IGetFavoritesHandler> _logger;
 
-        public GetFavoritesHandler(IWeatherQueriesRepository weatherQueriesRepository, IWeatherService weatherService, ILogger<GetFavoritesHandler> logger)
+        public GetFavoritesHandler(IWeatherQueriesRepository weatherQueriesRepository, IWeatherService weatherService, ILogger<IGetFavoritesHandler> logger)
         {
             _weatherQueriesRepository = Guard.Against.Null(weatherQueriesRepository);
             _weatherService = Guard.Against.Null(weatherService);

@@ -6,6 +6,7 @@ using Weather.Core.Abstractions;
 using Weather.Core.Queries;
 using Weather.Domain.Dtos;
 using Weather.Domain.Http;
+using Weather.Domain.Logging;
 
 namespace Weather.Core.UnitTests.Queries
 {
@@ -47,7 +48,6 @@ namespace Weather.Core.UnitTests.Queries
         public async Task GetFavorites_Empty()
         {
             //Arrange
-
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
                 .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>()));
 
@@ -64,8 +64,25 @@ namespace Weather.Core.UnitTests.Queries
         public async Task Result_Empty()
         {
             //Arrange
+            var failMessage = "Some fail message";
+            var locationDto = new LocationDto() { Latitude = 1, Longitude = 1 };
+
+            _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
+                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>() 
+                {
+                    locationDto
+                }));
+
+            _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failMessage));
             //Act
+            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
+
             //Assert
+            Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
+            Assert.Single(result.Errors);
+            _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
+            _weatherServiceMock.Verify(x => x.GetCurrentWeather(It.Is<LocationDto>(y=>y.Equals(locationDto)), It.IsAny<CancellationToken>()), Times.Once);
+            //TODO SETUP AND VERIFY LOGGER
         }
 
         [Fact]

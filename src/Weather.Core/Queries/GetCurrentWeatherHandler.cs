@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Validot;
 using Weather.Core.Abstractions;
+using Weather.Domain;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;
@@ -37,11 +38,11 @@ namespace Weather.Core.Queries
                 return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(getActualWeatherResult.Errors.ToErrorMessages());
             }
 
-            if(_currentWeatherValidator.IsValid(getActualWeatherResult.Value))
+            var validationResult = _currentWeatherValidator.Validate(getActualWeatherResult.Value);
+            if(validationResult.AnyErrors)
             {
-                //TODO complete invalid
-                _logger.LogError(/*log error*/)
-                return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(/*Specify message*/);
+                _logger.LogError(ErrorLogMessages.ValidationErrorLog, validationResult.ToString());
+                return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);
             }
 
             return HttpDataResponses.AsOK(getActualWeatherResult.Value);

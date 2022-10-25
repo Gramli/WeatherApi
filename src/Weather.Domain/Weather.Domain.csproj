@@ -11,4 +11,19 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="ErrorLogMessages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ErrorLogMessages.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="ErrorLogMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorLogMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

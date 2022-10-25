@@ -31,6 +31,15 @@ namespace Weather.Domain.Extensions
             };
         }
 
+        public static HttpDataResponse<T> AsInternalServerError<T>(string errorMessage)
+        {
+            return new HttpDataResponse<T>
+            {
+                StatusCode = System.Net.HttpStatusCode.InternalServerError,
+                Errors = new List<string> { errorMessage }
+            };
+        }
+
         public static HttpDataResponse<T> AsOK<T>(T data)
         {
             return new HttpDataResponse<T>

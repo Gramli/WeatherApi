@@ -17,21 +17,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalClients", "External
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F3BB2E4D-53BC-4EB0-9A73-300134879E26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.API.UnitTests", "Tests\UnitTests\Weather.API.UnitTests\Weather.API.UnitTests.csproj", "{AB3F6519-5124-40C5-99E5-7043855AD62F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.API.UnitTests", "Tests\UnitTests\Weather.API.UnitTests\Weather.API.UnitTests.csproj", "{AB3F6519-5124-40C5-99E5-7043855AD62F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Core.UnitTests", "Tests\UnitTests\Weather.Core.UnitTests\Weather.Core.UnitTests.csproj", "{C457E260-1E22-4ED0-B32A-2C6C7CA0D659}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Core.UnitTests", "Tests\UnitTests\Weather.Core.UnitTests\Weather.Core.UnitTests.csproj", "{C457E260-1E22-4ED0-B32A-2C6C7CA0D659}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Domain.UnitTests", "Tests\UnitTests\Weather.Domain.UnitTests\Weather.Domain.UnitTests.csproj", "{20107565-B8E0-484D-BA65-D933E23B784C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Domain.UnitTests", "Tests\UnitTests\Weather.Domain.UnitTests\Weather.Domain.UnitTests.csproj", "{20107565-B8E0-484D-BA65-D933E23B784C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Infrastructure.UnitTests", "Tests\UnitTests\Weather.Infrastructure.UnitTests\Weather.Infrastructure.UnitTests.csproj", "{4C21DB4C-18DC-490D-8CFA-7EBB7D8999F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Infrastructure.UnitTests", "Tests\UnitTests\Weather.Infrastructure.UnitTests\Weather.Infrastructure.UnitTests.csproj", "{4C21DB4C-18DC-490D-8CFA-7EBB7D8999F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{DBB0632C-F7EA-4593-927B-49DB2371CDE5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemTests", "SystemTests", "{457E4CA0-5F3C-4653-A131-2E5046A98C85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.API.SystemTests", "Tests\SystemTests\Weather.API.SystemTests\Weather.API.SystemTests.csproj", "{48E1C36D-3609-441B-9753-6D9F130EE1B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.API.SystemTests", "Tests\SystemTests\Weather.API.SystemTests\Weather.API.SystemTests.csproj", "{48E1C36D-3609-441B-9753-6D9F130EE1B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Infrastructure.SystemTests", "Tests\SystemTests\Weather.Infrastructure.SystemTests\Weather.Infrastructure.SystemTests.csproj", "{99C27C98-AADD-4B71-A437-6923D2F6DCDE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{F1939A12-97F2-4846-95BB-D187C90A24E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Infrastructure.IntegrationTests", "Tests\IntegrationTests\Weather.Infrastructure.IntegrationTests\Weather.Infrastructure.IntegrationTests.csproj", "{AC3B0CA2-967D-465A-A6E1-B052B5FB25DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.UnitTests.Common", "Tests\UnitTests\Weather.UnitTests.Common\Weather.UnitTests.Common.csproj", "{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -79,10 +83,14 @@ Global
 		{48E1C36D-3609-441B-9753-6D9F130EE1B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48E1C36D-3609-441B-9753-6D9F130EE1B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48E1C36D-3609-441B-9753-6D9F130EE1B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99C27C98-AADD-4B71-A437-6923D2F6DCDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99C27C98-AADD-4B71-A437-6923D2F6DCDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99C27C98-AADD-4B71-A437-6923D2F6DCDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99C27C98-AADD-4B71-A437-6923D2F6DCDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC3B0CA2-967D-465A-A6E1-B052B5FB25DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3B0CA2-967D-465A-A6E1-B052B5FB25DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3B0CA2-967D-465A-A6E1-B052B5FB25DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3B0CA2-967D-465A-A6E1-B052B5FB25DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,7 +104,9 @@ Global
 		{DBB0632C-F7EA-4593-927B-49DB2371CDE5} = {F3BB2E4D-53BC-4EB0-9A73-300134879E26}
 		{457E4CA0-5F3C-4653-A131-2E5046A98C85} = {F3BB2E4D-53BC-4EB0-9A73-300134879E26}
 		{48E1C36D-3609-441B-9753-6D9F130EE1B6} = {457E4CA0-5F3C-4653-A131-2E5046A98C85}
-		{99C27C98-AADD-4B71-A437-6923D2F6DCDE} = {457E4CA0-5F3C-4653-A131-2E5046A98C85}
+		{F1939A12-97F2-4846-95BB-D187C90A24E7} = {F3BB2E4D-53BC-4EB0-9A73-300134879E26}
+		{AC3B0CA2-967D-465A-A6E1-B052B5FB25DB} = {F1939A12-97F2-4846-95BB-D187C90A24E7}
+		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C} = {DBB0632C-F7EA-4593-927B-49DB2371CDE5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75897F3D-1882-40EE-A49D-10503A1CCA69}

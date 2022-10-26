@@ -1,12 +1,12 @@
 ﻿using FluentResults;
 using Microsoft.Extensions.Logging;
-using Moq;
 using System.Net;
 using Weather.Core.Abstractions;
 using Weather.Core.Queries;
 using Weather.Domain.Dtos;
 using Weather.Domain.Http;
 using Weather.Domain.Logging;
+using Weather.UnitTests.Common.Extensions;
 
 namespace Weather.Core.UnitTests.Queries
 {
@@ -82,23 +82,67 @@ namespace Weather.Core.UnitTests.Queries
             Assert.Single(result.Errors);
             _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
             _weatherServiceMock.Verify(x => x.GetCurrentWeather(It.Is<LocationDto>(y=>y.Equals(locationDto)), It.IsAny<CancellationToken>()), Times.Once);
-            //TODO SETUP AND VERIFY LOGGER
+            _loggerMock.VerifyLog(LogLevel.Warning, LogEvents.FavoriteWeathersGeneral, failMessage, Times.Once());
         }
 
         [Fact]
         public async Task One_Of_GetCurrentWeather_Failed()
         {
             //Arrange
+            var failMessage = "Some fail message";
+            var locationDto = new LocationDto() { Latitude = 1, Longitude = 1 };
+
+            _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
+                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>()
+                {
+                    locationDto,
+                    new LocationDto() {},
+                }));
+
+            var currentWeather = new CurrentWeatherDto();
+
+            _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.Is<LocationDto>(y=> y.Equals(locationDto)), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failMessage));
+            _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.Is<LocationDto>(y => !y.Equals(locationDto)), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(currentWeather));
             //Act
+            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
+
             //Assert
+            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+            Assert.Single(result.Errors);
+            Assert.NotNull(result.Data);
+            Assert.Single(result.Data.FavoriteWeathers);
+            Assert.Equal(currentWeather, result.Data.FavoriteWeathers.Single());
+            _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
+            _weatherServiceMock.Verify(x => x.GetCurrentWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
+            _loggerMock.VerifyLog(LogLevel.Warning, LogEvents.FavoriteWeathersGeneral, failMessage, Times.Once());
         }
 
         [Fact]
         public async Task Success()
         {
             //Arrange
+            var locationDto = new LocationDto() { Latitude = 1, Longitude = 1 };
+
+            _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
+                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>()
+                {
+                    locationDto,
+                }));
+
+            var currentWeather = new CurrentWeatherDto();
+
+            _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(currentWeather));
             //Act
+            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
+
             //Assert
+            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+            Assert.Empty(result.Errors);
+            Assert.NotNull(result.Data);
+            Assert.Single(result.Data.FavoriteWeathers);
+            Assert.Equal(currentWeather, result.Data.FavoriteWeathers.Single());
+            _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
+            _weatherServiceMock.Verify(x => x.GetCurrentWeather(It.Is<LocationDto>(y=>y.Equals(locationDto)), It.IsAny<CancellationToken>()), Times.Once);
         }
     }
 }

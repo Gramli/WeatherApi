@@ -120,7 +120,7 @@
   <data name="ExternalApiError" xml:space="preserve">
     <value>Problem with external API, check logs for more information.</value>
   </data>
-  <data name="InvalidLocation" xml:space="preserve">
-    <value>Invalid location.</value>
+  <data name="InvalidStoredLocation" xml:space="preserve">
+    <value>Stored favorite location is invalid {0}.</value>
   </data>
 </root>

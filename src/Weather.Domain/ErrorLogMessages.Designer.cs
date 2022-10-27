@@ -61,6 +61,24 @@ namespace Weather.Domain {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid location {location}..
+        /// </summary>
+        public static string InvalidLocation {
+            get {
+                return ResourceManager.GetString("InvalidLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid weather object for location {location}..
+        /// </summary>
+        public static string InvalidWeather {
+            get {
+                return ResourceManager.GetString("InvalidWeather", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Validation error: {error}.
         /// </summary>
         public static string ValidationErrorLog {

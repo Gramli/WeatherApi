@@ -70,11 +70,11 @@ namespace Weather.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid location..
+        ///   Looks up a localized string similar to Stored favorite location is invalid {0}..
         /// </summary>
-        internal static string InvalidLocation {
+        internal static string InvalidStoredLocation {
             get {
-                return ResourceManager.GetString("InvalidLocation", resourceCulture);
+                return ResourceManager.GetString("InvalidStoredLocation", resourceCulture);
             }
         }
     }

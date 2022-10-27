@@ -1,6 +1,7 @@
 ﻿using Ardalis.GuardClauses;
 using Validot;
 using Weather.Core.Abstractions;
+using Weather.Domain;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;
@@ -20,7 +21,7 @@ namespace Weather.Core.Queries
         {
             if(!_locationValidator.IsValid(request))
             {
-                return HttpDataResponses.AsBadRequest<ForecastWeatherDto>(ErrorMessages.InvalidLocation);
+                return HttpDataResponses.AsBadRequest<ForecastWeatherDto>(ErrorLogMessages.InvalidLocation);
             }
 
             var forecastResult = await _weatherService.GetForecastWeather(request, cancellationToken);
@@ -29,6 +30,8 @@ namespace Weather.Core.Queries
             {
                 return HttpDataResponses.AsInternalServerError<ForecastWeatherDto>(forecastResult.Errors.ToErrorMessages());
             }
+
+            //TODO ADD VALIDATION
 
             return HttpDataResponses.AsOK(forecastResult.Value);
         }

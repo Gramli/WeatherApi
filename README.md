@@ -16,7 +16,7 @@ As Minimal API allows to inject handlers into endpoint map methods, I decided to
 Instead of throwing exceptions, project use **Result pattern** (using FluentResuls package) and for returning exact http response, every handler returns data wraped into HttpDataResponse object which contains also error messages collection and http response code.
 
 Wery important part of every project are **Tests**. In ideal world test coverage should be 100%, but in most commercial projects (by my experience) we are trying to find **optimal test coverage**. Optimal test coverage can't be simply quantified and every project has diferent number by it's need.
-In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project. API projects also has its own **system test** project, because we want to test are endpoints completely. Infrastructure project on the other hand has **integration test** project where we want to test Weatherbit connection for example.
+In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project. API projects also has its own **system test** project, because we want to test our endpoints completely. Infrastructure project on the other hand has **integration test** project where we want to test Weatherbit connection for example.
 
 ### Benefits of Minimal API
 - **Reduce the ceremony of creating APIs**

@@ -84,8 +84,7 @@ namespace Weather.Core.Queries
             var favoriteWeather = await _weatherService.GetCurrentWeather(location, cancellationToken);
             if (favoriteWeather.IsFailed)
             {
-                var favoriteWeatherMessages = favoriteWeather.Errors.ToErrorMessages();
-                _logger.LogWarning(LogEvents.FavoriteWeathersGeneral, string.Join(',', favoriteWeatherMessages));
+                _logger.LogWarning(LogEvents.FavoriteWeathersGeneral, favoriteWeather.Errors.JoinToMessage());
                 return Result.Fail(ErrorMessages.ExternalApiError);
             }
 

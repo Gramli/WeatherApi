@@ -13,5 +13,15 @@ namespace Weather.Domain.Extensions
 
             return errors.Select(error => error.Message);
         }
+
+        public static string JoinToMessage(this IList<IError> errors)
+        {
+            if (!errors.HasAny())
+            {
+                return string.Empty;
+            }
+
+            return string.Join(',', errors.ToErrorMessages());
+        }
     }
 }

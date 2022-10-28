@@ -61,6 +61,15 @@ namespace Weather.Core {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t store location to database. .
+        /// </summary>
+        internal static string CantStoreLocation {
+            get {
+                return ResourceManager.GetString("CantStoreLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Problem with external API, check logs for more information..
         /// </summary>
         internal static string ExternalApiError {

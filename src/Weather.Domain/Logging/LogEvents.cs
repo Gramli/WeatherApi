@@ -5,5 +5,7 @@
         public const int GeneralError = 1000;
 
         public const int FavoriteWeathersGeneral = 2000;
+
+        public const int FavoriteWeathersStoreToDatabase = 2100;
     }
 }

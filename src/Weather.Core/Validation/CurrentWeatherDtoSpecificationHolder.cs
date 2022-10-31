@@ -1,4 +1,5 @@
 ﻿using Validot;
+using Weather.Core.Validation;
 using Weather.Domain.Dtos;
 
 namespace Wheaterbit.Client.Validation
@@ -7,22 +8,22 @@ namespace Wheaterbit.Client.Validation
     {
         public Specification<CurrentWeatherDto> Specification { get; }
 
-        public CurrentWeatherDtoSpecificationHolder()
+        internal CurrentWeatherDtoSpecificationHolder()
         {
             Specification<string> timeStringSpecification = s => s
                 .Rule(m => !string.IsNullOrWhiteSpace(m) && DateTime.TryParse(m, out var _));
 
             Specification<double> tempSpecification = s => s
-                .Rule(m => m < 60 && m > -90);
+                .Rule(GeneralPredicates.isValidTemperature);
 
             Specification<string> stringSpecification = s => s
-                .Rule(m => !string.IsNullOrWhiteSpace(m));
+                .Rule(GeneralPredicates.isValidString);
 
             Specification<CurrentWeatherDto> currentWeatherDtoSpecification = s => s
-            .Member(m => m.Sunrise, timeStringSpecification)
-            .Member(m => m.Sunset, timeStringSpecification)
-            .Member(m => m.Temperature, tempSpecification)
-            .Member(m => m.CityName, stringSpecification);
+                .Member(m => m.Sunrise, timeStringSpecification)
+                .Member(m => m.Sunset, timeStringSpecification)
+                .Member(m => m.Temperature, tempSpecification)
+                .Member(m => m.CityName, stringSpecification);
 
             Specification = currentWeatherDtoSpecification;
         }

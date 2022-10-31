@@ -49,8 +49,6 @@ Solution contains four layers:
 	* DTOs
 	* General Extensions
 
-#### Onion Diagram
-![Project Clean Architecture Diagram - Onion](./doc/img/cleanArchitectureOnion.jpg)
 #### Horizontal Diagram (references)
 ![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
 

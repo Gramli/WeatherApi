@@ -1,7 +1,7 @@
 ﻿using Ardalis.GuardClauses;
 using Microsoft.Extensions.Logging;
+using Validot;
 using Weather.Core.Abstractions;
-using Weather.Domain;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;
@@ -11,10 +11,10 @@ namespace Weather.Core.Commands
 {
     internal sealed class AddFavoriteHandler : IAddFavoriteHandler
     {
-        private readonly ILocationValidator _locationValidator;
+        private readonly IValidator<LocationDto> _locationValidator;
         private readonly ILogger<IAddFavoriteHandler> _logger;
         private readonly IWeatherCommandsRepository _weatherCommandsRepository;
-        internal AddFavoriteHandler(IWeatherCommandsRepository weatherCommandsRepository, ILocationValidator locationValidator, ILogger<IAddFavoriteHandler> logger)
+        public AddFavoriteHandler(IWeatherCommandsRepository weatherCommandsRepository, IValidator<LocationDto> locationValidator, ILogger<IAddFavoriteHandler> logger)
         {
             _weatherCommandsRepository = Guard.Against.Null(weatherCommandsRepository);
             _locationValidator = Guard.Against.Null(locationValidator);
@@ -25,7 +25,7 @@ namespace Weather.Core.Commands
         {
             if (!_locationValidator.IsValid(request))
             {
-                return HttpDataResponses.AsBadRequest<bool>(string.Format(ErrorLogMessages.InvalidLocation, request));
+                return HttpDataResponses.AsBadRequest<bool>(string.Format(ErrorMessages.RequestValidationError, request));
             }
 
             var addResult = await _weatherCommandsRepository.AddFavoriteLocation(request, cancellationToken);

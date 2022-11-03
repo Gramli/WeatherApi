@@ -6,7 +6,7 @@ namespace Weather.Core.Validation
     internal sealed class ForecastWeatherDtoSpecificationHolder : ISpecificationHolder<ForecastWeatherDto>
     {
         public Specification<ForecastWeatherDto> Specification { get; }
-        internal ForecastWeatherDtoSpecificationHolder()
+        public ForecastWeatherDtoSpecificationHolder()
         {
             Specification<double> tempSpecification = s => s
                 .Rule(GeneralPredicates.isValidTemperature);

@@ -7,7 +7,7 @@ namespace Weather.Core.Validation
     {
         public Specification<LocationDto> Specification { get; }
 
-        internal LocationDtoSpecificationHolder() 
+        public LocationDtoSpecificationHolder() 
         {
             Specification<long> latitudeSpecification = s => s
                 .Rule(m => m >= -90 && m <= 90);

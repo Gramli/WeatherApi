@@ -70,7 +70,7 @@ namespace Weather.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Problem with external API, check logs for more information..
+        ///   Looks up a localized string similar to Problem with external API, can&apos;t retrive data properly..
         /// </summary>
         internal static string ExternalApiError {
             get {
@@ -84,6 +84,15 @@ namespace Weather.Core {
         internal static string InvalidStoredLocation {
             get {
                 return ResourceManager.GetString("InvalidStoredLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid request data: {0}..
+        /// </summary>
+        internal static string RequestValidationError {
+            get {
+                return ResourceManager.GetString("RequestValidationError", resourceCulture);
             }
         }
     }

@@ -1,8 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Validot;
 using Weather.Core.Abstractions;
+using Weather.Core.Commands;
+using Weather.Core.Extensions;
 using Weather.Core.Queries;
-using Weather.Domain.Extensions;
+using Weather.Core.Validation;
+using Weather.Domain.Dtos;
+using Wheaterbit.Client.Validation;
 
 namespace Weather.Core.Configuration
 {
@@ -19,23 +23,16 @@ namespace Weather.Core.Configuration
         {
             return serviceCollection
                 .AddScoped<IGetCurrentWeatherHandler, GetCurrentWeatherHandler>()
-                .AddScoped<IGetFavoritesHandler, GetFavoritesHandler>();
+                .AddScoped<IGetFavoritesHandler, GetFavoritesHandler>()
+                .AddScoped<IGetForecastWeatherHandler, GetForecastWeatherHandler>()
+                .AddScoped<IAddFavoriteHandler, AddFavoriteHandler>();
         }
 
         private static IServiceCollection AddValidation(this IServiceCollection serviceCollection) 
         {
-            var holderAssemblies = AppDomain.CurrentDomain.GetAssemblies();
-            var holders = Validator.Factory.FetchHolders(holderAssemblies)
-                .GroupBy(h => h.SpecifiedType)
-                .Select(s => new
-                {
-                    ValidatorType = s.First().ValidatorType,
-                    ValidatorInstance = s.First().CreateValidator()
-                });
-
-            holders.ForEach((holder) => serviceCollection.AddSingleton(holder.ValidatorType, holder.ValidatorInstance));
-
-            return serviceCollection;
+            return serviceCollection.AddValidotSingleton<IValidator<CurrentWeatherDto>, CurrentWeatherDtoSpecificationHolder, CurrentWeatherDto>()
+                .AddValidotSingleton<IValidator<ForecastWeatherDto>, ForecastWeatherDtoSpecificationHolder, ForecastWeatherDto>()
+                .AddValidotSingleton<IValidator<LocationDto>, LocationDtoSpecificationHolder,LocationDto>();
         }
     }
 }

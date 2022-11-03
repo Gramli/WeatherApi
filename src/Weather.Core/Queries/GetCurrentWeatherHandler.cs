@@ -15,7 +15,7 @@ namespace Weather.Core.Queries
         private readonly IValidator<CurrentWeatherDto> _currentWeatherValidator;
         private readonly IWeatherService _weatherService;
         private readonly ILogger<IGetCurrentWeatherHandler> _logger;
-        internal GetCurrentWeatherHandler(IValidator<LocationDto> locationValidator, 
+        public GetCurrentWeatherHandler(IValidator<LocationDto> locationValidator, 
             IValidator<CurrentWeatherDto> currentWeatherValidator, 
             IWeatherService weatherService,
             ILogger<IGetCurrentWeatherHandler> logger)
@@ -29,7 +29,7 @@ namespace Weather.Core.Queries
         {
             if(!_locationValidator.IsValid(request))
             {
-                return HttpDataResponses.AsBadRequest<CurrentWeatherDto>(string.Format(ErrorLogMessages.InvalidLocation, request));
+                return HttpDataResponses.AsBadRequest<CurrentWeatherDto>(string.Format(ErrorMessages.RequestValidationError, request));
             }
 
             var getActualWeatherResult = await _weatherService.GetCurrentWeather(request, cancellationToken);

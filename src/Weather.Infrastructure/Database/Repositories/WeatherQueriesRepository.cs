@@ -12,7 +12,7 @@ namespace Weather.Infrastructure.Database.Repositories
     {
         private readonly IMapper _mapper;
         private readonly WeatherContext _weatherContext;
-        internal WeatherQueriesRepository(WeatherContext weatherContext, IMapper mapper)
+        public WeatherQueriesRepository(WeatherContext weatherContext, IMapper mapper)
         {
             _weatherContext = Guard.Against.Null(weatherContext);
             _mapper = Guard.Against.Null(mapper);

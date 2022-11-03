@@ -121,9 +121,12 @@
     <value>Can't store location to database. </value>
   </data>
   <data name="ExternalApiError" xml:space="preserve">
-    <value>Problem with external API, check logs for more information.</value>
+    <value>Problem with external API, can't retrive data properly.</value>
   </data>
   <data name="InvalidStoredLocation" xml:space="preserve">
     <value>Stored favorite location is invalid {0}.</value>
+  </data>
+  <data name="RequestValidationError" xml:space="preserve">
+    <value>Invalid request data: {0}.</value>
   </data>
 </root>

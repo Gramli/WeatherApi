@@ -8,7 +8,7 @@ namespace Wheaterbit.Client.Validation
     {
         public Specification<CurrentWeatherDto> Specification { get; }
 
-        internal CurrentWeatherDtoSpecificationHolder()
+        public CurrentWeatherDtoSpecificationHolder()
         {
             Specification<string> timeStringSpecification = s => s
                 .Rule(m => !string.IsNullOrWhiteSpace(m) && DateTime.TryParse(m, out var _));

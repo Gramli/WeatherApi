@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Validot;
 using Wheaterbit.Client.Abstractions;
+using Wheaterbit.Client.Factories;
 using Wheaterbit.Client.Options;
 using Wheaterbit.Client.Validation;
 
@@ -14,7 +15,8 @@ namespace Wheaterbit.Client.Configuration
             serviceCollection.Configure<WeatherbitOptions>(configuration.GetSection(WeatherbitOptions.Weatherbit));
 
             return serviceCollection.AddSingleton<IWheaterbitHttpClient, WheaterbitHttpClient>()
-                .AddSingleton(typeof(IValidator<WeatherbitOptions>), Validator.Factory.Create(new WeatherbitOptionsSpecificationHolder()));
+                .AddSingleton(typeof(IValidator<WeatherbitOptions>), Validator.Factory.Create(new WeatherbitOptionsSpecificationHolder()))
+                .AddSingleton<IJsonSerializerSettingsFactory, JsonSerializerSettingsFactory>();
         }
     }
 }

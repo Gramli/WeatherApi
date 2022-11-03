@@ -21,8 +21,8 @@ namespace Weather.API.EndpointBuilders
         private static IEndpointRouteBuilder BuildActualWeatherEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
             endpointRouteBuilder.MapGet("weather/current",
-                async ([FromBody] LocationDto locationDto, [FromServices] IGetCurrentWeatherHandler handler, CancellationToken cancellationToken) =>
-                    await handler.SendAsync(locationDto, cancellationToken))
+                async (long latitude, long longtitude, [FromServices] IGetCurrentWeatherHandler handler, CancellationToken cancellationToken) =>
+                    await handler.SendAsync(new LocationDto() { Latitude = latitude, Longitude = longtitude}, cancellationToken))
                         .Produces<CurrentWeatherDto>()
                         .WithName("GetCurrentWeather")
                         .WithTags("Getters");
@@ -32,8 +32,8 @@ namespace Weather.API.EndpointBuilders
         private static IEndpointRouteBuilder BuildForecastWeatherEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
             endpointRouteBuilder.MapGet("weather/forecast",
-                async ([FromBody] LocationDto locationDto, [FromServices] IGetForecastWeatherHandler handler, CancellationToken cancellationToken) =>
-                    await handler.SendAsync(locationDto, cancellationToken))
+                async (long latitude, long longtitude, [FromServices] IGetForecastWeatherHandler handler, CancellationToken cancellationToken) =>
+                    await handler.SendAsync(new LocationDto() { Latitude = latitude, Longitude = longtitude }, cancellationToken))
                         .Produces<ForecastWeatherDto>()
                         .WithName("GetForecastWeather")
                         .WithTags("Getters");

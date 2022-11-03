@@ -1,5 +1,7 @@
 ﻿using Ardalis.GuardClauses;
+using Newtonsoft.Json;
 using System.Net;
+using Weather.Domain.Http;
 using Weather.Domain.Logging;
 
 namespace Weather.API.Middlewares
@@ -33,7 +35,15 @@ namespace Weather.API.Middlewares
             var (responseCode, responseMessage) = ExtractFromException(generalEx);
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)responseCode;
-            await context.Response.WriteAsync(responseMessage);
+            var jsonResult = CreateResponseJson(responseMessage);
+            await context.Response.WriteAsync(jsonResult);
+        }
+
+        private string CreateResponseJson(string errorMessage)
+        {
+            var response = new DataResponse<object>();
+            response.Errors.Add(errorMessage);
+            return JsonConvert.SerializeObject(response);
         }
 
         private (HttpStatusCode responseCode, string responseMessage) ExtractFromException(Exception generalEx)

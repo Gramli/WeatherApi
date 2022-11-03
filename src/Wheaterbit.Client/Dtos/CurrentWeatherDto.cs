@@ -6,7 +6,7 @@
 
         public string city_name { get; init; }
 
-        public DateTime dateTime { get; init; }
+        public DateTime ob_time { get; init; }
 
         public string sunset { get; init; }
 

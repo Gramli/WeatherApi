@@ -13,16 +13,19 @@ namespace Wheaterbit.Client
     {
         private readonly HttpClient _httpClient;
         private readonly IOptions<WeatherbitOptions> _options;
+        private readonly IJsonSerializerSettingsFactory _jsonSerializerSettingsFactory;
 
         private const string XRapidAPIKeyHeader = "X-RapidAPI-Key";
         private const string XRapidAPIHostHeader = "X-RapidAPI-Host";
         public WheaterbitHttpClient(IOptions<WeatherbitOptions> options, 
             IHttpClientFactory httpClientFactory, 
-            IValidator<WeatherbitOptions> optionsValidator) 
+            IValidator<WeatherbitOptions> optionsValidator,
+            IJsonSerializerSettingsFactory jsonSerializerSettingsFactory) 
         {
             Guard.Against.Null(httpClientFactory);
             _httpClient = httpClientFactory.CreateClient();
             _options = Guard.Against.Null(options);
+            _jsonSerializerSettingsFactory = Guard.Against.Null(jsonSerializerSettingsFactory);
 
             ValidateOptions(optionsValidator, options);
         }
@@ -42,7 +45,7 @@ namespace Wheaterbit.Client
             var request = new HttpRequestMessage()
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri($"{_options.Value.BaseUrl}/current?lon={longitude}&lat={latitude}"),
+                RequestUri = new Uri($"{_options.Value.BaseUrl}/forecast/daily?lon={longitude}&lat={latitude}"),
                 Headers = 
                 {
                     { XRapidAPIHostHeader, _options.Value.XRapidAPIHost },
@@ -58,7 +61,7 @@ namespace Wheaterbit.Client
             var request = new HttpRequestMessage()
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri($"{_options.Value.BaseUrl}/forecast/3hourly?lat={latitude}&lon={longitude}"),
+                RequestUri = new Uri($"{_options.Value.BaseUrl}/current?lat={latitude}&lon={longitude}"),
                 Headers =
                 {
                     { XRapidAPIHostHeader, _options.Value.XRapidAPIHost },
@@ -91,7 +94,7 @@ namespace Wheaterbit.Client
 
             var resultContent = await response.Content.ReadAsStringAsync();
 
-            var result = JsonConvert.DeserializeObject<T>(resultContent);
+            var result = JsonConvert.DeserializeObject<T>(resultContent, _jsonSerializerSettingsFactory.Create());
             if(result is null)
             {
                 return Result.Fail($"Failed to deserialize response.");

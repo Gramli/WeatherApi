@@ -6,7 +6,7 @@ namespace Weather.Infrastructure.Mapping.Profiles
 {
     internal sealed class WeatherEntitiesProfile : Profile
     {
-        internal WeatherEntitiesProfile() 
+        public WeatherEntitiesProfile() 
         {
             CreateMap<LocationDto, FavoriteLocationEntity>();
             CreateMap<FavoriteLocationEntity, LocationDto>();

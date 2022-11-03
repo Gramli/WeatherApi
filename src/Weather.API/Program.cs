@@ -9,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddLogging();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddCore();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

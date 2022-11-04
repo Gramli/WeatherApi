@@ -18,13 +18,16 @@ Instead of throwing exceptions, project use **Result pattern** (using FluentResu
 Wery important part of every project are **Tests**. In ideal world test coverage should be 100%, but in most commercial projects (by my experience) we are trying to find **optimal test coverage**. Optimal test coverage can't be simply quantified and every project has diferent number by it's need.
 In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project. API projects also has its own **system test** project, because we want to test our endpoints completely. Infrastructure project on the other hand has **integration test** project where we want to test Weatherbit connection for example.
 
-### Benefits of Minimal API
+### Minimal API
+#### Pros
 - **Reduce the ceremony of creating APIs**
 	- no controllers (but you are still able to organize map methods in files)
 	- injects bussines handlers directly into endpoints map methods
 - **Minimal Hosting Model**
 	- you are able to create single clean start point of the API
-
+#### Cons
+- **Complex Query Parameters**
+	- does not support complex query parameters, you have to write [Custom Binding](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0#custom-binding), anyway [ASP.NET Core updates in .NET 7](https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-7-preview-5/) contains binding support using **[AsParameters]** attribute.
 ### Benefits of Clean Architecture
 - **UI/Framework/Database Independent** 
 	- easily change framework/database without touching internal layers

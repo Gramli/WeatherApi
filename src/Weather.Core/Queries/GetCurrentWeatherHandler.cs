@@ -6,6 +6,7 @@ using Weather.Domain;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;
+using Weather.Domain.Logging;
 
 namespace Weather.Core.Queries
 {
@@ -41,7 +42,7 @@ namespace Weather.Core.Queries
             var validationResult = _currentWeatherValidator.Validate(getActualWeatherResult.Value);
             if(validationResult.AnyErrors)
             {
-                _logger.LogError(ErrorLogMessages.ValidationErrorLog, validationResult.ToString());
+                _logger.LogError(LogEvents.CurrentWeathersValidation, ErrorLogMessages.ValidationErrorLog, validationResult.ToString());
                 return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);
             }
 

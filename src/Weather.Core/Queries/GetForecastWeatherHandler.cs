@@ -1,7 +1,6 @@
 ﻿using Ardalis.GuardClauses;
 using Validot;
 using Weather.Core.Abstractions;
-using Weather.Domain;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;

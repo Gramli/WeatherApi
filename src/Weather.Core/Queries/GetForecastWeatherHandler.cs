@@ -1,9 +1,12 @@
 ﻿using Ardalis.GuardClauses;
+using Microsoft.Extensions.Logging;
 using Validot;
 using Weather.Core.Abstractions;
+using Weather.Domain;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;
+using Weather.Domain.Logging;
 
 namespace Weather.Core.Queries
 {
@@ -12,11 +15,17 @@ namespace Weather.Core.Queries
         private readonly IValidator<LocationDto> _locationValidator;
         private readonly IValidator<ForecastWeatherDto> _forecastWeatherValidator;
         private readonly IWeatherService _weatherService;
-        public GetForecastWeatherHandler(IValidator<LocationDto> locationValidator, IWeatherService weatherService, IValidator<ForecastWeatherDto> forecastWeatherValidator)
+        private readonly ILogger<IGetCurrentWeatherHandler> _logger;
+        public GetForecastWeatherHandler(
+            IValidator<LocationDto> locationValidator, 
+            IWeatherService weatherService, 
+            IValidator<ForecastWeatherDto> forecastWeatherValidator,
+            ILogger<IGetCurrentWeatherHandler> logger)
         {
             _locationValidator = Guard.Against.Null(locationValidator);
             _weatherService = Guard.Against.Null(weatherService);
             _forecastWeatherValidator = Guard.Against.Null(forecastWeatherValidator);
+            _logger = Guard.Against.Null(logger);
         }
         public async Task<HttpDataResponse<ForecastWeatherDto>> HandleAsync(LocationDto request, CancellationToken cancellationToken)
         {
@@ -29,11 +38,14 @@ namespace Weather.Core.Queries
 
             if(forecastResult.IsFailed)
             {
-                return HttpDataResponses.AsInternalServerError<ForecastWeatherDto>(forecastResult.Errors.ToErrorMessages());
+                _logger.LogError(LogEvents.ForecastWeathersGet, forecastResult.Errors.JoinToMessage());
+                return HttpDataResponses.AsInternalServerError<ForecastWeatherDto>(ErrorMessages.ExternalApiError);
             }
 
-            if(!_forecastWeatherValidator.IsValid(forecastResult.Value))
+            var validationResult = _forecastWeatherValidator.Validate(forecastResult.Value);
+            if (validationResult.AnyErrors)
             {
+                _logger.LogError(LogEvents.ForecastWeathersValidation, ErrorLogMessages.ValidationErrorLog, validationResult.ToString());
                 return HttpDataResponses.AsInternalServerError<ForecastWeatherDto>(ErrorMessages.ExternalApiError);
             }
 

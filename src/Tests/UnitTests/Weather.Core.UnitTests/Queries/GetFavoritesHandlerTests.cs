@@ -49,8 +49,9 @@ namespace Weather.Core.UnitTests.Queries
             //Assert
             Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
             Assert.Single(result.Errors);
-            Assert.Equal(failMessage, result.Errors.Single());
+            Assert.Equal(ErrorMessages.ExternalApiError, result.Errors.Single());
             _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
+            _loggerMock.VerifyLog(LogLevel.Error, LogEvents.FavoriteWeathersGetFromDatabase, failMessage, Times.Once());
         }
 
         [Fact]

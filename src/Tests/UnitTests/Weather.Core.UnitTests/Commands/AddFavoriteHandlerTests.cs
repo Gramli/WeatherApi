@@ -1,15 +1,9 @@
 ﻿using FluentResults;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using Validot;
 using Weather.Core.Abstractions;
 using Weather.Core.Commands;
-using Weather.Core.Queries;
 using Weather.Domain.Dtos;
 using Weather.Domain.Logging;
 using Weather.UnitTests.Common.Extensions;

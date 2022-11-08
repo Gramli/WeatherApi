@@ -38,7 +38,8 @@ namespace Weather.Core.Queries
 
             if(favoriteLocationsResult.IsFailed)
             {
-                return HttpDataResponses.AsInternalServerError<FavoritesWeatherDto>(favoriteLocationsResult.Errors.ToErrorMessages());
+                _logger.LogError(LogEvents.FavoriteWeathersGetFromDatabase, favoriteLocationsResult.Errors.JoinToMessage());
+                return HttpDataResponses.AsInternalServerError<FavoritesWeatherDto>(ErrorMessages.ExternalApiError);
             }
 
             if(!favoriteLocationsResult.Value.HasAny())

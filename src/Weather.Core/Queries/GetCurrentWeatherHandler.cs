@@ -33,20 +33,21 @@ namespace Weather.Core.Queries
                 return HttpDataResponses.AsBadRequest<CurrentWeatherDto>(string.Format(ErrorMessages.RequestValidationError, request));
             }
 
-            var getActualWeatherResult = await _weatherService.GetCurrentWeather(request, cancellationToken);
-            if(getActualWeatherResult.IsFailed)
+            var getCurrentWeatherResult = await _weatherService.GetCurrentWeather(request, cancellationToken);
+            if(getCurrentWeatherResult.IsFailed)
             {
-                return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(getActualWeatherResult.Errors.ToErrorMessages());
+                _logger.LogError(LogEvents.CurrentWeathersGet, getCurrentWeatherResult.Errors.JoinToMessage());
+                return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);
             }
 
-            var validationResult = _currentWeatherValidator.Validate(getActualWeatherResult.Value);
+            var validationResult = _currentWeatherValidator.Validate(getCurrentWeatherResult.Value);
             if(validationResult.AnyErrors)
             {
                 _logger.LogError(LogEvents.CurrentWeathersValidation, ErrorLogMessages.ValidationErrorLog, validationResult.ToString());
                 return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);
             }
 
-            return HttpDataResponses.AsOK(getActualWeatherResult.Value);
+            return HttpDataResponses.AsOK(getCurrentWeatherResult.Value);
         }
     }
 }

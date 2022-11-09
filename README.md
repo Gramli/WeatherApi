@@ -11,7 +11,7 @@ Main motivation is to write practical example of minimal API, to see it's benefi
 
 Projects folows **Clean Architecture**, but application layer is splitted to Core and Domain projects where Core project holds business rules and Domain project contains business entities.
 
-As Minimal API allows to inject handlers into endpoint map methods, I decided to do not use **Mediator**, but still every endpoint has its own handler.
+As Minimal API allows to inject handlers into endpoint map methods, I decided to do not use **Mediator**, but still every endpoint has its own request and handler.
 
 Instead of throwing exceptions, project use **Result pattern** (using FluentResuls package) and for returning exact http response, every handler returns data wraped into HttpDataResponse object which contains also error messages collection and http response code.
 

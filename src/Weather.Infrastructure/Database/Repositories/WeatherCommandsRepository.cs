@@ -2,7 +2,7 @@
 using AutoMapper;
 using FluentResults;
 using Weather.Core.Abstractions;
-using Weather.Domain.Dtos;
+using Weather.Domain.Dtos.Commands;
 using Weather.Infrastructure.Database.EFContext;
 using Weather.Infrastructure.Database.EFContext.Entities;
 
@@ -18,9 +18,9 @@ namespace Weather.Infrastructure.Database.Repositories
             _mapper = Guard.Against.Null(mapper);
         }
 
-        public async Task<Result<int>> AddFavoriteLocation(LocationDto locationDto, CancellationToken cancellationToken)
+        public async Task<Result<int>> AddFavoriteLocation(AddFavoriteCommand addFavoriteCommand, CancellationToken cancellationToken)
         {
-            var locationEntity = _mapper.Map<FavoriteLocationEntity>(locationDto);
+            var locationEntity = _mapper.Map<FavoriteLocationEntity>(addFavoriteCommand.Location);
             _weatherContext.FavoriteLocations.Add(locationEntity);
             var id = await _weatherContext.SaveChangesAsync(cancellationToken);
             return Result.Ok(id);

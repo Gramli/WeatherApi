@@ -1,10 +1,10 @@
 ﻿using FluentResults;
-using Weather.Domain.Dtos;
+using Weather.Domain.Dtos.Commands;
 
 namespace Weather.Core.Abstractions
 {
     public interface IWeatherCommandsRepository
     {
-        Task<Result<int>> AddFavoriteLocation(LocationDto locationDto, CancellationToken cancellationToken);
+        Task<Result<int>> AddFavoriteLocation(AddFavoriteCommand locationDto, CancellationToken cancellationToken);
     }
 }

@@ -9,17 +9,7 @@ namespace Weather.Core.Validation
 
         public LocationDtoSpecificationHolder() 
         {
-            Specification<long> latitudeSpecification = s => s
-                .Rule(m => m >= -90 && m <= 90);
-
-            Specification<long> longtitudeSpecification = s => s
-                .Rule(m=> m >= -180 && m <= 180);
-
-            Specification<LocationDto> locationSpecification = s => s
-                .Member(m => m.Latitude, latitudeSpecification)
-                .Member(m => m.Longitude, longtitudeSpecification);
-
-            Specification = locationSpecification;
+            Specification = GeneralPredicates.isValidLocation;
         }
     }
 }

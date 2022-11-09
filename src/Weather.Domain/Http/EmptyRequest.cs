@@ -1,6 +1,6 @@
 ﻿namespace Weather.Domain.Http
 {
-    public sealed class EmptyRequest
+    public class EmptyRequest
     {
         private static EmptyRequest? _instance;
         public static EmptyRequest Instance

@@ -4,6 +4,7 @@ using Validot;
 using Weather.Core.Abstractions;
 using Weather.Domain;
 using Weather.Domain.Dtos;
+using Weather.Domain.Dtos.Queries;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;
 using Weather.Domain.Logging;
@@ -12,28 +13,28 @@ namespace Weather.Core.Queries
 {
     internal sealed class GetCurrentWeatherHandler : IGetCurrentWeatherHandler
     {
-        private readonly IValidator<LocationDto> _locationValidator;
+        private readonly IValidator<GetCurrentWeatherQuery> _getCurrentWeatcherQueryValidator;
         private readonly IValidator<CurrentWeatherDto> _currentWeatherValidator;
         private readonly IWeatherService _weatherService;
         private readonly ILogger<IGetCurrentWeatherHandler> _logger;
-        public GetCurrentWeatherHandler(IValidator<LocationDto> locationValidator, 
+        public GetCurrentWeatherHandler(IValidator<GetCurrentWeatherQuery> getCurrentWeatcherQueryValidator, 
             IValidator<CurrentWeatherDto> currentWeatherValidator, 
             IWeatherService weatherService,
             ILogger<IGetCurrentWeatherHandler> logger)
         {
-            _locationValidator = Guard.Against.Null(locationValidator);
+            _getCurrentWeatcherQueryValidator = Guard.Against.Null(getCurrentWeatcherQueryValidator);
             _weatherService = Guard.Against.Null(weatherService);
             _currentWeatherValidator = Guard.Against.Null(currentWeatherValidator);
             _logger = Guard.Against.Null(logger);
         }
-        public async Task<HttpDataResponse<CurrentWeatherDto>> HandleAsync(LocationDto request, CancellationToken cancellationToken)
+        public async Task<HttpDataResponse<CurrentWeatherDto>> HandleAsync(GetCurrentWeatherQuery request, CancellationToken cancellationToken)
         {
-            if(!_locationValidator.IsValid(request))
+            if(!_getCurrentWeatcherQueryValidator.IsValid(request))
             {
                 return HttpDataResponses.AsBadRequest<CurrentWeatherDto>(string.Format(ErrorMessages.RequestValidationError, request));
             }
 
-            var getCurrentWeatherResult = await _weatherService.GetCurrentWeather(request, cancellationToken);
+            var getCurrentWeatherResult = await _weatherService.GetCurrentWeather(request.Location, cancellationToken);
             if(getCurrentWeatherResult.IsFailed)
             {
                 _logger.LogError(LogEvents.CurrentWeathersGet, getCurrentWeatherResult.Errors.JoinToMessage());

@@ -9,9 +9,9 @@ Example API allows to get actual/forecast/favorite weather data by location and 
 Main motivation is to write practical example of minimal API, to see it's benefits and disadvantages. Also to create REST API template project using Clean Architecture and design patterns.
 ## Architecture
 
-Projects folows **Clean Architecture**, but application layer is splitted to Core and Domain projects where Core project holds business rules and Domain project contains business entities.
+Projects folows **[Clean Architecture](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#clean-architecture)**, but application layer is splitted to Core and Domain projects where Core project holds business rules and Domain project contains business entities.
 
-As Minimal API allows to inject handlers into endpoint map methods, I decided to do not use [MediatR](https://github.com/jbogard/MediatR), but still every endpoint has its own request and handler. Solution folows [CQRS pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs), it means that handlers are separated by commands and queries and every handler has its own command or query request.
+As Minimal API allows to inject handlers into endpoint map methods, I decided to do not use **[MediatR](https://github.com/jbogard/MediatR)**, but still every endpoint has its own request and handler. Solution folows **[CQRS pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)**, it means that handlers are separated by commands and queries and every handler has its own command or query request.
 
 Instead of throwing exceptions, project use **Result pattern** (using FluentResuls package) and for returning exact http response, every handler returns data wraped into HttpDataResponse object which contains also error messages collection and http response code.
 

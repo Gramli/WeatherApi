@@ -6,6 +6,8 @@ using Weather.Core.Extensions;
 using Weather.Core.Queries;
 using Weather.Core.Validation;
 using Weather.Domain.Dtos;
+using Weather.Domain.Dtos.Commands;
+using Weather.Domain.Dtos.Queries;
 using Wheaterbit.Client.Validation;
 
 namespace Weather.Core.Configuration
@@ -32,7 +34,10 @@ namespace Weather.Core.Configuration
         {
             return serviceCollection.AddValidotSingleton<IValidator<CurrentWeatherDto>, CurrentWeatherDtoSpecificationHolder, CurrentWeatherDto>()
                 .AddValidotSingleton<IValidator<ForecastWeatherDto>, ForecastWeatherDtoSpecificationHolder, ForecastWeatherDto>()
-                .AddValidotSingleton<IValidator<LocationDto>, LocationDtoSpecificationHolder,LocationDto>();
+                .AddValidotSingleton<IValidator<LocationDto>, LocationDtoSpecificationHolder, LocationDto>()
+                .AddValidotSingleton<IValidator<AddFavoriteCommand>, AddFavoriteCommandSpecificationHolder, AddFavoriteCommand>()
+                .AddValidotSingleton<IValidator<GetCurrentWeatherQuery>, GetCurrentWeatcherQuerySpecificationHolder, GetCurrentWeatherQuery>()
+                .AddValidotSingleton<IValidator<GetForecastWeatherQuery>, GetForecastWeatherSpecificationHolder, GetForecastWeatherQuery>();
         }
     }
 }

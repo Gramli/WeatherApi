@@ -55,6 +55,9 @@ Solution contains four layers:
 #### Horizontal Diagram (references)
 ![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
 
+## Setup & Run
+..
+
 ## Conclusion
 ..
 

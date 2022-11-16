@@ -11,7 +11,7 @@ Main motivation is to write practical example of minimal API, to see it's benefi
 
 Projects folows **[Clean Architecture](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#clean-architecture)**, but application layer is splitted to Core and Domain projects where Core project holds business rules and Domain project contains business entities.
 
-As Minimal API allows to inject handlers into endpoint map methods, I decided to do not use **[MediatR](https://github.com/jbogard/MediatR)**, but still every endpoint has its own request and handler. Solution folows **[CQRS pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)**, it means that handlers are separated by commands and queries, command handlers handle command requests and query handlers handle query requests.
+As Minimal API allows to inject handlers into endpoint map methods, I decided to do not use **[MediatR](https://github.com/jbogard/MediatR)**, but still every endpoint has its own request and handler. Solution folows **[CQRS pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)**, it means that handlers are separated by commands and queries, command handlers handle command requests and query handlers handle query requests. Also repositories (**[Repository pattern](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)**) are separated by command and queries.
 
 Instead of throwing exceptions, project use **[Result pattern](https://www.forevolve.com/en/articles/2018/03/19/operation-result/)** (using [FluentResuls package](https://github.com/altmann/FluentResults)) and for returning exact http response, every handler returns data wraped into HttpDataResponse object which contains also error messages collection and http response code.
 
@@ -41,14 +41,14 @@ Solution contains four layers:
 	*  Endpoints
 	*  Middlewares (or Filters)
 	*  API Configuration
-* **Weather.Infrastructure** - layer for communication with external resoucers like database, cache, web service.. 
+* **Weather.Infrastructure** - layer for communication with external resources like database, cache, web service.. 
 	*  Repositories Implementation - access to database
 	*  External Services Proxies - proxy classes implementation to obtain data from external web services
 	*  Infastructure Specific Services - services which are needed to interact with infrastructure
 * **Weather.Core** - business logic implementatin of the application
 	*  Request Handlers/Managers/.. - business implementation
 	*  Interfaces - interfaces for Infrastructure layer (Service, Repository, ..)
-* **Weather.Domain** - POCO classes, extensions, all what should be shared in all projects in solution
+* **Weather.Domain** - POCO classes, extensions, all what should be shared in projects which reference it through Core project
 	* DTOs
 	* General Extensions
 

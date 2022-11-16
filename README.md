@@ -56,7 +56,10 @@ Solution contains four layers:
 ![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
 
 ## Setup & Run
-..
+1. Register on [RapidAPI](https://rapidapi.com)
+2. Subscribe Weatherbit and go to API Documentation (its for free)
+3. In API documentation copy (from Code Snippet) **X-RapidAPI-Key**, **X-RapidAPI-Host** and put them to appsettings.json file in WeatherAPI project
+4. Set Weather.API as startup project and run  	
 
 ## Conclusion
 ..

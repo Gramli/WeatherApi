@@ -14,6 +14,10 @@ jobs:
 
     runs-on: ubuntu-latest
     name: Build & Unit Test
+    defaults:
+      run:
+        working-directory: src
+    
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -23,8 +27,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
-      working-directory: .\src
+      run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
-      working-directory: .\src\Tests
+      run: dotnet test --no-build --no-restore --verbosity normal

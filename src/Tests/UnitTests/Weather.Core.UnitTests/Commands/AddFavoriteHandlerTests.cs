@@ -31,7 +31,7 @@ namespace Weather.Core.UnitTests.Commands
         public async Task InvalidLocation()
         {
             //Arrange
-            var addFavoriteCommand = new AddFavoriteCommand(1,1);
+            var addFavoriteCommand = new AddFavoriteCommand() { Location = new Domain.Dtos.LocationDto { Latitude = 1, Longitude = 1 } };
 
             _addFavoriteCommandValidatorMock.Setup(x => x.IsValid(It.IsAny<AddFavoriteCommand>())).Returns(false);
 
@@ -49,7 +49,7 @@ namespace Weather.Core.UnitTests.Commands
         public async Task AddFavoriteLocation_Failed()
         {
             //Arrange
-            var addFavoriteCommand = new AddFavoriteCommand(1, 1);
+            var addFavoriteCommand = new AddFavoriteCommand() { Location = new Domain.Dtos.LocationDto { Latitude = 1, Longitude = 1 } };
             var errorMessage = "errorMessage";
 
             _addFavoriteCommandValidatorMock.Setup(x => x.IsValid(It.IsAny<AddFavoriteCommand>())).Returns(true);
@@ -72,7 +72,7 @@ namespace Weather.Core.UnitTests.Commands
         public async Task Success()
         {
             //Arrange
-            var addFavoriteCommand = new AddFavoriteCommand(1, 1);
+            var addFavoriteCommand = new AddFavoriteCommand() { Location = new Domain.Dtos.LocationDto { Latitude = 1, Longitude = 1 } };
             var locationId = 1;
 
             _addFavoriteCommandValidatorMock.Setup(x => x.IsValid(It.IsAny<AddFavoriteCommand>())).Returns(true);

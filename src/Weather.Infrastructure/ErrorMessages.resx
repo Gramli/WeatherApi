@@ -120,7 +120,10 @@
   <data name="DatabaseGetFailed" xml:space="preserve">
     <value>Failed to retrieve data from database.</value>
   </data>
-  <data name="ExternalClientGetDataFailed" xml:space="preserve">
-    <value>Can't retrieve data properly from external service.</value>
+  <data name="ExternalClientGetDataFailed_CorruptedData_InvalidCount" xml:space="preserve">
+    <value>Can't retrieve data properly from external service. Not expected data. Invalid Count: {0}</value>
+  </data>
+  <data name="ExternalClientGetDataFailed_EmptyOrNull" xml:space="preserve">
+    <value>Can't retrieve data properly from external service. Data are empty or null.</value>
   </data>
 </root>

@@ -14,7 +14,7 @@ namespace Wheaterbit.Client.Configuration
         {
             serviceCollection.Configure<WeatherbitOptions>(configuration.GetSection(WeatherbitOptions.Weatherbit));
 
-            return serviceCollection.AddSingleton<IWheaterbitHttpClient, WheaterbitHttpClient>()
+            return serviceCollection.AddSingleton<IWeatherbitHttpClient, WeatherbitHttpClient>()
                 .AddSingleton(typeof(IValidator<WeatherbitOptions>), Validator.Factory.Create(new WeatherbitOptionsSpecificationHolder()))
                 .AddSingleton<IJsonSerializerSettingsFactory, JsonSerializerSettingsFactory>();
         }

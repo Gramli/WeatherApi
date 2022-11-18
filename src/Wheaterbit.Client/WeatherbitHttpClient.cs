@@ -9,7 +9,7 @@ using Wheaterbit.Client.Options;
 
 namespace Wheaterbit.Client
 {
-    internal sealed class WheaterbitHttpClient : IWheaterbitHttpClient
+    internal sealed class WeatherbitHttpClient : IWeatherbitHttpClient
     {
         private readonly HttpClient _httpClient;
         private readonly IOptions<WeatherbitOptions> _options;
@@ -17,7 +17,7 @@ namespace Wheaterbit.Client
 
         private const string XRapidAPIKeyHeader = "X-RapidAPI-Key";
         private const string XRapidAPIHostHeader = "X-RapidAPI-Host";
-        public WheaterbitHttpClient(IOptions<WeatherbitOptions> options, 
+        public WeatherbitHttpClient(IOptions<WeatherbitOptions> options, 
             IHttpClientFactory httpClientFactory, 
             IValidator<WeatherbitOptions> optionsValidator,
             IJsonSerializerSettingsFactory jsonSerializerSettingsFactory) 
@@ -40,7 +40,7 @@ namespace Wheaterbit.Client
             }
         }
 
-        public async Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(double latitude, double longitude, CancellationToken cancellationToken)
+        public async Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(long latitude, long longitude, CancellationToken cancellationToken)
         {
             var request = new HttpRequestMessage()
             {
@@ -56,7 +56,7 @@ namespace Wheaterbit.Client
             return await SendAsyncSave<ForecastWeatherDto>(request, cancellationToken);
         }
 
-        public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(double latitude, double longitude, CancellationToken cancellationToken)
+        public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(long latitude, long longitude, CancellationToken cancellationToken)
         {
             var request = new HttpRequestMessage()
             {

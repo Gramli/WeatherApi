@@ -40,4 +40,10 @@
     <Folder Include="Abstractions\" />
   </ItemGroup>
 
+	<ItemGroup>
+		<AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+			<_Parameter1>Weather.Infrastructure.UnitTests</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+
 </Project>

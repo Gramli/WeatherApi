@@ -1,6 +1,8 @@
 # IN PROGRESS
 
 # WeatherApi
+[![.NET Build and Test](https://github.com/Gramli/WeatherApi/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Gramli/WeatherApi/actions/workflows/dotnet.yml)
+
 REST API solution demonstrates how to create clean and modern API (from my point of view) with Clean Architecture, minimal API and various of design patterns.  
 
 Example API allows to get actual/forecast/favorite weather data by location and safe favorites locations to in memory db.

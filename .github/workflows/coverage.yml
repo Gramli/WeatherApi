@@ -13,4 +13,4 @@ jobs:
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           api-token: ${{ secrets.CODACY_API_TOKEN }}
-          coverage-reports: dotCover.Output.xml
+          coverage-reports: /src/dotCover.Output.xml

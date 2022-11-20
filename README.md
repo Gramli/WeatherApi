@@ -69,7 +69,6 @@ Solution contains four layers:
   }
 ```
 4. Set Weather.API as startup project and run
-5. Test it using SwaggerUI
 
 ## Conclusion
 ..

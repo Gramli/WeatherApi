@@ -83,7 +83,7 @@ namespace Weather.Infrastructure.UnitTests.Services
                 new Wheaterbit.Client.Dtos.CurrentWeatherDto()
             };
 
-            _weatherbiClientMock.Setup(x => x.GetCurrentWeather(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(new CurrentWeatherDataDto() 
+            _weatherbiClientMock.Setup(x => x.GetCurrentWeather(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(new CurrentWeatherDataDto
             { 
                 Data = data
             }));
@@ -182,7 +182,7 @@ namespace Weather.Infrastructure.UnitTests.Services
             var location = new LocationDto { Latitude = 15, Longitude = 25 };
             var data = new Wheaterbit.Client.Dtos.ForecastWeatherDto
             {
-                Data = new List<Wheaterbit.Client.Dtos.ForecastTemperatureDto>()
+                Data = new List<Wheaterbit.Client.Dtos.ForecastTemperatureDto>
                 {
                     new Wheaterbit.Client.Dtos.ForecastTemperatureDto()
                 }

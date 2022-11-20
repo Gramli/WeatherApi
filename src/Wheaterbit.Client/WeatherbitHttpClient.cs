@@ -42,7 +42,7 @@ namespace Wheaterbit.Client
 
         public async Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(long latitude, long longitude, CancellationToken cancellationToken)
         {
-            var request = new HttpRequestMessage()
+            var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
                 RequestUri = new Uri($"{_options.Value.BaseUrl}/forecast/daily?lon={longitude}&lat={latitude}"),
@@ -58,7 +58,7 @@ namespace Wheaterbit.Client
 
         public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(long latitude, long longitude, CancellationToken cancellationToken)
         {
-            var request = new HttpRequestMessage()
+            var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
                 RequestUri = new Uri($"{_options.Value.BaseUrl}/current?lat={latitude}&lon={longitude}"),

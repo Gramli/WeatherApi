@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root CoveredStatements="527" TotalStatements="832" CoveragePercent="63" ReportType="Xml" DotCoverVersion="2022.2.4">
+  <Assembly Name="Weather.Core" CoveredStatements="89" TotalStatements="192" CoveragePercent="46">
+    <Namespace Name="Weather.Core.Commands" CoveredStatements="17" TotalStatements="17" CoveragePercent="100">
+      <Type Name="AddFavoriteHandler" CoveredStatements="17" TotalStatements="17" CoveragePercent="100">
+        <Constructor Name="AddFavoriteHandler(IWeatherCommandsRepository,IValidator&lt;AddFavoriteCommand&gt;,ILogger&lt;IAddFavoriteHandler&gt;)" CoveredStatements="6" TotalStatements="6" CoveragePercent="100" />
+        <Method Name="HandleAsync(AddFavoriteCommand,CancellationToken):Task&lt;HttpDataResponse&lt;bool&gt;&gt;" CoveredStatements="11" TotalStatements="11" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="11" TotalStatements="11" CoveragePercent="100" />
+        </Method>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Core.Configuration" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
+      <Type Name="ContainerConfigurationExtension" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
+        <Method Name="AddCore(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="AddHandlers(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="AddValidation(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Core.Extensions" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+      <Type Name="ValidotDependencyInjectionExtensions" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+        <Method Name="AddValidotSingleton&lt;TValidator,THolder,TType&gt;(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Core.Queries" CoveredStatements="72" TotalStatements="95" CoveragePercent="76">
+      <Type Name="GetCurrentWeatherHandler" CoveredStatements="23" TotalStatements="23" CoveragePercent="100">
+        <Constructor Name="GetCurrentWeatherHandler(IValidator&lt;GetCurrentWeatherQuery&gt;,IValidator&lt;CurrentWeatherDto&gt;,IWeatherService,ILogger&lt;IGetCurrentWeatherHandler&gt;)" CoveredStatements="7" TotalStatements="7" CoveragePercent="100" />
+        <Method Name="HandleAsync(GetCurrentWeatherQuery,CancellationToken):Task&lt;HttpDataResponse&lt;CurrentWeatherDto&gt;&gt;" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="16" TotalStatements="16" CoveragePercent="100" />
+        </Method>
+      </Type>
+      <Type Name="GetFavoritesHandler" CoveredStatements="49" TotalStatements="49" CoveragePercent="100">
+        <Constructor Name="GetFavoritesHandler(IWeatherQueriesRepository,IWeatherService,IValidator&lt;LocationDto&gt;,IValidator&lt;CurrentWeatherDto&gt;,ILogger&lt;IGetFavoritesHandler&gt;)" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
+        <Method Name="GetFavoritesAsync(IEnumerable&lt;LocationDto&gt;,CancellationToken):Task&lt;HttpDataResponse&lt;FavoritesWeatherDto&gt;&gt;" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+            <OwnCoverage CoveredStatements="6" TotalStatements="6" CoveragePercent="100" />
+            <AnonymousMethod Name="(LocationDto):Task" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+              <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
+            </AnonymousMethod>
+          </InternalCompiledMethod>
+        </Method>
+        <Method Name="GetWeatherAsync(LocationDto,CancellationToken):Task&lt;Result&lt;CurrentWeatherDto&gt;&gt;" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="16" TotalStatements="16" CoveragePercent="100" />
+        </Method>
+        <Method Name="HandleAsync(EmptyRequest,CancellationToken):Task&lt;HttpDataResponse&lt;FavoritesWeatherDto&gt;&gt;" CoveredStatements="11" TotalStatements="11" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="11" TotalStatements="11" CoveragePercent="100" />
+        </Method>
+      </Type>
+      <Type Name="GetForecastWeatherHandler" CoveredStatements="0" TotalStatements="23" CoveragePercent="0">
+        <Constructor Name="GetForecastWeatherHandler(IValidator&lt;GetForecastWeatherQuery&gt;,IWeatherService,IValidator&lt;ForecastWeatherDto&gt;,ILogger&lt;IGetCurrentWeatherHandler&gt;)" CoveredStatements="0" TotalStatements="7" CoveragePercent="0" />
+        <Method Name="HandleAsync(GetForecastWeatherQuery,CancellationToken):Task&lt;HttpDataResponse&lt;ForecastWeatherDto&gt;&gt;" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="16" CoveragePercent="0" />
+        </Method>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Core.Validation" CoveredStatements="0" TotalStatements="54" CoveragePercent="0">
+      <Type Name="AddFavoriteCommandSpecificationHolder" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
+        <Constructor Name="AddFavoriteCommandSpecificationHolder()" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;AddFavoriteCommand&gt;):ISpecificationOut&lt;AddFavoriteCommand&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Constructor>
+        <AutoProperty Name="Specification:Specification&lt;AddFavoriteCommand&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="ForecastWeatherDtoSpecificationHolder" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
+        <Constructor Name="ForecastWeatherDtoSpecificationHolder()" CoveredStatements="0" TotalStatements="15" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;double&gt;):ISpecificationOut&lt;double&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;DateTime&gt;):ISpecificationOut&lt;DateTime&gt;" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+            <AnonymousMethod Name="(DateTime):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          </AnonymousMethod>
+          <AnonymousMethod Name="(ISpecificationIn&lt;ForecastTemperatureDto&gt;):ISpecificationOut&lt;ForecastTemperatureDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;ForecastWeatherDto&gt;):ISpecificationOut&lt;ForecastWeatherDto&gt;" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+            <AnonymousMethod Name="(ISpecificationIn&lt;IReadOnlyCollection&lt;ForecastTemperatureDto&gt;&gt;):ISpecificationOut&lt;IReadOnlyCollection&lt;ForecastTemperatureDto&gt;&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+            <AnonymousMethod Name="(ISpecificationIn&lt;string&gt;):ISpecificationOut&lt;string&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          </AnonymousMethod>
+        </Constructor>
+        <AutoProperty Name="Specification:Specification&lt;ForecastWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="GeneralPredicates" CoveredStatements="0" TotalStatements="12" CoveragePercent="0">
+        <Constructor Name="GeneralPredicates()" CoveredStatements="0" TotalStatements="12" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+          <AnonymousMethod Name="(string):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(double):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(long):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(long):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;LocationDto&gt;):ISpecificationOut&lt;LocationDto&gt;" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+            <AnonymousMethod Name="(ISpecificationIn&lt;long&gt;):ISpecificationOut&lt;long&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+            <AnonymousMethod Name="(ISpecificationIn&lt;long&gt;):ISpecificationOut&lt;long&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          </AnonymousMethod>
+        </Constructor>
+      </Type>
+      <Type Name="GetCurrentWeatcherQuerySpecificationHolder" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
+        <Constructor Name="GetCurrentWeatcherQuerySpecificationHolder()" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;GetCurrentWeatherQuery&gt;):ISpecificationOut&lt;GetCurrentWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Constructor>
+        <AutoProperty Name="Specification:Specification&lt;GetCurrentWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="GetForecastWeatherSpecificationHolder" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
+        <Constructor Name="GetForecastWeatherSpecificationHolder()" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;GetForecastWeatherQuery&gt;):ISpecificationOut&lt;GetForecastWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Constructor>
+        <AutoProperty Name="Specification:Specification&lt;GetForecastWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="LocationDtoSpecificationHolder" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+        <Constructor Name="LocationDtoSpecificationHolder()" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <AutoProperty Name="Specification:Specification&lt;LocationDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+    <Namespace Name="Wheaterbit.Client.Validation" CoveredStatements="0" TotalStatements="14" CoveragePercent="0">
+      <Type Name="CurrentWeatherDtoSpecificationHolder" CoveredStatements="0" TotalStatements="14" CoveragePercent="0">
+        <Constructor Name="CurrentWeatherDtoSpecificationHolder()" CoveredStatements="0" TotalStatements="13" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;string&gt;):ISpecificationOut&lt;string&gt;" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+            <AnonymousMethod Name="(string):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          </AnonymousMethod>
+          <AnonymousMethod Name="(ISpecificationIn&lt;double&gt;):ISpecificationOut&lt;double&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;string&gt;):ISpecificationOut&lt;string&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;CurrentWeatherDto&gt;):ISpecificationOut&lt;CurrentWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Constructor>
+        <AutoProperty Name="Specification:Specification&lt;CurrentWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+  </Assembly>
+  <Assembly Name="Weather.Core.UnitTests" CoveredStatements="216" TotalStatements="224" CoveragePercent="96">
+    <Namespace Name="Weather.Core.UnitTests.Commands" CoveredStatements="42" TotalStatements="42" CoveragePercent="100">
+      <Type Name="AddFavoriteHandlerTests" CoveredStatements="42" TotalStatements="42" CoveragePercent="100">
+        <Constructor Name="AddFavoriteHandlerTests()" CoveredStatements="7" TotalStatements="7" CoveragePercent="100" />
+        <Method Name="AddFavoriteLocation_Failed():Task" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100" />
+        </Method>
+        <Method Name="InvalidLocation():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
+        </Method>
+        <Method Name="Success():Task" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="12" TotalStatements="12" CoveragePercent="100" />
+        </Method>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Core.UnitTests.Queries" CoveredStatements="174" TotalStatements="182" CoveragePercent="96">
+      <Type Name="GetCurrentWeatherHandlerTests" CoveredStatements="67" TotalStatements="67" CoveragePercent="100">
+        <Constructor Name="GetCurrentWeatherHandlerTests()" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
+        <Method Name="CurrentWeather_ValidationFailed():Task" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="18" TotalStatements="18" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetCurrentWeather_Failed():Task" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100" />
+        </Method>
+        <Method Name="InvalidLocation():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
+        </Method>
+        <Method Name="Success():Task" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="18" TotalStatements="18" CoveragePercent="100" />
+        </Method>
+      </Type>
+      <Type Name="GetFavoritesHandlerTests" CoveredStatements="107" TotalStatements="107" CoveragePercent="100">
+        <Constructor Name="GetFavoritesHandlerTests()" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
+        <Method Name="EmptyResult_GetCurrentWeather_Fail():Task" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetCurrentWeather_Validation_Fail():Task" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="16" TotalStatements="16" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetFavorites_Empty():Task" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="7" TotalStatements="7" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetFavorites_Failed():Task" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
+        </Method>
+        <Method Name="InvalidLocation():Task" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="12" TotalStatements="12" CoveragePercent="100" />
+        </Method>
+        <Method Name="One_Of_GetCurrentWeather_Failed():Task" CoveredStatements="21" TotalStatements="21" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="21" TotalStatements="21" CoveragePercent="100" />
+        </Method>
+        <Method Name="Success():Task" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="18" TotalStatements="18" CoveragePercent="100" />
+        </Method>
+      </Type>
+      <Type Name="GetForecastWeatherHandlerTests" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+        <Constructor Name="GetForecastWeatherHandlerTests()" CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+  </Assembly>
+  <Assembly Name="Weather.Domain" CoveredStatements="83" TotalStatements="124" CoveragePercent="67">
+    <Namespace Name="Weather.Domain.Dtos" CoveredStatements="12" TotalStatements="30" CoveragePercent="40">
+      <Type Name="CurrentWeatherDto" CoveredStatements="3" TotalStatements="13" CoveragePercent="23">
+        <Constructor Name="CurrentWeatherDto()" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <AutoProperty Name="CityName:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="DateTime:DateTime" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="Sunrise:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="Sunset:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="Temperature:double" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="FavoritesWeatherDto" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+        <Constructor Name="FavoritesWeatherDto()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        <AutoProperty Name="FavoriteWeathers:IReadOnlyCollection&lt;CurrentWeatherDto&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+      </Type>
+      <Type Name="ForecastTemperatureDto" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+        <AutoProperty Name="DateTime:DateTime" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="Temperature:double" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="ForecastWeatherDto" CoveredStatements="2" TotalStatements="6" CoveragePercent="33">
+        <Constructor Name="ForecastWeatherDto()" CoveredStatements="2" TotalStatements="2" CoveragePercent="100" />
+        <AutoProperty Name="CityName:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="ForecastTemperatures:IReadOnlyCollection&lt;ForecastTemperatureDto&gt;" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="LocationDto" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
+        <AutoProperty Name="Latitude:long" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+        <AutoProperty Name="Longitude:long" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Domain.Dtos.Commands" CoveredStatements="2" TotalStatements="3" CoveragePercent="67">
+      <Type Name="AddFavoriteCommand" CoveredStatements="2" TotalStatements="3" CoveragePercent="67">
+        <Constructor Name="AddFavoriteCommand()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        <AutoProperty Name="Location:LocationDto" CoveredStatements="1" TotalStatements="2" CoveragePercent="50">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Domain.Dtos.Queries" CoveredStatements="6" TotalStatements="12" CoveragePercent="50">
+      <Type Name="GetCurrentWeatherQuery" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+        <Constructor Name="GetCurrentWeatherQuery(long,long)" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <AutoProperty Name="Location:LocationDto" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+      </Type>
+      <Type Name="GetForecastWeatherQuery" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+        <Constructor Name="GetForecastWeatherQuery(long,long)" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <AutoProperty Name="Location:LocationDto" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Domain.Extensions" CoveredStatements="39" TotalStatements="55" CoveragePercent="71">
+      <Type Name="EnumerableExtensions" CoveredStatements="12" TotalStatements="21" CoveragePercent="57">
+        <Method Name="ForEach&lt;T&gt;(IEnumerable&lt;T&gt;,Action&lt;T&gt;):void" CoveredStatements="0" TotalStatements="9" CoveragePercent="0" />
+        <Method Name="ForEachAsync&lt;T&gt;(IEnumerable&lt;T&gt;,Func&lt;T,Task&gt;):Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
+        </Method>
+        <Method Name="HasAny&lt;T&gt;(IEnumerable&lt;T&gt;):bool" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+      </Type>
+      <Type Name="FluentResultExtensions" CoveredStatements="9" TotalStatements="13" CoveragePercent="69">
+        <Method Name="JoinToMessage(IList&lt;IError&gt;):string" CoveredStatements="4" TotalStatements="6" CoveragePercent="67" />
+        <Method Name="ToErrorMessages(IList&lt;IError&gt;):IEnumerable&lt;string&gt;" CoveredStatements="5" TotalStatements="7" CoveragePercent="71">
+          <OwnCoverage CoveredStatements="4" TotalStatements="6" CoveragePercent="67" />
+          <AnonymousMethod Name="(IError):string" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </Method>
+      </Type>
+      <Type Name="HttpDataResponses" CoveredStatements="18" TotalStatements="21" CoveragePercent="86">
+        <Method Name="AsBadRequest&lt;T&gt;(IEnumerable&lt;string&gt;):HttpDataResponse&lt;T&gt;" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="AsBadRequest&lt;T&gt;(string):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="AsInternalServerError&lt;T&gt;(IEnumerable&lt;string&gt;):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="AsInternalServerError&lt;T&gt;(string):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="AsNoContent&lt;T&gt;():HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="AsOK&lt;T&gt;(T):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="AsOK&lt;T&gt;(T,IEnumerable&lt;string&gt;):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Domain.Http" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+      <Type Name="DataResponse&lt;T&gt;" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+        <Constructor Name="DataResponse()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        <AutoProperty Name="Data:T" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+        <AutoProperty Name="Errors:IList&lt;string&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+      </Type>
+      <Type Name="EmptyRequest" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
+        <Constructor Name="EmptyRequest()" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Property Name="Instance:EmptyRequest" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        </Property>
+      </Type>
+      <Type Name="HttpDataResponse&lt;T&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+        <AutoProperty Name="StatusCode:HttpStatusCode" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Domain.Logging" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+      <Type Name="LogEvents" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+        <Constructor Name="LogEvents()" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
+      </Type>
+    </Namespace>
+  </Assembly>
+  <Assembly Name="Weather.Infrastructure" CoveredStatements="28" TotalStatements="98" CoveragePercent="29">
+    <Namespace Name="Weather.Infrastructure.Configuration" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
+      <Type Name="ContainerConfigurationExtension" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
+        <Method Name="AddDatabase(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+          <AnonymousMethod Name="(DbContextOptionsBuilder):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Method>
+        <Method Name="AddExternalHttpServices(IServiceCollection,IConfiguration):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="AddInfrastructure(IServiceCollection,IConfiguration):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="AddMapping(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="AddServices(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Infrastructure.Database.EFContext" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+      <Type Name="WeatherContext" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+        <Constructor Name="WeatherContext(DbContextOptions&lt;WeatherContext&gt;)" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Property Name="FavoriteLocations:DbSet&lt;FavoriteLocationEntity&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Property>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Infrastructure.Database.EFContext.Entities" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+      <Type Name="FavoriteLocationEntity" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+        <AutoProperty Name="Id:int" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="Latitude:long" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="Longitude:long" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Infrastructure.Database.Repositories" CoveredStatements="0" TotalStatements="24" CoveragePercent="0">
+      <Type Name="WeatherCommandsRepository" CoveredStatements="0" TotalStatements="11" CoveragePercent="0">
+        <Constructor Name="WeatherCommandsRepository(WeatherContext,IMapper)" CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+        <Method Name="AddFavoriteLocation(AddFavoriteCommand,CancellationToken):Task&lt;Result&lt;int&gt;&gt;" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
+        </Method>
+      </Type>
+      <Type Name="WeatherQueriesRepository" CoveredStatements="0" TotalStatements="13" CoveragePercent="0">
+        <Constructor Name="WeatherQueriesRepository(WeatherContext,IMapper)" CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+        <Method Name="GetFavorites(CancellationToken):Task&lt;Result&lt;IEnumerable&lt;LocationDto&gt;&gt;&gt;" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
+        </Method>
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Infrastructure.Mapping.Profiles" CoveredStatements="0" TotalStatements="20" CoveragePercent="0">
+      <Type Name="ExternalClientsProfile" CoveredStatements="0" TotalStatements="15" CoveragePercent="0">
+        <Constructor Name="ExternalClientsProfile()" CoveredStatements="0" TotalStatements="15" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
+          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,double&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,DateTime&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,string&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,string&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,string&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;ForecastTemperatureDto,ForecastTemperatureDto,double&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;ForecastTemperatureDto,ForecastTemperatureDto,DateTime&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;ForecastWeatherDto,ForecastWeatherDto,IReadOnlyCollection&lt;ForecastTemperatureDto&gt;&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;ForecastWeatherDto,ForecastWeatherDto,string&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Constructor>
+      </Type>
+      <Type Name="WeatherEntitiesProfile" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+        <Constructor Name="WeatherEntitiesProfile()" CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Weather.Infrastructure.Services" CoveredStatements="28" TotalStatements="28" CoveragePercent="100">
+      <Type Name="WeatherService" CoveredStatements="28" TotalStatements="28" CoveragePercent="100">
+        <Constructor Name="WeatherService(IWeatherbitHttpClient,IMapper)" CoveredStatements="5" TotalStatements="5" CoveragePercent="100" />
+        <Method Name="GetCurrentWeather(LocationDto,CancellationToken):Task&lt;Result&lt;CurrentWeatherDto&gt;&gt;" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="13" TotalStatements="13" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetForecastWeather(LocationDto,CancellationToken):Task&lt;Result&lt;ForecastWeatherDto&gt;&gt;" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
+        </Method>
+      </Type>
+    </Namespace>
+  </Assembly>
+  <Assembly Name="Weather.Infrastructure.UnitTests" CoveredStatements="98" TotalStatements="98" CoveragePercent="100">
+    <Namespace Name="Weather.Infrastructure.UnitTests.Services" CoveredStatements="98" TotalStatements="98" CoveragePercent="100">
+      <Type Name="WeatherServiceTests" CoveredStatements="98" TotalStatements="98" CoveragePercent="100">
+        <Constructor Name="WeatherServiceTests()" CoveredStatements="6" TotalStatements="6" CoveragePercent="100" />
+        <Method Name="GetCurrentWeather_EmptyData():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetCurrentWeather_Failed():Task" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetCurrentWeather_ManyData():Task" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetCurrentWeather_NullData():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetCurrentWeather_Success():Task" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="13" TotalStatements="13" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetForecastWeather_EmptyData():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetForecastWeather_Failed():Task" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetForecastWeather_NullData():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
+        </Method>
+        <Method Name="GetForecastWeather_Success():Task" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="13" TotalStatements="13" CoveragePercent="100" />
+        </Method>
+      </Type>
+    </Namespace>
+  </Assembly>
+  <Assembly Name="Weather.UnitTests.Common" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+    <Namespace Name="Weather.UnitTests.Common.Extensions" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+      <Type Name="MoqLoggerExtensions" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+        <Method Name="VerifyLog&lt;T&gt;(Mock&lt;ILogger&lt;T&gt;&gt;,LogLevel,EventId,string,Times):void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="VerifyLog&lt;T&gt;(Mock&lt;ILogger&lt;T&gt;&gt;,LogLevel,EventId,Times):void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+      </Type>
+    </Namespace>
+  </Assembly>
+  <Assembly Name="Wheaterbit.Client" CoveredStatements="7" TotalStatements="90" CoveragePercent="8">
+    <Namespace Name="Wheaterbit.Client" CoveredStatements="0" TotalStatements="41" CoveragePercent="0">
+      <Type Name="WeatherbitHttpClient" CoveredStatements="0" TotalStatements="41" CoveragePercent="0">
+        <Constructor Name="WeatherbitHttpClient(IOptions&lt;WeatherbitOptions&gt;,IHttpClientFactory,IValidator&lt;WeatherbitOptions&gt;,IJsonSerializerSettingsFactory)" CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
+        <Method Name="GetCurrentWeather(long,long,CancellationToken):Task&lt;Result&lt;CurrentWeatherDataDto&gt;&gt;" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        </Method>
+        <Method Name="GetSixteenDayForecast(long,long,CancellationToken):Task&lt;Result&lt;ForecastWeatherDto&gt;&gt;" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        </Method>
+        <Method Name="SendAsync&lt;T&gt;(HttpRequestMessage,CancellationToken):Task&lt;Result&lt;T&gt;&gt;" CoveredStatements="0" TotalStatements="12" CoveragePercent="0">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="12" CoveragePercent="0" />
+        </Method>
+        <Method Name="SendAsyncSave&lt;T&gt;(HttpRequestMessage,CancellationToken):Task&lt;Result&lt;T&gt;&gt;" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
+          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="7" CoveragePercent="0" />
+        </Method>
+        <Method Name="ValidateOptions(IValidator&lt;WeatherbitOptions&gt;,IOptions&lt;WeatherbitOptions&gt;):void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Wheaterbit.Client.Configuration" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+      <Type Name="ContainerConfigurationExtension" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+        <Method Name="AddWeatherbit(IServiceCollection,IConfiguration):IServiceCollection" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Wheaterbit.Client.Dtos" CoveredStatements="7" TotalStatements="23" CoveragePercent="30">
+      <Type Name="CurrentWeatherDataDto" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+        <Constructor Name="CurrentWeatherDataDto()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        <AutoProperty Name="Data:IReadOnlyCollection&lt;CurrentWeatherDto&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+      </Type>
+      <Type Name="CurrentWeatherDto" CoveredStatements="0" TotalStatements="10" CoveragePercent="0">
+        <AutoProperty Name="city_name:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="ob_time:DateTime" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="sunrise:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="sunset:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="temp:double" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="ForecastTemperatureDto" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+        <AutoProperty Name="ob_time:DateTime" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="temp:double" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="ForecastWeatherDto" CoveredStatements="4" TotalStatements="6" CoveragePercent="67">
+        <Constructor Name="ForecastWeatherDto()" CoveredStatements="2" TotalStatements="2" CoveragePercent="100" />
+        <AutoProperty Name="city_name:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="Data:IReadOnlyCollection&lt;ForecastTemperatureDto&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+    <Namespace Name="Wheaterbit.Client.Factories" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+      <Type Name="JsonSerializerSettingsFactory" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+        <Method Name="Create():JsonSerializerSettings" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Wheaterbit.Client.Options" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
+      <Type Name="WeatherbitOptions" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
+        <Constructor Name="WeatherbitOptions()" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <AutoProperty Name="BaseUrl:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="XRapidAPIHost:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+        <AutoProperty Name="XRapidAPIKey:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+    <Namespace Name="Wheaterbit.Client.Validation" CoveredStatements="0" TotalStatements="10" CoveragePercent="0">
+      <Type Name="WeatherbitOptionsSpecificationHolder" CoveredStatements="0" TotalStatements="10" CoveragePercent="0">
+        <Constructor Name="WeatherbitOptionsSpecificationHolder()" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
+          <AnonymousMethod Name="(ISpecificationIn&lt;string&gt;):ISpecificationOut&lt;string&gt;" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+            <AnonymousMethod Name="(string):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+          </AnonymousMethod>
+          <AnonymousMethod Name="(ISpecificationIn&lt;WeatherbitOptions&gt;):ISpecificationOut&lt;WeatherbitOptions&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Constructor>
+        <AutoProperty Name="Specification:Specification&lt;WeatherbitOptions&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+    </Namespace>
+  </Assembly>
+</Root>

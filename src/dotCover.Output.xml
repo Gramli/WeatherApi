@@ -1,426 +1,1214 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Root CoveredStatements="527" TotalStatements="832" CoveragePercent="63" ReportType="Xml" DotCoverVersion="2022.2.4">
+<Root CoveredStatements="527" TotalStatements="832" CoveragePercent="63" ReportType="DetailedXml" DotCoverVersion="2022.2.4">
+  <FileIndices>
+    <File Index="1" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Infrastructure.UnitTests\Services\WeatherServiceTests.cs" ChecksumAlgorithm="SHA256" Checksum="F529709E0FA60A1DBDE27725501686B9219F774B5312C2E3BC495ACE531A735C" />
+    <File Index="2" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Logging\LogEvents.cs" ChecksumAlgorithm="SHA256" Checksum="3D6DF6FF7D7AC4405C8CD33C8082E245BD59089F57B4C8311E08C43FD093CEE1" />
+    <File Index="3" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Http\DataResponse.cs" ChecksumAlgorithm="SHA256" Checksum="D504378306D6B57A97D1497A7DA73AEB44ECDA51A18F06D251A5A144EB77B07A" />
+    <File Index="4" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Http\EmptyRequest.cs" ChecksumAlgorithm="SHA256" Checksum="8D8A27F0FE20EC4A819FC66FB3DE1E4E80C407EF18D6A0903E8FD3BA1DFAB63C" />
+    <File Index="5" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Http\HttpDataResponse.cs" ChecksumAlgorithm="SHA256" Checksum="28E8D386352C8B4FFF3ECE5506C5D76F74187F27CFE0ADB49DC89D5B1FE96E3F" />
+    <File Index="6" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Extensions\EnumerableExtensions.cs" ChecksumAlgorithm="SHA256" Checksum="4E977759C0847807A51F4E45608495B13402B3F19C3F5E71B81D24604CC12091" />
+    <File Index="7" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Extensions\FluentResultExtensions.cs" ChecksumAlgorithm="SHA256" Checksum="47239DE8FB4503505E701C0B26DDFF5C777E587DA2DB0FBB1CE349E3C3B1F9D8" />
+    <File Index="8" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Extensions\HttpDataResponses.cs" ChecksumAlgorithm="SHA256" Checksum="7D30B1EAFAC4A1EBD166517A65E1AD8A3DA2919DA5D57E20CA7DB324DE79C1E6" />
+    <File Index="9" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Dtos\CurrentWeatherDto.cs" ChecksumAlgorithm="SHA256" Checksum="AB94F2D626598D37FC6D35B1D5BBB0E59C3F8F0FD7CD3A38A2662557130642EE" />
+    <File Index="10" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Dtos\FavoritesWeatherDto.cs" ChecksumAlgorithm="SHA256" Checksum="2CC027A045FF359A59A18855F03A9FEE97581DF6D556A23E8813A126D8E93D6C" />
+    <File Index="11" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Dtos\ForecastTemperatureDto.cs" ChecksumAlgorithm="SHA256" Checksum="FE684CC2E9D3F19308CE99336F2AE432687DD80EBB7A46C292C1476B09247547" />
+    <File Index="12" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Dtos\ForecastWeatherDto.cs" ChecksumAlgorithm="SHA256" Checksum="D2CB5AD1858EBF1E4465FA88035DEB4B2ABC3CDD89CF6876AF1A2FC318CFD1A3" />
+    <File Index="13" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Dtos\LocationDto.cs" ChecksumAlgorithm="SHA256" Checksum="B46A3D37F462E6C610C93275125C2858998A786A73176EC5E64CC37FE3FC7A2C" />
+    <File Index="14" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Dtos\Queries\GetCurrentWeatherQuery.cs" ChecksumAlgorithm="SHA256" Checksum="56208FC9507A1BB59D0B204E222671B55DBFFBE05385C603BA7486BE423A5B3F" />
+    <File Index="15" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Dtos\Queries\GetForecastWeatherQuery.cs" ChecksumAlgorithm="SHA256" Checksum="1C909FE13A6A60E1C06F5D4A93888B0F7BBA735D545BE546E5C6AC6C60F2BB48" />
+    <File Index="16" Name="E:\GitHub\WheaterApi\src\Weather.Domain\Dtos\Commands\AddFavoriteCommand.cs" ChecksumAlgorithm="SHA256" Checksum="4ABCFB149D89B6427ACCA842E64F7ABBDE1583DD72CD5A2E5C8B7921AEB73FD4" />
+    <File Index="17" Name="E:\GitHub\WheaterApi\src\Weather.Core\Validation\CurrentWeatherDtoSpecificationHolder.cs" ChecksumAlgorithm="SHA256" Checksum="6AC1E6E137152C2F08FF54AE5D37DBDE6753B0C163281C27C1E075520F279CF8" />
+    <File Index="18" Name="E:\GitHub\WheaterApi\src\Weather.Core\Validation\AddFavoriteCommandSpecificationHolder.cs" ChecksumAlgorithm="SHA256" Checksum="158F1D874CE0A3D24B83D20FFBFC7BD032E0D4983970E829BACED9D65167E9D0" />
+    <File Index="19" Name="E:\GitHub\WheaterApi\src\Weather.Core\Validation\ForecastWeatherDtoSpecificationHolder.cs" ChecksumAlgorithm="SHA256" Checksum="CC3A1E0CD41F40B20C1B167122CBEA09C5B7787EFE48B9A334D4C0CCF39431A1" />
+    <File Index="20" Name="E:\GitHub\WheaterApi\src\Weather.Core\Validation\GeneralPredicates.cs" ChecksumAlgorithm="SHA256" Checksum="BAE45BA02300BF4437E5FD2BB70AB064C1519774093A7010E1D5BE827D724351" />
+    <File Index="21" Name="E:\GitHub\WheaterApi\src\Weather.Core\Validation\GetCurrentWeatcherQuerySpecificationHolder.cs" ChecksumAlgorithm="SHA256" Checksum="AE7578430B0B14854674574918ED7F745751C8162F4324BA414CF634774391A1" />
+    <File Index="22" Name="E:\GitHub\WheaterApi\src\Weather.Core\Validation\GetForecastWeatherSpecificationHolder.cs" ChecksumAlgorithm="SHA256" Checksum="8F777B99DDFFB94BBABA2A73B60E982BBBCF3FDDEADDEEDBE36596B602E9785F" />
+    <File Index="23" Name="E:\GitHub\WheaterApi\src\Weather.Core\Validation\LocationDtoSpecificationHolder.cs" ChecksumAlgorithm="SHA256" Checksum="3D7B672E8C860A73587BA56166D172076C39ED50EEBFA337D96CE94EE500D04C" />
+    <File Index="24" Name="E:\GitHub\WheaterApi\src\Weather.Core\Queries\GetCurrentWeatherHandler.cs" ChecksumAlgorithm="SHA256" Checksum="11172B92F93AACA8DCC21317E67FF75F864CFEC32DC1C4BE916EFC3CD0D9B59B" />
+    <File Index="25" Name="E:\GitHub\WheaterApi\src\Weather.Core\Queries\GetFavoritesHandler.cs" ChecksumAlgorithm="SHA256" Checksum="0A99A603AFA3A5CE61B2E047A6F1BAFAA10D550E5AF9AC96F91E5BE94D4EC4D3" />
+    <File Index="26" Name="E:\GitHub\WheaterApi\src\Weather.Core\Queries\GetForecastWeatherHandler.cs" ChecksumAlgorithm="SHA256" Checksum="2DF17BFEDC913EF35532502377BB528A37905E6B9DAA5FB447E779CEC80DE95A" />
+    <File Index="27" Name="E:\GitHub\WheaterApi\src\Weather.Core\Extensions\ValidotDependencyInjectionExtensions.cs" ChecksumAlgorithm="SHA256" Checksum="2671AC30876F2A3DC4A8B91D636F8E505F1D33A31AB8D4F94FD0A0FA893D71A6" />
+    <File Index="28" Name="E:\GitHub\WheaterApi\src\Weather.Core\Configuration\ContainerConfigurationExtension.cs" ChecksumAlgorithm="SHA256" Checksum="8B3FCE085224769991A8E002F509283C22FED2BB0036906404D330155F67C04E" />
+    <File Index="29" Name="E:\GitHub\WheaterApi\src\Weather.Core\Commands\AddFavoriteHandler.cs" ChecksumAlgorithm="SHA256" Checksum="90709005F086AECE5F2B1375AA065F19D718C968347CA5B6276139A23ACBFC6C" />
+    <File Index="30" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Services\WeatherService.cs" ChecksumAlgorithm="SHA256" Checksum="D43A49BE76FDFF32B64E80D9A8DA724EAB65D17E173F552D69BD025F83B032C9" />
+    <File Index="31" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Mapping\Profiles\ExternalClientsProfile.cs" ChecksumAlgorithm="SHA256" Checksum="8A43F80879AAE5D8774BCAC12BB4B2FF12F77BF1FD510C367BE956542DBFA80A" />
+    <File Index="32" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Mapping\Profiles\WeatherEntitiesProfile.cs" ChecksumAlgorithm="SHA256" Checksum="78B6FBBCDC26409580D4FA21B3D7988271AE4FD6E6DA48A5B655E3F5E711FB48" />
+    <File Index="33" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Database\Repositories\WeatherCommandsRepository.cs" ChecksumAlgorithm="SHA256" Checksum="4B12F0B9DDB6B616E0569FD5D259DBA096A117FD717DDCAECF9D92590A235953" />
+    <File Index="34" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Database\Repositories\WeatherQueriesRepository.cs" ChecksumAlgorithm="SHA256" Checksum="972CC0A4888D727514E504AA2DD6B0149A09ACB20786FF87AACB1832C074BAA3" />
+    <File Index="35" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Database\EFContext\WeatherContext.cs" ChecksumAlgorithm="SHA256" Checksum="ED01AC2BCDD2B2AE3F75848A3C3F9B921B76991DE12D33744409B46A9F42FD57" />
+    <File Index="36" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Database\EFContext\Entities\FavoriteLocationEntity.cs" ChecksumAlgorithm="SHA256" Checksum="3BF171158972F28C79C26F586000E256D070FF1FEB49E7C0FC9CB21FF035F6C8" />
+    <File Index="37" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Configuration\ContainerConfigurationExtension.cs" ChecksumAlgorithm="SHA256" Checksum="E2859DB144D731A68E0C2F14F94901217DA7CB8BA40E2DC211C48D500DFBB2F3" />
+    <File Index="38" Name="E:\GitHub\WheaterApi\src\Wheaterbit.Client\WeatherbitHttpClient.cs" ChecksumAlgorithm="SHA256" Checksum="E1F33128793E05DC590092A1E623FDC0C033AE0CB0AB01A020ABA22776C63B47" />
+    <File Index="39" Name="E:\GitHub\WheaterApi\src\Wheaterbit.Client\Validation\WeatherbitOptionsSpecificationHolder.cs" ChecksumAlgorithm="SHA256" Checksum="F36F42F01DB28371E47FFDDE8B97B853AD6393F840F990E9317C3B50DB74B193" />
+    <File Index="40" Name="E:\GitHub\WheaterApi\src\Wheaterbit.Client\Options\WeatherbitOptions.cs" ChecksumAlgorithm="SHA256" Checksum="53E33F3EA3B3AC1E4D6D37B4ACB45DDA3C71833073F35688DB4132C476436A6B" />
+    <File Index="41" Name="E:\GitHub\WheaterApi\src\Wheaterbit.Client\Factories\JsonSerializerSettingsFactory.cs" ChecksumAlgorithm="SHA256" Checksum="DAC603B68FE1F4DCB521296A70427C161C0F3BF698CACB43F4B1CB52B1A39715" />
+    <File Index="42" Name="E:\GitHub\WheaterApi\src\Wheaterbit.Client\Dtos\CurrentWeatherDataDto.cs" ChecksumAlgorithm="SHA256" Checksum="AAE950B939853BDC91853D834EC3ECBCF5421202D853680EAB589C472E2A68BF" />
+    <File Index="43" Name="E:\GitHub\WheaterApi\src\Wheaterbit.Client\Dtos\CurrentWeatherDto.cs" ChecksumAlgorithm="SHA256" Checksum="7A12892C80FD325D2F8CC353A799E3BFC46BAA67D7DE14831062B354248790BE" />
+    <File Index="44" Name="E:\GitHub\WheaterApi\src\Wheaterbit.Client\Dtos\ForecastTemperatureDto.cs" ChecksumAlgorithm="SHA256" Checksum="2ACF00593D8D2CD5DFA2DE0390EDBD97B17A3AD16535FFF9ECE5AC9F4FDE52AB" />
+    <File Index="45" Name="E:\GitHub\WheaterApi\src\Wheaterbit.Client\Dtos\ForecastWeatherDto.cs" ChecksumAlgorithm="SHA256" Checksum="5368FBBF55EE1A0C2517918C173DDCAA2EAAD35A7A6D5BC43994497C15287E8B" />
+    <File Index="46" Name="E:\GitHub\WheaterApi\src\Wheaterbit.Client\Configuration\ContainerConfigurationExtension.cs" ChecksumAlgorithm="SHA256" Checksum="B4FAC5BCA1FAFFF6897B51834E29F389991C37A45C8DCF8AA9D5E8502C46015F" />
+    <File Index="47" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Core.UnitTests\Queries\GetCurrentWeatherHandlerTests.cs" ChecksumAlgorithm="SHA256" Checksum="5BFC597DB1D27B468D982D999958664BCB2E40F55D34654FB5DF22A95656143A" />
+    <File Index="48" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Core.UnitTests\Queries\GetFavoritesHandlerTests.cs" ChecksumAlgorithm="SHA256" Checksum="A1553E1ECDAC7C646647C1A2DB48E05788A2036A0F86B6C3F46577C6646D0899" />
+    <File Index="49" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Core.UnitTests\Queries\GetForecastWeatherHandlerTests.cs" ChecksumAlgorithm="SHA256" Checksum="EDCFA34C54C96AA2C13123E84C58B1A5EC367D2DFCA66D1D84281F0097F2BACF" />
+    <File Index="50" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Core.UnitTests\Commands\AddFavoriteHandlerTests.cs" ChecksumAlgorithm="SHA256" Checksum="EB8674F5796F4619788A7B4C3036A7808CBCC2E6328B9E41D90EF05507E06DD8" />
+    <File Index="51" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.UnitTests.Common\Extensions\MoqLoggerExtensions.cs" ChecksumAlgorithm="SHA256" Checksum="FCF016E8421788B9E6128D0C0E4B993D3DF40DBC2AA2546A63E688AD93A0B223" />
+  </FileIndices>
   <Assembly Name="Weather.Core" CoveredStatements="89" TotalStatements="192" CoveragePercent="46">
     <Namespace Name="Weather.Core.Commands" CoveredStatements="17" TotalStatements="17" CoveragePercent="100">
       <Type Name="AddFavoriteHandler" CoveredStatements="17" TotalStatements="17" CoveragePercent="100">
-        <Constructor Name="AddFavoriteHandler(IWeatherCommandsRepository,IValidator&lt;AddFavoriteCommand&gt;,ILogger&lt;IAddFavoriteHandler&gt;)" CoveredStatements="6" TotalStatements="6" CoveragePercent="100" />
-        <Method Name="HandleAsync(AddFavoriteCommand,CancellationToken):Task&lt;HttpDataResponse&lt;bool&gt;&gt;" CoveredStatements="11" TotalStatements="11" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="11" TotalStatements="11" CoveragePercent="100" />
+        <Type Name="&lt;HandleAsync&gt;d__4" CoveredStatements="11" TotalStatements="11" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="11" TotalStatements="11" CoveragePercent="100">
+            <Statement FileIndex="29" Line="25" Column="9" EndLine="25" EndColumn="10" Covered="True" />
+            <Statement FileIndex="29" Line="26" Column="13" EndLine="26" EndColumn="64" Covered="True" />
+            <Statement FileIndex="29" Line="27" Column="13" EndLine="27" EndColumn="14" Covered="True" />
+            <Statement FileIndex="29" Line="28" Column="17" EndLine="28" EndColumn="123" Covered="True" />
+            <Statement FileIndex="29" Line="31" Column="13" EndLine="31" EndColumn="110" Covered="True" />
+            <Statement FileIndex="29" Line="32" Column="13" EndLine="32" EndColumn="35" Covered="True" />
+            <Statement FileIndex="29" Line="33" Column="13" EndLine="33" EndColumn="14" Covered="True" />
+            <Statement FileIndex="29" Line="34" Column="17" EndLine="34" EndColumn="111" Covered="True" />
+            <Statement FileIndex="29" Line="35" Column="17" EndLine="35" EndColumn="103" Covered="True" />
+            <Statement FileIndex="29" Line="38" Column="13" EndLine="38" EndColumn="49" Covered="True" />
+            <Statement FileIndex="29" Line="39" Column="9" EndLine="39" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name=".ctor(Weather.Core.Abstractions.IWeatherCommandsRepository,Validot.IValidator&lt;Weather.Domain.Dtos.Commands.AddFavoriteCommand&gt;,Microsoft.Extensions.Logging.ILogger&lt;Weather.Core.Abstractions.IAddFavoriteHandler&gt;):System.Void" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+          <Statement FileIndex="29" Line="17" Column="9" EndLine="17" EndColumn="185" Covered="True" />
+          <Statement FileIndex="29" Line="18" Column="9" EndLine="18" EndColumn="10" Covered="True" />
+          <Statement FileIndex="29" Line="19" Column="13" EndLine="19" EndColumn="88" Covered="True" />
+          <Statement FileIndex="29" Line="20" Column="13" EndLine="20" EndColumn="92" Covered="True" />
+          <Statement FileIndex="29" Line="21" Column="13" EndLine="21" EndColumn="50" Covered="True" />
+          <Statement FileIndex="29" Line="22" Column="9" EndLine="22" EndColumn="10" Covered="True" />
         </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Core.Configuration" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
       <Type Name="ContainerConfigurationExtension" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
-        <Method Name="AddCore(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
-        <Method Name="AddHandlers(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
-        <Method Name="AddValidation(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="AddCore(Microsoft.Extensions.DependencyInjection.IServiceCollection):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="28" Line="18" Column="9" EndLine="18" EndColumn="10" Covered="False" />
+          <Statement FileIndex="28" Line="19" Column="13" EndLine="21" EndColumn="32" Covered="False" />
+          <Statement FileIndex="28" Line="22" Column="9" EndLine="22" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="AddHandlers(Microsoft.Extensions.DependencyInjection.IServiceCollection):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="28" Line="25" Column="9" EndLine="25" EndColumn="10" Covered="False" />
+          <Statement FileIndex="28" Line="26" Column="13" EndLine="30" EndColumn="71" Covered="False" />
+          <Statement FileIndex="28" Line="31" Column="9" EndLine="31" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="AddValidation(Microsoft.Extensions.DependencyInjection.IServiceCollection):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="28" Line="34" Column="9" EndLine="34" EndColumn="10" Covered="False" />
+          <Statement FileIndex="28" Line="35" Column="13" EndLine="40" EndColumn="141" Covered="False" />
+          <Statement FileIndex="28" Line="41" Column="9" EndLine="41" EndColumn="10" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Core.Extensions" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
       <Type Name="ValidotDependencyInjectionExtensions" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
-        <Method Name="AddValidotSingleton&lt;TValidator,THolder,TType&gt;(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="AddValidotSingleton&lt;TValidator,THolder,TType&gt;(Microsoft.Extensions.DependencyInjection.IServiceCollection):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="27" Line="11" Column="9" EndLine="11" EndColumn="10" Covered="False" />
+          <Statement FileIndex="27" Line="12" Column="13" EndLine="12" EndColumn="112" Covered="False" />
+          <Statement FileIndex="27" Line="13" Column="9" EndLine="13" EndColumn="10" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Core.Queries" CoveredStatements="72" TotalStatements="95" CoveragePercent="76">
       <Type Name="GetCurrentWeatherHandler" CoveredStatements="23" TotalStatements="23" CoveragePercent="100">
-        <Constructor Name="GetCurrentWeatherHandler(IValidator&lt;GetCurrentWeatherQuery&gt;,IValidator&lt;CurrentWeatherDto&gt;,IWeatherService,ILogger&lt;IGetCurrentWeatherHandler&gt;)" CoveredStatements="7" TotalStatements="7" CoveragePercent="100" />
-        <Method Name="HandleAsync(GetCurrentWeatherQuery,CancellationToken):Task&lt;HttpDataResponse&lt;CurrentWeatherDto&gt;&gt;" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="16" TotalStatements="16" CoveragePercent="100" />
+        <Type Name="&lt;HandleAsync&gt;d__5" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+            <Statement FileIndex="24" Line="31" Column="9" EndLine="31" EndColumn="10" Covered="True" />
+            <Statement FileIndex="24" Line="32" Column="13" EndLine="32" EndColumn="68" Covered="True" />
+            <Statement FileIndex="24" Line="33" Column="13" EndLine="33" EndColumn="14" Covered="True" />
+            <Statement FileIndex="24" Line="34" Column="17" EndLine="34" EndColumn="136" Covered="True" />
+            <Statement FileIndex="24" Line="37" Column="13" EndLine="37" EndColumn="120" Covered="True" />
+            <Statement FileIndex="24" Line="38" Column="13" EndLine="38" EndColumn="49" Covered="True" />
+            <Statement FileIndex="24" Line="39" Column="13" EndLine="39" EndColumn="14" Covered="True" />
+            <Statement FileIndex="24" Line="40" Column="17" EndLine="40" EndColumn="112" Covered="True" />
+            <Statement FileIndex="24" Line="41" Column="17" EndLine="41" EndColumn="115" Covered="True" />
+            <Statement FileIndex="24" Line="44" Column="13" EndLine="44" EndColumn="101" Covered="True" />
+            <Statement FileIndex="24" Line="45" Column="13" EndLine="45" EndColumn="43" Covered="True" />
+            <Statement FileIndex="24" Line="46" Column="13" EndLine="46" EndColumn="14" Covered="True" />
+            <Statement FileIndex="24" Line="47" Column="17" EndLine="47" EndColumn="137" Covered="True" />
+            <Statement FileIndex="24" Line="48" Column="17" EndLine="48" EndColumn="115" Covered="True" />
+            <Statement FileIndex="24" Line="51" Column="13" EndLine="51" EndColumn="74" Covered="True" />
+            <Statement FileIndex="24" Line="52" Column="9" EndLine="52" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name=".ctor(Validot.IValidator&lt;Weather.Domain.Dtos.Queries.GetCurrentWeatherQuery&gt;,Validot.IValidator&lt;Weather.Domain.Dtos.CurrentWeatherDto&gt;,Weather.Core.Abstractions.IWeatherService,Microsoft.Extensions.Logging.ILogger&lt;Weather.Core.Abstractions.IGetCurrentWeatherHandler&gt;):System.Void" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
+          <Statement FileIndex="24" Line="20" Column="9" EndLine="23" EndColumn="55" Covered="True" />
+          <Statement FileIndex="24" Line="24" Column="9" EndLine="24" EndColumn="10" Covered="True" />
+          <Statement FileIndex="24" Line="25" Column="13" EndLine="25" EndColumn="102" Covered="True" />
+          <Statement FileIndex="24" Line="26" Column="13" EndLine="26" EndColumn="66" Covered="True" />
+          <Statement FileIndex="24" Line="27" Column="13" EndLine="27" EndColumn="84" Covered="True" />
+          <Statement FileIndex="24" Line="28" Column="13" EndLine="28" EndColumn="50" Covered="True" />
+          <Statement FileIndex="24" Line="29" Column="9" EndLine="29" EndColumn="10" Covered="True" />
         </Method>
       </Type>
       <Type Name="GetFavoritesHandler" CoveredStatements="49" TotalStatements="49" CoveragePercent="100">
-        <Constructor Name="GetFavoritesHandler(IWeatherQueriesRepository,IWeatherService,IValidator&lt;LocationDto&gt;,IValidator&lt;CurrentWeatherDto&gt;,ILogger&lt;IGetFavoritesHandler&gt;)" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
-        <Method Name="GetFavoritesAsync(IEnumerable&lt;LocationDto&gt;,CancellationToken):Task&lt;HttpDataResponse&lt;FavoritesWeatherDto&gt;&gt;" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
-            <OwnCoverage CoveredStatements="6" TotalStatements="6" CoveragePercent="100" />
-            <AnonymousMethod Name="(LocationDto):Task" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
-              <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
-            </AnonymousMethod>
-          </InternalCompiledMethod>
-        </Method>
-        <Method Name="GetWeatherAsync(LocationDto,CancellationToken):Task&lt;Result&lt;CurrentWeatherDto&gt;&gt;" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="16" TotalStatements="16" CoveragePercent="100" />
-        </Method>
-        <Method Name="HandleAsync(EmptyRequest,CancellationToken):Task&lt;HttpDataResponse&lt;FavoritesWeatherDto&gt;&gt;" CoveredStatements="11" TotalStatements="11" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="11" TotalStatements="11" CoveragePercent="100" />
+        <Type Name="&lt;&gt;c__DisplayClass7_0" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+          <Type Name="&lt;&lt;GetFavoritesAsync&gt;b__0&gt;d" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+            <Method Name="MoveNext():System.Void" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+              <Statement FileIndex="25" Line="60" Column="13" EndLine="60" EndColumn="14" Covered="True" />
+              <Statement FileIndex="25" Line="61" Column="17" EndLine="61" EndColumn="90" Covered="True" />
+              <Statement FileIndex="25" Line="63" Column="17" EndLine="63" EndColumn="45" Covered="True" />
+              <Statement FileIndex="25" Line="64" Column="17" EndLine="64" EndColumn="18" Covered="True" />
+              <Statement FileIndex="25" Line="65" Column="21" EndLine="65" EndColumn="86" Covered="True" />
+              <Statement FileIndex="25" Line="66" Column="21" EndLine="66" EndColumn="28" Covered="True" />
+              <Statement FileIndex="25" Line="69" Column="17" EndLine="69" EndColumn="51" Covered="True" />
+              <Statement FileIndex="25" Line="70" Column="13" EndLine="70" EndColumn="14" Covered="True" />
+            </Method>
+          </Type>
+        </Type>
+        <Type Name="&lt;GetFavoritesAsync&gt;d__7" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+            <Statement FileIndex="25" Line="55" Column="9" EndLine="55" EndColumn="10" Covered="True" />
+            <Statement FileIndex="25" Line="56" Column="13" EndLine="56" EndColumn="56" Covered="True" />
+            <Statement FileIndex="25" Line="57" Column="13" EndLine="57" EndColumn="52" Covered="True" />
+            <Statement FileIndex="25" Line="59" Column="13" EndLine="70" EndColumn="16" Covered="True" />
+            <Statement FileIndex="25" Line="72" Column="13" EndLine="74" EndColumn="93" Covered="True" />
+            <Statement FileIndex="25" Line="75" Column="9" EndLine="75" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetWeatherAsync&gt;d__8" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+            <Statement FileIndex="25" Line="78" Column="9" EndLine="78" EndColumn="10" Covered="True" />
+            <Statement FileIndex="25" Line="79" Column="13" EndLine="79" EndColumn="55" Covered="True" />
+            <Statement FileIndex="25" Line="80" Column="13" EndLine="80" EndColumn="14" Covered="True" />
+            <Statement FileIndex="25" Line="81" Column="17" EndLine="81" EndColumn="115" Covered="True" />
+            <Statement FileIndex="25" Line="82" Column="17" EndLine="82" EndColumn="98" Covered="True" />
+            <Statement FileIndex="25" Line="85" Column="13" EndLine="85" EndColumn="104" Covered="True" />
+            <Statement FileIndex="25" Line="86" Column="13" EndLine="86" EndColumn="42" Covered="True" />
+            <Statement FileIndex="25" Line="87" Column="13" EndLine="87" EndColumn="14" Covered="True" />
+            <Statement FileIndex="25" Line="88" Column="17" EndLine="88" EndColumn="111" Covered="True" />
+            <Statement FileIndex="25" Line="89" Column="17" EndLine="89" EndColumn="68" Covered="True" />
+            <Statement FileIndex="25" Line="92" Column="13" EndLine="92" EndColumn="74" Covered="True" />
+            <Statement FileIndex="25" Line="93" Column="13" EndLine="93" EndColumn="14" Covered="True" />
+            <Statement FileIndex="25" Line="94" Column="17" EndLine="94" EndColumn="114" Covered="True" />
+            <Statement FileIndex="25" Line="95" Column="17" EndLine="95" EndColumn="68" Covered="True" />
+            <Statement FileIndex="25" Line="98" Column="13" EndLine="98" EndColumn="42" Covered="True" />
+            <Statement FileIndex="25" Line="99" Column="9" EndLine="99" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;HandleAsync&gt;d__6" CoveredStatements="11" TotalStatements="11" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="11" TotalStatements="11" CoveragePercent="100">
+            <Statement FileIndex="25" Line="36" Column="9" EndLine="36" EndColumn="10" Covered="True" />
+            <Statement FileIndex="25" Line="37" Column="13" EndLine="37" EndColumn="107" Covered="True" />
+            <Statement FileIndex="25" Line="39" Column="13" EndLine="39" EndColumn="49" Covered="True" />
+            <Statement FileIndex="25" Line="40" Column="13" EndLine="40" EndColumn="14" Covered="True" />
+            <Statement FileIndex="25" Line="41" Column="17" EndLine="41" EndColumn="125" Covered="True" />
+            <Statement FileIndex="25" Line="42" Column="17" EndLine="42" EndColumn="117" Covered="True" />
+            <Statement FileIndex="25" Line="45" Column="13" EndLine="45" EndColumn="56" Covered="True" />
+            <Statement FileIndex="25" Line="46" Column="13" EndLine="46" EndColumn="14" Covered="True" />
+            <Statement FileIndex="25" Line="47" Column="17" EndLine="47" EndColumn="77" Covered="True" />
+            <Statement FileIndex="25" Line="50" Column="13" EndLine="50" EndColumn="94" Covered="True" />
+            <Statement FileIndex="25" Line="52" Column="9" EndLine="52" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name=".ctor(Weather.Core.Abstractions.IWeatherQueriesRepository,Weather.Core.Abstractions.IWeatherService,Validot.IValidator&lt;Weather.Domain.Dtos.LocationDto&gt;,Validot.IValidator&lt;Weather.Domain.Dtos.CurrentWeatherDto&gt;,Microsoft.Extensions.Logging.ILogger&lt;Weather.Core.Abstractions.IGetFavoritesHandler&gt;):System.Void" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+          <Statement FileIndex="25" Line="22" Column="9" EndLine="26" EndColumn="50" Covered="True" />
+          <Statement FileIndex="25" Line="27" Column="9" EndLine="27" EndColumn="10" Covered="True" />
+          <Statement FileIndex="25" Line="28" Column="13" EndLine="28" EndColumn="72" Covered="True" />
+          <Statement FileIndex="25" Line="29" Column="13" EndLine="29" EndColumn="84" Covered="True" />
+          <Statement FileIndex="25" Line="30" Column="13" EndLine="30" EndColumn="86" Covered="True" />
+          <Statement FileIndex="25" Line="31" Column="13" EndLine="31" EndColumn="66" Covered="True" />
+          <Statement FileIndex="25" Line="32" Column="13" EndLine="32" EndColumn="50" Covered="True" />
+          <Statement FileIndex="25" Line="33" Column="9" EndLine="33" EndColumn="10" Covered="True" />
         </Method>
       </Type>
       <Type Name="GetForecastWeatherHandler" CoveredStatements="0" TotalStatements="23" CoveragePercent="0">
-        <Constructor Name="GetForecastWeatherHandler(IValidator&lt;GetForecastWeatherQuery&gt;,IWeatherService,IValidator&lt;ForecastWeatherDto&gt;,ILogger&lt;IGetCurrentWeatherHandler&gt;)" CoveredStatements="0" TotalStatements="7" CoveragePercent="0" />
-        <Method Name="HandleAsync(GetForecastWeatherQuery,CancellationToken):Task&lt;HttpDataResponse&lt;ForecastWeatherDto&gt;&gt;" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="16" CoveragePercent="0" />
+        <Type Name="&lt;HandleAsync&gt;d__5" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
+          <Method Name="MoveNext():System.Void" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
+            <Statement FileIndex="26" Line="32" Column="9" EndLine="32" EndColumn="10" Covered="False" />
+            <Statement FileIndex="26" Line="33" Column="13" EndLine="33" EndColumn="68" Covered="False" />
+            <Statement FileIndex="26" Line="34" Column="13" EndLine="34" EndColumn="14" Covered="False" />
+            <Statement FileIndex="26" Line="35" Column="17" EndLine="35" EndColumn="137" Covered="False" />
+            <Statement FileIndex="26" Line="38" Column="13" EndLine="38" EndColumn="112" Covered="False" />
+            <Statement FileIndex="26" Line="40" Column="13" EndLine="40" EndColumn="40" Covered="False" />
+            <Statement FileIndex="26" Line="41" Column="13" EndLine="41" EndColumn="14" Covered="False" />
+            <Statement FileIndex="26" Line="42" Column="17" EndLine="42" EndColumn="104" Covered="False" />
+            <Statement FileIndex="26" Line="43" Column="17" EndLine="43" EndColumn="116" Covered="False" />
+            <Statement FileIndex="26" Line="46" Column="13" EndLine="46" EndColumn="93" Covered="False" />
+            <Statement FileIndex="26" Line="47" Column="13" EndLine="47" EndColumn="44" Covered="False" />
+            <Statement FileIndex="26" Line="48" Column="13" EndLine="48" EndColumn="14" Covered="False" />
+            <Statement FileIndex="26" Line="49" Column="17" EndLine="49" EndColumn="138" Covered="False" />
+            <Statement FileIndex="26" Line="50" Column="17" EndLine="50" EndColumn="116" Covered="False" />
+            <Statement FileIndex="26" Line="53" Column="13" EndLine="53" EndColumn="65" Covered="False" />
+            <Statement FileIndex="26" Line="54" Column="9" EndLine="54" EndColumn="10" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor(Validot.IValidator&lt;Weather.Domain.Dtos.Queries.GetForecastWeatherQuery&gt;,Weather.Core.Abstractions.IWeatherService,Validot.IValidator&lt;Weather.Domain.Dtos.ForecastWeatherDto&gt;,Microsoft.Extensions.Logging.ILogger&lt;Weather.Core.Abstractions.IGetCurrentWeatherHandler&gt;):System.Void" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
+          <Statement FileIndex="26" Line="20" Column="9" EndLine="24" EndColumn="55" Covered="False" />
+          <Statement FileIndex="26" Line="25" Column="9" EndLine="25" EndColumn="10" Covered="False" />
+          <Statement FileIndex="26" Line="26" Column="13" EndLine="26" EndColumn="102" Covered="False" />
+          <Statement FileIndex="26" Line="27" Column="13" EndLine="27" EndColumn="66" Covered="False" />
+          <Statement FileIndex="26" Line="28" Column="13" EndLine="28" EndColumn="86" Covered="False" />
+          <Statement FileIndex="26" Line="29" Column="13" EndLine="29" EndColumn="50" Covered="False" />
+          <Statement FileIndex="26" Line="30" Column="9" EndLine="30" EndColumn="10" Covered="False" />
         </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Core.Validation" CoveredStatements="0" TotalStatements="54" CoveragePercent="0">
       <Type Name="AddFavoriteCommandSpecificationHolder" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
-        <Constructor Name="AddFavoriteCommandSpecificationHolder()" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
-          <OwnCoverage CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;AddFavoriteCommand&gt;):ISpecificationOut&lt;AddFavoriteCommand&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </Constructor>
-        <AutoProperty Name="Specification:Specification&lt;AddFavoriteCommand&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__3_0(Validot.Specification.ISpecificationIn&lt;Weather.Domain.Dtos.Commands.AddFavoriteCommand&gt;):Validot.Specification.ISpecificationOut&lt;Weather.Domain.Dtos.Commands.AddFavoriteCommand&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="18" Line="12" Column="86" EndLine="13" EndColumn="76" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+          <Statement FileIndex="18" Line="10" Column="9" EndLine="10" EndColumn="55" Covered="False" />
+          <Statement FileIndex="18" Line="11" Column="9" EndLine="11" EndColumn="10" Covered="False" />
+          <Statement FileIndex="18" Line="12" Column="13" EndLine="13" EndColumn="77" Covered="False" />
+          <Statement FileIndex="18" Line="15" Column="13" EndLine="15" EndColumn="61" Covered="False" />
+          <Statement FileIndex="18" Line="16" Column="9" EndLine="16" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="get_Specification():Validot.Specification&lt;Weather.Domain.Dtos.Commands.AddFavoriteCommand&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="18" Line="8" Column="66" EndLine="8" EndColumn="70" Covered="False" />
+        </Method>
       </Type>
       <Type Name="ForecastWeatherDtoSpecificationHolder" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
-        <Constructor Name="ForecastWeatherDtoSpecificationHolder()" CoveredStatements="0" TotalStatements="15" CoveragePercent="0">
-          <OwnCoverage CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;double&gt;):ISpecificationOut&lt;double&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;DateTime&gt;):ISpecificationOut&lt;DateTime&gt;" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-            <AnonymousMethod Name="(DateTime):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          </AnonymousMethod>
-          <AnonymousMethod Name="(ISpecificationIn&lt;ForecastTemperatureDto&gt;):ISpecificationOut&lt;ForecastTemperatureDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;ForecastWeatherDto&gt;):ISpecificationOut&lt;ForecastWeatherDto&gt;" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
-            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-            <AnonymousMethod Name="(ISpecificationIn&lt;IReadOnlyCollection&lt;ForecastTemperatureDto&gt;&gt;):ISpecificationOut&lt;IReadOnlyCollection&lt;ForecastTemperatureDto&gt;&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-            <AnonymousMethod Name="(ISpecificationIn&lt;string&gt;):ISpecificationOut&lt;string&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          </AnonymousMethod>
-        </Constructor>
-        <AutoProperty Name="Specification:Specification&lt;ForecastWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__3_0(Validot.Specification.ISpecificationIn&lt;System.Double&gt;):Validot.Specification.ISpecificationOut&lt;System.Double&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="19" Line="11" Column="60" EndLine="12" EndColumn="60" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__3_1(Validot.Specification.ISpecificationIn&lt;System.DateTime&gt;):Validot.Specification.ISpecificationOut&lt;System.DateTime&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="19" Line="14" Column="66" EndLine="15" EndColumn="56" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__3_10(Validot.Specification.ISpecificationIn&lt;System.String&gt;):Validot.Specification.ISpecificationOut&lt;System.String&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="19" Line="23" Column="45" EndLine="23" EndColumn="84" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__3_4(System.DateTime):System.Boolean" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="19" Line="15" Column="27" EndLine="15" EndColumn="55" Covered="False" />
+          </Method>
+        </Type>
+        <Type Name="&lt;&gt;c__DisplayClass3_0" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__2(Validot.Specification.ISpecificationIn&lt;Weather.Domain.Dtos.ForecastTemperatureDto&gt;):Validot.Specification.ISpecificationOut&lt;Weather.Domain.Dtos.ForecastTemperatureDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="19" Line="17" Column="91" EndLine="19" EndColumn="64" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__3(Validot.Specification.ISpecificationIn&lt;Weather.Domain.Dtos.ForecastWeatherDto&gt;):Validot.Specification.ISpecificationOut&lt;Weather.Domain.Dtos.ForecastWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="19" Line="21" Column="76" EndLine="23" EndColumn="85" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__8(Validot.Specification.ISpecificationIn&lt;System.Collections.Generic.IReadOnlyCollection&lt;Weather.Domain.Dtos.ForecastTemperatureDto&gt;&gt;):Validot.Specification.ISpecificationOut&lt;System.Collections.Generic.IReadOnlyCollection&lt;Weather.Domain.Dtos.ForecastTemperatureDto&gt;&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="19" Line="22" Column="59" EndLine="22" EndColumn="107" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+          <Statement FileIndex="19" Line="9" Column="9" EndLine="9" EndColumn="55" Covered="False" />
+          <Statement FileIndex="19" Line="10" Column="9" EndLine="10" EndColumn="10" Covered="False" />
+          <Statement FileIndex="19" Line="11" Column="13" EndLine="12" EndColumn="61" Covered="False" />
+          <Statement FileIndex="19" Line="14" Column="13" EndLine="15" EndColumn="57" Covered="False" />
+          <Statement FileIndex="19" Line="17" Column="13" EndLine="19" EndColumn="65" Covered="False" />
+          <Statement FileIndex="19" Line="21" Column="13" EndLine="23" EndColumn="86" Covered="False" />
+          <Statement FileIndex="19" Line="25" Column="13" EndLine="25" EndColumn="51" Covered="False" />
+          <Statement FileIndex="19" Line="26" Column="9" EndLine="26" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="get_Specification():Validot.Specification&lt;Weather.Domain.Dtos.ForecastWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="19" Line="8" Column="66" EndLine="8" EndColumn="70" Covered="False" />
+        </Method>
       </Type>
       <Type Name="GeneralPredicates" CoveredStatements="0" TotalStatements="12" CoveragePercent="0">
-        <Constructor Name="GeneralPredicates()" CoveredStatements="0" TotalStatements="12" CoveragePercent="0">
-          <OwnCoverage CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
-          <AnonymousMethod Name="(string):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(double):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(long):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(long):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;LocationDto&gt;):ISpecificationOut&lt;LocationDto&gt;" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
-            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-            <AnonymousMethod Name="(ISpecificationIn&lt;long&gt;):ISpecificationOut&lt;long&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-            <AnonymousMethod Name="(ISpecificationIn&lt;long&gt;):ISpecificationOut&lt;long&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          </AnonymousMethod>
-        </Constructor>
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
+          <Method Name="&lt;.cctor&gt;b__5_0(System.String):System.Boolean" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="20" Line="8" Column="73" EndLine="8" EndColumn="102" Covered="False" />
+          </Method>
+          <Method Name="&lt;.cctor&gt;b__5_1(System.Double):System.Boolean" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="20" Line="9" Column="78" EndLine="9" EndColumn="95" Covered="False" />
+          </Method>
+          <Method Name="&lt;.cctor&gt;b__5_2(System.Int64):System.Boolean" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="20" Line="10" Column="73" EndLine="10" EndColumn="92" Covered="False" />
+          </Method>
+          <Method Name="&lt;.cctor&gt;b__5_3(System.Int64):System.Boolean" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="20" Line="11" Column="75" EndLine="11" EndColumn="96" Covered="False" />
+          </Method>
+          <Method Name="&lt;.cctor&gt;b__5_4(Validot.Specification.ISpecificationIn&lt;Weather.Domain.Dtos.LocationDto&gt;):Validot.Specification.ISpecificationOut&lt;Weather.Domain.Dtos.LocationDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="20" Line="12" Column="84" EndLine="14" EndColumn="74" Covered="False" />
+          </Method>
+          <Method Name="&lt;.cctor&gt;b__5_6(Validot.Specification.ISpecificationIn&lt;System.Int64&gt;):Validot.Specification.ISpecificationOut&lt;System.Int64&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="20" Line="13" Column="47" EndLine="13" EndColumn="70" Covered="False" />
+          </Method>
+          <Method Name="&lt;.cctor&gt;b__5_8(Validot.Specification.ISpecificationIn&lt;System.Int64&gt;):Validot.Specification.ISpecificationOut&lt;System.Int64&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="20" Line="14" Column="48" EndLine="14" EndColumn="73" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".cctor():System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+          <Statement FileIndex="20" Line="8" Column="9" EndLine="8" EndColumn="103" Covered="False" />
+          <Statement FileIndex="20" Line="9" Column="9" EndLine="9" EndColumn="96" Covered="False" />
+          <Statement FileIndex="20" Line="10" Column="9" EndLine="10" EndColumn="93" Covered="False" />
+          <Statement FileIndex="20" Line="11" Column="9" EndLine="11" EndColumn="97" Covered="False" />
+          <Statement FileIndex="20" Line="12" Column="9" EndLine="14" EndColumn="75" Covered="False" />
+        </Method>
       </Type>
       <Type Name="GetCurrentWeatcherQuerySpecificationHolder" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
-        <Constructor Name="GetCurrentWeatcherQuerySpecificationHolder()" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
-          <OwnCoverage CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;GetCurrentWeatherQuery&gt;):ISpecificationOut&lt;GetCurrentWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </Constructor>
-        <AutoProperty Name="Specification:Specification&lt;GetCurrentWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__3_0(Validot.Specification.ISpecificationIn&lt;Weather.Domain.Dtos.Queries.GetCurrentWeatherQuery&gt;):Validot.Specification.ISpecificationOut&lt;Weather.Domain.Dtos.Queries.GetCurrentWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="21" Line="12" Column="95" EndLine="13" EndColumn="76" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+          <Statement FileIndex="21" Line="10" Column="9" EndLine="10" EndColumn="60" Covered="False" />
+          <Statement FileIndex="21" Line="11" Column="9" EndLine="11" EndColumn="10" Covered="False" />
+          <Statement FileIndex="21" Line="12" Column="13" EndLine="13" EndColumn="77" Covered="False" />
+          <Statement FileIndex="21" Line="15" Column="13" EndLine="15" EndColumn="66" Covered="False" />
+          <Statement FileIndex="21" Line="16" Column="9" EndLine="16" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="get_Specification():Validot.Specification&lt;Weather.Domain.Dtos.Queries.GetCurrentWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="21" Line="8" Column="70" EndLine="8" EndColumn="74" Covered="False" />
+        </Method>
       </Type>
       <Type Name="GetForecastWeatherSpecificationHolder" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
-        <Constructor Name="GetForecastWeatherSpecificationHolder()" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
-          <OwnCoverage CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;GetForecastWeatherQuery&gt;):ISpecificationOut&lt;GetForecastWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </Constructor>
-        <AutoProperty Name="Specification:Specification&lt;GetForecastWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__3_0(Validot.Specification.ISpecificationIn&lt;Weather.Domain.Dtos.Queries.GetForecastWeatherQuery&gt;):Validot.Specification.ISpecificationOut&lt;Weather.Domain.Dtos.Queries.GetForecastWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="22" Line="12" Column="96" EndLine="13" EndColumn="76" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+          <Statement FileIndex="22" Line="10" Column="9" EndLine="10" EndColumn="55" Covered="False" />
+          <Statement FileIndex="22" Line="11" Column="9" EndLine="11" EndColumn="10" Covered="False" />
+          <Statement FileIndex="22" Line="12" Column="13" EndLine="13" EndColumn="77" Covered="False" />
+          <Statement FileIndex="22" Line="15" Column="13" EndLine="15" EndColumn="66" Covered="False" />
+          <Statement FileIndex="22" Line="16" Column="9" EndLine="16" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="get_Specification():Validot.Specification&lt;Weather.Domain.Dtos.Queries.GetForecastWeatherQuery&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="22" Line="8" Column="71" EndLine="8" EndColumn="75" Covered="False" />
+        </Method>
       </Type>
       <Type Name="LocationDtoSpecificationHolder" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
-        <Constructor Name="LocationDtoSpecificationHolder()" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
-        <AutoProperty Name="Specification:Specification&lt;LocationDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="23" Line="10" Column="9" EndLine="10" EndColumn="48" Covered="False" />
+          <Statement FileIndex="23" Line="11" Column="9" EndLine="11" EndColumn="10" Covered="False" />
+          <Statement FileIndex="23" Line="12" Column="13" EndLine="12" EndColumn="63" Covered="False" />
+          <Statement FileIndex="23" Line="13" Column="9" EndLine="13" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="get_Specification():Validot.Specification&lt;Weather.Domain.Dtos.LocationDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="23" Line="8" Column="59" EndLine="8" EndColumn="63" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Wheaterbit.Client.Validation" CoveredStatements="0" TotalStatements="14" CoveragePercent="0">
       <Type Name="CurrentWeatherDtoSpecificationHolder" CoveredStatements="0" TotalStatements="14" CoveragePercent="0">
-        <Constructor Name="CurrentWeatherDtoSpecificationHolder()" CoveredStatements="0" TotalStatements="13" CoveragePercent="0">
-          <OwnCoverage CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;string&gt;):ISpecificationOut&lt;string&gt;" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-            <AnonymousMethod Name="(string):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          </AnonymousMethod>
-          <AnonymousMethod Name="(ISpecificationIn&lt;double&gt;):ISpecificationOut&lt;double&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;string&gt;):ISpecificationOut&lt;string&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;CurrentWeatherDto&gt;):ISpecificationOut&lt;CurrentWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </Constructor>
-        <AutoProperty Name="Specification:Specification&lt;CurrentWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__3_0(Validot.Specification.ISpecificationIn&lt;System.String&gt;):Validot.Specification.ISpecificationOut&lt;System.String&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="17" Line="13" Column="66" EndLine="14" EndColumn="93" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__3_1(Validot.Specification.ISpecificationIn&lt;System.Double&gt;):Validot.Specification.ISpecificationOut&lt;System.Double&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="17" Line="16" Column="60" EndLine="17" EndColumn="60" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__3_2(Validot.Specification.ISpecificationIn&lt;System.String&gt;):Validot.Specification.ISpecificationOut&lt;System.String&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="17" Line="19" Column="62" EndLine="20" EndColumn="55" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__3_4(System.String):System.Boolean" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="17" Line="14" Column="28" EndLine="14" EndColumn="92" Covered="False" />
+          </Method>
+        </Type>
+        <Type Name="&lt;&gt;c__DisplayClass3_0" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__3(Validot.Specification.ISpecificationIn&lt;Weather.Domain.Dtos.CurrentWeatherDto&gt;):Validot.Specification.ISpecificationOut&lt;Weather.Domain.Dtos.CurrentWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="17" Line="22" Column="84" EndLine="26" EndColumn="62" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+          <Statement FileIndex="17" Line="11" Column="9" EndLine="11" EndColumn="54" Covered="False" />
+          <Statement FileIndex="17" Line="12" Column="9" EndLine="12" EndColumn="10" Covered="False" />
+          <Statement FileIndex="17" Line="13" Column="13" EndLine="14" EndColumn="94" Covered="False" />
+          <Statement FileIndex="17" Line="16" Column="13" EndLine="17" EndColumn="61" Covered="False" />
+          <Statement FileIndex="17" Line="19" Column="13" EndLine="20" EndColumn="56" Covered="False" />
+          <Statement FileIndex="17" Line="22" Column="13" EndLine="26" EndColumn="63" Covered="False" />
+          <Statement FileIndex="17" Line="28" Column="13" EndLine="28" EndColumn="60" Covered="False" />
+          <Statement FileIndex="17" Line="29" Column="9" EndLine="29" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="get_Specification():Validot.Specification&lt;Weather.Domain.Dtos.CurrentWeatherDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="17" Line="9" Column="65" EndLine="9" EndColumn="69" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
   </Assembly>
   <Assembly Name="Weather.Core.UnitTests" CoveredStatements="216" TotalStatements="224" CoveragePercent="96">
     <Namespace Name="Weather.Core.UnitTests.Commands" CoveredStatements="42" TotalStatements="42" CoveragePercent="100">
       <Type Name="AddFavoriteHandlerTests" CoveredStatements="42" TotalStatements="42" CoveragePercent="100">
-        <Constructor Name="AddFavoriteHandlerTests()" CoveredStatements="7" TotalStatements="7" CoveragePercent="100" />
-        <Method Name="AddFavoriteLocation_Failed():Task" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100" />
-        </Method>
-        <Method Name="InvalidLocation():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
-        </Method>
-        <Method Name="Success():Task" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="12" TotalStatements="12" CoveragePercent="100" />
+        <Type Name="&lt;AddFavoriteLocation_Failed&gt;d__6" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+            <Statement FileIndex="50" Line="50" Column="9" EndLine="50" EndColumn="10" Covered="True" />
+            <Statement FileIndex="50" Line="52" Column="13" EndLine="52" EndColumn="136" Covered="True" />
+            <Statement FileIndex="50" Line="53" Column="13" EndLine="53" EndColumn="47" Covered="True" />
+            <Statement FileIndex="50" Line="55" Column="13" EndLine="55" EndColumn="114" Covered="True" />
+            <Statement FileIndex="50" Line="56" Column="13" EndLine="56" EndColumn="181" Covered="True" />
+            <Statement FileIndex="50" Line="59" Column="13" EndLine="59" EndColumn="93" Covered="True" />
+            <Statement FileIndex="50" Line="62" Column="13" EndLine="62" EndColumn="81" Covered="True" />
+            <Statement FileIndex="50" Line="63" Column="13" EndLine="63" EndColumn="42" Covered="True" />
+            <Statement FileIndex="50" Line="64" Column="13" EndLine="64" EndColumn="39" Covered="True" />
+            <Statement FileIndex="50" Line="65" Column="13" EndLine="65" EndColumn="83" Covered="True" />
+            <Statement FileIndex="50" Line="66" Column="13" EndLine="66" EndColumn="143" Covered="True" />
+            <Statement FileIndex="50" Line="67" Column="13" EndLine="67" EndColumn="182" Covered="True" />
+            <Statement FileIndex="50" Line="68" Column="13" EndLine="68" EndColumn="122" Covered="True" />
+            <Statement FileIndex="50" Line="69" Column="9" EndLine="69" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;InvalidLocation&gt;d__5" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+            <Statement FileIndex="50" Line="32" Column="9" EndLine="32" EndColumn="10" Covered="True" />
+            <Statement FileIndex="50" Line="34" Column="13" EndLine="34" EndColumn="136" Covered="True" />
+            <Statement FileIndex="50" Line="36" Column="13" EndLine="36" EndColumn="115" Covered="True" />
+            <Statement FileIndex="50" Line="39" Column="13" EndLine="39" EndColumn="93" Covered="True" />
+            <Statement FileIndex="50" Line="42" Column="13" EndLine="42" EndColumn="72" Covered="True" />
+            <Statement FileIndex="50" Line="43" Column="13" EndLine="43" EndColumn="42" Covered="True" />
+            <Statement FileIndex="50" Line="44" Column="13" EndLine="44" EndColumn="39" Covered="True" />
+            <Statement FileIndex="50" Line="45" Column="13" EndLine="45" EndColumn="143" Covered="True" />
+            <Statement FileIndex="50" Line="46" Column="9" EndLine="46" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;Success&gt;d__7" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+            <Statement FileIndex="50" Line="73" Column="9" EndLine="73" EndColumn="10" Covered="True" />
+            <Statement FileIndex="50" Line="75" Column="13" EndLine="75" EndColumn="136" Covered="True" />
+            <Statement FileIndex="50" Line="76" Column="13" EndLine="76" EndColumn="32" Covered="True" />
+            <Statement FileIndex="50" Line="78" Column="13" EndLine="78" EndColumn="114" Covered="True" />
+            <Statement FileIndex="50" Line="79" Column="13" EndLine="79" EndColumn="177" Covered="True" />
+            <Statement FileIndex="50" Line="82" Column="13" EndLine="82" EndColumn="93" Covered="True" />
+            <Statement FileIndex="50" Line="85" Column="13" EndLine="85" EndColumn="64" Covered="True" />
+            <Statement FileIndex="50" Line="86" Column="13" EndLine="86" EndColumn="41" Covered="True" />
+            <Statement FileIndex="50" Line="87" Column="13" EndLine="87" EndColumn="38" Covered="True" />
+            <Statement FileIndex="50" Line="88" Column="13" EndLine="88" EndColumn="143" Covered="True" />
+            <Statement FileIndex="50" Line="89" Column="13" EndLine="89" EndColumn="184" Covered="True" />
+            <Statement FileIndex="50" Line="90" Column="9" EndLine="90" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
+          <Statement FileIndex="50" Line="20" Column="9" EndLine="20" EndColumn="41" Covered="True" />
+          <Statement FileIndex="50" Line="21" Column="9" EndLine="21" EndColumn="10" Covered="True" />
+          <Statement FileIndex="50" Line="22" Column="13" EndLine="22" EndColumn="85" Covered="True" />
+          <Statement FileIndex="50" Line="23" Column="13" EndLine="23" EndColumn="91" Covered="True" />
+          <Statement FileIndex="50" Line="24" Column="13" EndLine="24" EndColumn="68" Covered="True" />
+          <Statement FileIndex="50" Line="26" Column="13" EndLine="26" EndColumn="143" Covered="True" />
+          <Statement FileIndex="50" Line="27" Column="9" EndLine="27" EndColumn="10" Covered="True" />
         </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Core.UnitTests.Queries" CoveredStatements="174" TotalStatements="182" CoveragePercent="96">
       <Type Name="GetCurrentWeatherHandlerTests" CoveredStatements="67" TotalStatements="67" CoveragePercent="100">
-        <Constructor Name="GetCurrentWeatherHandlerTests()" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
-        <Method Name="CurrentWeather_ValidationFailed():Task" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="18" TotalStatements="18" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetCurrentWeather_Failed():Task" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100" />
-        </Method>
-        <Method Name="InvalidLocation():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
-        </Method>
-        <Method Name="Success():Task" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="18" TotalStatements="18" CoveragePercent="100" />
+        <Type Name="&lt;CurrentWeather_ValidationFailed&gt;d__8" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
+            <Statement FileIndex="47" Line="75" Column="9" EndLine="75" EndColumn="10" Covered="True" />
+            <Statement FileIndex="47" Line="77" Column="13" EndLine="77" EndColumn="75" Covered="True" />
+            <Statement FileIndex="47" Line="78" Column="13" EndLine="78" EndColumn="58" Covered="True" />
+            <Statement FileIndex="47" Line="80" Column="13" EndLine="80" EndColumn="70" Covered="True" />
+            <Statement FileIndex="47" Line="81" Column="13" EndLine="81" EndColumn="73" Covered="True" />
+            <Statement FileIndex="47" Line="82" Column="13" EndLine="82" EndColumn="122" Covered="True" />
+            <Statement FileIndex="47" Line="83" Column="13" EndLine="83" EndColumn="161" Covered="True" />
+            <Statement FileIndex="47" Line="84" Column="13" EndLine="84" EndColumn="151" Covered="True" />
+            <Statement FileIndex="47" Line="87" Column="13" EndLine="87" EndColumn="97" Covered="True" />
+            <Statement FileIndex="47" Line="90" Column="13" EndLine="90" EndColumn="81" Covered="True" />
+            <Statement FileIndex="47" Line="91" Column="13" EndLine="91" EndColumn="42" Covered="True" />
+            <Statement FileIndex="47" Line="92" Column="13" EndLine="92" EndColumn="38" Covered="True" />
+            <Statement FileIndex="47" Line="93" Column="13" EndLine="93" EndColumn="155" Covered="True" />
+            <Statement FileIndex="47" Line="94" Column="13" EndLine="94" EndColumn="177" Covered="True" />
+            <Statement FileIndex="47" Line="95" Column="13" EndLine="95" EndColumn="153" Covered="True" />
+            <Statement FileIndex="47" Line="96" Column="13" EndLine="96" EndColumn="72" Covered="True" />
+            <Statement FileIndex="47" Line="97" Column="13" EndLine="97" EndColumn="102" Covered="True" />
+            <Statement FileIndex="47" Line="98" Column="9" EndLine="98" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetCurrentWeather_Failed&gt;d__7" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+            <Statement FileIndex="47" Line="53" Column="9" EndLine="53" EndColumn="10" Covered="True" />
+            <Statement FileIndex="47" Line="55" Column="13" EndLine="55" EndColumn="40" Covered="True" />
+            <Statement FileIndex="47" Line="56" Column="13" EndLine="56" EndColumn="75" Covered="True" />
+            <Statement FileIndex="47" Line="58" Column="13" EndLine="58" EndColumn="122" Covered="True" />
+            <Statement FileIndex="47" Line="59" Column="13" EndLine="59" EndColumn="159" Covered="True" />
+            <Statement FileIndex="47" Line="61" Column="13" EndLine="61" EndColumn="97" Covered="True" />
+            <Statement FileIndex="47" Line="64" Column="13" EndLine="64" EndColumn="81" Covered="True" />
+            <Statement FileIndex="47" Line="65" Column="13" EndLine="65" EndColumn="42" Covered="True" />
+            <Statement FileIndex="47" Line="66" Column="13" EndLine="66" EndColumn="82" Covered="True" />
+            <Statement FileIndex="47" Line="67" Column="13" EndLine="67" EndColumn="38" Covered="True" />
+            <Statement FileIndex="47" Line="68" Column="13" EndLine="68" EndColumn="155" Covered="True" />
+            <Statement FileIndex="47" Line="69" Column="13" EndLine="69" EndColumn="177" Covered="True" />
+            <Statement FileIndex="47" Line="70" Column="13" EndLine="70" EndColumn="109" Covered="True" />
+            <Statement FileIndex="47" Line="71" Column="9" EndLine="71" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;InvalidLocation&gt;d__6" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+            <Statement FileIndex="47" Line="35" Column="9" EndLine="35" EndColumn="10" Covered="True" />
+            <Statement FileIndex="47" Line="37" Column="13" EndLine="37" EndColumn="74" Covered="True" />
+            <Statement FileIndex="47" Line="39" Column="13" EndLine="39" EndColumn="123" Covered="True" />
+            <Statement FileIndex="47" Line="42" Column="13" EndLine="42" EndColumn="97" Covered="True" />
+            <Statement FileIndex="47" Line="45" Column="13" EndLine="45" EndColumn="72" Covered="True" />
+            <Statement FileIndex="47" Line="46" Column="13" EndLine="46" EndColumn="42" Covered="True" />
+            <Statement FileIndex="47" Line="47" Column="13" EndLine="47" EndColumn="38" Covered="True" />
+            <Statement FileIndex="47" Line="48" Column="13" EndLine="48" EndColumn="155" Covered="True" />
+            <Statement FileIndex="47" Line="49" Column="9" EndLine="49" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;Success&gt;d__9" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
+            <Statement FileIndex="47" Line="102" Column="9" EndLine="102" EndColumn="10" Covered="True" />
+            <Statement FileIndex="47" Line="104" Column="13" EndLine="104" EndColumn="75" Covered="True" />
+            <Statement FileIndex="47" Line="105" Column="13" EndLine="105" EndColumn="58" Covered="True" />
+            <Statement FileIndex="47" Line="107" Column="13" EndLine="107" EndColumn="70" Covered="True" />
+            <Statement FileIndex="47" Line="108" Column="13" EndLine="108" EndColumn="76" Covered="True" />
+            <Statement FileIndex="47" Line="109" Column="13" EndLine="109" EndColumn="122" Covered="True" />
+            <Statement FileIndex="47" Line="110" Column="13" EndLine="110" EndColumn="161" Covered="True" />
+            <Statement FileIndex="47" Line="111" Column="13" EndLine="111" EndColumn="151" Covered="True" />
+            <Statement FileIndex="47" Line="114" Column="13" EndLine="114" EndColumn="97" Covered="True" />
+            <Statement FileIndex="47" Line="117" Column="13" EndLine="117" EndColumn="64" Covered="True" />
+            <Statement FileIndex="47" Line="118" Column="13" EndLine="118" EndColumn="41" Covered="True" />
+            <Statement FileIndex="47" Line="119" Column="13" EndLine="119" EndColumn="41" Covered="True" />
+            <Statement FileIndex="47" Line="120" Column="13" EndLine="120" EndColumn="55" Covered="True" />
+            <Statement FileIndex="47" Line="121" Column="13" EndLine="121" EndColumn="155" Covered="True" />
+            <Statement FileIndex="47" Line="122" Column="13" EndLine="122" EndColumn="177" Covered="True" />
+            <Statement FileIndex="47" Line="123" Column="13" EndLine="123" EndColumn="157" Covered="True" />
+            <Statement FileIndex="47" Line="124" Column="13" EndLine="124" EndColumn="74" Covered="True" />
+            <Statement FileIndex="47" Line="125" Column="9" EndLine="125" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+          <Statement FileIndex="47" Line="23" Column="9" EndLine="23" EndColumn="47" Covered="True" />
+          <Statement FileIndex="47" Line="24" Column="9" EndLine="24" EndColumn="10" Covered="True" />
+          <Statement FileIndex="47" Line="25" Column="13" EndLine="25" EndColumn="99" Covered="True" />
+          <Statement FileIndex="47" Line="26" Column="13" EndLine="26" EndColumn="86" Covered="True" />
+          <Statement FileIndex="47" Line="27" Column="13" EndLine="27" EndColumn="63" Covered="True" />
+          <Statement FileIndex="47" Line="28" Column="13" EndLine="28" EndColumn="74" Covered="True" />
+          <Statement FileIndex="47" Line="30" Column="13" EndLine="30" EndColumn="179" Covered="True" />
+          <Statement FileIndex="47" Line="31" Column="9" EndLine="31" EndColumn="10" Covered="True" />
         </Method>
       </Type>
       <Type Name="GetFavoritesHandlerTests" CoveredStatements="107" TotalStatements="107" CoveragePercent="100">
-        <Constructor Name="GetFavoritesHandlerTests()" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
-        <Method Name="EmptyResult_GetCurrentWeather_Fail():Task" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetCurrentWeather_Validation_Fail():Task" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="16" TotalStatements="16" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetFavorites_Empty():Task" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="7" TotalStatements="7" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetFavorites_Failed():Task" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
-        </Method>
-        <Method Name="InvalidLocation():Task" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="12" TotalStatements="12" CoveragePercent="100" />
-        </Method>
-        <Method Name="One_Of_GetCurrentWeather_Failed():Task" CoveredStatements="21" TotalStatements="21" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="21" TotalStatements="21" CoveragePercent="100" />
-        </Method>
-        <Method Name="Success():Task" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="18" TotalStatements="18" CoveragePercent="100" />
+        <Type Name="&lt;EmptyResult_GetCurrentWeather_Fail&gt;d__10" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+            <Statement FileIndex="48" Line="101" Column="9" EndLine="101" EndColumn="10" Covered="True" />
+            <Statement FileIndex="48" Line="103" Column="13" EndLine="103" EndColumn="51" Covered="True" />
+            <Statement FileIndex="48" Line="104" Column="13" EndLine="104" EndColumn="79" Covered="True" />
+            <Statement FileIndex="48" Line="106" Column="13" EndLine="110" EndColumn="21" Covered="True" />
+            <Statement FileIndex="48" Line="112" Column="13" EndLine="112" EndColumn="95" Covered="True" />
+            <Statement FileIndex="48" Line="114" Column="13" EndLine="114" EndColumn="160" Covered="True" />
+            <Statement FileIndex="48" Line="116" Column="13" EndLine="116" EndColumn="96" Covered="True" />
+            <Statement FileIndex="48" Line="119" Column="13" EndLine="119" EndColumn="81" Covered="True" />
+            <Statement FileIndex="48" Line="120" Column="13" EndLine="120" EndColumn="42" Covered="True" />
+            <Statement FileIndex="48" Line="121" Column="13" EndLine="121" EndColumn="107" Covered="True" />
+            <Statement FileIndex="48" Line="122" Column="13" EndLine="122" EndColumn="155" Covered="True" />
+            <Statement FileIndex="48" Line="123" Column="13" EndLine="123" EndColumn="115" Covered="True" />
+            <Statement FileIndex="48" Line="124" Column="13" EndLine="124" EndColumn="117" Covered="True" />
+            <Statement FileIndex="48" Line="125" Column="9" EndLine="125" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetCurrentWeather_Validation_Fail&gt;d__12" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+            <Statement FileIndex="48" Line="167" Column="9" EndLine="167" EndColumn="10" Covered="True" />
+            <Statement FileIndex="48" Line="169" Column="13" EndLine="169" EndColumn="79" Covered="True" />
+            <Statement FileIndex="48" Line="171" Column="13" EndLine="175" EndColumn="21" Covered="True" />
+            <Statement FileIndex="48" Line="177" Column="13" EndLine="177" EndColumn="97" Covered="True" />
+            <Statement FileIndex="48" Line="178" Column="13" EndLine="178" EndColumn="110" Covered="True" />
+            <Statement FileIndex="48" Line="179" Column="13" EndLine="179" EndColumn="58" Covered="True" />
+            <Statement FileIndex="48" Line="181" Column="13" EndLine="181" EndColumn="161" Covered="True" />
+            <Statement FileIndex="48" Line="183" Column="13" EndLine="183" EndColumn="96" Covered="True" />
+            <Statement FileIndex="48" Line="186" Column="13" EndLine="186" EndColumn="81" Covered="True" />
+            <Statement FileIndex="48" Line="187" Column="13" EndLine="187" EndColumn="42" Covered="True" />
+            <Statement FileIndex="48" Line="188" Column="13" EndLine="188" EndColumn="38" Covered="True" />
+            <Statement FileIndex="48" Line="189" Column="13" EndLine="189" EndColumn="107" Covered="True" />
+            <Statement FileIndex="48" Line="190" Column="13" EndLine="190" EndColumn="157" Covered="True" />
+            <Statement FileIndex="48" Line="191" Column="13" EndLine="191" EndColumn="119" Covered="True" />
+            <Statement FileIndex="48" Line="192" Column="13" EndLine="192" EndColumn="134" Covered="True" />
+            <Statement FileIndex="48" Line="193" Column="9" EndLine="193" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetFavorites_Empty&gt;d__8" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
+            <Statement FileIndex="48" Line="59" Column="9" EndLine="59" EndColumn="10" Covered="True" />
+            <Statement FileIndex="48" Line="61" Column="13" EndLine="62" EndColumn="93" Covered="True" />
+            <Statement FileIndex="48" Line="65" Column="13" EndLine="65" EndColumn="96" Covered="True" />
+            <Statement FileIndex="48" Line="68" Column="13" EndLine="68" EndColumn="71" Covered="True" />
+            <Statement FileIndex="48" Line="69" Column="13" EndLine="69" EndColumn="41" Covered="True" />
+            <Statement FileIndex="48" Line="70" Column="13" EndLine="70" EndColumn="107" Covered="True" />
+            <Statement FileIndex="48" Line="71" Column="9" EndLine="71" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetFavorites_Failed&gt;d__7" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+            <Statement FileIndex="48" Line="40" Column="9" EndLine="40" EndColumn="10" Covered="True" />
+            <Statement FileIndex="48" Line="42" Column="13" EndLine="42" EndColumn="51" Covered="True" />
+            <Statement FileIndex="48" Line="44" Column="13" EndLine="44" EndColumn="133" Covered="True" />
+            <Statement FileIndex="48" Line="47" Column="13" EndLine="47" EndColumn="96" Covered="True" />
+            <Statement FileIndex="48" Line="50" Column="13" EndLine="50" EndColumn="81" Covered="True" />
+            <Statement FileIndex="48" Line="51" Column="13" EndLine="51" EndColumn="42" Covered="True" />
+            <Statement FileIndex="48" Line="52" Column="13" EndLine="52" EndColumn="82" Covered="True" />
+            <Statement FileIndex="48" Line="53" Column="13" EndLine="53" EndColumn="107" Covered="True" />
+            <Statement FileIndex="48" Line="54" Column="13" EndLine="54" EndColumn="121" Covered="True" />
+            <Statement FileIndex="48" Line="55" Column="9" EndLine="55" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;InvalidLocation&gt;d__9" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+            <Statement FileIndex="48" Line="75" Column="9" EndLine="75" EndColumn="10" Covered="True" />
+            <Statement FileIndex="48" Line="77" Column="13" EndLine="77" EndColumn="79" Covered="True" />
+            <Statement FileIndex="48" Line="79" Column="13" EndLine="83" EndColumn="21" Covered="True" />
+            <Statement FileIndex="48" Line="85" Column="13" EndLine="85" EndColumn="98" Covered="True" />
+            <Statement FileIndex="48" Line="88" Column="13" EndLine="88" EndColumn="96" Covered="True" />
+            <Statement FileIndex="48" Line="91" Column="13" EndLine="91" EndColumn="81" Covered="True" />
+            <Statement FileIndex="48" Line="92" Column="13" EndLine="92" EndColumn="42" Covered="True" />
+            <Statement FileIndex="48" Line="93" Column="13" EndLine="93" EndColumn="38" Covered="True" />
+            <Statement FileIndex="48" Line="94" Column="13" EndLine="94" EndColumn="107" Covered="True" />
+            <Statement FileIndex="48" Line="95" Column="13" EndLine="95" EndColumn="158" Covered="True" />
+            <Statement FileIndex="48" Line="96" Column="13" EndLine="96" EndColumn="119" Covered="True" />
+            <Statement FileIndex="48" Line="97" Column="9" EndLine="97" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;One_Of_GetCurrentWeather_Failed&gt;d__11" CoveredStatements="21" TotalStatements="21" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="21" TotalStatements="21" CoveragePercent="100">
+            <Statement FileIndex="48" Line="129" Column="9" EndLine="129" EndColumn="10" Covered="True" />
+            <Statement FileIndex="48" Line="131" Column="13" EndLine="131" EndColumn="51" Covered="True" />
+            <Statement FileIndex="48" Line="132" Column="13" EndLine="132" EndColumn="79" Covered="True" />
+            <Statement FileIndex="48" Line="134" Column="13" EndLine="139" EndColumn="21" Covered="True" />
+            <Statement FileIndex="48" Line="141" Column="13" EndLine="141" EndColumn="97" Covered="True" />
+            <Statement FileIndex="48" Line="143" Column="13" EndLine="143" EndColumn="58" Covered="True" />
+            <Statement FileIndex="48" Line="145" Column="13" EndLine="145" EndColumn="109" Covered="True" />
+            <Statement FileIndex="48" Line="147" Column="13" EndLine="147" EndColumn="182" Covered="True" />
+            <Statement FileIndex="48" Line="148" Column="13" EndLine="148" EndColumn="185" Covered="True" />
+            <Statement FileIndex="48" Line="150" Column="13" EndLine="150" EndColumn="96" Covered="True" />
+            <Statement FileIndex="48" Line="153" Column="13" EndLine="153" EndColumn="64" Covered="True" />
+            <Statement FileIndex="48" Line="154" Column="13" EndLine="154" EndColumn="42" Covered="True" />
+            <Statement FileIndex="48" Line="155" Column="13" EndLine="155" EndColumn="41" Covered="True" />
+            <Statement FileIndex="48" Line="156" Column="13" EndLine="156" EndColumn="57" Covered="True" />
+            <Statement FileIndex="48" Line="157" Column="13" EndLine="157" EndColumn="81" Covered="True" />
+            <Statement FileIndex="48" Line="158" Column="13" EndLine="158" EndColumn="107" Covered="True" />
+            <Statement FileIndex="48" Line="159" Column="13" EndLine="159" EndColumn="140" Covered="True" />
+            <Statement FileIndex="48" Line="160" Column="13" EndLine="160" EndColumn="115" Covered="True" />
+            <Statement FileIndex="48" Line="161" Column="13" EndLine="161" EndColumn="119" Covered="True" />
+            <Statement FileIndex="48" Line="162" Column="13" EndLine="162" EndColumn="134" Covered="True" />
+            <Statement FileIndex="48" Line="163" Column="9" EndLine="163" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;Success&gt;d__13" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="18" TotalStatements="18" CoveragePercent="100">
+            <Statement FileIndex="48" Line="197" Column="9" EndLine="197" EndColumn="10" Covered="True" />
+            <Statement FileIndex="48" Line="199" Column="13" EndLine="199" EndColumn="79" Covered="True" />
+            <Statement FileIndex="48" Line="201" Column="13" EndLine="205" EndColumn="21" Covered="True" />
+            <Statement FileIndex="48" Line="207" Column="13" EndLine="207" EndColumn="97" Covered="True" />
+            <Statement FileIndex="48" Line="208" Column="13" EndLine="208" EndColumn="107" Covered="True" />
+            <Statement FileIndex="48" Line="209" Column="13" EndLine="209" EndColumn="58" Covered="True" />
+            <Statement FileIndex="48" Line="211" Column="13" EndLine="211" EndColumn="161" Covered="True" />
+            <Statement FileIndex="48" Line="213" Column="13" EndLine="213" EndColumn="96" Covered="True" />
+            <Statement FileIndex="48" Line="216" Column="13" EndLine="216" EndColumn="64" Covered="True" />
+            <Statement FileIndex="48" Line="217" Column="13" EndLine="217" EndColumn="41" Covered="True" />
+            <Statement FileIndex="48" Line="218" Column="13" EndLine="218" EndColumn="41" Covered="True" />
+            <Statement FileIndex="48" Line="219" Column="13" EndLine="219" EndColumn="57" Covered="True" />
+            <Statement FileIndex="48" Line="220" Column="13" EndLine="220" EndColumn="81" Covered="True" />
+            <Statement FileIndex="48" Line="221" Column="13" EndLine="221" EndColumn="107" Covered="True" />
+            <Statement FileIndex="48" Line="222" Column="13" EndLine="222" EndColumn="155" Covered="True" />
+            <Statement FileIndex="48" Line="223" Column="13" EndLine="223" EndColumn="119" Covered="True" />
+            <Statement FileIndex="48" Line="224" Column="13" EndLine="224" EndColumn="132" Covered="True" />
+            <Statement FileIndex="48" Line="225" Column="9" EndLine="225" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <Statement FileIndex="48" Line="23" Column="9" EndLine="23" EndColumn="42" Covered="True" />
+          <Statement FileIndex="48" Line="24" Column="9" EndLine="24" EndColumn="10" Covered="True" />
+          <Statement FileIndex="48" Line="25" Column="13" EndLine="25" EndColumn="76" Covered="True" />
+          <Statement FileIndex="48" Line="26" Column="13" EndLine="26" EndColumn="63" Covered="True" />
+          <Statement FileIndex="48" Line="27" Column="13" EndLine="27" EndColumn="69" Covered="True" />
+          <Statement FileIndex="48" Line="28" Column="13" EndLine="28" EndColumn="74" Covered="True" />
+          <Statement FileIndex="48" Line="29" Column="13" EndLine="29" EndColumn="86" Covered="True" />
+          <Statement FileIndex="48" Line="31" Column="13" EndLine="35" EndColumn="37" Covered="True" />
+          <Statement FileIndex="48" Line="36" Column="9" EndLine="36" EndColumn="10" Covered="True" />
         </Method>
       </Type>
       <Type Name="GetForecastWeatherHandlerTests" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
-        <Constructor Name="GetForecastWeatherHandlerTests()" CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+          <Statement FileIndex="49" Line="18" Column="9" EndLine="18" EndColumn="48" Covered="False" />
+          <Statement FileIndex="49" Line="19" Column="9" EndLine="19" EndColumn="10" Covered="False" />
+          <Statement FileIndex="49" Line="20" Column="13" EndLine="20" EndColumn="101" Covered="False" />
+          <Statement FileIndex="49" Line="21" Column="13" EndLine="21" EndColumn="88" Covered="False" />
+          <Statement FileIndex="49" Line="22" Column="13" EndLine="22" EndColumn="63" Covered="False" />
+          <Statement FileIndex="49" Line="23" Column="13" EndLine="23" EndColumn="74" Covered="False" />
+          <Statement FileIndex="49" Line="25" Column="13" EndLine="25" EndColumn="182" Covered="False" />
+          <Statement FileIndex="49" Line="26" Column="9" EndLine="26" EndColumn="10" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
   </Assembly>
   <Assembly Name="Weather.Domain" CoveredStatements="83" TotalStatements="124" CoveragePercent="67">
     <Namespace Name="Weather.Domain.Dtos" CoveredStatements="12" TotalStatements="30" CoveragePercent="40">
       <Type Name="CurrentWeatherDto" CoveredStatements="3" TotalStatements="13" CoveragePercent="23">
-        <Constructor Name="CurrentWeatherDto()" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
-        <AutoProperty Name="CityName:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="DateTime:DateTime" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="Sunrise:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="Sunset:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="Temperature:double" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Method Name=".ctor():System.Void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="9" Line="7" Column="49" EndLine="7" EndColumn="61" Covered="True" />
+          <Statement FileIndex="9" Line="11" Column="47" EndLine="11" EndColumn="59" Covered="True" />
+          <Statement FileIndex="9" Line="13" Column="48" EndLine="13" EndColumn="60" Covered="True" />
+        </Method>
+        <Method Name="get_CityName():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="7" Column="34" EndLine="7" EndColumn="38" Covered="False" />
+        </Method>
+        <Method Name="get_DateTime():System.DateTime" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="9" Column="36" EndLine="9" EndColumn="40" Covered="False" />
+        </Method>
+        <Method Name="get_Sunrise():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="13" Column="33" EndLine="13" EndColumn="37" Covered="False" />
+        </Method>
+        <Method Name="get_Sunset():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="11" Column="32" EndLine="11" EndColumn="36" Covered="False" />
+        </Method>
+        <Method Name="get_Temperature():System.Double" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="5" Column="37" EndLine="5" EndColumn="41" Covered="False" />
+        </Method>
+        <Method Name="set_CityName(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="7" Column="39" EndLine="7" EndColumn="44" Covered="False" />
+        </Method>
+        <Method Name="set_DateTime(System.DateTime):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="9" Column="41" EndLine="9" EndColumn="46" Covered="False" />
+        </Method>
+        <Method Name="set_Sunrise(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="13" Column="38" EndLine="13" EndColumn="43" Covered="False" />
+        </Method>
+        <Method Name="set_Sunset(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="11" Column="37" EndLine="11" EndColumn="42" Covered="False" />
+        </Method>
+        <Method Name="set_Temperature(System.Double):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="9" Line="5" Column="42" EndLine="5" EndColumn="47" Covered="False" />
+        </Method>
       </Type>
       <Type Name="FavoritesWeatherDto" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
-        <Constructor Name="FavoritesWeatherDto()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        <AutoProperty Name="FavoriteWeathers:IReadOnlyCollection&lt;CurrentWeatherDto&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
+        <Method Name=".ctor():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="10" Line="5" Column="89" EndLine="5" EndColumn="118" Covered="True" />
+        </Method>
+        <Method Name="get_FavoriteWeathers():System.Collections.Generic.IReadOnlyCollection&lt;Weather.Domain.Dtos.CurrentWeatherDto&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="10" Line="5" Column="74" EndLine="5" EndColumn="78" Covered="True" />
+        </Method>
+        <Method Name="set_FavoriteWeathers(System.Collections.Generic.IReadOnlyCollection&lt;Weather.Domain.Dtos.CurrentWeatherDto&gt;):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="10" Line="5" Column="79" EndLine="5" EndColumn="84" Covered="True" />
+        </Method>
       </Type>
       <Type Name="ForecastTemperatureDto" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
-        <AutoProperty Name="DateTime:DateTime" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="Temperature:double" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Method Name="get_DateTime():System.DateTime" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="11" Line="7" Column="36" EndLine="7" EndColumn="40" Covered="False" />
+        </Method>
+        <Method Name="get_Temperature():System.Double" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="11" Line="5" Column="37" EndLine="5" EndColumn="41" Covered="False" />
+        </Method>
+        <Method Name="set_DateTime(System.DateTime):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="11" Line="7" Column="41" EndLine="7" EndColumn="46" Covered="False" />
+        </Method>
+        <Method Name="set_Temperature(System.Double):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="11" Line="5" Column="42" EndLine="5" EndColumn="47" Covered="False" />
+        </Method>
       </Type>
       <Type Name="ForecastWeatherDto" CoveredStatements="2" TotalStatements="6" CoveragePercent="33">
-        <Constructor Name="ForecastWeatherDto()" CoveredStatements="2" TotalStatements="2" CoveragePercent="100" />
-        <AutoProperty Name="CityName:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="ForecastTemperatures:IReadOnlyCollection&lt;ForecastTemperatureDto&gt;" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Method Name=".ctor():System.Void" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Statement FileIndex="12" Line="5" Column="98" EndLine="5" EndColumn="132" Covered="True" />
+          <Statement FileIndex="12" Line="7" Column="49" EndLine="7" EndColumn="61" Covered="True" />
+        </Method>
+        <Method Name="get_CityName():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="12" Line="7" Column="34" EndLine="7" EndColumn="38" Covered="False" />
+        </Method>
+        <Method Name="get_ForecastTemperatures():System.Collections.Generic.IReadOnlyCollection&lt;Weather.Domain.Dtos.ForecastTemperatureDto&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="12" Line="5" Column="83" EndLine="5" EndColumn="87" Covered="False" />
+        </Method>
+        <Method Name="set_CityName(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="12" Line="7" Column="39" EndLine="7" EndColumn="44" Covered="False" />
+        </Method>
+        <Method Name="set_ForecastTemperatures(System.Collections.Generic.IReadOnlyCollection&lt;Weather.Domain.Dtos.ForecastTemperatureDto&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="12" Line="5" Column="88" EndLine="5" EndColumn="93" Covered="False" />
+        </Method>
       </Type>
       <Type Name="LocationDto" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
-        <AutoProperty Name="Latitude:long" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
-        <AutoProperty Name="Longitude:long" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
+        <Method Name="get_Latitude():System.Int64" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="13" Line="5" Column="32" EndLine="5" EndColumn="36" Covered="True" />
+        </Method>
+        <Method Name="get_Longitude():System.Int64" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="13" Line="6" Column="33" EndLine="6" EndColumn="37" Covered="True" />
+        </Method>
+        <Method Name="set_Latitude(System.Int64):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="13" Line="5" Column="37" EndLine="5" EndColumn="42" Covered="True" />
+        </Method>
+        <Method Name="set_Longitude(System.Int64):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="13" Line="6" Column="38" EndLine="6" EndColumn="43" Covered="True" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Domain.Dtos.Commands" CoveredStatements="2" TotalStatements="3" CoveragePercent="67">
       <Type Name="AddFavoriteCommand" CoveredStatements="2" TotalStatements="3" CoveragePercent="67">
-        <Constructor Name="AddFavoriteCommand()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        <AutoProperty Name="Location:LocationDto" CoveredStatements="1" TotalStatements="2" CoveragePercent="50">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
+        <Method Name=".ctor():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="16" Line="5" Column="54" EndLine="5" EndColumn="71" Covered="True" />
+        </Method>
+        <Method Name="get_Location():Weather.Domain.Dtos.LocationDto" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="16" Line="5" Column="39" EndLine="5" EndColumn="43" Covered="False" />
+        </Method>
+        <Method Name="set_Location(Weather.Domain.Dtos.LocationDto):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="16" Line="5" Column="44" EndLine="5" EndColumn="49" Covered="True" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Domain.Dtos.Queries" CoveredStatements="6" TotalStatements="12" CoveragePercent="50">
       <Type Name="GetCurrentWeatherQuery" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
-        <Constructor Name="GetCurrentWeatherQuery(long,long)" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
-        <AutoProperty Name="Location:LocationDto" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
+        <Method Name=".ctor(System.Int64,System.Int64):System.Void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
+          <Statement FileIndex="14" Line="6" Column="9" EndLine="6" EndColumn="70" Covered="True" />
+          <Statement FileIndex="14" Line="7" Column="9" EndLine="7" EndColumn="10" Covered="True" />
+          <Statement FileIndex="14" Line="8" Column="13" EndLine="12" EndColumn="15" Covered="True" />
+          <Statement FileIndex="14" Line="13" Column="9" EndLine="13" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="get_Location():Weather.Domain.Dtos.LocationDto" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="14" Line="5" Column="39" EndLine="5" EndColumn="43" Covered="True" />
+        </Method>
+        <Method Name="set_Location(Weather.Domain.Dtos.LocationDto):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="14" Line="5" Column="44" EndLine="5" EndColumn="49" Covered="True" />
+        </Method>
       </Type>
       <Type Name="GetForecastWeatherQuery" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
-        <Constructor Name="GetForecastWeatherQuery(long,long)" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
-        <AutoProperty Name="Location:LocationDto" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Method Name=".ctor(System.Int64,System.Int64):System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="15" Line="6" Column="9" EndLine="6" EndColumn="71" Covered="False" />
+          <Statement FileIndex="15" Line="7" Column="9" EndLine="7" EndColumn="10" Covered="False" />
+          <Statement FileIndex="15" Line="8" Column="13" EndLine="12" EndColumn="15" Covered="False" />
+          <Statement FileIndex="15" Line="13" Column="9" EndLine="13" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="get_Location():Weather.Domain.Dtos.LocationDto" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="15" Line="5" Column="39" EndLine="5" EndColumn="43" Covered="False" />
+        </Method>
+        <Method Name="set_Location(Weather.Domain.Dtos.LocationDto):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="15" Line="5" Column="44" EndLine="5" EndColumn="49" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Domain.Extensions" CoveredStatements="39" TotalStatements="55" CoveragePercent="71">
       <Type Name="EnumerableExtensions" CoveredStatements="12" TotalStatements="21" CoveragePercent="57">
-        <Method Name="ForEach&lt;T&gt;(IEnumerable&lt;T&gt;,Action&lt;T&gt;):void" CoveredStatements="0" TotalStatements="9" CoveragePercent="0" />
-        <Method Name="ForEachAsync&lt;T&gt;(IEnumerable&lt;T&gt;,Func&lt;T,Task&gt;):Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
+        <Type Name="&lt;ForEachAsync&gt;d__1&lt;T&gt;" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+            <Statement FileIndex="6" Line="14" Column="9" EndLine="14" EndColumn="10" Covered="True" />
+            <Statement FileIndex="6" Line="15" Column="13" EndLine="15" EndColumn="20" Covered="True" />
+            <Statement FileIndex="6" Line="15" Column="34" EndLine="15" EndColumn="40" Covered="True" />
+            <Statement FileIndex="6" Line="15" Column="22" EndLine="15" EndColumn="30" Covered="True" />
+            <Statement FileIndex="6" Line="16" Column="13" EndLine="16" EndColumn="14" Covered="True" />
+            <Statement FileIndex="6" Line="17" Column="17" EndLine="17" EndColumn="36" Covered="True" />
+            <Statement FileIndex="6" Line="18" Column="13" EndLine="18" EndColumn="14" Covered="True" />
+            <Statement FileIndex="6" Line="15" Column="31" EndLine="15" EndColumn="33" Covered="True" />
+            <Statement FileIndex="6" Line="19" Column="9" EndLine="19" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name="ForEach&lt;T&gt;(System.Collections.Generic.IEnumerable&lt;T&gt;,System.Action&lt;T&gt;):System.Void" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
+          <Statement FileIndex="6" Line="6" Column="9" EndLine="6" EndColumn="10" Covered="False" />
+          <Statement FileIndex="6" Line="7" Column="13" EndLine="7" EndColumn="20" Covered="False" />
+          <Statement FileIndex="6" Line="7" Column="33" EndLine="7" EndColumn="39" Covered="False" />
+          <Statement FileIndex="6" Line="7" Column="21" EndLine="7" EndColumn="29" Covered="False" />
+          <Statement FileIndex="6" Line="8" Column="13" EndLine="8" EndColumn="14" Covered="False" />
+          <Statement FileIndex="6" Line="9" Column="17" EndLine="9" EndColumn="30" Covered="False" />
+          <Statement FileIndex="6" Line="10" Column="13" EndLine="10" EndColumn="14" Covered="False" />
+          <Statement FileIndex="6" Line="7" Column="30" EndLine="7" EndColumn="32" Covered="False" />
+          <Statement FileIndex="6" Line="11" Column="9" EndLine="11" EndColumn="10" Covered="False" />
         </Method>
-        <Method Name="HasAny&lt;T&gt;(IEnumerable&lt;T&gt;):bool" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="HasAny&lt;T&gt;(System.Collections.Generic.IEnumerable&lt;T&gt;):System.Boolean" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="6" Line="22" Column="9" EndLine="22" EndColumn="10" Covered="True" />
+          <Statement FileIndex="6" Line="23" Column="13" EndLine="23" EndColumn="43" Covered="True" />
+          <Statement FileIndex="6" Line="24" Column="9" EndLine="24" EndColumn="10" Covered="True" />
+        </Method>
       </Type>
       <Type Name="FluentResultExtensions" CoveredStatements="9" TotalStatements="13" CoveragePercent="69">
-        <Method Name="JoinToMessage(IList&lt;IError&gt;):string" CoveredStatements="4" TotalStatements="6" CoveragePercent="67" />
-        <Method Name="ToErrorMessages(IList&lt;IError&gt;):IEnumerable&lt;string&gt;" CoveredStatements="5" TotalStatements="7" CoveragePercent="71">
-          <OwnCoverage CoveredStatements="4" TotalStatements="6" CoveragePercent="67" />
-          <AnonymousMethod Name="(IError):string" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        <Type Name="&lt;&gt;c" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Method Name="&lt;ToErrorMessages&gt;b__0_0(FluentResults.IError):System.String" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+            <Statement FileIndex="7" Line="14" Column="43" EndLine="14" EndColumn="56" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name="JoinToMessage(System.Collections.Generic.IList&lt;FluentResults.IError&gt;):System.String" CoveredStatements="4" TotalStatements="6" CoveragePercent="67">
+          <Statement FileIndex="7" Line="18" Column="9" EndLine="18" EndColumn="10" Covered="True" />
+          <Statement FileIndex="7" Line="19" Column="13" EndLine="19" EndColumn="34" Covered="True" />
+          <Statement FileIndex="7" Line="20" Column="13" EndLine="20" EndColumn="14" Covered="False" />
+          <Statement FileIndex="7" Line="21" Column="17" EndLine="21" EndColumn="37" Covered="False" />
+          <Statement FileIndex="7" Line="24" Column="13" EndLine="24" EndColumn="63" Covered="True" />
+          <Statement FileIndex="7" Line="25" Column="9" EndLine="25" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="ToErrorMessages(System.Collections.Generic.IList&lt;FluentResults.IError&gt;):System.Collections.Generic.IEnumerable&lt;System.String&gt;" CoveredStatements="4" TotalStatements="6" CoveragePercent="67">
+          <Statement FileIndex="7" Line="8" Column="9" EndLine="8" EndColumn="10" Covered="True" />
+          <Statement FileIndex="7" Line="9" Column="13" EndLine="9" EndColumn="33" Covered="True" />
+          <Statement FileIndex="7" Line="10" Column="13" EndLine="10" EndColumn="14" Covered="False" />
+          <Statement FileIndex="7" Line="11" Column="17" EndLine="11" EndColumn="46" Covered="False" />
+          <Statement FileIndex="7" Line="14" Column="13" EndLine="14" EndColumn="58" Covered="True" />
+          <Statement FileIndex="7" Line="15" Column="9" EndLine="15" EndColumn="10" Covered="True" />
         </Method>
       </Type>
       <Type Name="HttpDataResponses" CoveredStatements="18" TotalStatements="21" CoveragePercent="86">
-        <Method Name="AsBadRequest&lt;T&gt;(IEnumerable&lt;string&gt;):HttpDataResponse&lt;T&gt;" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
-        <Method Name="AsBadRequest&lt;T&gt;(string):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
-        <Method Name="AsInternalServerError&lt;T&gt;(IEnumerable&lt;string&gt;):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
-        <Method Name="AsInternalServerError&lt;T&gt;(string):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
-        <Method Name="AsNoContent&lt;T&gt;():HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
-        <Method Name="AsOK&lt;T&gt;(T):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
-        <Method Name="AsOK&lt;T&gt;(T,IEnumerable&lt;string&gt;):HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="AsBadRequest&lt;T&gt;(System.Collections.Generic.IEnumerable&lt;System.String&gt;):Weather.Domain.Http.HttpDataResponse&lt;T&gt;" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="8" Line="8" Column="9" EndLine="8" EndColumn="10" Covered="False" />
+          <Statement FileIndex="8" Line="9" Column="13" EndLine="13" EndColumn="15" Covered="False" />
+          <Statement FileIndex="8" Line="14" Column="9" EndLine="14" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="AsBadRequest&lt;T&gt;(System.String):Weather.Domain.Http.HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="8" Line="17" Column="9" EndLine="17" EndColumn="10" Covered="True" />
+          <Statement FileIndex="8" Line="18" Column="13" EndLine="22" EndColumn="15" Covered="True" />
+          <Statement FileIndex="8" Line="23" Column="9" EndLine="23" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="AsInternalServerError&lt;T&gt;(System.Collections.Generic.IEnumerable&lt;System.String&gt;):Weather.Domain.Http.HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="8" Line="26" Column="9" EndLine="26" EndColumn="10" Covered="True" />
+          <Statement FileIndex="8" Line="27" Column="13" EndLine="31" EndColumn="15" Covered="True" />
+          <Statement FileIndex="8" Line="32" Column="9" EndLine="32" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="AsInternalServerError&lt;T&gt;(System.String):Weather.Domain.Http.HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="8" Line="35" Column="9" EndLine="35" EndColumn="10" Covered="True" />
+          <Statement FileIndex="8" Line="36" Column="13" EndLine="40" EndColumn="15" Covered="True" />
+          <Statement FileIndex="8" Line="41" Column="9" EndLine="41" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="AsNoContent&lt;T&gt;():Weather.Domain.Http.HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="8" Line="63" Column="9" EndLine="63" EndColumn="10" Covered="True" />
+          <Statement FileIndex="8" Line="64" Column="13" EndLine="67" EndColumn="15" Covered="True" />
+          <Statement FileIndex="8" Line="68" Column="9" EndLine="68" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="AsOK&lt;T&gt;(T):Weather.Domain.Http.HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="8" Line="44" Column="9" EndLine="44" EndColumn="10" Covered="True" />
+          <Statement FileIndex="8" Line="45" Column="13" EndLine="49" EndColumn="15" Covered="True" />
+          <Statement FileIndex="8" Line="50" Column="9" EndLine="50" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="AsOK&lt;T&gt;(T,System.Collections.Generic.IEnumerable&lt;System.String&gt;):Weather.Domain.Http.HttpDataResponse&lt;T&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="8" Line="53" Column="9" EndLine="53" EndColumn="10" Covered="True" />
+          <Statement FileIndex="8" Line="54" Column="13" EndLine="59" EndColumn="15" Covered="True" />
+          <Statement FileIndex="8" Line="60" Column="9" EndLine="60" EndColumn="10" Covered="True" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Domain.Http" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
       <Type Name="DataResponse&lt;T&gt;" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
-        <Constructor Name="DataResponse()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        <AutoProperty Name="Data:T" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
-        <AutoProperty Name="Errors:IList&lt;string&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
+        <Method Name=".ctor():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="3" Line="7" Column="54" EndLine="7" EndColumn="72" Covered="True" />
+        </Method>
+        <Method Name="get_Data():T" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="3" Line="5" Column="26" EndLine="5" EndColumn="30" Covered="True" />
+        </Method>
+        <Method Name="get_Errors():System.Collections.Generic.IList&lt;System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="3" Line="7" Column="39" EndLine="7" EndColumn="43" Covered="True" />
+        </Method>
+        <Method Name="set_Data(T):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="3" Line="5" Column="31" EndLine="5" EndColumn="36" Covered="True" />
+        </Method>
+        <Method Name="set_Errors(System.Collections.Generic.IList&lt;System.String&gt;):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="3" Line="7" Column="44" EndLine="7" EndColumn="49" Covered="True" />
+        </Method>
       </Type>
       <Type Name="EmptyRequest" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
-        <Constructor Name="EmptyRequest()" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
-        <Property Name="Instance:EmptyRequest" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
-        </Property>
+        <Method Name=".ctor():System.Void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="4" Line="15" Column="9" EndLine="15" EndColumn="31" Covered="True" />
+          <Statement FileIndex="4" Line="16" Column="9" EndLine="16" EndColumn="10" Covered="True" />
+          <Statement FileIndex="4" Line="18" Column="9" EndLine="18" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="get_Instance():Weather.Domain.Http.EmptyRequest" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
+          <Statement FileIndex="4" Line="9" Column="13" EndLine="9" EndColumn="14" Covered="True" />
+          <Statement FileIndex="4" Line="10" Column="17" EndLine="10" EndColumn="50" Covered="True" />
+          <Statement FileIndex="4" Line="11" Column="17" EndLine="11" EndColumn="34" Covered="True" />
+          <Statement FileIndex="4" Line="12" Column="13" EndLine="12" EndColumn="14" Covered="True" />
+        </Method>
       </Type>
       <Type Name="HttpDataResponse&lt;T&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-        <AutoProperty Name="StatusCode:HttpStatusCode" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
+        <Method Name="get_StatusCode():System.Net.HttpStatusCode" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="7" Column="44" EndLine="7" EndColumn="48" Covered="True" />
+        </Method>
+        <Method Name="set_StatusCode(System.Net.HttpStatusCode):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="7" Column="49" EndLine="7" EndColumn="54" Covered="True" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Domain.Logging" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
       <Type Name="LogEvents" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
-        <Constructor Name="LogEvents()" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
+        <Method Name=".cctor():System.Void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <Statement FileIndex="2" Line="5" Column="9" EndLine="5" EndColumn="56" Covered="True" />
+          <Statement FileIndex="2" Line="8" Column="9" EndLine="8" EndColumn="67" Covered="True" />
+          <Statement FileIndex="2" Line="10" Column="9" EndLine="10" EndColumn="75" Covered="True" />
+          <Statement FileIndex="2" Line="12" Column="9" EndLine="12" EndColumn="75" Covered="True" />
+          <Statement FileIndex="2" Line="15" Column="9" EndLine="15" EndColumn="66" Covered="True" />
+          <Statement FileIndex="2" Line="17" Column="9" EndLine="17" EndColumn="69" Covered="True" />
+          <Statement FileIndex="2" Line="19" Column="9" EndLine="19" EndColumn="62" Covered="True" />
+          <Statement FileIndex="2" Line="22" Column="9" EndLine="22" EndColumn="67" Covered="True" />
+          <Statement FileIndex="2" Line="24" Column="9" EndLine="24" EndColumn="70" Covered="True" />
+          <Statement FileIndex="2" Line="26" Column="9" EndLine="26" EndColumn="63" Covered="True" />
+        </Method>
       </Type>
     </Namespace>
   </Assembly>
   <Assembly Name="Weather.Infrastructure" CoveredStatements="28" TotalStatements="98" CoveragePercent="29">
     <Namespace Name="Weather.Infrastructure.Configuration" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
       <Type Name="ContainerConfigurationExtension" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
-        <Method Name="AddDatabase(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
-          <OwnCoverage CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
-          <AnonymousMethod Name="(DbContextOptionsBuilder):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;AddDatabase&gt;b__3_0(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="37" Line="39" Column="54" EndLine="39" EndColumn="88" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name="AddDatabase(Microsoft.Extensions.DependencyInjection.IServiceCollection):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="37" Line="37" Column="9" EndLine="37" EndColumn="10" Covered="False" />
+          <Statement FileIndex="37" Line="38" Column="13" EndLine="41" EndColumn="85" Covered="False" />
+          <Statement FileIndex="37" Line="42" Column="9" EndLine="42" EndColumn="10" Covered="False" />
         </Method>
-        <Method Name="AddExternalHttpServices(IServiceCollection,IConfiguration):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
-        <Method Name="AddInfrastructure(IServiceCollection,IConfiguration):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
-        <Method Name="AddMapping(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
-        <Method Name="AddServices(IServiceCollection):IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="AddExternalHttpServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="37" Line="45" Column="9" EndLine="45" EndColumn="10" Covered="False" />
+          <Statement FileIndex="37" Line="46" Column="13" EndLine="47" EndColumn="47" Covered="False" />
+          <Statement FileIndex="37" Line="48" Column="9" EndLine="48" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="AddInfrastructure(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="37" Line="16" Column="9" EndLine="16" EndColumn="10" Covered="False" />
+          <Statement FileIndex="37" Line="17" Column="13" EndLine="21" EndColumn="32" Covered="False" />
+          <Statement FileIndex="37" Line="22" Column="9" EndLine="22" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="AddMapping(Microsoft.Extensions.DependencyInjection.IServiceCollection):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="37" Line="31" Column="9" EndLine="31" EndColumn="10" Covered="False" />
+          <Statement FileIndex="37" Line="32" Column="13" EndLine="33" EndColumn="64" Covered="False" />
+          <Statement FileIndex="37" Line="34" Column="9" EndLine="34" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="AddServices(Microsoft.Extensions.DependencyInjection.IServiceCollection):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="37" Line="25" Column="9" EndLine="25" EndColumn="10" Covered="False" />
+          <Statement FileIndex="37" Line="26" Column="13" EndLine="27" EndColumn="63" Covered="False" />
+          <Statement FileIndex="37" Line="28" Column="9" EndLine="28" EndColumn="10" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Infrastructure.Database.EFContext" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
       <Type Name="WeatherContext" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
-        <Constructor Name="WeatherContext(DbContextOptions&lt;WeatherContext&gt;)" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
-        <Property Name="FavoriteLocations:DbSet&lt;FavoriteLocationEntity&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </Property>
+        <Method Name=".ctor(Microsoft.EntityFrameworkCore.DbContextOptions&lt;Weather.Infrastructure.Database.EFContext.WeatherContext&gt;):System.Void" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="35" Line="9" Column="15" EndLine="9" EndColumn="28" Covered="False" />
+          <Statement FileIndex="35" Line="9" Column="29" EndLine="9" EndColumn="30" Covered="False" />
+          <Statement FileIndex="35" Line="9" Column="31" EndLine="9" EndColumn="32" Covered="False" />
+        </Method>
+        <Method Name="get_FavoriteLocations():Microsoft.EntityFrameworkCore.DbSet&lt;Weather.Infrastructure.Database.EFContext.Entities.FavoriteLocationEntity&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="35" Line="11" Column="67" EndLine="11" EndColumn="96" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Infrastructure.Database.EFContext.Entities" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
       <Type Name="FavoriteLocationEntity" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
-        <AutoProperty Name="Id:int" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="Latitude:long" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="Longitude:long" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Method Name="get_Id():System.Int32" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="36" Line="5" Column="25" EndLine="5" EndColumn="29" Covered="False" />
+        </Method>
+        <Method Name="get_Latitude():System.Int64" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="36" Line="6" Column="32" EndLine="6" EndColumn="36" Covered="False" />
+        </Method>
+        <Method Name="get_Longitude():System.Int64" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="36" Line="7" Column="33" EndLine="7" EndColumn="37" Covered="False" />
+        </Method>
+        <Method Name="set_Id(System.Int32):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="36" Line="5" Column="30" EndLine="5" EndColumn="34" Covered="False" />
+        </Method>
+        <Method Name="set_Latitude(System.Int64):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="36" Line="6" Column="37" EndLine="6" EndColumn="41" Covered="False" />
+        </Method>
+        <Method Name="set_Longitude(System.Int64):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="36" Line="7" Column="38" EndLine="7" EndColumn="42" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Infrastructure.Database.Repositories" CoveredStatements="0" TotalStatements="24" CoveragePercent="0">
       <Type Name="WeatherCommandsRepository" CoveredStatements="0" TotalStatements="11" CoveragePercent="0">
-        <Constructor Name="WeatherCommandsRepository(WeatherContext,IMapper)" CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
-        <Method Name="AddFavoriteLocation(AddFavoriteCommand,CancellationToken):Task&lt;Result&lt;int&gt;&gt;" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
+        <Type Name="&lt;AddFavoriteLocation&gt;d__3" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+          <Method Name="MoveNext():System.Void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+            <Statement FileIndex="33" Line="22" Column="9" EndLine="22" EndColumn="10" Covered="False" />
+            <Statement FileIndex="33" Line="23" Column="13" EndLine="23" EndColumn="99" Covered="False" />
+            <Statement FileIndex="33" Line="24" Column="13" EndLine="24" EndColumn="67" Covered="False" />
+            <Statement FileIndex="33" Line="25" Column="13" EndLine="25" EndColumn="80" Covered="False" />
+            <Statement FileIndex="33" Line="26" Column="13" EndLine="26" EndColumn="34" Covered="False" />
+            <Statement FileIndex="33" Line="27" Column="9" EndLine="27" EndColumn="10" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor(Weather.Infrastructure.Database.EFContext.WeatherContext,AutoMapper.IMapper):System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+          <Statement FileIndex="33" Line="15" Column="9" EndLine="15" EndColumn="88" Covered="False" />
+          <Statement FileIndex="33" Line="16" Column="9" EndLine="16" EndColumn="10" Covered="False" />
+          <Statement FileIndex="33" Line="17" Column="13" EndLine="17" EndColumn="66" Covered="False" />
+          <Statement FileIndex="33" Line="18" Column="13" EndLine="18" EndColumn="50" Covered="False" />
+          <Statement FileIndex="33" Line="19" Column="9" EndLine="19" EndColumn="10" Covered="False" />
         </Method>
       </Type>
       <Type Name="WeatherQueriesRepository" CoveredStatements="0" TotalStatements="13" CoveragePercent="0">
-        <Constructor Name="WeatherQueriesRepository(WeatherContext,IMapper)" CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
-        <Method Name="GetFavorites(CancellationToken):Task&lt;Result&lt;IEnumerable&lt;LocationDto&gt;&gt;&gt;" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
+        <Type Name="&lt;GetFavorites&gt;d__3" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+          <Method Name="MoveNext():System.Void" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+            <Statement FileIndex="34" Line="21" Column="9" EndLine="21" EndColumn="10" Covered="False" />
+            <Statement FileIndex="34" Line="22" Column="13" EndLine="22" EndColumn="115" Covered="False" />
+            <Statement FileIndex="34" Line="23" Column="13" EndLine="23" EndColumn="87" Covered="False" />
+            <Statement FileIndex="34" Line="25" Column="13" EndLine="25" EndColumn="35" Covered="False" />
+            <Statement FileIndex="34" Line="26" Column="13" EndLine="26" EndColumn="14" Covered="False" />
+            <Statement FileIndex="34" Line="27" Column="17" EndLine="27" EndColumn="69" Covered="False" />
+            <Statement FileIndex="34" Line="30" Column="13" EndLine="30" EndColumn="68" Covered="False" />
+            <Statement FileIndex="34" Line="31" Column="9" EndLine="31" EndColumn="10" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor(Weather.Infrastructure.Database.EFContext.WeatherContext,AutoMapper.IMapper):System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+          <Statement FileIndex="34" Line="15" Column="9" EndLine="15" EndColumn="87" Covered="False" />
+          <Statement FileIndex="34" Line="16" Column="9" EndLine="16" EndColumn="10" Covered="False" />
+          <Statement FileIndex="34" Line="17" Column="13" EndLine="17" EndColumn="66" Covered="False" />
+          <Statement FileIndex="34" Line="18" Column="13" EndLine="18" EndColumn="50" Covered="False" />
+          <Statement FileIndex="34" Line="19" Column="9" EndLine="19" EndColumn="10" Covered="False" />
         </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Infrastructure.Mapping.Profiles" CoveredStatements="0" TotalStatements="20" CoveragePercent="0">
       <Type Name="ExternalClientsProfile" CoveredStatements="0" TotalStatements="15" CoveragePercent="0">
-        <Constructor Name="ExternalClientsProfile()" CoveredStatements="0" TotalStatements="15" CoveragePercent="0">
-          <OwnCoverage CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
-          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,double&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,DateTime&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,string&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,string&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;CurrentWeatherDto,CurrentWeatherDto,string&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;ForecastTemperatureDto,ForecastTemperatureDto,double&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;ForecastTemperatureDto,ForecastTemperatureDto,DateTime&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;ForecastWeatherDto,ForecastWeatherDto,IReadOnlyCollection&lt;ForecastTemperatureDto&gt;&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <AnonymousMethod Name="(IMemberConfigurationExpression&lt;ForecastWeatherDto,ForecastWeatherDto,string&gt;):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </Constructor>
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__0_1(AutoMapper.IMemberConfigurationExpression&lt;Wheaterbit.Client.Dtos.CurrentWeatherDto,Weather.Domain.Dtos.CurrentWeatherDto,System.Double&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="31" Line="10" Column="59" EndLine="10" EndColumn="87" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__0_11(AutoMapper.IMemberConfigurationExpression&lt;Wheaterbit.Client.Dtos.ForecastTemperatureDto,Weather.Domain.Dtos.ForecastTemperatureDto,System.Double&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="31" Line="17" Column="61" EndLine="17" EndColumn="89" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__0_13(AutoMapper.IMemberConfigurationExpression&lt;Wheaterbit.Client.Dtos.ForecastTemperatureDto,Weather.Domain.Dtos.ForecastTemperatureDto,System.DateTime&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="31" Line="18" Column="58" EndLine="18" EndColumn="89" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__0_15(AutoMapper.IMemberConfigurationExpression&lt;Wheaterbit.Client.Dtos.ForecastWeatherDto,Weather.Domain.Dtos.ForecastWeatherDto,System.Collections.Generic.IReadOnlyCollection&lt;Weather.Domain.Dtos.ForecastTemperatureDto&gt;&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="31" Line="21" Column="70" EndLine="21" EndColumn="98" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__0_17(AutoMapper.IMemberConfigurationExpression&lt;Wheaterbit.Client.Dtos.ForecastWeatherDto,Weather.Domain.Dtos.ForecastWeatherDto,System.String&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="31" Line="22" Column="58" EndLine="22" EndColumn="91" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__0_3(AutoMapper.IMemberConfigurationExpression&lt;Wheaterbit.Client.Dtos.CurrentWeatherDto,Weather.Domain.Dtos.CurrentWeatherDto,System.DateTime&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="31" Line="11" Column="58" EndLine="11" EndColumn="89" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__0_5(AutoMapper.IMemberConfigurationExpression&lt;Wheaterbit.Client.Dtos.CurrentWeatherDto,Weather.Domain.Dtos.CurrentWeatherDto,System.String&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="31" Line="12" Column="58" EndLine="12" EndColumn="91" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__0_7(AutoMapper.IMemberConfigurationExpression&lt;Wheaterbit.Client.Dtos.CurrentWeatherDto,Weather.Domain.Dtos.CurrentWeatherDto,System.String&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="31" Line="13" Column="57" EndLine="13" EndColumn="88" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__0_9(AutoMapper.IMemberConfigurationExpression&lt;Wheaterbit.Client.Dtos.CurrentWeatherDto,Weather.Domain.Dtos.CurrentWeatherDto,System.String&gt;):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="31" Line="14" Column="56" EndLine="14" EndColumn="86" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+          <Statement FileIndex="31" Line="7" Column="9" EndLine="7" EndColumn="40" Covered="False" />
+          <Statement FileIndex="31" Line="8" Column="9" EndLine="8" EndColumn="10" Covered="False" />
+          <Statement FileIndex="31" Line="9" Column="13" EndLine="14" EndColumn="88" Covered="False" />
+          <Statement FileIndex="31" Line="16" Column="13" EndLine="18" EndColumn="91" Covered="False" />
+          <Statement FileIndex="31" Line="20" Column="13" EndLine="22" EndColumn="93" Covered="False" />
+          <Statement FileIndex="31" Line="23" Column="9" EndLine="23" EndColumn="10" Covered="False" />
+        </Method>
       </Type>
       <Type Name="WeatherEntitiesProfile" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
-        <Constructor Name="WeatherEntitiesProfile()" CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+          <Statement FileIndex="32" Line="9" Column="9" EndLine="9" EndColumn="40" Covered="False" />
+          <Statement FileIndex="32" Line="10" Column="9" EndLine="10" EndColumn="10" Covered="False" />
+          <Statement FileIndex="32" Line="11" Column="13" EndLine="11" EndColumn="62" Covered="False" />
+          <Statement FileIndex="32" Line="12" Column="13" EndLine="12" EndColumn="62" Covered="False" />
+          <Statement FileIndex="32" Line="13" Column="9" EndLine="13" EndColumn="10" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Weather.Infrastructure.Services" CoveredStatements="28" TotalStatements="28" CoveragePercent="100">
       <Type Name="WeatherService" CoveredStatements="28" TotalStatements="28" CoveragePercent="100">
-        <Constructor Name="WeatherService(IWeatherbitHttpClient,IMapper)" CoveredStatements="5" TotalStatements="5" CoveragePercent="100" />
-        <Method Name="GetCurrentWeather(LocationDto,CancellationToken):Task&lt;Result&lt;CurrentWeatherDto&gt;&gt;" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="13" TotalStatements="13" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetForecastWeather(LocationDto,CancellationToken):Task&lt;Result&lt;ForecastWeatherDto&gt;&gt;" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
+        <Type Name="&lt;GetCurrentWeather&gt;d__3" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
+            <Statement FileIndex="30" Line="24" Column="9" EndLine="24" EndColumn="10" Covered="True" />
+            <Statement FileIndex="30" Line="25" Column="13" EndLine="25" EndColumn="150" Covered="True" />
+            <Statement FileIndex="30" Line="26" Column="13" EndLine="26" EndColumn="46" Covered="True" />
+            <Statement FileIndex="30" Line="27" Column="13" EndLine="27" EndColumn="14" Covered="True" />
+            <Statement FileIndex="30" Line="28" Column="17" EndLine="28" EndColumn="65" Covered="True" />
+            <Statement FileIndex="30" Line="31" Column="13" EndLine="31" EndColumn="96" Covered="True" />
+            <Statement FileIndex="30" Line="32" Column="13" EndLine="32" EndColumn="14" Covered="True" />
+            <Statement FileIndex="30" Line="33" Column="17" EndLine="33" EndColumn="91" Covered="True" />
+            <Statement FileIndex="30" Line="36" Column="13" EndLine="36" EndColumn="59" Covered="True" />
+            <Statement FileIndex="30" Line="37" Column="13" EndLine="37" EndColumn="14" Covered="True" />
+            <Statement FileIndex="30" Line="38" Column="17" EndLine="38" EndColumn="160" Covered="True" />
+            <Statement FileIndex="30" Line="41" Column="13" EndLine="41" EndColumn="93" Covered="True" />
+            <Statement FileIndex="30" Line="42" Column="9" EndLine="42" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetForecastWeather&gt;d__4" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+            <Statement FileIndex="30" Line="45" Column="9" EndLine="45" EndColumn="10" Covered="True" />
+            <Statement FileIndex="30" Line="46" Column="13" EndLine="46" EndColumn="155" Covered="True" />
+            <Statement FileIndex="30" Line="47" Column="13" EndLine="47" EndColumn="48" Covered="True" />
+            <Statement FileIndex="30" Line="48" Column="13" EndLine="48" EndColumn="14" Covered="True" />
+            <Statement FileIndex="30" Line="49" Column="17" EndLine="49" EndColumn="66" Covered="True" />
+            <Statement FileIndex="30" Line="52" Column="13" EndLine="52" EndColumn="96" Covered="True" />
+            <Statement FileIndex="30" Line="53" Column="13" EndLine="53" EndColumn="14" Covered="True" />
+            <Statement FileIndex="30" Line="54" Column="17" EndLine="54" EndColumn="91" Covered="True" />
+            <Statement FileIndex="30" Line="57" Column="13" EndLine="57" EndColumn="81" Covered="True" />
+            <Statement FileIndex="30" Line="58" Column="9" EndLine="58" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name=".ctor(Wheaterbit.Client.Abstractions.IWeatherbitHttpClient,AutoMapper.IMapper):System.Void" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+          <Statement FileIndex="30" Line="17" Column="9" EndLine="17" EndColumn="90" Covered="True" />
+          <Statement FileIndex="30" Line="18" Column="9" EndLine="18" EndColumn="10" Covered="True" />
+          <Statement FileIndex="30" Line="19" Column="13" EndLine="19" EndColumn="78" Covered="True" />
+          <Statement FileIndex="30" Line="20" Column="13" EndLine="20" EndColumn="50" Covered="True" />
+          <Statement FileIndex="30" Line="21" Column="9" EndLine="21" EndColumn="10" Covered="True" />
         </Method>
       </Type>
     </Namespace>
@@ -428,33 +1216,141 @@
   <Assembly Name="Weather.Infrastructure.UnitTests" CoveredStatements="98" TotalStatements="98" CoveragePercent="100">
     <Namespace Name="Weather.Infrastructure.UnitTests.Services" CoveredStatements="98" TotalStatements="98" CoveragePercent="100">
       <Type Name="WeatherServiceTests" CoveredStatements="98" TotalStatements="98" CoveragePercent="100">
-        <Constructor Name="WeatherServiceTests()" CoveredStatements="6" TotalStatements="6" CoveragePercent="100" />
-        <Method Name="GetCurrentWeather_EmptyData():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetCurrentWeather_Failed():Task" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetCurrentWeather_ManyData():Task" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetCurrentWeather_NullData():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetCurrentWeather_Success():Task" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="13" TotalStatements="13" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetForecastWeather_EmptyData():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetForecastWeather_Failed():Task" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetForecastWeather_NullData():Task" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100" />
-        </Method>
-        <Method Name="GetForecastWeather_Success():Task" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="13" TotalStatements="13" CoveragePercent="100" />
+        <Type Name="&lt;GetCurrentWeather_EmptyData&gt;d__6" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+            <Statement FileIndex="1" Line="61" Column="9" EndLine="61" EndColumn="10" Covered="True" />
+            <Statement FileIndex="1" Line="63" Column="13" EndLine="63" EndColumn="78" Covered="True" />
+            <Statement FileIndex="1" Line="65" Column="13" EndLine="65" EndColumn="186" Covered="True" />
+            <Statement FileIndex="1" Line="67" Column="13" EndLine="67" EndColumn="89" Covered="True" />
+            <Statement FileIndex="1" Line="69" Column="13" EndLine="69" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="70" Column="13" EndLine="70" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="71" Column="13" EndLine="71" EndColumn="115" Covered="True" />
+            <Statement FileIndex="1" Line="72" Column="13" EndLine="72" EndColumn="205" Covered="True" />
+            <Statement FileIndex="1" Line="73" Column="9" EndLine="73" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetCurrentWeather_Failed&gt;d__4" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+            <Statement FileIndex="1" Line="28" Column="9" EndLine="28" EndColumn="10" Covered="True" />
+            <Statement FileIndex="1" Line="30" Column="13" EndLine="30" EndColumn="78" Covered="True" />
+            <Statement FileIndex="1" Line="31" Column="13" EndLine="31" EndColumn="43" Covered="True" />
+            <Statement FileIndex="1" Line="33" Column="13" EndLine="33" EndColumn="172" Covered="True" />
+            <Statement FileIndex="1" Line="35" Column="13" EndLine="35" EndColumn="89" Covered="True" />
+            <Statement FileIndex="1" Line="37" Column="13" EndLine="37" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="38" Column="13" EndLine="38" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="39" Column="13" EndLine="39" EndColumn="72" Covered="True" />
+            <Statement FileIndex="1" Line="40" Column="13" EndLine="40" EndColumn="203" Covered="True" />
+            <Statement FileIndex="1" Line="41" Column="9" EndLine="41" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetCurrentWeather_ManyData&gt;d__7" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+            <Statement FileIndex="1" Line="77" Column="9" EndLine="77" EndColumn="10" Covered="True" />
+            <Statement FileIndex="1" Line="79" Column="13" EndLine="79" EndColumn="78" Covered="True" />
+            <Statement FileIndex="1" Line="80" Column="13" EndLine="84" EndColumn="15" Covered="True" />
+            <Statement FileIndex="1" Line="86" Column="13" EndLine="89" EndColumn="17" Covered="True" />
+            <Statement FileIndex="1" Line="91" Column="13" EndLine="91" EndColumn="89" Covered="True" />
+            <Statement FileIndex="1" Line="93" Column="13" EndLine="93" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="94" Column="13" EndLine="94" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="95" Column="13" EndLine="95" EndColumn="148" Covered="True" />
+            <Statement FileIndex="1" Line="96" Column="13" EndLine="96" EndColumn="205" Covered="True" />
+            <Statement FileIndex="1" Line="97" Column="9" EndLine="97" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetCurrentWeather_NullData&gt;d__5" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+            <Statement FileIndex="1" Line="45" Column="9" EndLine="45" EndColumn="10" Covered="True" />
+            <Statement FileIndex="1" Line="47" Column="13" EndLine="47" EndColumn="78" Covered="True" />
+            <Statement FileIndex="1" Line="49" Column="13" EndLine="49" EndColumn="186" Covered="True" />
+            <Statement FileIndex="1" Line="51" Column="13" EndLine="51" EndColumn="89" Covered="True" />
+            <Statement FileIndex="1" Line="53" Column="13" EndLine="53" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="54" Column="13" EndLine="54" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="55" Column="13" EndLine="55" EndColumn="112" Covered="True" />
+            <Statement FileIndex="1" Line="56" Column="13" EndLine="56" EndColumn="205" Covered="True" />
+            <Statement FileIndex="1" Line="57" Column="9" EndLine="57" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetCurrentWeather_Success&gt;d__8" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
+            <Statement FileIndex="1" Line="101" Column="9" EndLine="101" EndColumn="10" Covered="True" />
+            <Statement FileIndex="1" Line="103" Column="13" EndLine="103" EndColumn="78" Covered="True" />
+            <Statement FileIndex="1" Line="104" Column="13" EndLine="107" EndColumn="15" Covered="True" />
+            <Statement FileIndex="1" Line="109" Column="13" EndLine="109" EndColumn="65" Covered="True" />
+            <Statement FileIndex="1" Line="111" Column="13" EndLine="114" EndColumn="17" Covered="True" />
+            <Statement FileIndex="1" Line="116" Column="13" EndLine="116" EndColumn="147" Covered="True" />
+            <Statement FileIndex="1" Line="119" Column="13" EndLine="119" EndColumn="89" Covered="True" />
+            <Statement FileIndex="1" Line="122" Column="13" EndLine="122" EndColumn="43" Covered="True" />
+            <Statement FileIndex="1" Line="123" Column="13" EndLine="123" EndColumn="41" Covered="True" />
+            <Statement FileIndex="1" Line="124" Column="13" EndLine="124" EndColumn="205" Covered="True" />
+            <Statement FileIndex="1" Line="125" Column="13" EndLine="125" EndColumn="56" Covered="True" />
+            <Statement FileIndex="1" Line="126" Column="13" EndLine="126" EndColumn="141" Covered="True" />
+            <Statement FileIndex="1" Line="127" Column="9" EndLine="127" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetForecastWeather_EmptyData&gt;d__11" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+            <Statement FileIndex="1" Line="164" Column="9" EndLine="164" EndColumn="10" Covered="True" />
+            <Statement FileIndex="1" Line="166" Column="13" EndLine="166" EndColumn="78" Covered="True" />
+            <Statement FileIndex="1" Line="168" Column="13" EndLine="168" EndColumn="210" Covered="True" />
+            <Statement FileIndex="1" Line="170" Column="13" EndLine="170" EndColumn="90" Covered="True" />
+            <Statement FileIndex="1" Line="172" Column="13" EndLine="172" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="173" Column="13" EndLine="173" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="174" Column="13" EndLine="174" EndColumn="115" Covered="True" />
+            <Statement FileIndex="1" Line="175" Column="13" EndLine="175" EndColumn="209" Covered="True" />
+            <Statement FileIndex="1" Line="176" Column="9" EndLine="176" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetForecastWeather_Failed&gt;d__9" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+            <Statement FileIndex="1" Line="131" Column="9" EndLine="131" EndColumn="10" Covered="True" />
+            <Statement FileIndex="1" Line="133" Column="13" EndLine="133" EndColumn="78" Covered="True" />
+            <Statement FileIndex="1" Line="134" Column="13" EndLine="134" EndColumn="43" Covered="True" />
+            <Statement FileIndex="1" Line="136" Column="13" EndLine="136" EndColumn="178" Covered="True" />
+            <Statement FileIndex="1" Line="138" Column="13" EndLine="138" EndColumn="90" Covered="True" />
+            <Statement FileIndex="1" Line="140" Column="13" EndLine="140" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="141" Column="13" EndLine="141" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="142" Column="13" EndLine="142" EndColumn="72" Covered="True" />
+            <Statement FileIndex="1" Line="143" Column="13" EndLine="143" EndColumn="209" Covered="True" />
+            <Statement FileIndex="1" Line="144" Column="9" EndLine="144" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetForecastWeather_NullData&gt;d__10" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
+            <Statement FileIndex="1" Line="148" Column="9" EndLine="148" EndColumn="10" Covered="True" />
+            <Statement FileIndex="1" Line="150" Column="13" EndLine="150" EndColumn="78" Covered="True" />
+            <Statement FileIndex="1" Line="152" Column="13" EndLine="152" EndColumn="210" Covered="True" />
+            <Statement FileIndex="1" Line="154" Column="13" EndLine="154" EndColumn="90" Covered="True" />
+            <Statement FileIndex="1" Line="156" Column="13" EndLine="156" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="157" Column="13" EndLine="157" EndColumn="42" Covered="True" />
+            <Statement FileIndex="1" Line="158" Column="13" EndLine="158" EndColumn="112" Covered="True" />
+            <Statement FileIndex="1" Line="159" Column="13" EndLine="159" EndColumn="209" Covered="True" />
+            <Statement FileIndex="1" Line="160" Column="9" EndLine="160" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetForecastWeather_Success&gt;d__12" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
+            <Statement FileIndex="1" Line="180" Column="9" EndLine="180" EndColumn="10" Covered="True" />
+            <Statement FileIndex="1" Line="182" Column="13" EndLine="182" EndColumn="78" Covered="True" />
+            <Statement FileIndex="1" Line="183" Column="13" EndLine="189" EndColumn="15" Covered="True" />
+            <Statement FileIndex="1" Line="191" Column="13" EndLine="191" EndColumn="66" Covered="True" />
+            <Statement FileIndex="1" Line="193" Column="13" EndLine="193" EndColumn="167" Covered="True" />
+            <Statement FileIndex="1" Line="195" Column="13" EndLine="195" EndColumn="149" Covered="True" />
+            <Statement FileIndex="1" Line="198" Column="13" EndLine="198" EndColumn="90" Covered="True" />
+            <Statement FileIndex="1" Line="201" Column="13" EndLine="201" EndColumn="43" Covered="True" />
+            <Statement FileIndex="1" Line="202" Column="13" EndLine="202" EndColumn="41" Covered="True" />
+            <Statement FileIndex="1" Line="203" Column="13" EndLine="203" EndColumn="209" Covered="True" />
+            <Statement FileIndex="1" Line="204" Column="13" EndLine="204" EndColumn="56" Covered="True" />
+            <Statement FileIndex="1" Line="205" Column="13" EndLine="205" EndColumn="143" Covered="True" />
+            <Statement FileIndex="1" Line="206" Column="9" EndLine="206" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+          <Statement FileIndex="1" Line="18" Column="9" EndLine="18" EndColumn="37" Covered="True" />
+          <Statement FileIndex="1" Line="19" Column="9" EndLine="19" EndColumn="10" Covered="True" />
+          <Statement FileIndex="1" Line="20" Column="13" EndLine="20" EndColumn="70" Covered="True" />
+          <Statement FileIndex="1" Line="21" Column="13" EndLine="21" EndColumn="47" Covered="True" />
+          <Statement FileIndex="1" Line="23" Column="13" EndLine="23" EndColumn="88" Covered="True" />
+          <Statement FileIndex="1" Line="24" Column="9" EndLine="24" EndColumn="10" Covered="True" />
         </Method>
       </Type>
     </Namespace>
@@ -462,122 +1358,234 @@
   <Assembly Name="Weather.UnitTests.Common" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
     <Namespace Name="Weather.UnitTests.Common.Extensions" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
       <Type Name="MoqLoggerExtensions" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
-        <Method Name="VerifyLog&lt;T&gt;(Mock&lt;ILogger&lt;T&gt;&gt;,LogLevel,EventId,string,Times):void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
-        <Method Name="VerifyLog&lt;T&gt;(Mock&lt;ILogger&lt;T&gt;&gt;,LogLevel,EventId,Times):void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="VerifyLog&lt;T&gt;(Moq.Mock&lt;Microsoft.Extensions.Logging.ILogger&lt;T&gt;&gt;,Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,Moq.Times):System.Void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="51" Line="21" Column="9" EndLine="21" EndColumn="10" Covered="True" />
+          <Statement FileIndex="51" Line="22" Column="13" EndLine="29" EndColumn="23" Covered="True" />
+          <Statement FileIndex="51" Line="30" Column="9" EndLine="30" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="VerifyLog&lt;T&gt;(Moq.Mock&lt;Microsoft.Extensions.Logging.ILogger&lt;T&gt;&gt;,Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,System.String,Moq.Times):System.Void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="51" Line="9" Column="9" EndLine="9" EndColumn="10" Covered="True" />
+          <Statement FileIndex="51" Line="10" Column="13" EndLine="17" EndColumn="23" Covered="True" />
+          <Statement FileIndex="51" Line="18" Column="9" EndLine="18" EndColumn="10" Covered="True" />
+        </Method>
       </Type>
     </Namespace>
   </Assembly>
   <Assembly Name="Wheaterbit.Client" CoveredStatements="7" TotalStatements="90" CoveragePercent="8">
     <Namespace Name="Wheaterbit.Client" CoveredStatements="0" TotalStatements="41" CoveragePercent="0">
       <Type Name="WeatherbitHttpClient" CoveredStatements="0" TotalStatements="41" CoveragePercent="0">
-        <Constructor Name="WeatherbitHttpClient(IOptions&lt;WeatherbitOptions&gt;,IHttpClientFactory,IValidator&lt;WeatherbitOptions&gt;,IJsonSerializerSettingsFactory)" CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
-        <Method Name="GetCurrentWeather(long,long,CancellationToken):Task&lt;Result&lt;CurrentWeatherDataDto&gt;&gt;" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <Type Name="&lt;GetCurrentWeather&gt;d__8" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Method Name="MoveNext():System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+            <Statement FileIndex="38" Line="60" Column="9" EndLine="60" EndColumn="10" Covered="False" />
+            <Statement FileIndex="38" Line="61" Column="13" EndLine="70" EndColumn="15" Covered="False" />
+            <Statement FileIndex="38" Line="72" Column="13" EndLine="72" EndColumn="91" Covered="False" />
+            <Statement FileIndex="38" Line="73" Column="9" EndLine="73" EndColumn="10" Covered="False" />
+          </Method>
+        </Type>
+        <Type Name="&lt;GetSixteenDayForecast&gt;d__7" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Method Name="MoveNext():System.Void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+            <Statement FileIndex="38" Line="44" Column="9" EndLine="44" EndColumn="10" Covered="False" />
+            <Statement FileIndex="38" Line="45" Column="13" EndLine="54" EndColumn="15" Covered="False" />
+            <Statement FileIndex="38" Line="56" Column="13" EndLine="56" EndColumn="88" Covered="False" />
+            <Statement FileIndex="38" Line="57" Column="9" EndLine="57" EndColumn="10" Covered="False" />
+          </Method>
+        </Type>
+        <Type Name="&lt;SendAsync&gt;d__10&lt;T&gt;" CoveredStatements="0" TotalStatements="12" CoveragePercent="0">
+          <Method Name="MoveNext():System.Void" CoveredStatements="0" TotalStatements="12" CoveragePercent="0">
+            <Statement FileIndex="38" Line="88" Column="9" EndLine="88" EndColumn="10" Covered="False" />
+            <Statement FileIndex="38" Line="89" Column="13" EndLine="89" EndColumn="97" Covered="False" />
+            <Statement FileIndex="38" Line="90" Column="13" EndLine="90" EndColumn="47" Covered="False" />
+            <Statement FileIndex="38" Line="91" Column="13" EndLine="91" EndColumn="14" Covered="False" />
+            <Statement FileIndex="38" Line="92" Column="17" EndLine="92" EndColumn="91" Covered="False" />
+            <Statement FileIndex="38" Line="95" Column="13" EndLine="95" EndColumn="76" Covered="False" />
+            <Statement FileIndex="38" Line="97" Column="13" EndLine="97" EndColumn="115" Covered="False" />
+            <Statement FileIndex="38" Line="98" Column="13" EndLine="98" EndColumn="31" Covered="False" />
+            <Statement FileIndex="38" Line="99" Column="13" EndLine="99" EndColumn="14" Covered="False" />
+            <Statement FileIndex="38" Line="100" Column="17" EndLine="100" EndColumn="72" Covered="False" />
+            <Statement FileIndex="38" Line="103" Column="13" EndLine="103" EndColumn="38" Covered="False" />
+            <Statement FileIndex="38" Line="104" Column="9" EndLine="104" EndColumn="10" Covered="False" />
+          </Method>
+        </Type>
+        <Type Name="&lt;SendAsyncSave&gt;d__9&lt;T&gt;" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
+          <Method Name="MoveNext():System.Void" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
+            <Statement FileIndex="38" Line="76" Column="9" EndLine="76" EndColumn="10" Covered="False" />
+            <Statement FileIndex="38" Line="78" Column="13" EndLine="78" EndColumn="14" Covered="False" />
+            <Statement FileIndex="38" Line="79" Column="17" EndLine="79" EndColumn="78" Covered="False" />
+            <Statement FileIndex="38" Line="81" Column="13" EndLine="81" EndColumn="33" Covered="False" />
+            <Statement FileIndex="38" Line="82" Column="13" EndLine="82" EndColumn="14" Covered="False" />
+            <Statement FileIndex="38" Line="83" Column="17" EndLine="83" EndColumn="48" Covered="False" />
+            <Statement FileIndex="38" Line="85" Column="9" EndLine="85" EndColumn="10" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor(Microsoft.Extensions.Options.IOptions&lt;Wheaterbit.Client.Options.WeatherbitOptions&gt;,System.Net.Http.IHttpClientFactory,Validot.IValidator&lt;Wheaterbit.Client.Options.WeatherbitOptions&gt;,Wheaterbit.Client.Abstractions.IJsonSerializerSettingsFactory):System.Void" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+          <Statement FileIndex="38" Line="20" Column="9" EndLine="23" EndColumn="74" Covered="False" />
+          <Statement FileIndex="38" Line="24" Column="9" EndLine="24" EndColumn="10" Covered="False" />
+          <Statement FileIndex="38" Line="25" Column="13" EndLine="25" EndColumn="51" Covered="False" />
+          <Statement FileIndex="38" Line="26" Column="13" EndLine="26" EndColumn="60" Covered="False" />
+          <Statement FileIndex="38" Line="27" Column="13" EndLine="27" EndColumn="52" Covered="False" />
+          <Statement FileIndex="38" Line="28" Column="13" EndLine="28" EndColumn="96" Covered="False" />
+          <Statement FileIndex="38" Line="30" Column="13" EndLine="30" EndColumn="56" Covered="False" />
+          <Statement FileIndex="38" Line="31" Column="9" EndLine="31" EndColumn="10" Covered="False" />
         </Method>
-        <Method Name="GetSixteenDayForecast(long,long,CancellationToken):Task&lt;Result&lt;ForecastWeatherDto&gt;&gt;" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <Method Name="ValidateOptions(Validot.IValidator&lt;Wheaterbit.Client.Options.WeatherbitOptions&gt;,Microsoft.Extensions.Options.IOptions&lt;Wheaterbit.Client.Options.WeatherbitOptions&gt;):System.Void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+          <Statement FileIndex="38" Line="34" Column="9" EndLine="34" EndColumn="10" Covered="False" />
+          <Statement FileIndex="38" Line="35" Column="13" EndLine="35" EndColumn="77" Covered="False" />
+          <Statement FileIndex="38" Line="37" Column="13" EndLine="37" EndColumn="43" Covered="False" />
+          <Statement FileIndex="38" Line="38" Column="13" EndLine="38" EndColumn="14" Covered="False" />
+          <Statement FileIndex="38" Line="39" Column="17" EndLine="39" EndColumn="105" Covered="False" />
+          <Statement FileIndex="38" Line="41" Column="9" EndLine="41" EndColumn="10" Covered="False" />
         </Method>
-        <Method Name="SendAsync&lt;T&gt;(HttpRequestMessage,CancellationToken):Task&lt;Result&lt;T&gt;&gt;" CoveredStatements="0" TotalStatements="12" CoveragePercent="0">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="12" CoveragePercent="0" />
-        </Method>
-        <Method Name="SendAsyncSave&lt;T&gt;(HttpRequestMessage,CancellationToken):Task&lt;Result&lt;T&gt;&gt;" CoveredStatements="0" TotalStatements="7" CoveragePercent="0">
-          <InternalCompiledMethod Name="MoveNext():void" CoveredStatements="0" TotalStatements="7" CoveragePercent="0" />
-        </Method>
-        <Method Name="ValidateOptions(IValidator&lt;WeatherbitOptions&gt;,IOptions&lt;WeatherbitOptions&gt;):void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
       </Type>
     </Namespace>
     <Namespace Name="Wheaterbit.Client.Configuration" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
       <Type Name="ContainerConfigurationExtension" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
-        <Method Name="AddWeatherbit(IServiceCollection,IConfiguration):IServiceCollection" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <Method Name="AddWeatherbit(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration):Microsoft.Extensions.DependencyInjection.IServiceCollection" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+          <Statement FileIndex="46" Line="14" Column="9" EndLine="14" EndColumn="10" Covered="False" />
+          <Statement FileIndex="46" Line="15" Column="13" EndLine="15" EndColumn="116" Covered="False" />
+          <Statement FileIndex="46" Line="17" Column="13" EndLine="19" EndColumn="96" Covered="False" />
+          <Statement FileIndex="46" Line="20" Column="9" EndLine="20" EndColumn="10" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Wheaterbit.Client.Dtos" CoveredStatements="7" TotalStatements="23" CoveragePercent="30">
       <Type Name="CurrentWeatherDataDto" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
-        <Constructor Name="CurrentWeatherDataDto()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        <AutoProperty Name="Data:IReadOnlyCollection&lt;CurrentWeatherDto&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
+        <Method Name=".ctor():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="42" Line="5" Column="77" EndLine="5" EndColumn="106" Covered="True" />
+        </Method>
+        <Method Name="get_Data():System.Collections.Generic.IReadOnlyCollection&lt;Wheaterbit.Client.Dtos.CurrentWeatherDto&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="42" Line="5" Column="62" EndLine="5" EndColumn="66" Covered="True" />
+        </Method>
+        <Method Name="set_Data(System.Collections.Generic.IReadOnlyCollection&lt;Wheaterbit.Client.Dtos.CurrentWeatherDto&gt;):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="42" Line="5" Column="67" EndLine="5" EndColumn="72" Covered="True" />
+        </Method>
       </Type>
       <Type Name="CurrentWeatherDto" CoveredStatements="0" TotalStatements="10" CoveragePercent="0">
-        <AutoProperty Name="city_name:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="ob_time:DateTime" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="sunrise:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="sunset:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="temp:double" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Method Name="get_city_name():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="7" Column="35" EndLine="7" EndColumn="39" Covered="False" />
+        </Method>
+        <Method Name="get_ob_time():System.DateTime" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="9" Column="35" EndLine="9" EndColumn="39" Covered="False" />
+        </Method>
+        <Method Name="get_sunrise():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="13" Column="33" EndLine="13" EndColumn="37" Covered="False" />
+        </Method>
+        <Method Name="get_sunset():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="11" Column="32" EndLine="11" EndColumn="36" Covered="False" />
+        </Method>
+        <Method Name="get_temp():System.Double" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="5" Column="30" EndLine="5" EndColumn="34" Covered="False" />
+        </Method>
+        <Method Name="set_city_name(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="7" Column="40" EndLine="7" EndColumn="45" Covered="False" />
+        </Method>
+        <Method Name="set_ob_time(System.DateTime):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="9" Column="40" EndLine="9" EndColumn="45" Covered="False" />
+        </Method>
+        <Method Name="set_sunrise(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="13" Column="38" EndLine="13" EndColumn="43" Covered="False" />
+        </Method>
+        <Method Name="set_sunset(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="11" Column="37" EndLine="11" EndColumn="42" Covered="False" />
+        </Method>
+        <Method Name="set_temp(System.Double):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="43" Line="5" Column="35" EndLine="5" EndColumn="40" Covered="False" />
+        </Method>
       </Type>
       <Type Name="ForecastTemperatureDto" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
-        <AutoProperty Name="ob_time:DateTime" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="temp:double" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Method Name="get_ob_time():System.DateTime" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="44" Line="6" Column="35" EndLine="6" EndColumn="39" Covered="False" />
+        </Method>
+        <Method Name="get_temp():System.Double" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="44" Line="5" Column="30" EndLine="5" EndColumn="34" Covered="False" />
+        </Method>
+        <Method Name="set_ob_time(System.DateTime):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="44" Line="6" Column="40" EndLine="6" EndColumn="45" Covered="False" />
+        </Method>
+        <Method Name="set_temp(System.Double):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="44" Line="5" Column="35" EndLine="5" EndColumn="40" Covered="False" />
+        </Method>
       </Type>
       <Type Name="ForecastWeatherDto" CoveredStatements="4" TotalStatements="6" CoveragePercent="67">
-        <Constructor Name="ForecastWeatherDto()" CoveredStatements="2" TotalStatements="2" CoveragePercent="100" />
-        <AutoProperty Name="city_name:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertyInitOnlySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="Data:IReadOnlyCollection&lt;ForecastTemperatureDto&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
-          <PropertyGetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-          <PropertyInitOnlySetter CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
-        </AutoProperty>
+        <Method Name=".ctor():System.Void" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Statement FileIndex="45" Line="5" Column="82" EndLine="5" EndColumn="116" Covered="True" />
+          <Statement FileIndex="45" Line="7" Column="50" EndLine="7" EndColumn="62" Covered="True" />
+        </Method>
+        <Method Name="get_city_name():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="45" Line="7" Column="35" EndLine="7" EndColumn="39" Covered="False" />
+        </Method>
+        <Method Name="get_Data():System.Collections.Generic.IReadOnlyCollection&lt;Wheaterbit.Client.Dtos.ForecastTemperatureDto&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="45" Line="5" Column="67" EndLine="5" EndColumn="71" Covered="True" />
+        </Method>
+        <Method Name="set_city_name(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="45" Line="7" Column="40" EndLine="7" EndColumn="45" Covered="False" />
+        </Method>
+        <Method Name="set_Data(System.Collections.Generic.IReadOnlyCollection&lt;Wheaterbit.Client.Dtos.ForecastTemperatureDto&gt;):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="45" Line="5" Column="72" EndLine="5" EndColumn="77" Covered="True" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Wheaterbit.Client.Factories" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
       <Type Name="JsonSerializerSettingsFactory" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
-        <Method Name="Create():JsonSerializerSettings" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <Method Name="Create():Newtonsoft.Json.JsonSerializerSettings" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="41" Line="9" Column="9" EndLine="9" EndColumn="10" Covered="False" />
+          <Statement FileIndex="41" Line="10" Column="13" EndLine="13" EndColumn="15" Covered="False" />
+          <Statement FileIndex="41" Line="14" Column="9" EndLine="14" EndColumn="10" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Wheaterbit.Client.Options" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
       <Type Name="WeatherbitOptions" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
-        <Constructor Name="WeatherbitOptions()" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
-        <AutoProperty Name="BaseUrl:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="XRapidAPIHost:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
-        <AutoProperty Name="XRapidAPIKey:string" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          <PropertySetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <Statement FileIndex="40" Line="7" Column="47" EndLine="7" EndColumn="59" Covered="False" />
+          <Statement FileIndex="40" Line="8" Column="52" EndLine="8" EndColumn="64" Covered="False" />
+          <Statement FileIndex="40" Line="9" Column="53" EndLine="9" EndColumn="65" Covered="False" />
+        </Method>
+        <Method Name="get_BaseUrl():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="40" Line="7" Column="33" EndLine="7" EndColumn="37" Covered="False" />
+        </Method>
+        <Method Name="get_XRapidAPIHost():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="40" Line="9" Column="39" EndLine="9" EndColumn="43" Covered="False" />
+        </Method>
+        <Method Name="get_XRapidAPIKey():System.String" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="40" Line="8" Column="38" EndLine="8" EndColumn="42" Covered="False" />
+        </Method>
+        <Method Name="set_BaseUrl(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="40" Line="7" Column="38" EndLine="7" EndColumn="42" Covered="False" />
+        </Method>
+        <Method Name="set_XRapidAPIHost(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="40" Line="9" Column="44" EndLine="9" EndColumn="48" Covered="False" />
+        </Method>
+        <Method Name="set_XRapidAPIKey(System.String):System.Void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="40" Line="8" Column="43" EndLine="8" EndColumn="47" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
     <Namespace Name="Wheaterbit.Client.Validation" CoveredStatements="0" TotalStatements="10" CoveragePercent="0">
       <Type Name="WeatherbitOptionsSpecificationHolder" CoveredStatements="0" TotalStatements="10" CoveragePercent="0">
-        <Constructor Name="WeatherbitOptionsSpecificationHolder()" CoveredStatements="0" TotalStatements="9" CoveragePercent="0">
-          <OwnCoverage CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
-          <AnonymousMethod Name="(ISpecificationIn&lt;string&gt;):ISpecificationOut&lt;string&gt;" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
-            <OwnCoverage CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-            <AnonymousMethod Name="(string):bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-          </AnonymousMethod>
-          <AnonymousMethod Name="(ISpecificationIn&lt;WeatherbitOptions&gt;):ISpecificationOut&lt;WeatherbitOptions&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </Constructor>
-        <AutoProperty Name="Specification:Specification&lt;WeatherbitOptions&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
-          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
-        </AutoProperty>
+        <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="2" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__3_0(Validot.Specification.ISpecificationIn&lt;System.String&gt;):Validot.Specification.ISpecificationOut&lt;System.String&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="39" Line="12" Column="70" EndLine="13" EndColumn="58" Covered="False" />
+          </Method>
+          <Method Name="&lt;.ctor&gt;b__3_2(System.String):System.Boolean" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="39" Line="13" Column="28" EndLine="13" EndColumn="57" Covered="False" />
+          </Method>
+        </Type>
+        <Type Name="&lt;&gt;c__DisplayClass3_0" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Method Name="&lt;.ctor&gt;b__1(Validot.Specification.ISpecificationIn&lt;Wheaterbit.Client.Options.WeatherbitOptions&gt;):Validot.Specification.ISpecificationOut&lt;Wheaterbit.Client.Options.WeatherbitOptions&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+            <Statement FileIndex="39" Line="15" Column="84" EndLine="18" EndColumn="70" Covered="False" />
+          </Method>
+        </Type>
+        <Method Name=".ctor():System.Void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0">
+          <Statement FileIndex="39" Line="10" Column="9" EndLine="10" EndColumn="54" Covered="False" />
+          <Statement FileIndex="39" Line="11" Column="9" EndLine="11" EndColumn="10" Covered="False" />
+          <Statement FileIndex="39" Line="12" Column="13" EndLine="13" EndColumn="59" Covered="False" />
+          <Statement FileIndex="39" Line="15" Column="13" EndLine="18" EndColumn="71" Covered="False" />
+          <Statement FileIndex="39" Line="20" Column="13" EndLine="20" EndColumn="60" Covered="False" />
+          <Statement FileIndex="39" Line="21" Column="9" EndLine="21" EndColumn="10" Covered="False" />
+        </Method>
+        <Method Name="get_Specification():Validot.Specification&lt;Wheaterbit.Client.Options.WeatherbitOptions&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="39" Line="8" Column="65" EndLine="8" EndColumn="69" Covered="False" />
+        </Method>
       </Type>
     </Namespace>
   </Assembly>

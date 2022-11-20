@@ -2,27 +2,27 @@
 {
     public static class LogEvents
     {
-        public const int GeneralError = 1000;
+        public static readonly int GeneralError = 1000;
 
         //Favorites
-        public const int FavoriteWeathersGeneral = 2000;
+        public static readonly int FavoriteWeathersGeneral = 2000;
 
-        public const int FavoriteWeathersStoreToDatabase = 2100;
+        public static readonly int FavoriteWeathersStoreToDatabase = 2100;
 
-        public const int FavoriteWeathersGetFromDatabase = 2200;
+        public static readonly int FavoriteWeathersGetFromDatabase = 2200;
 
         //Current
-        public const int CurrentWeathersGeneral = 3000;
+        public static readonly int CurrentWeathersGeneral = 3000;
 
-        public const int CurrentWeathersValidation = 3100;
+        public static readonly int CurrentWeathersValidation = 3100;
 
-        public const int CurrentWeathersGet = 3200;
+        public static readonly int CurrentWeathersGet = 3200;
 
         //Forecast
-        public const int ForecastWeathersGeneral = 4000;
+        public static readonly int ForecastWeathersGeneral = 4000;
 
-        public const int ForecastWeathersValidation = 4100;
+        public static readonly int ForecastWeathersValidation = 4100;
 
-        public const int ForecastWeathersGet = 4200;
+        public static readonly int ForecastWeathersGet = 4200;
     }
 }

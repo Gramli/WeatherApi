@@ -7,7 +7,7 @@ namespace Wheaterbit.Client.Factories
     {
         public JsonSerializerSettings Create()
         {
-            return new JsonSerializerSettings()
+            return new JsonSerializerSettings
             {
                 DateFormatString = "yyyy-MM-dd hh:mm"
             };

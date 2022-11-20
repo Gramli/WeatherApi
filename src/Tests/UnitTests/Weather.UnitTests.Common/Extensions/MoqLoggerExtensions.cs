@@ -11,7 +11,7 @@ namespace Weather.UnitTests.Common.Extensions
                x => x.Log(
                    It.Is<LogLevel>(y=>y.Equals(logLevel)),
                    It.Is<EventId>(y=>y.Equals(eventId)),
-                   It.Is<It.IsAnyType>((o, t) => string.Equals(message, o.ToString(), StringComparison.InvariantCultureIgnoreCase)),
+                   It.Is<It.IsAnyType>((o, _) => string.Equals(message, o.ToString(), StringComparison.InvariantCultureIgnoreCase)),
                    It.IsAny<Exception>(),
                    It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
                times);

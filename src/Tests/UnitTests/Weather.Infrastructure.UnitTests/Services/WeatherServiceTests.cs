@@ -27,7 +27,7 @@ namespace Weather.Infrastructure.UnitTests.Services
         public async Task GetCurrentWeather_Failed()
         {
             //Arrange
-            var location = new LocationDto() { Latitude = 15, Longitude = 25 };
+            var location = new LocationDto { Latitude = 15, Longitude = 25 };
             var failedMessage = "message";
 
             _weatherbiClientMock.Setup(x=>x.GetCurrentWeather(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failedMessage));
@@ -44,7 +44,7 @@ namespace Weather.Infrastructure.UnitTests.Services
         public async Task GetCurrentWeather_NullData()
         {
             //Arrange
-            var location = new LocationDto() { Latitude = 15, Longitude = 25 };
+            var location = new LocationDto { Latitude = 15, Longitude = 25 };
 
             _weatherbiClientMock.Setup(x => x.GetCurrentWeather(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok((CurrentWeatherDataDto)null));
             //Act
@@ -60,7 +60,7 @@ namespace Weather.Infrastructure.UnitTests.Services
         public async Task GetCurrentWeather_EmptyData()
         {
             //Arrange
-            var location = new LocationDto() { Latitude = 15, Longitude = 25 };
+            var location = new LocationDto { Latitude = 15, Longitude = 25 };
 
             _weatherbiClientMock.Setup(x => x.GetCurrentWeather(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(new CurrentWeatherDataDto()));
             //Act
@@ -76,8 +76,8 @@ namespace Weather.Infrastructure.UnitTests.Services
         public async Task GetCurrentWeather_ManyData()
         {
             //Arrange
-            var location = new LocationDto() { Latitude = 15, Longitude = 25 };
-            var data = new List<Wheaterbit.Client.Dtos.CurrentWeatherDto>()
+            var location = new LocationDto { Latitude = 15, Longitude = 25 };
+            var data = new List<Wheaterbit.Client.Dtos.CurrentWeatherDto>
             {
                 new Wheaterbit.Client.Dtos.CurrentWeatherDto(),
                 new Wheaterbit.Client.Dtos.CurrentWeatherDto()
@@ -100,8 +100,8 @@ namespace Weather.Infrastructure.UnitTests.Services
         public async Task GetCurrentWeather_Success()
         {
             //Arrange
-            var location = new LocationDto() { Latitude = 15, Longitude = 25 };
-            var data = new List<Wheaterbit.Client.Dtos.CurrentWeatherDto>()
+            var location = new LocationDto { Latitude = 15, Longitude = 25 };
+            var data = new List<Wheaterbit.Client.Dtos.CurrentWeatherDto>
             {
                 new Wheaterbit.Client.Dtos.CurrentWeatherDto(),
             };
@@ -130,7 +130,7 @@ namespace Weather.Infrastructure.UnitTests.Services
         public async Task GetForecastWeather_Failed()
         {
             //Arrange
-            var location = new LocationDto() { Latitude = 15, Longitude = 25 };
+            var location = new LocationDto { Latitude = 15, Longitude = 25 };
             var failedMessage = "message";
 
             _weatherbiClientMock.Setup(x => x.GetSixteenDayForecast(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failedMessage));
@@ -147,7 +147,7 @@ namespace Weather.Infrastructure.UnitTests.Services
         public async Task GetForecastWeather_NullData()
         {
             //Arrange
-            var location = new LocationDto() { Latitude = 15, Longitude = 25 };
+            var location = new LocationDto { Latitude = 15, Longitude = 25 };
 
             _weatherbiClientMock.Setup(x => x.GetSixteenDayForecast(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok((Wheaterbit.Client.Dtos.ForecastWeatherDto)null));
             //Act
@@ -163,7 +163,7 @@ namespace Weather.Infrastructure.UnitTests.Services
         public async Task GetForecastWeather_EmptyData()
         {
             //Arrange
-            var location = new LocationDto() { Latitude = 15, Longitude = 25 };
+            var location = new LocationDto { Latitude = 15, Longitude = 25 };
 
             _weatherbiClientMock.Setup(x => x.GetSixteenDayForecast(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(new Wheaterbit.Client.Dtos.ForecastWeatherDto()));
             //Act
@@ -179,8 +179,8 @@ namespace Weather.Infrastructure.UnitTests.Services
         public async Task GetForecastWeather_Success()
         {
             //Arrange
-            var location = new LocationDto() { Latitude = 15, Longitude = 25 };
-            var data = new Wheaterbit.Client.Dtos.ForecastWeatherDto()
+            var location = new LocationDto { Latitude = 15, Longitude = 25 };
+            var data = new Wheaterbit.Client.Dtos.ForecastWeatherDto
             {
                 Data = new List<Wheaterbit.Client.Dtos.ForecastTemperatureDto>()
                 {

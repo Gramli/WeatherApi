@@ -5,7 +5,7 @@
         public LocationDto Location { get; init; }
         public GetCurrentWeatherQuery(long latitude, long longtitude)
         {
-            Location = new LocationDto()
+            Location = new LocationDto
             {
                 Latitude = latitude,
                 Longitude = longtitude

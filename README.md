@@ -1,6 +1,7 @@
 # IN PROGRESS
 
 # WeatherApi
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ef95aa9e75894a81911fb2c6bc3e8ed7)](https://app.codacy.com/gh/Gramli/WeatherApi?utm_source=github.com&utm_medium=referral&utm_content=Gramli/WeatherApi&utm_campaign=Badge_Grade_Settings)
 [![.NET Build and Test](https://github.com/Gramli/WeatherApi/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Gramli/WeatherApi/actions/workflows/dotnet.yml)
 
 REST API solution demonstrates how to create clean and modern API (from my point of view) with Clean Architecture, minimal API and various of design patterns.  

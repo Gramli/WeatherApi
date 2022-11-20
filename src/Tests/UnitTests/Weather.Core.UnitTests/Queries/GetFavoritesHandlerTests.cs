@@ -132,7 +132,7 @@ namespace Weather.Core.UnitTests.Queries
             var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>()
+                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>
                 {
                     locationDto,
                     new LocationDto(),

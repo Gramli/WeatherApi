@@ -108,7 +108,7 @@ namespace Weather.Infrastructure.UnitTests.Services
 
             var mapResult = new Domain.Dtos.CurrentWeatherDto();
 
-            _weatherbiClientMock.Setup(x => x.GetCurrentWeather(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(new CurrentWeatherDataDto()
+            _weatherbiClientMock.Setup(x => x.GetCurrentWeather(It.IsAny<long>(), It.IsAny<long>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(new CurrentWeatherDataDto
             {
                 Data = data
             }));

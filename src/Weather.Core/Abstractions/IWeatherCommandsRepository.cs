@@ -5,6 +5,6 @@ namespace Weather.Core.Abstractions
 {
     public interface IWeatherCommandsRepository
     {
-        Task<Result<int>> AddFavoriteLocation(AddFavoriteCommand locationDto, CancellationToken cancellationToken);
+        Task<Result<int>> AddFavoriteLocation(AddFavoriteCommand addFavoriteCommand, CancellationToken cancellationToken);
     }
 }

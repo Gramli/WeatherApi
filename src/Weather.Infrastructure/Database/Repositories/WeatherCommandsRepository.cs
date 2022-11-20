@@ -21,9 +21,9 @@ namespace Weather.Infrastructure.Database.Repositories
         public async Task<Result<int>> AddFavoriteLocation(AddFavoriteCommand addFavoriteCommand, CancellationToken cancellationToken)
         {
             var locationEntity = _mapper.Map<FavoriteLocationEntity>(addFavoriteCommand.Location);
-            _weatherContext.FavoriteLocations.Add(locationEntity);
-            var id = await _weatherContext.SaveChangesAsync(cancellationToken);
-            return Result.Ok(id);
+            await _weatherContext.FavoriteLocations.AddAsync(locationEntity);
+            await _weatherContext.SaveChangesAsync(cancellationToken);
+            return Result.Ok(locationEntity.Id);
         }
     }
 }

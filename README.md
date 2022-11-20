@@ -68,7 +68,8 @@ Solution contains four layers:
     "XRapidAPIHost": "value from code snippet"
   }
 ```
-4. Set Weather.API as startup project and run  	
+4. Set Weather.API as startup project and run
+5. Test it using SwaggerUI
 
 ## Conclusion
 ..

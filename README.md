@@ -85,7 +85,12 @@ Solution contains four layers:
 ![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
 
 ## Technologies
-...
+* [ASP.NET Core 6](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0)
+* [AutoMapper](https://github.com/AutoMapper/AutoMapper)
+* [FluentResuls](https://github.com/altmann/FluentResults)
+* [Validot] (https://github.com/bartoszlenar/Validot)
+* [Moq] (https://github.com/moq/moq4)
+* [Xunit] (https://github.com/xunit/xunit)
 ## Conclusion
 ...
 

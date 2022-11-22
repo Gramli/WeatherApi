@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Root CoveredStatements="673" TotalStatements="926" CoveragePercent="73" ReportType="DetailedXml" DotCoverVersion="2022.2.4">
+<Root CoveredStatements="727" TotalStatements="975" CoveragePercent="75" ReportType="DetailedXml" DotCoverVersion="2022.2.4">
   <FileIndices>
     <File Index="1" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Infrastructure.UnitTests\Services\WeatherServiceTests.cs" ChecksumAlgorithm="SHA256" Checksum="D4F653181BD55A2FE954BB02598457DD9177BD89320F10ED91F8DA233C42B16A" />
     <File Index="2" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Infrastructure.UnitTests\Database\TestWeatherContext.cs" ChecksumAlgorithm="SHA256" Checksum="829BD7C125EADB638957E428765433ACAD9DEE6A16FC95836E784D14F73DC212" />
-    <File Index="3" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Infrastructure.UnitTests\Database\Repositories\WeatherCommandsRepositoryTests.cs" ChecksumAlgorithm="SHA256" Checksum="2FA9F4E1283BA70A8477DD44D76964F5ADFA1E0E19B157982CAC0B354C175B88" />
+    <File Index="3" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Infrastructure.UnitTests\Database\Repositories\WeatherCommandsRepositoryTests.cs" ChecksumAlgorithm="SHA256" Checksum="31DE741E0B802871267600744541F4A82A088DDE63BD2D194CF4ED1F9F92DD6F" />
     <File Index="4" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Services\WeatherService.cs" ChecksumAlgorithm="SHA256" Checksum="D43A49BE76FDFF32B64E80D9A8DA724EAB65D17E173F552D69BD025F83B032C9" />
     <File Index="5" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Mapping\Profiles\ExternalClientsProfile.cs" ChecksumAlgorithm="SHA256" Checksum="8A43F80879AAE5D8774BCAC12BB4B2FF12F77BF1FD510C367BE956542DBFA80A" />
     <File Index="6" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Mapping\Profiles\WeatherEntitiesProfile.cs" ChecksumAlgorithm="SHA256" Checksum="78B6FBBCDC26409580D4FA21B3D7988271AE4FD6E6DA48A5B655E3F5E711FB48" />
     <File Index="7" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Database\Repositories\WeatherCommandsRepository.cs" ChecksumAlgorithm="SHA256" Checksum="5CC0DC1830F9CB83B0B8B997AAAFE455B93647BB65CDDEB0D8843323EC6DFFCA" />
-    <File Index="8" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Database\Repositories\WeatherQueriesRepository.cs" ChecksumAlgorithm="SHA256" Checksum="972CC0A4888D727514E504AA2DD6B0149A09ACB20786FF87AACB1832C074BAA3" />
+    <File Index="8" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Database\Repositories\WeatherQueriesRepository.cs" ChecksumAlgorithm="SHA256" Checksum="8D027CE7A6A18F3D57583FA15DCF90C2291E794F331880FA6E27F01886CD2C76" />
     <File Index="9" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Database\EFContext\WeatherContext.cs" ChecksumAlgorithm="SHA256" Checksum="11F70A97C42B65ED3CDD6F3EF15E77079D1B5D491F615CC568A69F7C380D7A48" />
     <File Index="10" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Database\EFContext\Entities\FavoriteLocationEntity.cs" ChecksumAlgorithm="SHA256" Checksum="ED1BB6224A0F160513CE4CBBE7FF5908D0699D4D7A0EF4C80CF8165FEFBE1C58" />
     <File Index="11" Name="E:\GitHub\WheaterApi\src\Weather.Infrastructure\Configuration\ContainerConfigurationExtension.cs" ChecksumAlgorithm="SHA256" Checksum="E2859DB144D731A68E0C2F14F94901217DA7CB8BA40E2DC211C48D500DFBB2F3" />
@@ -54,6 +54,9 @@
     <File Index="51" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Core.UnitTests\Queries\GetForecastWeatherHandlerTests.cs" ChecksumAlgorithm="SHA256" Checksum="1D826072F2EB55E583C1409EF3F9E24E4952DAAE6D6240E200EE5D6DA479AF0C" />
     <File Index="52" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Core.UnitTests\Commands\AddFavoriteHandlerTests.cs" ChecksumAlgorithm="SHA256" Checksum="EB8674F5796F4619788A7B4C3036A7808CBCC2E6328B9E41D90EF05507E06DD8" />
     <File Index="53" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.UnitTests.Common\Extensions\MoqLoggerExtensions.cs" ChecksumAlgorithm="SHA256" Checksum="FCF016E8421788B9E6128D0C0E4B993D3DF40DBC2AA2546A63E688AD93A0B223" />
+    <File Index="54" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Domain.UnitTests\Extensions\EnumerableExtensionsTests.cs" ChecksumAlgorithm="SHA256" Checksum="B0AB5E9AC0253ED49412CF73F6F7958B034C7592F1767B0FF49B8430FDDBA1E4" />
+    <File Index="55" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Domain.UnitTests\Extensions\FluentResultExtensionsTests.cs" ChecksumAlgorithm="SHA256" Checksum="6A344799C03A84194F03091DF83AB00920345F5426C817AB0943F14EF2FC7265" />
+    <File Index="56" Name="E:\GitHub\WheaterApi\src\Tests\UnitTests\Weather.Domain.UnitTests\Extensions\TestError.cs" ChecksumAlgorithm="SHA256" Checksum="9E485BB4046747DDC6E9AF7D92AC78073CF48801817E6C8D67B1D581D2778C76" />
   </FileIndices>
   <Assembly Name="Weather.Core" CoveredStatements="112" TotalStatements="192" CoveragePercent="58">
     <Namespace Name="Weather.Core.Commands" CoveredStatements="17" TotalStatements="17" CoveragePercent="100">
@@ -796,7 +799,7 @@
       </Type>
     </Namespace>
   </Assembly>
-  <Assembly Name="Weather.Domain" CoveredStatements="90" TotalStatements="124" CoveragePercent="73">
+  <Assembly Name="Weather.Domain" CoveredStatements="94" TotalStatements="124" CoveragePercent="76">
     <Namespace Name="Weather.Domain.Dtos" CoveredStatements="12" TotalStatements="30" CoveragePercent="40">
       <Type Name="CurrentWeatherDto" CoveredStatements="3" TotalStatements="13" CoveragePercent="23">
         <Method Name=".ctor():System.Void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
@@ -936,7 +939,7 @@
         </Method>
       </Type>
     </Namespace>
-    <Namespace Name="Weather.Domain.Extensions" CoveredStatements="39" TotalStatements="55" CoveragePercent="71">
+    <Namespace Name="Weather.Domain.Extensions" CoveredStatements="43" TotalStatements="55" CoveragePercent="78">
       <Type Name="EnumerableExtensions" CoveredStatements="12" TotalStatements="21" CoveragePercent="57">
         <Type Name="&lt;ForEachAsync&gt;d__1&lt;T&gt;" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
           <Method Name="MoveNext():System.Void" CoveredStatements="9" TotalStatements="9" CoveragePercent="100">
@@ -968,25 +971,25 @@
           <Statement FileIndex="16" Line="24" Column="9" EndLine="24" EndColumn="10" Covered="True" />
         </Method>
       </Type>
-      <Type Name="FluentResultExtensions" CoveredStatements="9" TotalStatements="13" CoveragePercent="69">
+      <Type Name="FluentResultExtensions" CoveredStatements="13" TotalStatements="13" CoveragePercent="100">
         <Type Name="&lt;&gt;c" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
           <Method Name="&lt;ToErrorMessages&gt;b__0_0(FluentResults.IError):System.String" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
             <Statement FileIndex="17" Line="14" Column="43" EndLine="14" EndColumn="56" Covered="True" />
           </Method>
         </Type>
-        <Method Name="JoinToMessage(System.Collections.Generic.IList&lt;FluentResults.IError&gt;):System.String" CoveredStatements="4" TotalStatements="6" CoveragePercent="67">
+        <Method Name="JoinToMessage(System.Collections.Generic.IList&lt;FluentResults.IError&gt;):System.String" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
           <Statement FileIndex="17" Line="18" Column="9" EndLine="18" EndColumn="10" Covered="True" />
           <Statement FileIndex="17" Line="19" Column="13" EndLine="19" EndColumn="34" Covered="True" />
-          <Statement FileIndex="17" Line="20" Column="13" EndLine="20" EndColumn="14" Covered="False" />
-          <Statement FileIndex="17" Line="21" Column="17" EndLine="21" EndColumn="37" Covered="False" />
+          <Statement FileIndex="17" Line="20" Column="13" EndLine="20" EndColumn="14" Covered="True" />
+          <Statement FileIndex="17" Line="21" Column="17" EndLine="21" EndColumn="37" Covered="True" />
           <Statement FileIndex="17" Line="24" Column="13" EndLine="24" EndColumn="63" Covered="True" />
           <Statement FileIndex="17" Line="25" Column="9" EndLine="25" EndColumn="10" Covered="True" />
         </Method>
-        <Method Name="ToErrorMessages(System.Collections.Generic.IList&lt;FluentResults.IError&gt;):System.Collections.Generic.IEnumerable&lt;System.String&gt;" CoveredStatements="4" TotalStatements="6" CoveragePercent="67">
+        <Method Name="ToErrorMessages(System.Collections.Generic.IList&lt;FluentResults.IError&gt;):System.Collections.Generic.IEnumerable&lt;System.String&gt;" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
           <Statement FileIndex="17" Line="8" Column="9" EndLine="8" EndColumn="10" Covered="True" />
           <Statement FileIndex="17" Line="9" Column="13" EndLine="9" EndColumn="33" Covered="True" />
-          <Statement FileIndex="17" Line="10" Column="13" EndLine="10" EndColumn="14" Covered="False" />
-          <Statement FileIndex="17" Line="11" Column="17" EndLine="11" EndColumn="46" Covered="False" />
+          <Statement FileIndex="17" Line="10" Column="13" EndLine="10" EndColumn="14" Covered="True" />
+          <Statement FileIndex="17" Line="11" Column="17" EndLine="11" EndColumn="46" Covered="True" />
           <Statement FileIndex="17" Line="14" Column="13" EndLine="14" EndColumn="58" Covered="True" />
           <Statement FileIndex="17" Line="15" Column="9" EndLine="15" EndColumn="10" Covered="True" />
         </Method>
@@ -1086,7 +1089,95 @@
       </Type>
     </Namespace>
   </Assembly>
-  <Assembly Name="Weather.Infrastructure" CoveredStatements="43" TotalStatements="98" CoveragePercent="44">
+  <Assembly Name="Weather.Domain.UnitTests" CoveredStatements="50" TotalStatements="52" CoveragePercent="96">
+    <Namespace Name="Weather.Domain.UnitTests.Extensions" CoveredStatements="50" TotalStatements="52" CoveragePercent="96">
+      <Type Name="EnumerableExtensionsTests" CoveredStatements="15" TotalStatements="15" CoveragePercent="100">
+        <Method Name="HasAny_EmptyValues():System.Void" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+          <Statement FileIndex="54" Line="20" Column="9" EndLine="20" EndColumn="10" Covered="True" />
+          <Statement FileIndex="54" Line="22" Column="13" EndLine="22" EndColumn="40" Covered="True" />
+          <Statement FileIndex="54" Line="24" Column="13" EndLine="24" EndColumn="40" Covered="True" />
+          <Statement FileIndex="54" Line="26" Column="13" EndLine="26" EndColumn="34" Covered="True" />
+          <Statement FileIndex="54" Line="27" Column="9" EndLine="27" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="HasAny_NullValues():System.Void" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+          <Statement FileIndex="54" Line="9" Column="9" EndLine="9" EndColumn="10" Covered="True" />
+          <Statement FileIndex="54" Line="11" Column="13" EndLine="11" EndColumn="40" Covered="True" />
+          <Statement FileIndex="54" Line="13" Column="13" EndLine="13" EndColumn="40" Covered="True" />
+          <Statement FileIndex="54" Line="15" Column="13" EndLine="15" EndColumn="34" Covered="True" />
+          <Statement FileIndex="54" Line="16" Column="9" EndLine="16" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="HasAny_Success():System.Void" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+          <Statement FileIndex="54" Line="31" Column="9" EndLine="31" EndColumn="10" Covered="True" />
+          <Statement FileIndex="54" Line="33" Column="13" EndLine="33" EndColumn="46" Covered="True" />
+          <Statement FileIndex="54" Line="35" Column="13" EndLine="35" EndColumn="40" Covered="True" />
+          <Statement FileIndex="54" Line="37" Column="13" EndLine="37" EndColumn="33" Covered="True" />
+          <Statement FileIndex="54" Line="38" Column="9" EndLine="38" EndColumn="10" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="FluentResultExtensionsTests" CoveredStatements="33" TotalStatements="33" CoveragePercent="100">
+        <Method Name="JoinToMessage_EmptyValues():System.Void" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+          <Statement FileIndex="55" Line="56" Column="9" EndLine="56" EndColumn="10" Covered="True" />
+          <Statement FileIndex="55" Line="58" Column="13" EndLine="58" EndColumn="43" Covered="True" />
+          <Statement FileIndex="55" Line="60" Column="13" EndLine="60" EndColumn="47" Covered="True" />
+          <Statement FileIndex="55" Line="62" Column="13" EndLine="62" EndColumn="34" Covered="True" />
+          <Statement FileIndex="55" Line="63" Column="9" EndLine="63" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="JoinToMessage_NullValues():System.Void" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+          <Statement FileIndex="55" Line="45" Column="9" EndLine="45" EndColumn="10" Covered="True" />
+          <Statement FileIndex="55" Line="47" Column="13" EndLine="47" EndColumn="44" Covered="True" />
+          <Statement FileIndex="55" Line="49" Column="13" EndLine="49" EndColumn="47" Covered="True" />
+          <Statement FileIndex="55" Line="51" Column="13" EndLine="51" EndColumn="34" Covered="True" />
+          <Statement FileIndex="55" Line="52" Column="9" EndLine="52" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="JoinToMessage_Success():System.Void" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+          <Statement FileIndex="55" Line="67" Column="9" EndLine="67" EndColumn="10" Covered="True" />
+          <Statement FileIndex="55" Line="69" Column="13" EndLine="69" EndColumn="37" Covered="True" />
+          <Statement FileIndex="55" Line="70" Column="13" EndLine="70" EndColumn="81" Covered="True" />
+          <Statement FileIndex="55" Line="72" Column="13" EndLine="72" EndColumn="47" Covered="True" />
+          <Statement FileIndex="55" Line="74" Column="13" EndLine="74" EndColumn="43" Covered="True" />
+          <Statement FileIndex="55" Line="75" Column="9" EndLine="75" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="ToErrorMessages_EmptyValues():System.Void" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+          <Statement FileIndex="55" Line="21" Column="9" EndLine="21" EndColumn="10" Covered="True" />
+          <Statement FileIndex="55" Line="23" Column="13" EndLine="23" EndColumn="43" Covered="True" />
+          <Statement FileIndex="55" Line="25" Column="13" EndLine="25" EndColumn="49" Covered="True" />
+          <Statement FileIndex="55" Line="27" Column="13" EndLine="27" EndColumn="34" Covered="True" />
+          <Statement FileIndex="55" Line="28" Column="9" EndLine="28" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="ToErrorMessages_NullValues():System.Void" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+          <Statement FileIndex="55" Line="10" Column="9" EndLine="10" EndColumn="10" Covered="True" />
+          <Statement FileIndex="55" Line="12" Column="13" EndLine="12" EndColumn="44" Covered="True" />
+          <Statement FileIndex="55" Line="14" Column="13" EndLine="14" EndColumn="49" Covered="True" />
+          <Statement FileIndex="55" Line="16" Column="13" EndLine="16" EndColumn="34" Covered="True" />
+          <Statement FileIndex="55" Line="17" Column="9" EndLine="17" EndColumn="10" Covered="True" />
+        </Method>
+        <Method Name="ToErrorMessages_Success():System.Void" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
+          <Statement FileIndex="55" Line="32" Column="9" EndLine="32" EndColumn="10" Covered="True" />
+          <Statement FileIndex="55" Line="34" Column="13" EndLine="34" EndColumn="37" Covered="True" />
+          <Statement FileIndex="55" Line="35" Column="13" EndLine="35" EndColumn="81" Covered="True" />
+          <Statement FileIndex="55" Line="37" Column="13" EndLine="37" EndColumn="49" Covered="True" />
+          <Statement FileIndex="55" Line="39" Column="13" EndLine="39" EndColumn="35" Covered="True" />
+          <Statement FileIndex="55" Line="40" Column="13" EndLine="40" EndColumn="52" Covered="True" />
+          <Statement FileIndex="55" Line="41" Column="9" EndLine="41" EndColumn="10" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="TestError" CoveredStatements="2" TotalStatements="4" CoveragePercent="50">
+        <Method Name="get_Message():System.String" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="56" Line="9" Column="32" EndLine="9" EndColumn="36" Covered="True" />
+        </Method>
+        <Method Name="get_Metadata():System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="56" Line="11" Column="55" EndLine="11" EndColumn="90" Covered="False" />
+        </Method>
+        <Method Name="get_Reasons():System.Collections.Generic.List&lt;FluentResults.IError&gt;" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <Statement FileIndex="56" Line="7" Column="40" EndLine="7" EndColumn="75" Covered="False" />
+        </Method>
+        <Method Name="set_Message(System.String):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="56" Line="9" Column="36" EndLine="9" EndColumn="40" Covered="True" />
+        </Method>
+      </Type>
+    </Namespace>
+  </Assembly>
+  <Assembly Name="Weather.Infrastructure" CoveredStatements="43" TotalStatements="95" CoveragePercent="45">
     <Namespace Name="Weather.Infrastructure.Configuration" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
       <Type Name="ContainerConfigurationExtension" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
         <Type Name="&lt;&gt;c" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
@@ -1155,7 +1246,7 @@
         </Method>
       </Type>
     </Namespace>
-    <Namespace Name="Weather.Infrastructure.Database.Repositories" CoveredStatements="11" TotalStatements="24" CoveragePercent="46">
+    <Namespace Name="Weather.Infrastructure.Database.Repositories" CoveredStatements="11" TotalStatements="21" CoveragePercent="52">
       <Type Name="WeatherCommandsRepository" CoveredStatements="11" TotalStatements="11" CoveragePercent="100">
         <Type Name="&lt;AddFavoriteLocation&gt;d__3" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
           <Method Name="MoveNext():System.Void" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
@@ -1175,17 +1266,14 @@
           <Statement FileIndex="7" Line="19" Column="9" EndLine="19" EndColumn="10" Covered="True" />
         </Method>
       </Type>
-      <Type Name="WeatherQueriesRepository" CoveredStatements="0" TotalStatements="13" CoveragePercent="0">
-        <Type Name="&lt;GetFavorites&gt;d__3" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
-          <Method Name="MoveNext():System.Void" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+      <Type Name="WeatherQueriesRepository" CoveredStatements="0" TotalStatements="10" CoveragePercent="0">
+        <Type Name="&lt;GetFavorites&gt;d__3" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
+          <Method Name="MoveNext():System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
             <Statement FileIndex="8" Line="21" Column="9" EndLine="21" EndColumn="10" Covered="False" />
             <Statement FileIndex="8" Line="22" Column="13" EndLine="22" EndColumn="115" Covered="False" />
             <Statement FileIndex="8" Line="23" Column="13" EndLine="23" EndColumn="87" Covered="False" />
-            <Statement FileIndex="8" Line="25" Column="13" EndLine="25" EndColumn="35" Covered="False" />
-            <Statement FileIndex="8" Line="26" Column="13" EndLine="26" EndColumn="14" Covered="False" />
-            <Statement FileIndex="8" Line="27" Column="17" EndLine="27" EndColumn="69" Covered="False" />
-            <Statement FileIndex="8" Line="30" Column="13" EndLine="30" EndColumn="68" Covered="False" />
-            <Statement FileIndex="8" Line="31" Column="9" EndLine="31" EndColumn="10" Covered="False" />
+            <Statement FileIndex="8" Line="24" Column="13" EndLine="24" EndColumn="68" Covered="False" />
+            <Statement FileIndex="8" Line="25" Column="9" EndLine="25" EndColumn="10" Covered="False" />
           </Method>
         </Type>
         <Method Name=".ctor(Weather.Infrastructure.Database.EFContext.WeatherContext,AutoMapper.IMapper):System.Void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0">
@@ -1307,48 +1395,48 @@
       <Type Name="WeatherCommandsRepositoryTests" CoveredStatements="31" TotalStatements="31" CoveragePercent="100">
         <Type Name="&lt;&gt;c__DisplayClass6_0" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
           <Method Name="&lt;AddFavoriteLocation_Throw&gt;b__5():System.Threading.Tasks.Task" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
-            <Statement FileIndex="3" Line="63" Column="85" EndLine="63" EndColumn="153" Covered="True" />
+            <Statement FileIndex="3" Line="62" Column="85" EndLine="62" EndColumn="153" Covered="True" />
           </Method>
         </Type>
         <Type Name="&lt;AddFavoriteLocation_Success&gt;d__5" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
           <Method Name="MoveNext():System.Void" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
-            <Statement FileIndex="3" Line="34" Column="9" EndLine="34" EndColumn="10" Covered="True" />
-            <Statement FileIndex="3" Line="36" Column="13" EndLine="36" EndColumn="124" Covered="True" />
-            <Statement FileIndex="3" Line="37" Column="13" EndLine="37" EndColumn="71" Covered="True" />
-            <Statement FileIndex="3" Line="39" Column="13" EndLine="39" EndColumn="124" Covered="True" />
-            <Statement FileIndex="3" Line="42" Column="13" EndLine="42" EndColumn="101" Covered="True" />
-            <Statement FileIndex="3" Line="45" Column="13" EndLine="45" EndColumn="43" Covered="True" />
-            <Statement FileIndex="3" Line="46" Column="13" EndLine="46" EndColumn="105" Covered="True" />
-            <Statement FileIndex="3" Line="47" Column="13" EndLine="47" EndColumn="110" Covered="True" />
-            <Statement FileIndex="3" Line="48" Column="13" EndLine="48" EndColumn="149" Covered="True" />
-            <Statement FileIndex="3" Line="49" Column="9" EndLine="49" EndColumn="10" Covered="True" />
+            <Statement FileIndex="3" Line="33" Column="9" EndLine="33" EndColumn="10" Covered="True" />
+            <Statement FileIndex="3" Line="35" Column="13" EndLine="35" EndColumn="124" Covered="True" />
+            <Statement FileIndex="3" Line="36" Column="13" EndLine="36" EndColumn="71" Covered="True" />
+            <Statement FileIndex="3" Line="38" Column="13" EndLine="38" EndColumn="124" Covered="True" />
+            <Statement FileIndex="3" Line="41" Column="13" EndLine="41" EndColumn="101" Covered="True" />
+            <Statement FileIndex="3" Line="44" Column="13" EndLine="44" EndColumn="43" Covered="True" />
+            <Statement FileIndex="3" Line="45" Column="13" EndLine="45" EndColumn="105" Covered="True" />
+            <Statement FileIndex="3" Line="46" Column="13" EndLine="46" EndColumn="110" Covered="True" />
+            <Statement FileIndex="3" Line="47" Column="13" EndLine="47" EndColumn="149" Covered="True" />
+            <Statement FileIndex="3" Line="48" Column="9" EndLine="48" EndColumn="10" Covered="True" />
           </Method>
         </Type>
         <Type Name="&lt;AddFavoriteLocation_Throw&gt;d__6" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
           <Method Name="MoveNext():System.Void" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
-            <Statement FileIndex="3" Line="53" Column="9" EndLine="53" EndColumn="10" Covered="True" />
-            <Statement FileIndex="3" Line="55" Column="13" EndLine="55" EndColumn="124" Covered="True" />
-            <Statement FileIndex="3" Line="56" Column="13" EndLine="56" EndColumn="71" Covered="True" />
-            <Statement FileIndex="3" Line="57" Column="13" EndLine="57" EndColumn="67" Covered="True" />
-            <Statement FileIndex="3" Line="59" Column="13" EndLine="59" EndColumn="124" Covered="True" />
-            <Statement FileIndex="3" Line="60" Column="13" EndLine="60" EndColumn="154" Covered="True" />
-            <Statement FileIndex="3" Line="63" Column="13" EndLine="63" EndColumn="155" Covered="True" />
-            <Statement FileIndex="3" Line="66" Column="13" EndLine="66" EndColumn="59" Covered="True" />
-            <Statement FileIndex="3" Line="67" Column="13" EndLine="67" EndColumn="105" Covered="True" />
-            <Statement FileIndex="3" Line="68" Column="13" EndLine="68" EndColumn="111" Covered="True" />
-            <Statement FileIndex="3" Line="69" Column="13" EndLine="69" EndColumn="149" Covered="True" />
-            <Statement FileIndex="3" Line="70" Column="9" EndLine="70" EndColumn="10" Covered="True" />
+            <Statement FileIndex="3" Line="52" Column="9" EndLine="52" EndColumn="10" Covered="True" />
+            <Statement FileIndex="3" Line="54" Column="13" EndLine="54" EndColumn="124" Covered="True" />
+            <Statement FileIndex="3" Line="55" Column="13" EndLine="55" EndColumn="71" Covered="True" />
+            <Statement FileIndex="3" Line="56" Column="13" EndLine="56" EndColumn="67" Covered="True" />
+            <Statement FileIndex="3" Line="58" Column="13" EndLine="58" EndColumn="124" Covered="True" />
+            <Statement FileIndex="3" Line="59" Column="13" EndLine="59" EndColumn="154" Covered="True" />
+            <Statement FileIndex="3" Line="62" Column="13" EndLine="62" EndColumn="155" Covered="True" />
+            <Statement FileIndex="3" Line="65" Column="13" EndLine="65" EndColumn="59" Covered="True" />
+            <Statement FileIndex="3" Line="66" Column="13" EndLine="66" EndColumn="105" Covered="True" />
+            <Statement FileIndex="3" Line="67" Column="13" EndLine="67" EndColumn="111" Covered="True" />
+            <Statement FileIndex="3" Line="68" Column="13" EndLine="68" EndColumn="149" Covered="True" />
+            <Statement FileIndex="3" Line="69" Column="9" EndLine="69" EndColumn="10" Covered="True" />
           </Method>
         </Type>
         <Method Name=".ctor():System.Void" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
-          <Statement FileIndex="3" Line="21" Column="9" EndLine="21" EndColumn="48" Covered="True" />
-          <Statement FileIndex="3" Line="22" Column="9" EndLine="22" EndColumn="10" Covered="True" />
-          <Statement FileIndex="3" Line="23" Column="13" EndLine="23" EndColumn="90" Covered="True" />
-          <Statement FileIndex="3" Line="24" Column="13" EndLine="24" EndColumn="68" Covered="True" />
-          <Statement FileIndex="3" Line="25" Column="13" EndLine="25" EndColumn="116" Covered="True" />
-          <Statement FileIndex="3" Line="27" Column="13" EndLine="27" EndColumn="47" Covered="True" />
-          <Statement FileIndex="3" Line="29" Column="13" EndLine="29" EndColumn="100" Covered="True" />
-          <Statement FileIndex="3" Line="30" Column="9" EndLine="30" EndColumn="10" Covered="True" />
+          <Statement FileIndex="3" Line="20" Column="9" EndLine="20" EndColumn="48" Covered="True" />
+          <Statement FileIndex="3" Line="21" Column="9" EndLine="21" EndColumn="10" Covered="True" />
+          <Statement FileIndex="3" Line="22" Column="13" EndLine="22" EndColumn="90" Covered="True" />
+          <Statement FileIndex="3" Line="23" Column="13" EndLine="23" EndColumn="68" Covered="True" />
+          <Statement FileIndex="3" Line="24" Column="13" EndLine="24" EndColumn="116" Covered="True" />
+          <Statement FileIndex="3" Line="26" Column="13" EndLine="26" EndColumn="47" Covered="True" />
+          <Statement FileIndex="3" Line="28" Column="13" EndLine="28" EndColumn="100" Covered="True" />
+          <Statement FileIndex="3" Line="29" Column="9" EndLine="29" EndColumn="10" Covered="True" />
         </Method>
       </Type>
     </Namespace>

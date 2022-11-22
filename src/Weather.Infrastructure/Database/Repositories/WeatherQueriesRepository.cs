@@ -21,12 +21,6 @@ namespace Weather.Infrastructure.Database.Repositories
         {
             var facoriteLocationEntities = await _weatherContext.FavoriteLocations.ToListAsync(cancellationToken);
             var resultData = _mapper.Map<List<LocationDto>>(facoriteLocationEntities);
-
-            if(resultData is null)
-            {
-                return Result.Fail(ErrorMessages.DatabaseGetFailed);
-            }
-
             return Result.Ok((IEnumerable<LocationDto>)resultData);
         }
     }

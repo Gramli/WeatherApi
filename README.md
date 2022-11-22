@@ -7,6 +7,20 @@ REST API solution demonstrates how to create clean and modern API (from my point
 
 Example API allows to get actual/forecast/favorite weather data by location and safe favorites locations to in memory db.
 
+## Menu
+* [Get Started](#get-started)
+* [Motivation](#motivation)
+* [Architecture](#architecture)
+	* [Minimal API](#minimal-api)
+		* [Pros](#pros)
+		* [Cons](#cons)
+	* [Benefits of Clean Architecture](#benefits-of-clean-architecture)
+	* [Clean Architecture Layers](#clean-architecture-layers)
+		* [Horizontal Diagram (references)](#horizontal-diagram-references)
+* [Technologies](#technologies)
+* [Conclusion](#conclusion)
+
+
 ## Get Started
 1. Register on [RapidAPI](https://rapidapi.com)
 2. Subscribe Weatherbit (its for free) and go to API Documentation
@@ -70,6 +84,8 @@ Solution contains four layers:
 #### Horizontal Diagram (references)
 ![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
 
+## Technologies
+...
 ## Conclusion
 ...
 

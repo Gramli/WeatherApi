@@ -1,5 +1,3 @@
-# IN PROGRESS
-
 # WeatherApi
 [![.NET Build and Test](https://github.com/Gramli/WeatherApi/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Gramli/WeatherApi/actions/workflows/dotnet.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/77a7db482a44489aa5fbe40ca15d3137)](https://www.codacy.com/gh/Gramli/WeatherApi/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Gramli/WeatherApi&amp;utm_campaign=Badge_Grade)
@@ -8,6 +6,19 @@
 REST API solution demonstrates how to create clean and modern API (from my point of view) with Clean Architecture, minimal API and various of design patterns.  
 
 Example API allows to get actual/forecast/favorite weather data by location and safe favorites locations to in memory db.
+
+## Get Started
+1. Register on [RapidAPI](https://rapidapi.com)
+2. Subscribe Weatherbit (its for free) and go to API Documentation
+3. In API documentation copy (from Code Snippet) **X-RapidAPI-Key**, **X-RapidAPI-Host** and put them to appsettings.json file in WeatherAPI project
+```json
+  "Weatherbit": {
+    "BaseUrl": "https://weatherbit-v1-mashape.p.rapidapi.com",
+    "XRapidAPIKey": "value from code snippet",
+    "XRapidAPIHost": "value from code snippet"
+  }
+```
+4. Run
 
 ## Motivation
 Main motivation is to write practical example of minimal API, to see it's benefits and disadvantages. Also to create REST API template project using Clean Architecture and design patterns.
@@ -19,7 +30,7 @@ As Minimal API allows to inject handlers into endpoint map methods, I decided to
 
 Instead of throwing exceptions, project use **[Result pattern](https://www.forevolve.com/en/articles/2018/03/19/operation-result/)** (using [FluentResuls package](https://github.com/altmann/FluentResults)) and for returning exact http response, every handler returns data wraped into HttpDataResponse object which contains also error messages collection and http response code.
 
-Important part of every project are **Tests**. In ideal world test coverage should be 100%, but in most commercial projects (by my experience) we are trying to find **optimal test coverage**. Optimal test coverage can't be simply quantified and every project has diferent number by it's need.
+Important part of every project are **Tests**. In ideal world test coverage should be 100%, but in most commercial projects (by my experience) we are trying to find **optimal test coverage**, optimal test coverage can't be simply quantified and every project has diferent number by it's need.
 In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project. API projects also has its own **system test** project, because we want to test our endpoints completely. Infrastructure project on the other hand has **integration test** project where we want to test Weatherbit connection for example.
 
 ### Minimal API
@@ -59,21 +70,9 @@ Solution contains four layers:
 #### Horizontal Diagram (references)
 ![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
 
-## Setup & Run
-1. Register on [RapidAPI](https://rapidapi.com)
-2. Subscribe Weatherbit (its for free) and go to API Documentation
-3. In API documentation copy (from Code Snippet) **X-RapidAPI-Key**, **X-RapidAPI-Host** and put them to appsettings.json file in WeatherAPI project
-```json
-  "Weatherbit": {
-    "BaseUrl": "https://weatherbit-v1-mashape.p.rapidapi.com",
-    "XRapidAPIKey": "value from code snippet",
-    "XRapidAPIHost": "value from code snippet"
-  }
-```
-4. Set Weather.API as startup project and run
-
 ## Conclusion
-..
+...
+
 
 
 

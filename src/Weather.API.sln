@@ -37,6 +37,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Infrastructure.Inte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.UnitTests.Common", "Tests\UnitTests\Weather.UnitTests.Common\Weather.UnitTests.Common.csproj", "{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalClients", "ExternalClients", "{20EF0756-7FA6-4708-8349-D1E1FF49229A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wheaterbit.Client.UnitTests", "Tests\UnitTests\Wheaterbit.Client.UnitTests\Wheaterbit.Client.UnitTests.csproj", "{501B5489-717D-49E3-940B-99DDA39F278F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +95,10 @@ Global
 		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{501B5489-717D-49E3-940B-99DDA39F278F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{501B5489-717D-49E3-940B-99DDA39F278F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{501B5489-717D-49E3-940B-99DDA39F278F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{501B5489-717D-49E3-940B-99DDA39F278F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +115,8 @@ Global
 		{F1939A12-97F2-4846-95BB-D187C90A24E7} = {F3BB2E4D-53BC-4EB0-9A73-300134879E26}
 		{AC3B0CA2-967D-465A-A6E1-B052B5FB25DB} = {F1939A12-97F2-4846-95BB-D187C90A24E7}
 		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C} = {DBB0632C-F7EA-4593-927B-49DB2371CDE5}
+		{20EF0756-7FA6-4708-8349-D1E1FF49229A} = {DBB0632C-F7EA-4593-927B-49DB2371CDE5}
+		{501B5489-717D-49E3-940B-99DDA39F278F} = {20EF0756-7FA6-4708-8349-D1E1FF49229A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75897F3D-1882-40EE-A49D-10503A1CCA69}

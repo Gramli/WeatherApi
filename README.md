@@ -35,7 +35,7 @@ Example API allows to get actual/forecast/favorite weather data by location and 
   }
 ```
 4. Run & Try it in SwaggerUI
-![SwaggerUI](./doc/img/swagger.png)
+![SwaggerUI](./doc/img/swagger.PNG)
 
 ## Motivation
 Main motivation is to write practical example of minimal API, to see it's benefits and disadvantages. Also to create REST API template project using Clean Architecture and design patterns.

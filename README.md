@@ -46,8 +46,11 @@ As Minimal API allows to inject handlers into endpoint map methods, I decided to
 
 Instead of throwing exceptions, project use **[Result pattern](https://www.forevolve.com/en/articles/2018/03/19/operation-result/)** (using [FluentResuls package](https://github.com/altmann/FluentResults)) and for returning exact http response, every handler returns data wraped into HttpDataResponse object which contains also error messages collection and http response code.
 
-Important part of every project are **Tests**. In ideal world test coverage should be 100%, but in most commercial projects (by my experience) we are trying to find **optimal test coverage**, optimal test coverage can't be simply quantified and every project has diferent number by it's need.
-In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project. API projects also has its own **system test** project, because we want to test our endpoints completely. Infrastructure project on the other hand has **integration test** project where we want to test Weatherbit connection for example.
+Important part of every project are **[tests](https://github.com/Gramli/WeatherApi/tree/main/src/Tests)**. When writing tests we want to achieve [optimal code coverage](https://stackoverflow.com/questions/90002/what-is-a-reasonable-code-coverage-for-unit-tests-and-why). I think that every project has its own optimal code coverage number by it's need and I always follow the rule: cover your code to be able refactor without worry about functionality change.
+
+In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project, which is very helpful for orientation in test project.  
+API projects also has its own **[system test](https://github.com/Gramli/WeatherApi/tree/main/src/Tests/SystemTests/Weather.API.SystemTests)** project, because we want to test our endpoints completely. 
+Infrastructure project on the other hand has **[integration test](https://github.com/Gramli/WeatherApi/tree/main/src/Tests/IntegrationTests/Weather.Infrastructure.IntegrationTests)** project where we want to test Weatherbit connection for example.
 
 ### Minimal API
 #### Pros
@@ -95,8 +98,6 @@ Solution contains four layers:
 * [GuardClauses](https://github.com/ardalis/GuardClauses)
 * [Moq](https://github.com/moq/moq4)
 * [Xunit](https://github.com/xunit/xunit)
-## Conclusion
-...
 
 
 

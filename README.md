@@ -34,7 +34,8 @@ Example API allows to get actual/forecast/favorite weather data by location and 
     "XRapidAPIHost": "value from code snippet"
   }
 ```
-4. Run
+4. Run & Try it in SwaggerUI
+![SwaggerUI](./doc/img/swagger.png)
 
 ## Motivation
 Main motivation is to write practical example of minimal API, to see it's benefits and disadvantages. Also to create REST API template project using Clean Architecture and design patterns.
@@ -48,9 +49,7 @@ Instead of throwing exceptions, project use **[Result pattern](https://www.forev
 
 Important part of every project are **[tests](https://github.com/Gramli/WeatherApi/tree/main/src/Tests)**. When writing tests we want to achieve [optimal code coverage](https://stackoverflow.com/questions/90002/what-is-a-reasonable-code-coverage-for-unit-tests-and-why). I think that every project has its own optimal code coverage number by it's need and I always follow the rule: cover your code to be able refactor without worry about functionality change.
 
-In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project, which is very helpful for orientation in test project.  
-API projects also has its own **[system test](https://github.com/Gramli/WeatherApi/tree/main/src/Tests/SystemTests/Weather.API.SystemTests)** project, because we want to test our endpoints completely. 
-Infrastructure project on the other hand has **[integration test](https://github.com/Gramli/WeatherApi/tree/main/src/Tests/IntegrationTests/Weather.Infrastructure.IntegrationTests)** project where we want to test Weatherbit connection for example.
+In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project, which is very helpful for orientation in test project.
 
 ### Minimal API
 #### Pros
@@ -77,12 +76,12 @@ Solution contains four layers:
 	*  API Configuration
 * **Weather.Infrastructure** - layer for communication with external resources like database, cache, web service.. 
 	*  Repositories Implementation - access to database
-	*  External Services Proxies - proxy classes implementation to obtain data from external web services
+	*  External Services Proxies - proxy classes implementation - to obtain data from external web services
 	*  Infastructure Specific Services - services which are needed to interact with infrastructure
-* **Weather.Core** - business logic implementatin of the application
+* **Weather.Core** - business logic of the application
 	*  Request Handlers/Managers/.. - business implementation
 	*  Interfaces - interfaces for Infrastructure layer (Service, Repository, ..)
-* **Weather.Domain** - POCO classes, extensions, all what should be shared in projects which reference it through Core project
+* **Weather.Domain** - POCO classes, extensions, all what should be shared
 	* DTOs
 	* General Extensions
 

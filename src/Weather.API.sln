@@ -33,9 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.API.SystemTests", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{F1939A12-97F2-4846-95BB-D187C90A24E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.Infrastructure.IntegrationTests", "Tests\IntegrationTests\Weather.Infrastructure.IntegrationTests\Weather.Infrastructure.IntegrationTests.csproj", "{AC3B0CA2-967D-465A-A6E1-B052B5FB25DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.Infrastructure.IntegrationTests", "Tests\IntegrationTests\Weather.Infrastructure.IntegrationTests\Weather.Infrastructure.IntegrationTests.csproj", "{AC3B0CA2-967D-465A-A6E1-B052B5FB25DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather.UnitTests.Common", "Tests\UnitTests\Weather.UnitTests.Common\Weather.UnitTests.Common.csproj", "{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.UnitTests.Common", "Tests\UnitTests\Weather.UnitTests.Common\Weather.UnitTests.Common.csproj", "{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

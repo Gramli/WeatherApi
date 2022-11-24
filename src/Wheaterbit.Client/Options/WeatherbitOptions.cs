@@ -1,6 +1,6 @@
 ﻿namespace Wheaterbit.Client.Options
 {
-    internal class WeatherbitOptions
+    public class WeatherbitOptions
     {
         public const string Weatherbit = "Weatherbit";
 

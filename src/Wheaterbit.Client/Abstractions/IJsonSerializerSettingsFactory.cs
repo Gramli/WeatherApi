@@ -2,7 +2,7 @@
 
 namespace Wheaterbit.Client.Abstractions
 {
-    internal interface IJsonSerializerSettingsFactory
+    public interface IJsonSerializerSettingsFactory
     {
         JsonSerializerSettings Create();
     }

@@ -1,4 +1,4 @@
-﻿namespace Wheaterbit.Client.UnitTests.Extensions
+﻿namespace Wheaterbit.Client.UnitTests.Extensions.Http
 {
     public interface ICusomHttpMessageHandler
     {

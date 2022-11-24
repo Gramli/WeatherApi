@@ -1,6 +1,6 @@
 ﻿using Ardalis.GuardClauses;
 
-namespace Wheaterbit.Client.UnitTests.Extensions
+namespace Wheaterbit.Client.UnitTests.Extensions.Http
 {
     internal class CustomHttpMessageHandler : HttpMessageHandler
     {

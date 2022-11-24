@@ -1,6 +1,6 @@
 ﻿using Moq;
 
-namespace Wheaterbit.Client.UnitTests.Extensions
+namespace Wheaterbit.Client.UnitTests.Extensions.Http
 {
     internal static class HttpClientFactoryMockExtensions
     {

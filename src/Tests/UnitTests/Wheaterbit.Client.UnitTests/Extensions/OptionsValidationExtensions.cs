@@ -11,8 +11,6 @@ namespace Wheaterbit.Client.UnitTests.Extensions
     {
         internal static Mock<IValidator<WeatherbitOptions>> Setup(this Mock<IValidator<WeatherbitOptions>> optionsValidatorMock, bool anyErrors)
         {
-            optionsValidatorMock = new Mock<IValidator<WeatherbitOptions>>();
-
             var validationResultMock = new Mock<IValidationResult>();
             validationResultMock.SetupGet(x => x.AnyErrors).Returns(anyErrors);
 

@@ -4,7 +4,7 @@
     {
         public static Microsoft.Extensions.Options.IOptions<Options.WeatherbitOptions> CreateInvalidOptions()
         {
-            return Microsoft.Extensions.Options.Options.Create(new Options.WeatherbitOptions()
+            return Microsoft.Extensions.Options.Options.Create(new Options.WeatherbitOptions
             {
                 BaseUrl = "baseUrl",
                 XRapidAPIHost = "xRapidAPIHost",
@@ -14,7 +14,7 @@
 
         public static Microsoft.Extensions.Options.IOptions<Options.WeatherbitOptions> CreateValidOptions()
         {
-            return Microsoft.Extensions.Options.Options.Create(new Options.WeatherbitOptions()
+            return Microsoft.Extensions.Options.Options.Create(new Options.WeatherbitOptions
             {
                 BaseUrl = "https://baseUrl",
                 XRapidAPIHost = "xRapidAPIHost",

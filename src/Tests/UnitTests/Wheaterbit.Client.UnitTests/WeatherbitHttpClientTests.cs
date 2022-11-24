@@ -1,12 +1,5 @@
 ﻿using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using Validot;
-using Validot.Results;
 using Wheaterbit.Client.Abstractions;
 using Wheaterbit.Client.UnitTests.DataGenerator;
 using Wheaterbit.Client.UnitTests.Extensions;
@@ -18,7 +11,6 @@ namespace Wheaterbit.Client.UnitTests
         private Mock<IHttpClientFactory>? _httpClientFactoryMock;
         private Mock<IJsonSerializerSettingsFactory>? _jsonSerializerSettingsFactoryMock;
         private Mock<IValidator<Options.WeatherbitOptions>>? _optionsValidatorMock;
-        private Mock<ICusomHttpMessageHandler>? _customHttpMessageHandlerMock;
 
         private IWeatherbitHttpClient? _uut;
 
@@ -26,7 +18,7 @@ namespace Wheaterbit.Client.UnitTests
         public void InvalidOptions()
         {
             //Arrange
-            _customHttpMessageHandlerMock = new Mock<ICusomHttpMessageHandler>();
+            var _customHttpMessageHandlerMock = new Mock<ICusomHttpMessageHandler>();
             _httpClientFactoryMock = new Mock<IHttpClientFactory>().Setup(_customHttpMessageHandlerMock);
             _jsonSerializerSettingsFactoryMock = new Mock<IJsonSerializerSettingsFactory>();
             _optionsValidatorMock = new Mock<IValidator<Options.WeatherbitOptions>>()
@@ -37,10 +29,10 @@ namespace Wheaterbit.Client.UnitTests
         }
 
         [Fact]
-        public async void GetSixteenDayForecast_SendAsync_NotSuccessStatusCode()
+        public async Task GetSixteenDayForecast_SendAsync_NotSuccessStatusCode()
         {
             //Arrange
-            _customHttpMessageHandlerMock = new Mock<ICusomHttpMessageHandler>();
+            var _customHttpMessageHandlerMock = new Mock<ICusomHttpMessageHandler>();
             _httpClientFactoryMock = new Mock<IHttpClientFactory>().Setup(_customHttpMessageHandlerMock);
             _jsonSerializerSettingsFactoryMock = new Mock<IJsonSerializerSettingsFactory>();
             _optionsValidatorMock = new Mock<IValidator<Options.WeatherbitOptions>>()
@@ -56,7 +48,7 @@ namespace Wheaterbit.Client.UnitTests
 
             _customHttpMessageHandlerMock
                 .Setup(x => x.SendAsync(It.IsAny<HttpRequestMessage>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new HttpResponseMessage() { StatusCode = System.Net.HttpStatusCode.InternalServerError });
+                .ReturnsAsync(new HttpResponseMessage { StatusCode = System.Net.HttpStatusCode.InternalServerError });
             //Act
             var result = await _uut.GetSixteenDayForecast(0,0,CancellationToken.None);
 
@@ -68,7 +60,7 @@ namespace Wheaterbit.Client.UnitTests
         public async Task GetSixteenDayForecast_InvalidUri()
         {
             //Arrange
-            _customHttpMessageHandlerMock = new Mock<ICusomHttpMessageHandler>();
+            var _customHttpMessageHandlerMock = new Mock<ICusomHttpMessageHandler>();
             _httpClientFactoryMock = new Mock<IHttpClientFactory>().Setup(_customHttpMessageHandlerMock);
             _jsonSerializerSettingsFactoryMock = new Mock<IJsonSerializerSettingsFactory>();
             _optionsValidatorMock = new Mock<IValidator<Options.WeatherbitOptions>>()
@@ -80,9 +72,6 @@ namespace Wheaterbit.Client.UnitTests
                 _optionsValidatorMock.Object,
                 _jsonSerializerSettingsFactoryMock.Object);
 
-            _customHttpMessageHandlerMock
-                .Setup(x => x.SendAsync(It.IsAny<HttpRequestMessage>(), It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new HttpResponseMessage() { StatusCode = System.Net.HttpStatusCode.InternalServerError });
             //Act & Assert
             await Assert.ThrowsAsync<UriFormatException>(() => _uut.GetSixteenDayForecast(0, 0, CancellationToken.None));
         }

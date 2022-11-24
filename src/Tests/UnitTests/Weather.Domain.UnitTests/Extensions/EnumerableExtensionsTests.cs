@@ -30,7 +30,7 @@ namespace Weather.Domain.UnitTests.Extensions
         public void HasAny_Success()
         {
             //Arrange
-            var data = new List<int>() { 1 };
+            var data = new List<int> { 1 };
             //Act
             var result = data.HasAny();
             //Assert

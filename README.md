@@ -59,8 +59,8 @@ In this solution, each 'code' project has its own unit test project and every **
 - **Minimal Hosting Model**
 	- you are able to create single clean start point of the API
 #### Cons
-- **Complex Query Parameters**
-	- does not support complex query parameters, you have to write [Custom Binding](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0#custom-binding), anyway [ASP.NET Core updates in .NET 7](https://devblogs.microsoft.com/dotnet/asp-net-core-updates-in-dotnet-7-preview-5/) contains binding support using **[AsParameters]** attribute.
+- **Complex Query Parameters (ASP.NET Core 6.0)**
+	- **ASP.NET Core 6.0** does not support complex query parameters, you have to write [Custom Binding](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0#custom-binding), anyway **ASP.NET Core 7.0** contains binding support using **[AsParameters]** attribute.
 ### Benefits of Clean Architecture
 - **UI/Framework/Database Independent** 
 	- easily change framework/database without touching internal layers
@@ -89,7 +89,7 @@ Solution contains four layers:
 ![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
 
 ## Technologies
-* [ASP.NET Core 6](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0)
+* [ASP.NET Core 7](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-7.0)
 * [Entity Framework Core InMemory](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli)
 * [AutoMapper](https://github.com/AutoMapper/AutoMapper)
 * [FluentResuls](https://github.com/altmann/FluentResults)

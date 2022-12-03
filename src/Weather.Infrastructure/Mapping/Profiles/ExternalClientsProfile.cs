@@ -15,7 +15,7 @@ namespace Weather.Infrastructure.Mapping.Profiles
 
             CreateMap<Wheaterbit.Client.Dtos.ForecastTemperatureDto, Domain.Dtos.ForecastTemperatureDto>()
                 .ForMember(dest => dest.Temperature, opt => opt.MapFrom(src => src.temp))
-                .ForMember(dest => dest.DateTime, opt => opt.MapFrom(src => src.ob_time));
+                .ForMember(dest => dest.DateTime, opt => opt.MapFrom(src => src.datetime));
 
             CreateMap<Wheaterbit.Client.Dtos.ForecastWeatherDto, Domain.Dtos.ForecastWeatherDto>()
                 .ForMember(dest => dest.ForecastTemperatures, opt => opt.MapFrom(src => src.Data))

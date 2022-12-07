@@ -20,7 +20,6 @@ Example API allows to get actual/forecast weather data by location from [Weather
 	* [Clean Architecture Layers](#clean-architecture-layers)
 		* [Horizontal Diagram (references)](#horizontal-diagram-references)
 * [Technologies](#technologies)
-* [Conclusion](#conclusion)
 
 
 ## Get Started
@@ -81,7 +80,7 @@ Solution contains four layers:
 * **Weather.Core** - business logic of the application
 	*  Request Handlers/Managers/.. - business implementation
 	*  Interfaces - interfaces for Infrastructure layer (Service, Repository, ..)
-* **Weather.Domain** - POCO classes, extensions, all what should be shared
+* **Weather.Domain** - DTOs, extensions, all what should be shared
 	* DTOs
 	* General Extensions
 

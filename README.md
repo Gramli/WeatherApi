@@ -7,7 +7,7 @@
 
 REST API solution demonstrates how to create clean and modern API (from my point of view) with Clean Architecture, minimal API and various of design patterns.  
 
-Example API allows to get actual/forecast/favorite weather data by location and safe favorites locations to in memory db.
+Example API allows to get actual/forecast weather data by location from [Weatherbit](https://www.weatherbit.io/) throught [RapidAPI](https://rapidapi.com) and also allow's to add favorite locations into [in memory database](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli) and then get weather data by stored (favorites) locations.
 
 ## Menu
 * [Get Started](#get-started)

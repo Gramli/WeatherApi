@@ -64,7 +64,7 @@ In this solution, each 'code' project has its own unit test project and every **
 - **UI/Framework/Database Independent** 
 	- easily change framework/database without touching internal layers
 	- UI is top layer so you are able to change it without touching any internal layer
-- **Highly Testable** - clean architechture is designed for testing, so you can fox example easily test business logic without touching any external element like database, UI, external web service etc.
+- **Highly Testable** - clean architechture is designed for testing, so you can for example easily test business logic without touching any external element like database, UI, external web service etc.
 
 ### Clean Architecture Layers
 

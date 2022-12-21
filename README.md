@@ -77,6 +77,7 @@ Solution contains four layers:
 	*  Repositories Implementation - access to database
 	*  External Services Proxies - proxy classes implementation - to obtain data from external web services
 	*  Infastructure Specific Services - services which are needed to interact with external libraries and frameworks
+	* **Weatherbit.Client** - standalone project for communication with RapidAPI/Weatherbit
 * **Weather.Core** - business logic of the application
 	*  Request Handlers/Managers/.. - business implementation
 	*  Abstractions - besides abstractions for business logic are there abstractions for Infrastructure layer (Service, Repository, ..) to be able use them in this (core) layer

@@ -76,11 +76,11 @@ Solution contains four layers:
 * **Weather.Infrastructure** - layer for communication with external resources like database, cache, web service.. 
 	*  Repositories Implementation - access to database
 	*  External Services Proxies - proxy classes implementation - to obtain data from external web services
-	*  Infastructure Specific Services - services which are needed to interact with infrastructure
+	*  Infastructure Specific Services - services which are needed to interact with external libraries and frameworks
 * **Weather.Core** - business logic of the application
 	*  Request Handlers/Managers/.. - business implementation
-	*  Interfaces - interfaces for Infrastructure layer (Service, Repository, ..)
-* **Weather.Domain** - DTOs, extensions, all what should be shared
+	*  Abstractions - besides abstractions for business logic are there abstractions for Infrastructure layer (Service, Repository, ..) to be able use them in this (core) layer
+* **Weather.Domain** - all what should be shared across all projects
 	* DTOs
 	* General Extensions
 

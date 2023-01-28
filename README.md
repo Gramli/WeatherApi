@@ -34,7 +34,7 @@ Example API allows to get actual/forecast weather data by location from [Weather
   }
 ```
 4. Run & Try it in SwaggerUI
-![SwaggerUI](./doc/img/swagger.PNG)
+![SwaggerUI](./doc/img/weatherApiSwagger.gif)
 
 ## Motivation
 Main motivation is to write practical example of minimal API, to see it's benefits and disadvantages. Also to create REST API example project using Clean Architecture and design patterns.

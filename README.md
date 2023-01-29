@@ -50,6 +50,8 @@ Important part of every project are **[tests](https://github.com/Gramli/WeatherA
 
 In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project, which is very helpful for orientation in test project.
 
+To ensure that our REST API works as expected for end users we write **System tests**. System tests should **test application as whole**, typically we call endpoints of the API in particullar order defined by business requirements and check expected results. The solution contains simple [System Tests](https://github.com/Gramli/WeatherApi/tree/main/src/Tests/SystemTests) which just call exposed endpoints and check desired response.
+
 ### Minimal API
 #### Pros
 - **Reduce the ceremony of creating APIs**

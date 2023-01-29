@@ -29,4 +29,4 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --filter FullyQualifiedName!=Weather.API.SystemTests.WeatherSystemTests --no-build --verbosity normal
+      run: dotnet test --filter FullyQualifiedName!~Weather.API.SystemTests --no-build --verbosity normal

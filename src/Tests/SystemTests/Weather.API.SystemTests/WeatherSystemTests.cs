@@ -25,7 +25,7 @@ namespace Weather.API.SystemTests
         {
             //Arrange
             //Act
-            var response = await _httpClient.GetAsync($"weather/current?latitude={latitude}&longtitude={longtitude}");
+            var response = await _httpClient.GetAsync($"weather/v1/current?latitude={latitude}&longtitude={longtitude}");
 
             //Assert
             response.EnsureSuccessStatusCode();
@@ -40,7 +40,7 @@ namespace Weather.API.SystemTests
         {
             //Arrange
             //Act
-            var response = await _httpClient.GetAsync("weather/forecast?latitude=1&longtitude=1");
+            var response = await _httpClient.GetAsync("weather/v1/forecast?latitude=1&longtitude=1");
 
             //Assert
             response.EnsureSuccessStatusCode();
@@ -71,7 +71,7 @@ namespace Weather.API.SystemTests
 
             addResponse.EnsureSuccessStatusCode();
             //Act
-            var response = await _httpClient.GetAsync("weather/favorites");
+            var response = await _httpClient.GetAsync("weather/v1/favorites");
 
             //Assert
             response.EnsureSuccessStatusCode();
@@ -95,7 +95,7 @@ namespace Weather.API.SystemTests
             var content = new StringContent(body, Encoding.UTF8, "application/json");
 
             //Act
-            return await _httpClient.PostAsync("weather/favorite", content);
+            return await _httpClient.PostAsync("weather/v1/favorite", content);
         }
     }
 }

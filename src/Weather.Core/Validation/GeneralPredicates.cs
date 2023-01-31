@@ -5,7 +5,6 @@ namespace Weather.Core.Validation
 {
     internal static class GeneralPredicates
     {
-        internal static readonly Predicate<string> isValidString = m => !string.IsNullOrWhiteSpace(m);
         internal static readonly Predicate<double> isValidTemperature = m => m < 60 && m > -90;
         internal static readonly Predicate<long> isValidLatitude = m => m >= -90 && m <= 90;
         internal static readonly Predicate<long> isValidLongtitude = m => m >= -180 && m <= 180;

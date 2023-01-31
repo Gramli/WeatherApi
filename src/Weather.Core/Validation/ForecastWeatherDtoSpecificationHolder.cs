@@ -20,7 +20,7 @@ namespace Weather.Core.Validation
 
             Specification<ForecastWeatherDto> forecastSpecification = s => s
                 .Member(m => m.ForecastTemperatures, m => m.AsCollection(forecastTemperatureSpecification))
-                .Member(m => m.CityName, m=>m.Rule(GeneralPredicates.isValidString));
+                .Member(m => m.CityName, m=>m.NotEmpty().NotWhiteSpace());
 
             Specification = forecastSpecification;
         }

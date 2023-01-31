@@ -11,19 +11,18 @@ namespace Wheaterbit.Client.Validation
         public CurrentWeatherDtoSpecificationHolder()
         {
             Specification<string> timeStringSpecification = s => s
-                .Rule(m => !string.IsNullOrWhiteSpace(m) && DateTime.TryParse(m, out var _));
+                .NotEmpty()
+                .And()
+                .Rule(m => DateTime.TryParse(m, out var _));
 
             Specification<double> tempSpecification = s => s
                 .Rule(GeneralPredicates.isValidTemperature);
-
-            Specification<string> stringSpecification = s => s
-                .Rule(GeneralPredicates.isValidString);
 
             Specification<CurrentWeatherDto> currentWeatherDtoSpecification = s => s
                 .Member(m => m.Sunrise, timeStringSpecification)
                 .Member(m => m.Sunset, timeStringSpecification)
                 .Member(m => m.Temperature, tempSpecification)
-                .Member(m => m.CityName, stringSpecification);
+                .Member(m => m.CityName, m => m.NotEmpty().NotWhiteSpace());
 
             Specification = currentWeatherDtoSpecification;
         }

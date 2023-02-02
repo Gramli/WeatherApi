@@ -62,6 +62,8 @@ To ensure that our REST API works as expected for end users we write **System te
 #### Cons
 - **Complex Query Parameters (ASP.NET Core 6.0)**
 	- **ASP.NET Core 6.0** does not support complex query parameters, you have to write [Custom Binding](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0#custom-binding), anyway **ASP.NET Core 7.0** contains binding support using **[AsParameters]** attribute.
+- **Endpoints Grouping (ASP.NET Core 6.0)**
+	- **ASP.NET Core 6.0** does not support endpoint grouping, it means that you have to create repetitive code when map endpoints. Anyway **ASP.NET Core 7.0** already support it: [route groups](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-7.0#route-groups).
 ### Benefits of Clean Architecture
 - **UI/Framework/Database Independent** 
 	- easily change framework/database without touching internal layers

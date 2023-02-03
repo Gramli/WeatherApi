@@ -43,7 +43,8 @@ namespace Weather.Infrastructure.Configuration
 
         private static IServiceCollection AddExternalHttpServices(this IServiceCollection serviceCollection, IConfiguration configuration) 
         {
-            return serviceCollection.AddHttpClient()
+            return serviceCollection
+                .AddHttpClient()
                 .AddWeatherbit(configuration);
         }
     }

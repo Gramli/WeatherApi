@@ -25,7 +25,7 @@ namespace Weather.API.Middlewares
             }
             catch (Exception generalEx)
             {
-                _logger.LogError(LogEvents.GeneralError, generalEx, "Unexpected Error Occured.");
+                _logger.LogError(LogEvents.GeneralError, generalEx, "Unexpected error occured.");
                 await WriteResponseAsync(generalEx, context);
             }
         }

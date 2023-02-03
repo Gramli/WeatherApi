@@ -50,7 +50,7 @@ namespace Wheaterbit.Client.UnitTests
             //Assert
             Assert.False(result.IsSuccess);
             Assert.Single(result.Errors);
-            Assert.Equal("Failed response to GetSixteenDayForecast", result.Errors.Single().Message);
+            Assert.Equal("Failed response to SendAsync", result.Errors.Single().Message);
         }
 
         [Fact]

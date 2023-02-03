@@ -89,7 +89,7 @@ namespace Wheaterbit.Client
             using var response = await _httpClient.SendAsync(requestMessage, cancellationToken);
             if (!response.IsSuccessStatusCode)
             {
-                return Result.Fail($"Failed response to {nameof(GetSixteenDayForecast)}");
+                return Result.Fail($"Failed response to {nameof(SendAsync)}");
             }
 
             var resultContent = await response.Content.ReadAsStringAsync();

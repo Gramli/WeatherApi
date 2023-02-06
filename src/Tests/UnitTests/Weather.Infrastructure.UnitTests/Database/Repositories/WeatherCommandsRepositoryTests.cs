@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using Moq;
+﻿using Microsoft.EntityFrameworkCore;
 using Weather.Core.Abstractions;
 using Weather.Domain.Dtos;
 using Weather.Domain.Dtos.Commands;

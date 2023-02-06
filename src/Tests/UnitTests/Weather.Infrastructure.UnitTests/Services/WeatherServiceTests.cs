@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using FluentResults;
-using Moq;
-using Weather.Core.Abstractions;
+﻿using Weather.Core.Abstractions;
 using Weather.Domain.Dtos;
 using Weather.Infrastructure.Services;
 using Wheaterbit.Client.Abstractions;

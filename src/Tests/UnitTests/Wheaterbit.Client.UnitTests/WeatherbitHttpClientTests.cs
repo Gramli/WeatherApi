@@ -1,7 +1,4 @@
-﻿using FluentResults;
-using Moq;
-using System.Net.Http.Json;
-using Validot;
+﻿using Validot;
 using Wheaterbit.Client.Abstractions;
 using Wheaterbit.Client.UnitTests.DataGenerator;
 using Wheaterbit.Client.UnitTests.Extensions;

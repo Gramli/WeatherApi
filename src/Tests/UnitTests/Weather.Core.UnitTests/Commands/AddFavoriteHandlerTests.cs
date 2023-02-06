@@ -1,8 +1,4 @@
-﻿using FluentResults;
-using Microsoft.Extensions.Logging;
-using System.Net;
-using Validot;
-using Weather.Core.Abstractions;
+﻿using Weather.Core.Abstractions;
 using Weather.Core.Commands;
 using Weather.Domain.Dtos.Commands;
 using Weather.Domain.Logging;

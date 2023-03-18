@@ -27,7 +27,7 @@ namespace Weather.API.EndpointBuilders
             endpointRouteBuilder.MapGet("v1/current",
                 async (long latitude, long longtitude, [FromServices] IGetCurrentWeatherHandler handler, CancellationToken cancellationToken) =>
                     await handler.SendAsync(new GetCurrentWeatherQuery(latitude,longtitude), cancellationToken))
-                        .Produces<CurrentWeatherDto>()
+                        .Produces<DataResponse<CurrentWeatherDto>>()
                         .WithName("GetCurrentWeather")
                         .WithTags("Getters");
             return endpointRouteBuilder;
@@ -38,7 +38,7 @@ namespace Weather.API.EndpointBuilders
             endpointRouteBuilder.MapGet("v1/forecast",
                 async (long latitude, long longtitude, [FromServices] IGetForecastWeatherHandler handler, CancellationToken cancellationToken) =>
                     await handler.SendAsync(new GetForecastWeatherQuery(latitude, longtitude), cancellationToken))
-                        .Produces<ForecastWeatherDto>()
+                        .Produces<DataResponse<ForecastWeatherDto>>()
                         .WithName("GetForecastWeather")
                         .WithTags("Getters");
 
@@ -50,14 +50,14 @@ namespace Weather.API.EndpointBuilders
             endpointRouteBuilder.MapGet("v1/favorites",
                 async ([FromServices] IGetFavoritesHandler handler, CancellationToken cancellationToken) =>
                     await handler.SendAsync(EmptyRequest.Instance, cancellationToken))
-                        .Produces<FavoritesWeatherDto>()
+                        .Produces<DataResponse<FavoritesWeatherDto>>()
                         .WithName("GetFavorites")
                         .WithTags("Getters");
 
             endpointRouteBuilder.MapPost("v1/favorite",
                 async ([FromBody] AddFavoriteCommand addFavoriteCommand, [FromServices] IAddFavoriteHandler handler, CancellationToken cancellationToken) =>
                     await handler.SendAsync(addFavoriteCommand, cancellationToken))
-                        .Produces<bool>()
+                        .Produces<DataResponse<bool>>()
                         .WithName("AddFavorite")
                         .WithTags("Setters");
 

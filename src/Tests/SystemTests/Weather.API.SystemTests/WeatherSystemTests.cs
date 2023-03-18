@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System.Text;
 using Weather.Domain.Dtos;
 using Weather.Domain.Dtos.Commands;
+using Weather.Domain.Http;
 
 namespace Weather.API.SystemTests
 {
@@ -30,9 +31,9 @@ namespace Weather.API.SystemTests
             //Assert
             response.EnsureSuccessStatusCode();
             var stringResult = await response.Content.ReadAsStringAsync();
-            var resultDto = JsonConvert.DeserializeObject<CurrentWeatherDto>(stringResult);
-            Assert.NotNull(resultDto);
-            Assert.Equal(cityName, resultDto.CityName);
+            var resultDto = JsonConvert.DeserializeObject<DataResponse<CurrentWeatherDto>>(stringResult);
+            Assert.NotNull(resultDto?.Data);
+            Assert.Equal(cityName, resultDto.Data.CityName);
         }
 
         [Fact]
@@ -45,9 +46,9 @@ namespace Weather.API.SystemTests
             //Assert
             response.EnsureSuccessStatusCode();
             var stringResult = await response.Content.ReadAsStringAsync();
-            var resultDto = JsonConvert.DeserializeObject<ForecastWeatherDto>(stringResult);
-            Assert.NotNull(resultDto);
-            Assert.Equal(cityName, resultDto.CityName);
+            var resultDto = JsonConvert.DeserializeObject<DataResponse<ForecastWeatherDto>>(stringResult);
+            Assert.NotNull(resultDto?.Data);
+            Assert.Equal(cityName, resultDto.Data.CityName);
         }
 
         [Fact]
@@ -59,8 +60,8 @@ namespace Weather.API.SystemTests
             //Assert
             response.EnsureSuccessStatusCode();
             var stringResult = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<bool>(stringResult);
-            Assert.True(result);
+            var result = JsonConvert.DeserializeObject<DataResponse<bool>>(stringResult);
+            Assert.True(result?.Data);
         }
 
         [Fact]
@@ -76,9 +77,9 @@ namespace Weather.API.SystemTests
             //Assert
             response.EnsureSuccessStatusCode();
             var stringResult = await response.Content.ReadAsStringAsync();
-            var resultDto = JsonConvert.DeserializeObject<FavoritesWeatherDto>(stringResult);
-            Assert.NotNull(resultDto);
-            Assert.Equal(cityName, resultDto.FavoriteWeathers.First().CityName);
+            var resultDto = JsonConvert.DeserializeObject<DataResponse<FavoritesWeatherDto>>(stringResult);
+            Assert.NotNull(resultDto?.Data);
+            Assert.Equal(cityName, resultDto.Data.FavoriteWeathers.First().CityName);
         }
 
         private async Task<HttpResponseMessage> AddFavorite()

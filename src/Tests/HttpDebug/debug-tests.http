@@ -1,0 +1,26 @@
+@hostname=localhost
+@port=7034
+@host={{hostname}}:{{port}}
+
+### get current weather request
+GET https://{{host}}/weather/v1/current?latitude=1&longtitude=1
+Content-Type: application/json
+
+### get forecast weather request
+GET https://{{host}}/weather/v1/forecast?latitude=1&longtitude=1
+Content-Type: application/json
+
+### get favorites weather request
+GET https://{{host}}/weather/v1/favorites
+Content-Type: application/json
+
+### add favorites weather request
+POST https://{{host}}/weather/v1/favorite
+Content-Type: application/json
+
+{
+  "location": {
+    "latitude": 1,
+    "longitude": 1
+  }
+}

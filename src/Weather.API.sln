@@ -39,7 +39,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.UnitTests.Common", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalClients", "ExternalClients", "{20EF0756-7FA6-4708-8349-D1E1FF49229A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wheaterbit.Client.UnitTests", "Tests\UnitTests\Wheaterbit.Client.UnitTests\Wheaterbit.Client.UnitTests.csproj", "{501B5489-717D-49E3-940B-99DDA39F278F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wheaterbit.Client.UnitTests", "Tests\UnitTests\Wheaterbit.Client.UnitTests\Wheaterbit.Client.UnitTests.csproj", "{501B5489-717D-49E3-940B-99DDA39F278F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpDebug", "HttpDebug", "{799572B7-2EF0-498A-ABD0-7AAA963286F5}"
+	ProjectSection(SolutionItems) = preProject
+		Tests\HttpDebug\debug-tests.http = Tests\HttpDebug\debug-tests.http
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +122,7 @@ Global
 		{A42AAA9B-DD74-48D3-A23C-9C3D69009C1C} = {DBB0632C-F7EA-4593-927B-49DB2371CDE5}
 		{20EF0756-7FA6-4708-8349-D1E1FF49229A} = {DBB0632C-F7EA-4593-927B-49DB2371CDE5}
 		{501B5489-717D-49E3-940B-99DDA39F278F} = {20EF0756-7FA6-4708-8349-D1E1FF49229A}
+		{799572B7-2EF0-498A-ABD0-7AAA963286F5} = {F3BB2E4D-53BC-4EB0-9A73-300134879E26}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {75897F3D-1882-40EE-A49D-10503A1CCA69}

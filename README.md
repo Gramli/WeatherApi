@@ -33,8 +33,14 @@ Example API allows to get actual/forecast weather data by location from [Weather
     "XRapidAPIHost": "value from code snippet"
   }
 ```
-4. Run & Try it in SwaggerUI
+4. Run Weather.API 
+
+### Try it in SwaggerUI
 ![SwaggerUI](./doc/img/weatherApiSwagger.gif)
+
+### Try it using .http file (VS2022)
+ * Go to Tests/Debug folder and open **debug-tests.http** file (in VS2022)
+ * Send request
 
 ## Motivation
 Main motivation is to write practical example of minimal API, to see it's benefits and disadvantages. Also to create REST API example project using Clean Architecture and design patterns.

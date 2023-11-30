@@ -30,7 +30,8 @@ namespace Weather.Infrastructure.Configuration
         private static IServiceCollection AddMapping(this IServiceCollection serviceCollection)
         {
             return serviceCollection
-                .AddAutoMapper(typeof(WeatherEntitiesProfile));
+                .AddAutoMapper(typeof(WeatherEntitiesProfile))
+                .AddAutoMapper(typeof(WeatherbitClientProfile));
         }
 
         private static IServiceCollection AddDatabase(this IServiceCollection serviceCollection)

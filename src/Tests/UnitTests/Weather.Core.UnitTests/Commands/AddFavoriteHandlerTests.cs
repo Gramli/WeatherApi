@@ -1,5 +1,6 @@
 ﻿using Weather.Core.Abstractions;
 using Weather.Core.Commands;
+using Weather.Core.Resources;
 using Weather.Domain.Dtos.Commands;
 using Weather.Domain.Logging;
 using Weather.UnitTests.Common.Extensions;

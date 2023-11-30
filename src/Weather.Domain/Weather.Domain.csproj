@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ErrorLogMessages.Designer.cs">
+    <Compile Update="Resources\ErrorLogMessages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ErrorLogMessages.resx</DependentUpon>
@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ErrorLogMessages.resx">
+    <EmbeddedResource Update="Resources\ErrorLogMessages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorLogMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>

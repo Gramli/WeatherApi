@@ -1,5 +1,6 @@
 ﻿using Weather.Core.Abstractions;
 using Weather.Domain.Dtos;
+using Weather.Infrastructure.Resources;
 using Weather.Infrastructure.Services;
 using Wheaterbit.Client.Abstractions;
 using Wheaterbit.Client.Dtos;

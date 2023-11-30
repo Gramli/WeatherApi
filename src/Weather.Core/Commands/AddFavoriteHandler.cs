@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Validot;
 using Weather.Core.Abstractions;
+using Weather.Core.Resources;
 using Weather.Domain.Dtos.Commands;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;

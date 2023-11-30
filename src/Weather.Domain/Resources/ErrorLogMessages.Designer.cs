@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Weather.Domain {
+namespace Weather.Domain.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Weather.Domain {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Weather.Domain.ErrorLogMessages", typeof(ErrorLogMessages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Weather.Domain.Resources.ErrorLogMessages", typeof(ErrorLogMessages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

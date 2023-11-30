@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Weather.Core {
+namespace Weather.Infrastructure.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Weather.Core {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Weather.Core.ErrorMessages", typeof(ErrorMessages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Weather.Infrastructure.Resources.ErrorMessages", typeof(ErrorMessages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,29 @@ namespace Weather.Core {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Can&apos;t store location to database. .
+        ///   Looks up a localized string similar to Failed to retrieve data from database..
         /// </summary>
-        internal static string CantStoreLocation {
+        internal static string DatabaseGetFailed {
             get {
-                return ResourceManager.GetString("CantStoreLocation", resourceCulture);
+                return ResourceManager.GetString("DatabaseGetFailed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Problem with external API, can&apos;t retrive data properly..
+        ///   Looks up a localized string similar to Can&apos;t retrieve data properly from external service. Not expected data. Invalid Count: {0}.
         /// </summary>
-        internal static string ExternalApiError {
+        internal static string ExternalClientGetDataFailed_CorruptedData_InvalidCount {
             get {
-                return ResourceManager.GetString("ExternalApiError", resourceCulture);
+                return ResourceManager.GetString("ExternalClientGetDataFailed_CorruptedData_InvalidCount", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stored favorite location is invalid {0}..
+        ///   Looks up a localized string similar to Can&apos;t retrieve data properly from external service. Data are empty or null..
         /// </summary>
-        internal static string InvalidStoredLocation {
+        internal static string ExternalClientGetDataFailed_EmptyOrNull {
             get {
-                return ResourceManager.GetString("InvalidStoredLocation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Invalid request data: {0}..
-        /// </summary>
-        internal static string RequestValidationError {
-            get {
-                return ResourceManager.GetString("RequestValidationError", resourceCulture);
+                return ResourceManager.GetString("ExternalClientGetDataFailed_EmptyOrNull", resourceCulture);
             }
         }
     }

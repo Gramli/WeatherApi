@@ -1,6 +1,7 @@
 ﻿using Validot.Results;
 using Weather.Core.Abstractions;
 using Weather.Core.Queries;
+using Weather.Core.Resources;
 using Weather.Domain.Dtos;
 using Weather.Domain.Dtos.Queries;
 using Weather.Domain.Logging;

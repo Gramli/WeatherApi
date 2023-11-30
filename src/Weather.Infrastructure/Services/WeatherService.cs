@@ -1,10 +1,10 @@
 ﻿using Ardalis.GuardClauses;
 using AutoMapper;
 using FluentResults;
-using Microsoft.Extensions.Logging;
 using Weather.Core.Abstractions;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
+using Weather.Infrastructure.Resources;
 using Wheaterbit.Client.Abstractions;
 
 namespace Weather.Infrastructure.Services

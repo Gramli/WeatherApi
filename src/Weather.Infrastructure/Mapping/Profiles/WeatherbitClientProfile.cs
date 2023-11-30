@@ -2,9 +2,9 @@
 
 namespace Weather.Infrastructure.Mapping.Profiles
 {
-    internal sealed class ExternalClientsProfile : Profile
+    internal sealed class WeatherbitClientProfile : Profile
     {
-        public ExternalClientsProfile()
+        public WeatherbitClientProfile()
         {
             CreateMap<Wheaterbit.Client.Dtos.CurrentWeatherDto, Domain.Dtos.CurrentWeatherDto>()
                 .ForMember(dest=>dest.Temperature, opt => opt.MapFrom(src => src.temp))

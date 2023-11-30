@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ErrorMessages.Designer.cs">
+    <Compile Update="Resources\ErrorMessages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ErrorMessages.resx</DependentUpon>
@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ErrorMessages.resx">
+    <EmbeddedResource Update="Resources\ErrorMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>

@@ -3,11 +3,12 @@ using FluentResults;
 using Microsoft.Extensions.Logging;
 using Validot;
 using Weather.Core.Abstractions;
-using Weather.Domain;
+using Weather.Core.Resources;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;
 using Weather.Domain.Logging;
+using Weather.Domain.Resources;
 
 namespace Weather.Core.Queries
 {

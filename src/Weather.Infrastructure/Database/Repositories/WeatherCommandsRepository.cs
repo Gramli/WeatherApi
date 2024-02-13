@@ -2,7 +2,7 @@
 using AutoMapper;
 using FluentResults;
 using Weather.Core.Abstractions;
-using Weather.Domain.Dtos.Commands;
+using Weather.Domain.Commands;
 using Weather.Infrastructure.Database.EFContext;
 using Weather.Infrastructure.Database.EFContext.Entities;
 

@@ -1,4 +1,4 @@
-﻿using Weather.Domain.Dtos.Commands;
+﻿using Weather.Domain.Commands;
 
 namespace Weather.Core.Abstractions
 {

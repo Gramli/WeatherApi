@@ -1,9 +1,11 @@
-﻿namespace Weather.Domain.Dtos.Queries
+﻿using Weather.Domain.Dtos;
+
+namespace Weather.Domain.Queries
 {
-    public sealed class GetCurrentWeatherQuery
+    public sealed class GetForecastWeatherQuery
     {
         public LocationDto Location { get; init; }
-        public GetCurrentWeatherQuery(long latitude, long longtitude)
+        public GetForecastWeatherQuery(long latitude, long longtitude)
         {
             Location = new LocationDto
             {

@@ -4,10 +4,10 @@ using Validot;
 using Weather.Core.Abstractions;
 using Weather.Core.Resources;
 using Weather.Domain.Dtos;
-using Weather.Domain.Dtos.Queries;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;
 using Weather.Domain.Logging;
+using Weather.Domain.Queries;
 using Weather.Domain.Resources;
 
 namespace Weather.Core.Queries

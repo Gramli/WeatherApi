@@ -1,5 +1,5 @@
 ﻿using Validot;
-using Weather.Domain.Dtos.Commands;
+using Weather.Domain.Commands;
 
 namespace Weather.Core.Validation
 {

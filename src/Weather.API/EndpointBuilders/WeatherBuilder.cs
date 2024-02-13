@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Weather.API.Extensions;
 using Weather.Core.Abstractions;
+using Weather.Domain.Commands;
 using Weather.Domain.Dtos;
-using Weather.Domain.Dtos.Commands;
-using Weather.Domain.Dtos.Queries;
 using Weather.Domain.Http;
+using Weather.Domain.Queries;
 
 namespace Weather.API.EndpointBuilders
 {

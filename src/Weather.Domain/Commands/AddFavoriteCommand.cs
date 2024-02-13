@@ -1,4 +1,6 @@
-﻿namespace Weather.Domain.Dtos.Commands
+﻿using Weather.Domain.Dtos;
+
+namespace Weather.Domain.Commands
 {
     public sealed class AddFavoriteCommand
     {

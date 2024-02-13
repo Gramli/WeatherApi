@@ -1,5 +1,5 @@
 ﻿using Weather.Domain.Dtos;
-using Weather.Domain.Dtos.Queries;
+using Weather.Domain.Queries;
 
 namespace Weather.Core.Abstractions
 {

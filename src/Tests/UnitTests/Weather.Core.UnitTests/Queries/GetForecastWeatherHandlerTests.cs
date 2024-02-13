@@ -3,8 +3,8 @@ using Weather.Core.Abstractions;
 using Weather.Core.Queries;
 using Weather.Core.Resources;
 using Weather.Domain.Dtos;
-using Weather.Domain.Dtos.Queries;
 using Weather.Domain.Logging;
+using Weather.Domain.Queries;
 using Weather.UnitTests.Common.Extensions;
 
 namespace Weather.Core.UnitTests.Queries

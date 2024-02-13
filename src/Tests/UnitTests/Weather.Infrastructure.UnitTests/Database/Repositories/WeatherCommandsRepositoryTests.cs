@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Weather.Core.Abstractions;
+using Weather.Domain.Commands;
 using Weather.Domain.Dtos;
-using Weather.Domain.Dtos.Commands;
 using Weather.Infrastructure.Database.EFContext.Entities;
 using Weather.Infrastructure.Database.Repositories;
 

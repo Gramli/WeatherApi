@@ -68,11 +68,23 @@ To ensure that our REST API works as expected for end users we write **System te
 - **Minimal Hosting Model**
 	- you are able to create single clean start point of the API
 
-### Benefits of Clean Architecture
+### Clean Architecture
+#### Pros
 - **UI/Framework/Database Independent** 
-	- easily change framework/database without touching internal layers
-	- UI is top layer so you are able to change it without touching any internal layer
-- **Highly Testable** - clean architechture is designed for testing, so you can for example easily test business logic without touching any external element like database, UI, external web service etc.
+	- business logic is in the middle so framework, database (any external layer) can be easily changed without major impacts
+- **Highly Testable** 
+	- clean architechture is designed for testing, for example business logic can be tested without touching any external layer/element like database, UI, external web service etc.
+	- easy to mock because of abstractions
+- **Maintain and Extensibility**
+	- thanks to defined structure changes has isolated impact and together with SOLID principles it's easy to maintain
+
+#### Cons
+- **Understanding**
+	- sometimes it's hard to split responsibilities or select right layer for our new code 
+- **Heavy Structure**
+	- it can be overkill to use it for simple CRUD api beacuse of lot of boilerplate code 
+
+#### Cons
 
 ### Clean Architecture Layers
 

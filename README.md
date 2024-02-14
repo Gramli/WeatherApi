@@ -76,7 +76,7 @@ To ensure that our REST API works as expected for end users we write **System te
 	- clean architechture is designed for testing, for example business logic can be tested without touching any external layer/element like database, UI, external web service etc.
 	- easy to mock because of abstractions
 - **Maintain and Extensibility**
-	- thanks to defined structure changes has isolated impact and together with SOLID principles it's easy to maintain
+	- thanks to defined structure, changes has isolated impact and together with SOLID principles it's easy to maintain
 
 #### Cons
 - **Understanding**

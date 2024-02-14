@@ -84,8 +84,6 @@ To ensure that our REST API works as expected for end users we write **System te
 - **Heavy Structure**
 	- it can be overkill to use it for simple CRUD api beacuse of lot of boilerplate code 
 
-#### Cons
-
 ### Clean Architecture Layers
 
 Solution contains four layers: 

@@ -24,7 +24,7 @@ Example API allows to get actual/forecast weather data by location from [Weather
 
 ## Get Started
 1. Register on [RapidAPI](https://rapidapi.com)
-2. Subscribe Weatherbit (its for free) and go to API Documentation
+2. Subscribe [Weatherbit](https://rapidapi.com/weatherbit/api/weather) (its for free) and go to Endpoints tab
 3. In API documentation copy (from Code Snippet) **X-RapidAPI-Key**, **X-RapidAPI-Host** and put them to appsettings.json file in WeatherAPI project
 ```json
   "Weatherbit": {

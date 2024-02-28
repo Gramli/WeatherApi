@@ -40,7 +40,7 @@ namespace Wheaterbit.Client
             }
         }
 
-        public async Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(long latitude, long longitude, CancellationToken cancellationToken)
+        public async Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(double latitude, double longitude, CancellationToken cancellationToken)
         {
             var request = new HttpRequestMessage
             {
@@ -56,7 +56,7 @@ namespace Wheaterbit.Client
             return await SendAsyncSave<ForecastWeatherDto>(request, cancellationToken);
         }
 
-        public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(long latitude, long longitude, CancellationToken cancellationToken)
+        public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(double latitude, double longitude, CancellationToken cancellationToken)
         {
             var request = new HttpRequestMessage
             {

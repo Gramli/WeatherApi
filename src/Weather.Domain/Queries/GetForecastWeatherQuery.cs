@@ -5,7 +5,7 @@ namespace Weather.Domain.Queries
     public sealed class GetForecastWeatherQuery
     {
         public LocationDto Location { get; init; }
-        public GetForecastWeatherQuery(long latitude, long longtitude)
+        public GetForecastWeatherQuery(double latitude, double longtitude)
         {
             Location = new LocationDto
             {

@@ -25,7 +25,7 @@ namespace Weather.API.EndpointBuilders
         private static IEndpointRouteBuilder BuildActualWeatherEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
             endpointRouteBuilder.MapGet("v1/current",
-                async (long latitude, long longtitude, [FromServices] IGetCurrentWeatherHandler handler, CancellationToken cancellationToken) =>
+                async (double latitude, double longtitude, [FromServices] IGetCurrentWeatherHandler handler, CancellationToken cancellationToken) =>
                     await handler.SendAsync(new GetCurrentWeatherQuery(latitude,longtitude), cancellationToken))
                         .Produces<DataResponse<CurrentWeatherDto>>()
                         .WithName("GetCurrentWeather")
@@ -36,7 +36,7 @@ namespace Weather.API.EndpointBuilders
         private static IEndpointRouteBuilder BuildForecastWeatherEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
         {
             endpointRouteBuilder.MapGet("v1/forecast",
-                async (long latitude, long longtitude, [FromServices] IGetForecastWeatherHandler handler, CancellationToken cancellationToken) =>
+                async (double latitude, double longtitude, [FromServices] IGetForecastWeatherHandler handler, CancellationToken cancellationToken) =>
                     await handler.SendAsync(new GetForecastWeatherQuery(latitude, longtitude), cancellationToken))
                         .Produces<DataResponse<ForecastWeatherDto>>()
                         .WithName("GetForecastWeather")

@@ -9,9 +9,9 @@ namespace Weather.API.SystemTests
 {
     public class WeatherSystemTests
     {
-        private readonly long latitude = 1;
-        private readonly long longtitude = 1;
-        private readonly string cityName = "Mumford";
+        private readonly double latitude = 38.5;
+        private readonly double longtitude = -78.5;
+        private readonly string cityName = "Stanley";
 
         private readonly HttpClient _httpClient;
 
@@ -41,7 +41,7 @@ namespace Weather.API.SystemTests
         {
             //Arrange
             //Act
-            var response = await _httpClient.GetAsync("weather/v1/forecast?latitude=1&longtitude=1");
+            var response = await _httpClient.GetAsync($"weather/v1/forecast?latitude={latitude}&longtitude={longtitude}");
 
             //Assert
             response.EnsureSuccessStatusCode();

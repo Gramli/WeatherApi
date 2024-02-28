@@ -13,40 +13,30 @@ namespace Weather.Infrastructure.Configuration
     public static class ContainerConfigurationExtension
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection serviceCollection, IConfiguration configuration)
-        {
-            return serviceCollection
+            => serviceCollection
                 .AddMapping()
                 .AddDatabase()
                 .AddExternalHttpServices(configuration)
                 .AddServices();
-        }
 
         private static IServiceCollection AddServices(this IServiceCollection serviceCollection)
-        {
-            return serviceCollection
+            => serviceCollection
                 .AddScoped<IWeatherService, WeatherService>();
-        }
 
         private static IServiceCollection AddMapping(this IServiceCollection serviceCollection)
-        {
-            return serviceCollection
+            => serviceCollection
                 .AddAutoMapper(typeof(WeatherEntitiesProfile))
                 .AddAutoMapper(typeof(WeatherbitClientProfile));
-        }
 
         private static IServiceCollection AddDatabase(this IServiceCollection serviceCollection)
-        {
-            return serviceCollection
+            => serviceCollection
                 .AddDbContext<WeatherContext>(opt => opt.UseInMemoryDatabase("Weather"))
                 .AddScoped<IWeatherQueriesRepository, WeatherQueriesRepository>()
                 .AddScoped<IWeatherCommandsRepository, WeatherCommandsRepository>();
-        }
 
         private static IServiceCollection AddExternalHttpServices(this IServiceCollection serviceCollection, IConfiguration configuration) 
-        {
-            return serviceCollection
+            => serviceCollection
                 .AddHttpClient()
                 .AddWeatherbit(configuration);
-        }
     }
 }

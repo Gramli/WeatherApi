@@ -15,30 +15,24 @@ namespace Weather.Core.Configuration
     public static class ContainerConfigurationExtension
     {
         public static IServiceCollection AddCore(this IServiceCollection serviceCollection)
-        {
-            return serviceCollection
+            => serviceCollection
                 .AddValidation()
                 .AddHandlers();
-        }
 
         private static IServiceCollection AddHandlers(this IServiceCollection serviceCollection) 
-        {
-            return serviceCollection
+            => serviceCollection
                 .AddScoped<IGetCurrentWeatherHandler, GetCurrentWeatherHandler>()
                 .AddScoped<IGetFavoritesHandler, GetFavoritesHandler>()
                 .AddScoped<IGetForecastWeatherHandler, GetForecastWeatherHandler>()
                 .AddScoped<IAddFavoriteHandler, AddFavoriteHandler>();
-        }
 
         private static IServiceCollection AddValidation(this IServiceCollection serviceCollection) 
-        {
-            return serviceCollection
+            => serviceCollection
                 .AddValidotSingleton<IValidator<CurrentWeatherDto>, CurrentWeatherDtoSpecificationHolder, CurrentWeatherDto>()
                 .AddValidotSingleton<IValidator<ForecastWeatherDto>, ForecastWeatherDtoSpecificationHolder, ForecastWeatherDto>()
                 .AddValidotSingleton<IValidator<LocationDto>, LocationDtoSpecificationHolder, LocationDto>()
                 .AddValidotSingleton<IValidator<AddFavoriteCommand>, AddFavoriteCommandSpecificationHolder, AddFavoriteCommand>()
                 .AddValidotSingleton<IValidator<GetCurrentWeatherQuery>, GetCurrentWeatherQuerySpecificationHolder, GetCurrentWeatherQuery>()
                 .AddValidotSingleton<IValidator<GetForecastWeatherQuery>, GetForecastWeatherSpecificationHolder, GetForecastWeatherQuery>();
-        }
     }
 }

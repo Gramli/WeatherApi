@@ -14,7 +14,7 @@ namespace Weather.Core.UnitTests.Queries
         private readonly Mock<IValidator<GetForecastWeatherQuery>> _getForecastWeatherQueryValidatorMock;
         private readonly Mock<IValidator<ForecastWeatherDto>> _forecastWeatherValidatorMock;
         private readonly Mock<IWeatherService> _weatherServiceMock;
-        private readonly Mock<ILogger<IGetCurrentWeatherHandler>> _loggerMock;
+        private readonly Mock<ILogger<IGetForecastWeatherHandler>> _loggerMock;
 
         private readonly IGetForecastWeatherHandler _uut;
         public GetForecastWeatherHandlerTests()
@@ -22,7 +22,7 @@ namespace Weather.Core.UnitTests.Queries
             _getForecastWeatherQueryValidatorMock = new Mock<IValidator<GetForecastWeatherQuery>>();
             _forecastWeatherValidatorMock = new Mock<IValidator<ForecastWeatherDto>>();
             _weatherServiceMock = new Mock<IWeatherService>();
-            _loggerMock = new Mock<ILogger<IGetCurrentWeatherHandler>>();
+            _loggerMock = new Mock<ILogger<IGetForecastWeatherHandler>>();
 
             _uut = new GetForecastWeatherHandler(_getForecastWeatherQueryValidatorMock.Object, _weatherServiceMock.Object, _forecastWeatherValidatorMock.Object, _loggerMock.Object);
         }

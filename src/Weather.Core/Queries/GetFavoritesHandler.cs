@@ -37,18 +37,12 @@ namespace Weather.Core.Queries
         {
             var favoriteLocationsResult = await _weatherQueriesRepository.GetFavorites(cancellationToken);
 
-            if(favoriteLocationsResult.IsFailed)
-            {
-                _logger.LogError(LogEvents.FavoriteWeathersGetFromDatabase, favoriteLocationsResult.Errors.JoinToMessage());
-                return HttpDataResponses.AsInternalServerError<FavoritesWeatherDto>(ErrorMessages.ExternalApiError);
-            }
-
-            if(!favoriteLocationsResult.Value.HasAny())
+            if(!favoriteLocationsResult.HasAny())
             {
                 return HttpDataResponses.AsNoContent<FavoritesWeatherDto>();
             }
 
-            return await GetFavoritesAsync(favoriteLocationsResult.Value, cancellationToken);
+            return await GetFavoritesAsync(favoriteLocationsResult, cancellationToken);
 
         }
 

@@ -5,6 +5,6 @@ namespace Weather.Core.Abstractions
 {
     public interface IWeatherQueriesRepository
     {
-        Task<Result<IEnumerable<LocationDto>>> GetFavorites(CancellationToken cancellationToken);
+        Task<IEnumerable<LocationDto>> GetFavorites(CancellationToken cancellationToken);
     }
 }

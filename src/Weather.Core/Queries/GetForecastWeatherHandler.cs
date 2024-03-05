@@ -17,12 +17,12 @@ namespace Weather.Core.Queries
         private readonly IValidator<GetForecastWeatherQuery> _getForecastWeatherQueryValidator;
         private readonly IValidator<ForecastWeatherDto> _forecastWeatherValidator;
         private readonly IWeatherService _weatherService;
-        private readonly ILogger<IGetCurrentWeatherHandler> _logger;
+        private readonly ILogger<IGetForecastWeatherHandler> _logger;
         public GetForecastWeatherHandler(
             IValidator<GetForecastWeatherQuery> getForecastWeatherQueryValidator, 
             IWeatherService weatherService, 
             IValidator<ForecastWeatherDto> forecastWeatherValidator,
-            ILogger<IGetCurrentWeatherHandler> logger)
+            ILogger<IGetForecastWeatherHandler> logger)
         {
             _getForecastWeatherQueryValidator = Guard.Against.Null(getForecastWeatherQueryValidator);
             _weatherService = Guard.Against.Null(weatherService);

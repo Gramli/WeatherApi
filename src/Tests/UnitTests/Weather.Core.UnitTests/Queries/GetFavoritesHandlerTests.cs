@@ -33,30 +33,11 @@ namespace Weather.Core.UnitTests.Queries
         }
 
         [Fact]
-        public async Task GetFavorites_Failed()
-        {
-            //Arrange
-            var failMessage = "Some fail message";
-
-            _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failMessage));
-
-            //Act
-            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
-
-            //Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
-            Assert.Single(result.Errors);
-            Assert.Equal(ErrorMessages.ExternalApiError, result.Errors.Single());
-            _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
-            _loggerMock.VerifyLog(LogLevel.Error, LogEvents.FavoriteWeathersGetFromDatabase, failMessage, Times.Once());
-        }
-
-        [Fact]
         public async Task GetFavorites_Empty()
         {
             //Arrange
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>()));
+                .ReturnsAsync(new List<LocationDto>());
 
             //Act
             var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
@@ -74,10 +55,10 @@ namespace Weather.Core.UnitTests.Queries
             var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>
+                .ReturnsAsync(new List<LocationDto>
                 {
                     locationDto,
-                }));
+                });
 
             _locationValidatorMock.Setup(x => x.IsValid(It.IsAny<LocationDto>())).Returns(false);
 
@@ -101,10 +82,10 @@ namespace Weather.Core.UnitTests.Queries
             var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>
+                .ReturnsAsync(new List<LocationDto>
                 {
-                    locationDto
-                }));
+                    locationDto,
+                });
 
             _locationValidatorMock.Setup(x=>x.IsValid(It.IsAny<LocationDto>())).Returns(true);
 
@@ -129,11 +110,11 @@ namespace Weather.Core.UnitTests.Queries
             var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>
+                .ReturnsAsync(new List<LocationDto>
                 {
                     locationDto,
                     new LocationDto(),
-                }));
+                });
 
             _locationValidatorMock.Setup(x => x.IsValid(It.IsAny<LocationDto>())).Returns(true);
 
@@ -166,10 +147,10 @@ namespace Weather.Core.UnitTests.Queries
             var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>
+                .ReturnsAsync(new List<LocationDto>
                 {
                     locationDto,
-                }));
+                });
 
             _locationValidatorMock.Setup(x => x.IsValid(It.IsAny<LocationDto>())).Returns(true);
             _currentWeatherValidatorMock.Setup(x => x.IsValid(It.IsAny<CurrentWeatherDto>())).Returns(false);
@@ -196,10 +177,10 @@ namespace Weather.Core.UnitTests.Queries
             var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(Result.Ok<IEnumerable<LocationDto>>(new List<LocationDto>
+                .ReturnsAsync(new List<LocationDto>
                 {
                     locationDto,
-                }));
+                });
 
             _locationValidatorMock.Setup(x => x.IsValid(It.IsAny<LocationDto>())).Returns(true);
             _currentWeatherValidatorMock.Setup(x=>x.IsValid(It.IsAny<CurrentWeatherDto>())).Returns(true);

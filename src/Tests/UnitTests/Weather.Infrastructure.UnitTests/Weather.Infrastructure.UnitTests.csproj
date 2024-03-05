@@ -27,6 +27,7 @@
     <ProjectReference Include="..\..\..\Weather.Core\Weather.Core.csproj" />
     <ProjectReference Include="..\..\..\Weather.Infrastructure\Weather.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\Wheaterbit.Client\Wheaterbit.Client.csproj" />
+    <ProjectReference Include="..\Weather.UnitTests.Common\Weather.UnitTests.Common.csproj" />
   </ItemGroup>
 
 </Project>

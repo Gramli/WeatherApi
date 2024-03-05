@@ -8,20 +8,15 @@ using Weather.Infrastructure.Database.EFContext;
 
 namespace Weather.Infrastructure.Database.Repositories
 {
-    internal sealed class WeatherQueriesRepository : IWeatherQueriesRepository
+    internal sealed class WeatherQueriesRepository : RepositoryBase, IWeatherQueriesRepository
     {
-        private readonly IMapper _mapper;
-        private readonly WeatherContext _weatherContext;
         public WeatherQueriesRepository(WeatherContext weatherContext, IMapper mapper)
-        {
-            _weatherContext = Guard.Against.Null(weatherContext);
-            _mapper = Guard.Against.Null(mapper);
-        }
-        public async Task<Result<IEnumerable<LocationDto>>> GetFavorites(CancellationToken cancellationToken)
+            : base(weatherContext, mapper) { }
+
+        public async Task<IEnumerable<LocationDto>> GetFavorites(CancellationToken cancellationToken)
         {
             var facoriteLocationEntities = await _weatherContext.FavoriteLocations.ToListAsync(cancellationToken);
-            var resultData = _mapper.Map<List<LocationDto>>(facoriteLocationEntities);
-            return Result.Ok((IEnumerable<LocationDto>)resultData);
+            return _mapper.Map<List<LocationDto>>(facoriteLocationEntities);
         }
     }
 }

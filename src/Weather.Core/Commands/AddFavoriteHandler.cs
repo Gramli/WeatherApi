@@ -22,21 +22,21 @@ namespace Weather.Core.Commands
             _logger = Guard.Against.Null(logger);
         }
 
-        public async Task<HttpDataResponse<bool>> HandleAsync(AddFavoriteCommand request, CancellationToken cancellationToken)
+        public async Task<HttpDataResponse<int>> HandleAsync(AddFavoriteCommand request, CancellationToken cancellationToken)
         {
             if (!_addFavoriteCommandValidator.IsValid(request))
             {
-                return HttpDataResponses.AsBadRequest<bool>(string.Format(ErrorMessages.RequestValidationError, request));
+                return HttpDataResponses.AsBadRequest<int>(string.Format(ErrorMessages.RequestValidationError, request));
             }
 
             var addResult = await _weatherCommandsRepository.AddFavoriteLocation(request, cancellationToken);
             if(addResult.IsFailed)
             {
                 _logger.LogError(LogEvents.FavoriteWeathersStoreToDatabase, addResult.Errors.JoinToMessage());
-                return HttpDataResponses.AsInternalServerError<bool>(ErrorMessages.CantStoreLocation);
+                return HttpDataResponses.AsInternalServerError<int>(ErrorMessages.CantStoreLocation);
             }
 
-            return HttpDataResponses.AsOK(true);
+            return HttpDataResponses.AsOK(addResult.Value);
         }
     }
 }

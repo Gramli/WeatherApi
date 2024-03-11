@@ -1,6 +1,6 @@
 ﻿namespace Weather.Domain.Dtos
 {
-    public sealed class CurrentWeatherDto
+    public class CurrentWeatherDto
     {
         public double Temperature { get; init; }
 

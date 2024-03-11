@@ -1,9 +1,7 @@
-﻿using Ardalis.GuardClauses;
-using AutoMapper;
-using FluentResults;
+﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Weather.Core.Abstractions;
-using Weather.Domain.Dtos;
+using Weather.Domain.BusinessEntities;
 using Weather.Infrastructure.Database.EFContext;
 
 namespace Weather.Infrastructure.Database.Repositories
@@ -13,10 +11,10 @@ namespace Weather.Infrastructure.Database.Repositories
         public WeatherQueriesRepository(WeatherContext weatherContext, IMapper mapper)
             : base(weatherContext, mapper) { }
 
-        public async Task<IEnumerable<LocationDto>> GetFavorites(CancellationToken cancellationToken)
+        public async Task<IEnumerable<FavoriteLocation>> GetFavorites(CancellationToken cancellationToken)
         {
-            var facoriteLocationEntities = await _weatherContext.FavoriteLocations.ToListAsync(cancellationToken);
-            return _mapper.Map<List<LocationDto>>(facoriteLocationEntities);
+            var favoriteLocationEntities = await _weatherContext.FavoriteLocations.ToListAsync(cancellationToken);
+            return _mapper.Map<List<FavoriteLocation>>(favoriteLocationEntities);
         }
     }
 }

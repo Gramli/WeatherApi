@@ -3,11 +3,11 @@
 @host={{hostname}}:{{port}}
 
 ### get current weather request
-GET https://{{host}}/weather/v1/current?latitude=38.5&longtitude=-78.5
+GET https://{{host}}/weather/v1/current?latitude=38.5&longitude=-78.5
 Content-Type: application/json
 
 ### get forecast weather request
-GET https://{{host}}/weather/v1/forecast?latitude=38.5&longtitude=-78.5
+GET https://{{host}}/weather/v1/forecast?latitude=38.5&longitude=-78.5
 Content-Type: application/json
 
 ### get favorites weather request
@@ -24,3 +24,7 @@ Content-Type: application/json
     "longitude": -78.5
   }
 }
+
+### add favorites weather request
+DELETE https://{{host}}/weather/v1/favorite/1
+Content-Type: application/json

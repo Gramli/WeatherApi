@@ -2,7 +2,7 @@
 
 namespace Weather.Core.Abstractions
 {
-    public interface IAddFavoriteHandler : IRequestHandler<bool, AddFavoriteCommand>
+    public interface IAddFavoriteHandler : IRequestHandler<int, AddFavoriteCommand>
     {
 
     }

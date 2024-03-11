@@ -35,5 +35,21 @@ namespace Weather.Infrastructure.Database.Repositories
                 return Result.Fail(ex.Message);
             }
         }
+
+        public async Task<Result> DeleteFavoriteLocationSafeAsync(DeleteFavoriteCommand command, CancellationToken cancellationToken)
+        {
+            try
+            {
+                var location = await _weatherContext.FavoriteLocations.FindAsync(command.Id, cancellationToken);
+                _weatherContext.Remove(location!);
+                await _weatherContext.SaveChangesAsync(cancellationToken);
+                return Result.Ok();
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError(LogEvents.FavoriteWeathersStoreToDatabase, ex, "Can't delete location.");
+                return Result.Fail(ex.Message);
+            }
+        }
     }
 }

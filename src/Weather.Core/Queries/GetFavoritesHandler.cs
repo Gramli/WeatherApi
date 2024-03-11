@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Validot;
 using Weather.Core.Abstractions;
 using Weather.Core.Resources;
+using Weather.Domain.BusinessEntities;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
 using Weather.Domain.Http;
@@ -46,9 +47,9 @@ namespace Weather.Core.Queries
 
         }
 
-        private async Task<HttpDataResponse<FavoritesWeatherDto>> GetFavoritesAsync(IEnumerable<LocationDto> favoriteLocationsResult, CancellationToken cancellationToken)
+        private async Task<HttpDataResponse<FavoritesWeatherDto>> GetFavoritesAsync(IEnumerable<FavoriteLocation> favoriteLocationsResult, CancellationToken cancellationToken)
         {
-            var result = new List<CurrentWeatherDto>();
+            var result = new List<FavoriteCurrentWeatherDto>();
             var errorMessages = new List<string>();
 
             await favoriteLocationsResult.ForEachAsync(async (location) =>
@@ -61,7 +62,15 @@ namespace Weather.Core.Queries
                     return;
                 }
 
-                result.Add(favoriteWeather.Value);
+                result.Add(new FavoriteCurrentWeatherDto
+                {
+                    CityName = favoriteWeather.Value.CityName,
+                    DateTime = favoriteWeather.Value.DateTime,
+                    Sunrise = favoriteWeather.Value.Sunrise,
+                    Sunset = favoriteWeather.Value.Sunset,
+                    Id = location.Id,
+                    Temperature = favoriteWeather.Value.Temperature
+                });
             });
 
             return result.Any() ?

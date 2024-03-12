@@ -35,13 +35,13 @@ namespace Weather.Infrastructure.UnitTests.Database.Repositories
         public async Task AddFavoriteLocation_Success()
         {
             //Arrange
-            var addFacoriteCommand = new AddFavoriteCommand { Location = new LocationDto { Latitude = 1, Longitude = 1 } };
+            var addFavoriteCommand = new AddFavoriteCommand { Location = new LocationDto { Latitude = 1, Longitude = 1 } };
             var favoriteLocationEntity = new FavoriteLocationEntity();
 
             _mapperMock.Setup(x => x.Map<FavoriteLocationEntity>(It.IsAny<LocationDto>())).Returns(favoriteLocationEntity);
 
             //Act
-            var result = await _uut.AddFavoriteLocation(addFacoriteCommand, CancellationToken.None);
+            var result = await _uut.AddFavoriteLocation(addFavoriteCommand, CancellationToken.None);
 
             //Assert
             Assert.True(result.IsSuccess);
@@ -54,14 +54,14 @@ namespace Weather.Infrastructure.UnitTests.Database.Repositories
         public async Task AddFavoriteLocation_Failed()
         {
             //Arrange
-            var addFacoriteCommand = new AddFavoriteCommand { Location = new LocationDto { Latitude = 1, Longitude = 1 } };
+            var addFavoriteCommand = new AddFavoriteCommand { Location = new LocationDto { Latitude = 1, Longitude = 1 } };
             var favoriteLocationEntity = new FavoriteLocationEntity();
 
             _mapperMock.Setup(x => x.Map<FavoriteLocationEntity>(It.IsAny<LocationDto>())).Returns(favoriteLocationEntity);
             _favoriteLocationEntityDbSetMock.Setup(x => x.AddAsync(It.IsAny<FavoriteLocationEntity>(), It.IsAny<CancellationToken>())).Throws(new DbUpdateException());
 
             //Act
-            var result = await _uut.AddFavoriteLocation(addFacoriteCommand, CancellationToken.None);
+            var result = await _uut.AddFavoriteLocation(addFavoriteCommand, CancellationToken.None);
 
             //Assert
             Assert.True(result.IsFailed);
@@ -75,7 +75,7 @@ namespace Weather.Infrastructure.UnitTests.Database.Repositories
         public async Task AddFavoriteLocation_Throw()
         {
             //Arrange
-            var addFacoriteCommand = new AddFavoriteCommand { Location = new LocationDto { Latitude = 1, Longitude = 1 } };
+            var addFavoriteCommand = new AddFavoriteCommand { Location = new LocationDto { Latitude = 1, Longitude = 1 } };
             var favoriteLocationEntity = new FavoriteLocationEntity();
             var exception = new ArgumentException("some message");
 
@@ -83,13 +83,74 @@ namespace Weather.Infrastructure.UnitTests.Database.Repositories
             _favoriteLocationEntityDbSetMock.Setup(x => x.AddAsync(It.IsAny<FavoriteLocationEntity>(), It.IsAny<CancellationToken>())).Throws(exception);
 
             //Act
-            var exceptionResult = await Assert.ThrowsAsync<ArgumentException>(() => _uut.AddFavoriteLocation(addFacoriteCommand, CancellationToken.None));
+            var exceptionResult = await Assert.ThrowsAsync<ArgumentException>(() => _uut.AddFavoriteLocation(addFavoriteCommand, CancellationToken.None));
 
             //Assert
             Assert.Equivalent(exception, exceptionResult);
             _mapperMock.Verify(x => x.Map<FavoriteLocationEntity>(It.IsAny<LocationDto>()), Times.Once);
             _weatherDbContextMock.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Never);
             _favoriteLocationEntityDbSetMock.Verify(x => x.AddAsync(It.IsAny<FavoriteLocationEntity>(), It.IsAny<CancellationToken>()), Times.Once);
+        }
+
+        [Fact]
+        public async Task DeleteFavoriteLocationSafeAsync_Success()
+        {
+            //Arrange
+            var deleteFavoriteCommand = new DeleteFavoriteCommand { Id = 1 };
+            var favoriteLocationEntity = new FavoriteLocationEntity();
+            _favoriteLocationEntityDbSetMock.Setup(x => x.FindAsync(It.IsAny<int>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(favoriteLocationEntity);
+
+            //Act
+            var result = await _uut.DeleteFavoriteLocationSafeAsync(deleteFavoriteCommand, CancellationToken.None);
+
+            //Assert
+            Assert.True(result.IsSuccess);
+            _weatherDbContextMock.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
+            _favoriteLocationEntityDbSetMock.Verify(x => x.FindAsync(deleteFavoriteCommand.Id, CancellationToken.None), Times.Once);
+            _favoriteLocationEntityDbSetMock.Verify(x => x.Remove(favoriteLocationEntity), Times.Once);
+        }
+
+        [Fact]
+        public async Task DeleteFavoriteLocationSafeAsync_Failed()
+        {
+            //Arrange
+            var deleteFavoriteCommand = new DeleteFavoriteCommand { Id = 1 };
+            var favoriteLocationEntity = new FavoriteLocationEntity();
+            _favoriteLocationEntityDbSetMock.Setup(x => x.FindAsync(It.IsAny<int>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(favoriteLocationEntity);
+            _weatherDbContextMock.Setup(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new DbUpdateException());
+
+            //Act
+            var result = await _uut.DeleteFavoriteLocationSafeAsync(deleteFavoriteCommand, CancellationToken.None);
+
+            //Assert
+            Assert.True(result.IsFailed);
+            _weatherDbContextMock.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
+            _favoriteLocationEntityDbSetMock.Verify(x => x.FindAsync(deleteFavoriteCommand.Id, CancellationToken.None), Times.Once);
+            _favoriteLocationEntityDbSetMock.Verify(x => x.Remove(favoriteLocationEntity), Times.Once);
+        }
+
+        [Fact]
+        public async Task DeleteFavoriteLocationSafeAsync_Throw()
+        {
+            //Arrange
+            var deleteFavoriteCommand = new DeleteFavoriteCommand { Id = 1 };
+            var favoriteLocationEntity = new FavoriteLocationEntity();
+            _favoriteLocationEntityDbSetMock.Setup(x => x.FindAsync(It.IsAny<int>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(favoriteLocationEntity);
+
+            _weatherDbContextMock.Setup(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()))
+                .ThrowsAsync(new ArgumentException());
+
+            //Act
+            var _ = await Assert.ThrowsAsync<ArgumentException>(() => _uut.DeleteFavoriteLocationSafeAsync(deleteFavoriteCommand, CancellationToken.None));
+
+            //Assert
+            _weatherDbContextMock.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);
+            _favoriteLocationEntityDbSetMock.Verify(x => x.FindAsync(deleteFavoriteCommand.Id, CancellationToken.None), Times.Once);
+            _favoriteLocationEntityDbSetMock.Verify(x => x.Remove(favoriteLocationEntity), Times.Once);
         }
     }
 }

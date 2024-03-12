@@ -41,7 +41,7 @@ namespace Weather.Infrastructure.Database.Repositories
             try
             {
                 var location = await _weatherContext.FavoriteLocations.FindAsync(command.Id, cancellationToken);
-                _weatherContext.Remove(location!);
+                _weatherContext.FavoriteLocations.Remove(location!);
                 await _weatherContext.SaveChangesAsync(cancellationToken);
                 return Result.Ok();
             }

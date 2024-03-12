@@ -145,7 +145,7 @@ namespace Weather.Infrastructure.UnitTests.Database.Repositories
                 .ThrowsAsync(new ArgumentException());
 
             //Act
-            var _ = await Assert.ThrowsAsync<ArgumentException>(() => _uut.DeleteFavoriteLocationSafeAsync(deleteFavoriteCommand, CancellationToken.None));
+            await Assert.ThrowsAsync<ArgumentException>(() => _uut.DeleteFavoriteLocationSafeAsync(deleteFavoriteCommand, CancellationToken.None));
 
             //Assert
             _weatherDbContextMock.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()), Times.Once);

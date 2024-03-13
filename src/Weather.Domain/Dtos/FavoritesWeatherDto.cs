@@ -2,6 +2,6 @@
 {
     public sealed class FavoritesWeatherDto
     {
-        public IReadOnlyCollection<CurrentWeatherDto> FavoriteWeathers { get; init; } = new List<CurrentWeatherDto>();
+        public IReadOnlyCollection<FavoriteCurrentWeatherDto> FavoriteWeathers { get; init; } = new List<FavoriteCurrentWeatherDto>();
     }
 }

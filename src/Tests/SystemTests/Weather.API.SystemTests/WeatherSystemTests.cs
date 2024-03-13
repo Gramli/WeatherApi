@@ -10,7 +10,7 @@ namespace Weather.API.SystemTests
     public class WeatherSystemTests
     {
         private readonly double latitude = 38.5;
-        private readonly double longtitude = -78.5;
+        private readonly double longitude = -78.5;
         private readonly string cityName = "Stanley";
 
         private readonly HttpClient _httpClient;
@@ -26,7 +26,7 @@ namespace Weather.API.SystemTests
         {
             //Arrange
             //Act
-            var response = await _httpClient.GetAsync($"weather/v1/current?latitude={latitude}&longtitude={longtitude}");
+            var response = await _httpClient.GetAsync($"weather/v1/current?latitude={latitude}&longitude={longitude}");
 
             //Assert
             response.EnsureSuccessStatusCode();
@@ -41,7 +41,7 @@ namespace Weather.API.SystemTests
         {
             //Arrange
             //Act
-            var response = await _httpClient.GetAsync($"weather/v1/forecast?latitude={latitude}&longtitude={longtitude}");
+            var response = await _httpClient.GetAsync($"weather/v1/forecast?latitude={latitude}&longitude={longitude}");
 
             //Assert
             response.EnsureSuccessStatusCode();
@@ -82,6 +82,27 @@ namespace Weather.API.SystemTests
             Assert.Equal(cityName, resultDto.Data.FavoriteWeathers.First().CityName);
         }
 
+        [Fact]
+        public async Task DeleteWeatherFavorites()
+        {
+            //Arrange
+            var addResponse = await AddFavorite();
+
+            addResponse.EnsureSuccessStatusCode();
+
+            var content = await addResponse.Content.ReadAsStringAsync();
+            var addResult = JsonConvert.DeserializeObject<DataResponse<int>>(content);
+            //Act
+            var response = await _httpClient.DeleteAsync($"weather/v1/favorite/{addResult!.Data}");
+
+            //Assert
+            response.EnsureSuccessStatusCode();
+            var stringResult = await response.Content.ReadAsStringAsync();
+            var resultDto = JsonConvert.DeserializeObject<DataResponse<bool>>(stringResult);
+            Assert.NotNull(resultDto?.Data);
+            Assert.True(resultDto.Data);
+        }
+
         private async Task<HttpResponseMessage> AddFavorite()
         {
             //Arrange
@@ -90,7 +111,7 @@ namespace Weather.API.SystemTests
                 Location = new LocationDto
                 {
                     Latitude = latitude,
-                    Longitude = longtitude,
+                    Longitude = longitude,
                 }
             });
             var content = new StringContent(body, Encoding.UTF8, "application/json");

@@ -1,10 +1,9 @@
-﻿using FluentResults;
-using Weather.Domain.Dtos;
+﻿using Weather.Domain.BusinessEntities;
 
 namespace Weather.Core.Abstractions
 {
     public interface IWeatherQueriesRepository
     {
-        Task<IEnumerable<LocationDto>> GetFavorites(CancellationToken cancellationToken);
+        Task<IEnumerable<FavoriteLocation>> GetFavorites(CancellationToken cancellationToken);
     }
 }

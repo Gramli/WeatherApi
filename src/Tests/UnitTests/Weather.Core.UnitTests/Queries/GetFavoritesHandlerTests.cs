@@ -1,6 +1,7 @@
 ﻿using Weather.Core.Abstractions;
 using Weather.Core.Queries;
 using Weather.Core.Resources;
+using Weather.Domain.BusinessEntities;
 using Weather.Domain.Dtos;
 using Weather.Domain.Http;
 using Weather.Domain.Logging;
@@ -37,7 +38,7 @@ namespace Weather.Core.UnitTests.Queries
         {
             //Arrange
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new List<LocationDto>());
+                .ReturnsAsync(new List<FavoriteLocation>());
 
             //Act
             var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
@@ -52,10 +53,10 @@ namespace Weather.Core.UnitTests.Queries
         public async Task InvalidLocation()
         {
             //Arrange
-            var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
+            var locationDto = new FavoriteLocation { Id =0, Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new List<LocationDto>
+                .ReturnsAsync(new List<FavoriteLocation>
                 {
                     locationDto,
                 });
@@ -79,10 +80,10 @@ namespace Weather.Core.UnitTests.Queries
         {
             //Arrange
             var failMessage = "Some fail message";
-            var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
+            var locationDto = new FavoriteLocation { Id = 0, Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new List<LocationDto>
+                .ReturnsAsync(new List<FavoriteLocation>
                 {
                     locationDto,
                 });
@@ -107,13 +108,13 @@ namespace Weather.Core.UnitTests.Queries
         {
             //Arrange
             var failMessage = "Some fail message";
-            var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
+            var locationDto = new FavoriteLocation { Id = 0, Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new List<LocationDto>
+                .ReturnsAsync(new List<FavoriteLocation>
                 {
                     locationDto,
-                    new LocationDto(),
+                    new FavoriteLocation(),
                 });
 
             _locationValidatorMock.Setup(x => x.IsValid(It.IsAny<LocationDto>())).Returns(true);
@@ -122,8 +123,8 @@ namespace Weather.Core.UnitTests.Queries
 
             _currentWeatherValidatorMock.Setup(x => x.IsValid(It.IsAny<CurrentWeatherDto>())).Returns(true);
 
-            _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.Is<LocationDto>(y=> y.Equals(locationDto)), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failMessage));
-            _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.Is<LocationDto>(y => !y.Equals(locationDto)), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(currentWeather));
+            _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.Is<FavoriteLocation>(y=> y.Equals(locationDto)), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failMessage));
+            _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.Is<FavoriteLocation>(y => !y.Equals(locationDto)), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(currentWeather));
             //Act
             var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
 
@@ -132,7 +133,7 @@ namespace Weather.Core.UnitTests.Queries
             Assert.Single(result.Errors);
             Assert.NotNull(result.Data);
             Assert.Single(result.Data.FavoriteWeathers);
-            Assert.Equal(currentWeather, result.Data.FavoriteWeathers.Single());
+            Assert.Equal(currentWeather.CityName, result.Data.FavoriteWeathers.Single().CityName);
             _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
             _weatherServiceMock.Verify(x => x.GetCurrentWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>()), Times.Exactly(2));
             _loggerMock.VerifyLog(LogLevel.Warning, LogEvents.FavoriteWeathersGeneral, failMessage, Times.Once());
@@ -144,10 +145,10 @@ namespace Weather.Core.UnitTests.Queries
         public async Task GetCurrentWeather_Validation_Fail()
         {
             //Arrange
-            var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
+            var locationDto = new FavoriteLocation { Id = 0, Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new List<LocationDto>
+                .ReturnsAsync(new List<FavoriteLocation>
                 {
                     locationDto,
                 });
@@ -174,10 +175,10 @@ namespace Weather.Core.UnitTests.Queries
         public async Task Success()
         {
             //Arrange
-            var locationDto = new LocationDto { Latitude = 1, Longitude = 1 };
+            var locationDto = new FavoriteLocation {  Latitude = 1, Longitude = 1 };
 
             _weatherRepositoryMock.Setup(x => x.GetFavorites(It.IsAny<CancellationToken>()))
-                .ReturnsAsync(new List<LocationDto>
+                .ReturnsAsync(new List<FavoriteLocation>
                 {
                     locationDto,
                 });
@@ -195,7 +196,7 @@ namespace Weather.Core.UnitTests.Queries
             Assert.Empty(result.Errors);
             Assert.NotNull(result.Data);
             Assert.Single(result.Data.FavoriteWeathers);
-            Assert.Equal(currentWeather, result.Data.FavoriteWeathers.Single());
+            Assert.Equal(currentWeather.CityName, result.Data.FavoriteWeathers.Single().CityName);
             _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
             _weatherServiceMock.Verify(x => x.GetCurrentWeather(It.Is<LocationDto>(y=>y.Equals(locationDto)), It.IsAny<CancellationToken>()), Times.Once);
             _locationValidatorMock.Verify(x => x.IsValid(It.Is<LocationDto>(y => y.Equals(locationDto))), Times.Once);

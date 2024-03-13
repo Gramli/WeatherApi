@@ -24,7 +24,8 @@ namespace Weather.Core.Configuration
                 .AddScoped<IGetCurrentWeatherHandler, GetCurrentWeatherHandler>()
                 .AddScoped<IGetFavoritesHandler, GetFavoritesHandler>()
                 .AddScoped<IGetForecastWeatherHandler, GetForecastWeatherHandler>()
-                .AddScoped<IAddFavoriteHandler, AddFavoriteHandler>();
+                .AddScoped<IAddFavoriteHandler, AddFavoriteHandler>()
+                .AddScoped<IDeleteFavoriteHandler, DeleteFavoriteHandler>();
 
         private static IServiceCollection AddValidation(this IServiceCollection serviceCollection) 
             => serviceCollection
@@ -33,6 +34,7 @@ namespace Weather.Core.Configuration
                 .AddValidotSingleton<IValidator<LocationDto>, LocationDtoSpecificationHolder, LocationDto>()
                 .AddValidotSingleton<IValidator<AddFavoriteCommand>, AddFavoriteCommandSpecificationHolder, AddFavoriteCommand>()
                 .AddValidotSingleton<IValidator<GetCurrentWeatherQuery>, GetCurrentWeatherQuerySpecificationHolder, GetCurrentWeatherQuery>()
-                .AddValidotSingleton<IValidator<GetForecastWeatherQuery>, GetForecastWeatherSpecificationHolder, GetForecastWeatherQuery>();
+                .AddValidotSingleton<IValidator<GetForecastWeatherQuery>, GetForecastWeatherSpecificationHolder, GetForecastWeatherQuery>()
+                .AddValidotSingleton<IValidator<DeleteFavoriteCommand>, DeleteFavoriteCommandSpecificationHolder, DeleteFavoriteCommand>();
     }
 }

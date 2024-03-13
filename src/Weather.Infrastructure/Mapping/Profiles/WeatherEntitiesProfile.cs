@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Weather.Domain.BusinessEntities;
 using Weather.Domain.Dtos;
 using Weather.Infrastructure.Database.EFContext.Entities;
 
@@ -9,7 +10,7 @@ namespace Weather.Infrastructure.Mapping.Profiles
         public WeatherEntitiesProfile() 
         {
             CreateMap<LocationDto, FavoriteLocationEntity>();
-            CreateMap<FavoriteLocationEntity, LocationDto>();
+            CreateMap<FavoriteLocationEntity, FavoriteLocation>();
         }
     }
 }

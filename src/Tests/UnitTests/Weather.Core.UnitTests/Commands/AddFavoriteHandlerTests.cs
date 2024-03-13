@@ -38,7 +38,6 @@ namespace Weather.Core.UnitTests.Commands
             //Assert
             Assert.Equal(HttpStatusCode.BadRequest, result.StatusCode);
             Assert.Single(result.Errors);
-            Assert.False(result.Data);
             _addFavoriteCommandValidatorMock.Verify(x => x.IsValid(It.Is<AddFavoriteCommand>(y => y.Equals(addFavoriteCommand))), Times.Once);
         }
 
@@ -58,7 +57,6 @@ namespace Weather.Core.UnitTests.Commands
             //Assert
             Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
             Assert.Single(result.Errors);
-            Assert.False(result.Data);
             Assert.Equal(ErrorMessages.CantStoreLocation, result.Errors.Single());
             _addFavoriteCommandValidatorMock.Verify(x => x.IsValid(It.Is<AddFavoriteCommand>(y => y.Equals(addFavoriteCommand))), Times.Once);
             _weatherCommandsRepositoryMock.Verify(x => x.AddFavoriteLocation(It.Is<AddFavoriteCommand>(y=>y.Equals(addFavoriteCommand)), It.IsAny<CancellationToken>()), Times.Once);
@@ -81,7 +79,7 @@ namespace Weather.Core.UnitTests.Commands
             //Assert
             Assert.Equal(HttpStatusCode.OK, result.StatusCode);
             Assert.Empty(result.Errors);
-            Assert.True(result.Data);
+            Assert.Equal(locationId, result.Data);
             _addFavoriteCommandValidatorMock.Verify(x => x.IsValid(It.Is<AddFavoriteCommand>(y => y.Equals(addFavoriteCommand))), Times.Once);
             _weatherCommandsRepositoryMock.Verify(x => x.AddFavoriteLocation(It.Is<AddFavoriteCommand>(y => y.Equals(addFavoriteCommand)), It.IsAny<CancellationToken>()), Times.Once);
         }

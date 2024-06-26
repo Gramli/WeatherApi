@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SmallApiToolkit\src\SmallApiToolkit\SmallApiToolkit.csproj" />
     <ProjectReference Include="..\Weather.Core\Weather.Core.csproj" />
     <ProjectReference Include="..\Weather.Domain\Weather.Domain.csproj" />
     <ProjectReference Include="..\Weather.Infrastructure\Weather.Infrastructure.csproj" />

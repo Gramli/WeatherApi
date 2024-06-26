@@ -1,14 +1,14 @@
-﻿using Validot;
-using Weather.Core.Validation;
+﻿using SmallApiToolkit.Core.Validation;
+using Validot;
 using Weather.Domain.Dtos;
 
-namespace Wheaterbit.Client.Validation
+namespace Weather.Core.Validation
 {
-    internal sealed class CurrentWeatherDtoSpecificationHolder : ISpecificationHolder<CurrentWeatherDto>
+    internal sealed class CurrentWeatherDtoValidator : IRequestValidator<CurrentWeatherDto>
     {
-        public Specification<CurrentWeatherDto> Specification { get; }
+        private readonly IValidator<CurrentWeatherDto> _validator;
 
-        public CurrentWeatherDtoSpecificationHolder()
+        public CurrentWeatherDtoValidator()
         {
             Specification<string> timeStringSpecification = s => s
                 .NotEmpty()
@@ -24,7 +24,10 @@ namespace Wheaterbit.Client.Validation
                 .Member(m => m.Temperature, tempSpecification)
                 .Member(m => m.CityName, m => m.NotEmpty().NotWhiteSpace());
 
-            Specification = currentWeatherDtoSpecification;
+            _validator = Validot.Validator.Factory.Create(currentWeatherDtoSpecification);
         }
+
+        public bool IsValid(CurrentWeatherDto request)
+            => _validator.IsValid(request);
     }
 }

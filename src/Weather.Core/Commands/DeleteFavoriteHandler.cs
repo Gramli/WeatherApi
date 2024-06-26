@@ -1,21 +1,22 @@
 ﻿using Ardalis.GuardClauses;
+using SmallApiToolkit.Core.Extensions;
+using SmallApiToolkit.Core.Response;
+using SmallApiToolkit.Core.Validation;
 using Validot;
 using Weather.Core.Abstractions;
 using Weather.Core.Resources;
 using Weather.Domain.Commands;
-using Weather.Domain.Extensions;
-using Weather.Domain.Http;
 
 namespace Weather.Core.Commands
 {
     internal sealed class DeleteFavoriteHandler : IDeleteFavoriteHandler
     {
         private readonly IWeatherCommandsRepository _weatherCommandsRepository;
-        private readonly IValidator<DeleteFavoriteCommand> _validator;
+        private readonly IRequestValidator<DeleteFavoriteCommand> _validator;
 
         public DeleteFavoriteHandler(
-            IWeatherCommandsRepository weatherCommandsRepository, 
-            IValidator<DeleteFavoriteCommand> validator)
+            IWeatherCommandsRepository weatherCommandsRepository,
+            IRequestValidator<DeleteFavoriteCommand> validator)
         {
             _weatherCommandsRepository = Guard.Against.Null(weatherCommandsRepository);
             _validator = Guard.Against.Null(validator);

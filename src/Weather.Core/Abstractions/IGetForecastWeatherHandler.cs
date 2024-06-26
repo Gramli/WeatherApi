@@ -1,9 +1,10 @@
-﻿using Weather.Domain.Dtos;
+﻿using SmallApiToolkit.Core.RequestHandlers;
+using Weather.Domain.Dtos;
 using Weather.Domain.Queries;
 
 namespace Weather.Core.Abstractions
 {
-    public interface IGetForecastWeatherHandler : IRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery>
+    public interface IGetForecastWeatherHandler : IHttpRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery>
     {
     }
 }

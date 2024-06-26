@@ -1,9 +1,10 @@
-﻿using Weather.Domain.Dtos;
-using Weather.Domain.Http;
+﻿using SmallApiToolkit.Core.RequestHandlers;
+using SmallApiToolkit.Core.Response;
+using Weather.Domain.Dtos;
 
 namespace Weather.Core.Abstractions
 {
-    public interface IGetFavoritesHandler : IRequestHandler<FavoritesWeatherDto, EmptyRequest>
+    public interface IGetFavoritesHandler : IHttpRequestHandler<FavoritesWeatherDto, EmptyRequest>
     {
     }
 }

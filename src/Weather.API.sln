@@ -46,6 +46,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpDebug", "HttpDebug", "{
 		Tests\HttpDebug\debug-tests.http = Tests\HttpDebug\debug-tests.http
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmallApiToolkit", "..\..\SmallApiToolkit\src\SmallApiToolkit\SmallApiToolkit.csproj", "{EC8B1CA5-AC84-42C3-8929-091D2EECA74F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmallApiToolkit.Core", "..\..\SmallApiToolkit\src\SmallApiToolkit.Core\SmallApiToolkit.Core.csproj", "{E31BFF9D-9C2A-4D4B-96B0-9261D67083EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +108,14 @@ Global
 		{501B5489-717D-49E3-940B-99DDA39F278F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{501B5489-717D-49E3-940B-99DDA39F278F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{501B5489-717D-49E3-940B-99DDA39F278F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8B1CA5-AC84-42C3-8929-091D2EECA74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8B1CA5-AC84-42C3-8929-091D2EECA74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC8B1CA5-AC84-42C3-8929-091D2EECA74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC8B1CA5-AC84-42C3-8929-091D2EECA74F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E31BFF9D-9C2A-4D4B-96B0-9261D67083EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E31BFF9D-9C2A-4D4B-96B0-9261D67083EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E31BFF9D-9C2A-4D4B-96B0-9261D67083EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E31BFF9D-9C2A-4D4B-96B0-9261D67083EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

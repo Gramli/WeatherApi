@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SmallApiToolkit\src\SmallApiToolkit.Core\SmallApiToolkit.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Resources\ErrorLogMessages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

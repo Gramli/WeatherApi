@@ -1,13 +1,14 @@
 ﻿using Ardalis.GuardClauses;
 using FluentResults;
 using Microsoft.Extensions.Logging;
-using Validot;
+using SmallApiToolkit.Core.Extensions;
+using SmallApiToolkit.Core.Response;
+using SmallApiToolkit.Core.Validation;
 using Weather.Core.Abstractions;
 using Weather.Core.Resources;
 using Weather.Domain.BusinessEntities;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
-using Weather.Domain.Http;
 using Weather.Domain.Logging;
 using Weather.Domain.Resources;
 
@@ -15,16 +16,16 @@ namespace Weather.Core.Queries
 {
     internal sealed class GetFavoritesHandler : IGetFavoritesHandler
     {
-        private readonly IValidator<LocationDto> _locationValidator;
-        private readonly IValidator<CurrentWeatherDto> _currentWeatherValidator;
+        private readonly IRequestValidator<LocationDto> _locationValidator;
+        private readonly IRequestValidator<CurrentWeatherDto> _currentWeatherValidator;
         private readonly IWeatherQueriesRepository _weatherQueriesRepository;
         private readonly IWeatherService _weatherService;
         private readonly ILogger<IGetFavoritesHandler> _logger;
 
         public GetFavoritesHandler(IWeatherQueriesRepository weatherQueriesRepository, 
             IWeatherService weatherService,
-            IValidator<LocationDto> locationValidator,
-            IValidator<CurrentWeatherDto> currentWeatherValidator,
+            IRequestValidator<LocationDto> locationValidator,
+            IRequestValidator<CurrentWeatherDto> currentWeatherValidator,
             ILogger<IGetFavoritesHandler> logger)
         {
             _locationValidator = Guard.Against.Null(locationValidator);

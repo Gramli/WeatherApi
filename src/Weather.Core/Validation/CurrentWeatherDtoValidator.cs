@@ -27,7 +27,14 @@ namespace Weather.Core.Validation
             _validator = Validot.Validator.Factory.Create(currentWeatherDtoSpecification);
         }
 
-        public bool IsValid(CurrentWeatherDto request)
-            => _validator.IsValid(request);
+        public RequestValidationResult Validate(CurrentWeatherDto request)
+        {
+            var result = _validator.Validate(request);
+            return new RequestValidationResult
+            { 
+                IsValid = !result.AnyErrors,
+                ErrorMessages = [.. result.Codes]
+            };
+        }
     }
 }

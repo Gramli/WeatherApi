@@ -16,7 +16,7 @@ namespace Weather.Core.Validation
             _validator = Validot.Validator.Factory.Create(deleteFavoriteCommandSpecification);
         }
 
-        public bool IsValid(DeleteFavoriteCommand request)
-            => _validator.IsValid(request);
+        public RequestValidationResult Validate(DeleteFavoriteCommand request)
+            => new() { IsValid = _validator.IsValid(request) };
     }
 }

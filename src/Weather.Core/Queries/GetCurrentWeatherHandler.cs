@@ -4,7 +4,6 @@ using SmallApiToolkit.Core.Extensions;
 using SmallApiToolkit.Core.RequestHandlers;
 using SmallApiToolkit.Core.Response;
 using SmallApiToolkit.Core.Validation;
-using Validot;
 using Weather.Core.Abstractions;
 using Weather.Core.Resources;
 using Weather.Domain.Dtos;
@@ -19,11 +18,11 @@ namespace Weather.Core.Queries
     {
         private readonly IRequestValidator<CurrentWeatherDto> _currentWeatherValidator;
         private readonly IWeatherService _weatherService;
-        private readonly ILogger<IGetCurrentWeatherHandler> _logger;
+        private readonly ILogger<GetCurrentWeatherHandler> _logger;
         public GetCurrentWeatherHandler(IRequestValidator<GetCurrentWeatherQuery> getCurrentWeatherQueryValidator,
             IRequestValidator<CurrentWeatherDto> currentWeatherValidator,
             IWeatherService weatherService,
-            ILogger<IGetCurrentWeatherHandler> logger)
+            ILogger<GetCurrentWeatherHandler> logger)
             : base(getCurrentWeatherQueryValidator)
         {
             _weatherService = Guard.Against.Null(weatherService);
@@ -31,8 +30,11 @@ namespace Weather.Core.Queries
             _logger = Guard.Against.Null(logger);
         }
 
-        protected override HttpDataResponse<CurrentWeatherDto> CreateInvalidResponse(GetCurrentWeatherQuery request)
-            => HttpDataResponses.AsBadRequest<CurrentWeatherDto>(string.Format(ErrorMessages.RequestValidationError, request));
+        protected override HttpDataResponse<CurrentWeatherDto> CreateInvalidResponse(GetCurrentWeatherQuery request, RequestValidationResult validationResult)
+        {
+            _logger.LogError(LogEvents.CurrentWeathersValidation, validationResult.ToString());
+            return HttpDataResponses.AsBadRequest<CurrentWeatherDto>(string.Format(ErrorMessages.RequestValidationError, request));
+        }
 
         protected override async Task<HttpDataResponse<CurrentWeatherDto>> HandleValidRequestAsync(GetCurrentWeatherQuery request, CancellationToken cancellationToken)
         {
@@ -44,7 +46,7 @@ namespace Weather.Core.Queries
             }
 
             var validationResult = _currentWeatherValidator.Validate(getCurrentWeatherResult.Value);
-            if (validationResult.AnyErrors)
+            if (!validationResult.IsValid)
             {
                 _logger.LogError(LogEvents.CurrentWeathersValidation, ErrorLogMessages.ValidationErrorLog, validationResult.ToString());
                 return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);

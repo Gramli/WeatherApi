@@ -2,6 +2,7 @@
 using FluentResults;
 using Microsoft.Extensions.Logging;
 using SmallApiToolkit.Core.Extensions;
+using SmallApiToolkit.Core.RequestHandlers;
 using SmallApiToolkit.Core.Response;
 using SmallApiToolkit.Core.Validation;
 using Weather.Core.Abstractions;
@@ -14,19 +15,19 @@ using Weather.Domain.Resources;
 
 namespace Weather.Core.Queries
 {
-    internal sealed class GetFavoritesHandler : IGetFavoritesHandler
+    internal sealed class GetFavoritesHandler : IHttpRequestHandler<FavoritesWeatherDto, EmptyRequest>
     {
         private readonly IRequestValidator<LocationDto> _locationValidator;
         private readonly IRequestValidator<CurrentWeatherDto> _currentWeatherValidator;
         private readonly IWeatherQueriesRepository _weatherQueriesRepository;
         private readonly IWeatherService _weatherService;
-        private readonly ILogger<IGetFavoritesHandler> _logger;
+        private readonly ILogger<GetFavoritesHandler> _logger;
 
         public GetFavoritesHandler(IWeatherQueriesRepository weatherQueriesRepository, 
             IWeatherService weatherService,
             IRequestValidator<LocationDto> locationValidator,
             IRequestValidator<CurrentWeatherDto> currentWeatherValidator,
-            ILogger<IGetFavoritesHandler> logger)
+            ILogger<GetFavoritesHandler> logger)
         {
             _locationValidator = Guard.Against.Null(locationValidator);
             _currentWeatherValidator = Guard.Against.Null(currentWeatherValidator);
@@ -81,7 +82,7 @@ namespace Weather.Core.Queries
 
         private async Task<Result<CurrentWeatherDto>> GetWeatherAsync(LocationDto location, CancellationToken cancellationToken)
         {
-            if (!_locationValidator.IsValid(location))
+            if (!_locationValidator.Validate(location).IsValid)
             {
                 _logger.LogWarning(LogEvents.FavoriteWeathersGeneral, ErrorLogMessages.InvalidLocation, location);
                 return Result.Fail(string.Format(ErrorMessages.InvalidStoredLocation, location));
@@ -94,7 +95,7 @@ namespace Weather.Core.Queries
                 return Result.Fail(ErrorMessages.ExternalApiError);
             }
 
-            if (!_currentWeatherValidator.IsValid(favoriteWeather.Value))
+            if (!_currentWeatherValidator.Validate(favoriteWeather.Value).IsValid)
             {
                 _logger.LogWarning(LogEvents.FavoriteWeathersGeneral, ErrorLogMessages.InvalidWeather, location);
                 return Result.Fail(ErrorMessages.ExternalApiError);

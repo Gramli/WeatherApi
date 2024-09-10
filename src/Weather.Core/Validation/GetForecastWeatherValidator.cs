@@ -16,7 +16,7 @@ namespace Weather.Core.Validation
             _validator = Validot.Validator.Factory.Create(getForecastWeatherQuerySpecification);
         }
 
-        public bool IsValid(GetForecastWeatherQuery request)
-            => _validator.IsValid(request);
+        public RequestValidationResult Validate(GetForecastWeatherQuery request)
+            => new() { IsValid = _validator.IsValid(request) };
     }
 }

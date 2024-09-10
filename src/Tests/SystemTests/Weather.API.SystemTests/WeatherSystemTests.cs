@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
+using SmallApiToolkit.Core.Response;
 using System.Text;
 using Weather.Domain.Commands;
 using Weather.Domain.Dtos;
-using Weather.Domain.Http;
 
 namespace Weather.API.SystemTests
 {

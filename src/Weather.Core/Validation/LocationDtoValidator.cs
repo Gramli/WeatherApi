@@ -13,7 +13,7 @@ namespace Weather.Core.Validation
             _validator = Validot.Validator.Factory.Create(GeneralPredicates.isValidLocation);
         }
 
-        public bool IsValid(LocationDto request)
-            => _validator.IsValid(request);
+        public RequestValidationResult Validate(LocationDto request)
+            => new() { IsValid = _validator.IsValid(request) };
     }
 }

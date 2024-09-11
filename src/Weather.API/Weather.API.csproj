@@ -11,11 +11,11 @@
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="4.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="SmallApiToolkit" Version="1.0.0.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\SmallApiToolkit\src\SmallApiToolkit\SmallApiToolkit.csproj" />
     <ProjectReference Include="..\Weather.Core\Weather.Core.csproj" />
     <ProjectReference Include="..\Weather.Domain\Weather.Domain.csproj" />
     <ProjectReference Include="..\Weather.Infrastructure\Weather.Infrastructure.csproj" />

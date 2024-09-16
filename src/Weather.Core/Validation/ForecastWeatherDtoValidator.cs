@@ -1,12 +1,13 @@
-﻿using Validot;
+﻿using SmallApiToolkit.Core.Validation;
+using Validot;
 using Weather.Domain.Dtos;
 
 namespace Weather.Core.Validation
 {
-    internal sealed class ForecastWeatherDtoSpecificationHolder : ISpecificationHolder<ForecastWeatherDto>
+    internal sealed class ForecastWeatherDtoValidator : IRequestValidator<ForecastWeatherDto>
     {
-        public Specification<ForecastWeatherDto> Specification { get; }
-        public ForecastWeatherDtoSpecificationHolder()
+        private readonly IValidator<ForecastWeatherDto> _validator;
+        public ForecastWeatherDtoValidator()
         {
             Specification<double> tempSpecification = s => s
                 .Rule(GeneralPredicates.isValidTemperature);
@@ -22,7 +23,10 @@ namespace Weather.Core.Validation
                 .Member(m => m.ForecastTemperatures, m => m.AsCollection(forecastTemperatureSpecification))
                 .Member(m => m.CityName, m=>m.NotEmpty().NotWhiteSpace());
 
-            Specification = forecastSpecification;
+            _validator = Validot.Validator.Factory.Create(forecastSpecification);
         }
+
+        public RequestValidationResult Validate(ForecastWeatherDto request)
+            => new() { IsValid = _validator.IsValid(request) };
     }
 }

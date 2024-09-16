@@ -1,14 +1,13 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Validot;
-using Weather.Core.Abstractions;
+using SmallApiToolkit.Core.RequestHandlers;
+using SmallApiToolkit.Core.Response;
+using SmallApiToolkit.Core.Validation;
 using Weather.Core.Commands;
-using Weather.Core.Extensions;
 using Weather.Core.Queries;
 using Weather.Core.Validation;
 using Weather.Domain.Commands;
 using Weather.Domain.Dtos;
 using Weather.Domain.Queries;
-using Wheaterbit.Client.Validation;
 
 namespace Weather.Core.Configuration
 {
@@ -21,20 +20,20 @@ namespace Weather.Core.Configuration
 
         private static IServiceCollection AddHandlers(this IServiceCollection serviceCollection) 
             => serviceCollection
-                .AddScoped<IGetCurrentWeatherHandler, GetCurrentWeatherHandler>()
-                .AddScoped<IGetFavoritesHandler, GetFavoritesHandler>()
-                .AddScoped<IGetForecastWeatherHandler, GetForecastWeatherHandler>()
-                .AddScoped<IAddFavoriteHandler, AddFavoriteHandler>()
-                .AddScoped<IDeleteFavoriteHandler, DeleteFavoriteHandler>();
+                .AddScoped<IHttpRequestHandler<CurrentWeatherDto, GetCurrentWeatherQuery>, GetCurrentWeatherHandler>()
+                .AddScoped<IHttpRequestHandler<FavoritesWeatherDto, EmptyRequest>, GetFavoritesHandler>()
+                .AddScoped<IHttpRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery>, GetForecastWeatherHandler>()
+                .AddScoped<IHttpRequestHandler<int, AddFavoriteCommand>, AddFavoriteHandler>()
+                .AddScoped<IHttpRequestHandler<bool, DeleteFavoriteCommand>, DeleteFavoriteHandler>();
 
         private static IServiceCollection AddValidation(this IServiceCollection serviceCollection) 
             => serviceCollection
-                .AddValidotSingleton<IValidator<CurrentWeatherDto>, CurrentWeatherDtoSpecificationHolder, CurrentWeatherDto>()
-                .AddValidotSingleton<IValidator<ForecastWeatherDto>, ForecastWeatherDtoSpecificationHolder, ForecastWeatherDto>()
-                .AddValidotSingleton<IValidator<LocationDto>, LocationDtoSpecificationHolder, LocationDto>()
-                .AddValidotSingleton<IValidator<AddFavoriteCommand>, AddFavoriteCommandSpecificationHolder, AddFavoriteCommand>()
-                .AddValidotSingleton<IValidator<GetCurrentWeatherQuery>, GetCurrentWeatherQuerySpecificationHolder, GetCurrentWeatherQuery>()
-                .AddValidotSingleton<IValidator<GetForecastWeatherQuery>, GetForecastWeatherSpecificationHolder, GetForecastWeatherQuery>()
-                .AddValidotSingleton<IValidator<DeleteFavoriteCommand>, DeleteFavoriteCommandSpecificationHolder, DeleteFavoriteCommand>();
+                .AddSingleton<IRequestValidator<CurrentWeatherDto>, CurrentWeatherDtoValidator>()
+                .AddSingleton<IRequestValidator<ForecastWeatherDto>, ForecastWeatherDtoValidator>()
+                .AddSingleton<IRequestValidator<LocationDto>, LocationDtoValidator>()
+                .AddSingleton<IRequestValidator<AddFavoriteCommand>, AddFavoriteCommandValidator>()
+                .AddSingleton<IRequestValidator<GetCurrentWeatherQuery>, GetCurrentWeatherQueryValidator>()
+                .AddSingleton<IRequestValidator<GetForecastWeatherQuery>, GetForecastWeatherValidator>()
+                .AddSingleton<IRequestValidator<DeleteFavoriteCommand>, DeleteFavoriteCommandValidator>();
     }
 }

@@ -19,8 +19,12 @@
         }
 
         public static bool HasAny<T>(this IEnumerable<T> values)
-        {
-            return values?.Any() ?? false;
-        }
+            => values?.Any() ?? false;
+
+        public static string JoinToMessage(this IEnumerable<string> values) 
+            => values.JoinToMessage(',');
+
+        public static string JoinToMessage(this IEnumerable<string> values, char separator)
+            => string.Join(separator, values);
     }
 }

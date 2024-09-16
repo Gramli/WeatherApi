@@ -1,34 +1,33 @@
 ﻿using Ardalis.GuardClauses;
 using Microsoft.Extensions.Logging;
-using Validot;
+using SmallApiToolkit.Core.Extensions;
+using SmallApiToolkit.Core.RequestHandlers;
+using SmallApiToolkit.Core.Response;
+using SmallApiToolkit.Core.Validation;
 using Weather.Core.Abstractions;
 using Weather.Core.Resources;
 using Weather.Domain.Commands;
 using Weather.Domain.Extensions;
-using Weather.Domain.Http;
 using Weather.Domain.Logging;
 
 namespace Weather.Core.Commands
 {
-    internal sealed class AddFavoriteHandler : IAddFavoriteHandler
+    internal sealed class AddFavoriteHandler : ValidationHttpRequestHandler<int, AddFavoriteCommand>
     {
-        private readonly IValidator<AddFavoriteCommand> _addFavoriteCommandValidator;
-        private readonly ILogger<IAddFavoriteHandler> _logger;
+        private readonly ILogger<AddFavoriteHandler> _logger;
         private readonly IWeatherCommandsRepository _weatherCommandsRepository;
-        public AddFavoriteHandler(IWeatherCommandsRepository weatherCommandsRepository, IValidator<AddFavoriteCommand> addFavoriteCommandValidator, ILogger<IAddFavoriteHandler> logger)
+        public AddFavoriteHandler(
+            IWeatherCommandsRepository weatherCommandsRepository, 
+            IRequestValidator<AddFavoriteCommand> addFavoriteCommandValidator, 
+            ILogger<AddFavoriteHandler> logger)
+            :base(addFavoriteCommandValidator)
         {
             _weatherCommandsRepository = Guard.Against.Null(weatherCommandsRepository);
-            _addFavoriteCommandValidator = Guard.Against.Null(addFavoriteCommandValidator);
             _logger = Guard.Against.Null(logger);
         }
 
-        public async Task<HttpDataResponse<int>> HandleAsync(AddFavoriteCommand request, CancellationToken cancellationToken)
+        protected override async Task<HttpDataResponse<int>> HandleValidRequestAsync(AddFavoriteCommand request, CancellationToken cancellationToken)
         {
-            if (!_addFavoriteCommandValidator.IsValid(request))
-            {
-                return HttpDataResponses.AsBadRequest<int>(string.Format(ErrorMessages.RequestValidationError, request));
-            }
-
             var addResult = await _weatherCommandsRepository.AddFavoriteLocation(request, cancellationToken);
             if(addResult.IsFailed)
             {

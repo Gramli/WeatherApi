@@ -5,21 +5,16 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/77a7db482a44489aa5fbe40ca15d3137)](https://www.codacy.com/gh/Gramli/WeatherApi/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Gramli/WeatherApi&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/77a7db482a44489aa5fbe40ca15d3137)](https://www.codacy.com/gh/Gramli/WeatherApi/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Gramli/WeatherApi&utm_campaign=Badge_Coverage)
 
-REST API solution demonstrates how to create clean and modern API (from my point of view) with Clean Architecture, minimal API and various of design patterns.  
+This REST API solution demonstrates how to create a clean, modern API (from my point of view) using Clean Architecture, Minimal API, and various design patterns.
 
-Example API allows to get actual/forecast weather data by location from [Weatherbit](https://www.weatherbit.io/) throught [RapidAPI](https://rapidapi.com) and also allow's to add favorite locations into [in memory database](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli) and then get weather data by stored (favorites) locations.
+The example API allows users to retrieve current and forecasted weather data by location from [Weatherbit](https://www.weatherbit.io/) via [RapidAPI](https://rapidapi.com). It also allows users to add favorite locations to an [in memory database](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli) and retrieve weather data for those stored locations.
 
 ## Menu
 * [Get Started](#get-started)
 * [Motivation](#motivation)
 * [Architecture](#architecture)
-	* [Minimal API](#minimal-api)
-		* [Pros](#pros)
-	* [Clean Architecture](#clean-architecture)
-  		* [Pros](#pros)
-   		* [Cons](#cons)
 	* [Clean Architecture Layers](#clean-architecture-layers)
-		* [Horizontal Diagram (references)](#horizontal-diagram-references)
+ 	* [Pros and Cons](#pros-and-cons) 
 * [Technologies](#technologies)
 
 
@@ -44,50 +39,26 @@ Example API allows to get actual/forecast weather data by location from [Weather
  * Send request
 
 ## Motivation
-Main motivation is to write practical example of minimal API, to see it's benefits and disadvantages. Also to create REST API example project using Clean Architecture and design patterns.
+The main motivation for this project is to create a practical example of Minimal API, to explore its benefits and drawbacks, and to build a REST API using Clean Architecture and various design patterns.
 ## Architecture
 
-Projects folows **[Clean Architecture](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#clean-architecture)**, but application layer is splitted to Core and Domain projects where Core project holds business rules and Domain project contains business entities.
+This project follows **[Clean Architecture](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures#clean-architecture)**. The application layer is split into the Core and Domain projects, where the Core project holds the business rules, and the Domain project contains the business entities.
 
-As Minimal API allows to inject handlers into endpoint map methods, I decided to do not use **[MediatR](https://github.com/jbogard/MediatR)**, but still every endpoint has its own request and handler. Solution folows **[CQRS pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)**, it means that handlers are separated by commands and queries, command handlers handle command requests and query handlers handle query requests. Also repositories (**[Repository pattern](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)**) are separated by command and queries.
+Since Minimal API allows injecting handlers into endpoint mapping methods, I decided not to use **[MediatR](https://github.com/jbogard/MediatR)**. Instead, each endpoint has its own request and handler. The solution follows the **[CQRS pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)**, where handlers are separated into commands and queries. Command handlers handle command requests, while query handlers handle query requests. Additionally, repositories (**[Repository pattern](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)**) are also separated into command and query repositories.
 
-Instead of throwing exceptions, project use **[Result pattern](https://www.forevolve.com/en/articles/2018/03/19/operation-result/)** (using [FluentResuls package](https://github.com/altmann/FluentResults)) and for returning exact http response, every handler returns data wraped into HttpDataResponse object which contains also error messages collection and http response code.
+Instead of throwing exceptions, the project uses the **[Result pattern](https://www.forevolve.com/en/articles/2018/03/19/operation-result/)** (using the [FluentResuls package](https://github.com/altmann/FluentResults)). Every handler returns data wrapped in an HttpDataResponse object, which also contains a collection of error messages and an HTTP status code.
 
-Response value of every http status code is boxed into DataResponse<T> class which holds result data and collection of errors. This approach allows for example return some error messages together with OK status code.
+Each HTTP status code's response is wrapped in a DataResponse<T> class, which holds the result data and any errors. This approach allows, for example, returning error messages alongside an "OK" status code.
 
-Important part of every project are **[tests](https://github.com/Gramli/WeatherApi/tree/main/src/Tests)**. When writing tests we want to achieve [optimal code coverage](https://stackoverflow.com/questions/90002/what-is-a-reasonable-code-coverage-for-unit-tests-and-why). I think that every project has its own optimal code coverage number by it's need and I always follow the rule: cover your code to be able refactor without worry about functionality change.
+An important aspect of any project is **[testing](https://github.com/Gramli/WeatherApi/tree/main/src/Tests)**. When writing tests, we aim for [optimal code coverage](https://stackoverflow.com/questions/90002/what-is-a-reasonable-code-coverage-for-unit-tests-and-why). I believe every project has its own optimal coverage based on its needs. My rule is: cover your code enough to confidently refactor without worrying about functionality changes.
 
-In this solution, each 'code' project has its own unit test project and every **unit test** project copy the same directory structure as 'code' project, which is very helpful for orientation in test project.
+In this solution, each code project has its own unit test project, and each unit test project mirrors the directory structure of its respective code project. This structure helps with organization in larger projects.
 
-To ensure that our REST API works as expected for end users we write **System tests**. Typically we call endpoints of the API in particular order defined by business requirements and check expected results. The solution contains simple [System Tests](https://github.com/Gramli/WeatherApi/tree/main/src/Tests/SystemTests) which just call exposed endpoints and check desired response.
-
-### Minimal API
-#### Pros
-- **Reduce the ceremony of creating APIs**
-	- no controllers (but you are still able to organize map methods in files)
-	- injects bussines handlers directly into endpoints map methods
-- **Minimal Hosting Model**
-	- you are able to create single clean start point of the API
-
-### Clean Architecture
-#### Pros
-- **UI/Framework/Database Independent** 
-	- business logic is in the middle so framework, database (any external layer) can be easily changed without major impacts
-- **Highly Testable** 
-	- clean architechture is designed for testing, for example business logic can be tested without touching any external layer/element like database, UI, external web service etc.
-	- easy to mock because of abstractions
-- **Maintain and Extensibility**
-	- thanks to defined structure, changes has isolated impact and together with SOLID principles it's easy to maintain
-
-#### Cons
-- **Understanding**
-	- sometimes it's hard to split responsibilities or select right layer for our new code 
-- **Heavy Structure**
-	- it can be overkill to use it for simple CRUD api beacuse of lot of boilerplate code 
+To ensure the REST API works as expected for end users, we write **system tests**. These tests typically call API endpoints in a specific order defined by business requirements and check the expected results. The solution contains simple [System Tests](https://github.com/Gramli/WeatherApi/tree/main/src/Tests/SystemTests), which call the exposed endpoints and validate the response.
 
 ### Clean Architecture Layers
 
-Solution contains four layers: 
+The solution consists of four layers:
 * **WeatherAPI** - entry point of the application, top layer
 	*  Endpoints
 	*  Middlewares (or Filters)
@@ -106,6 +77,10 @@ Solution contains four layers:
 
 #### Horizontal Diagram (references)
 ![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
+
+### Pros and Cons
+* [Clean Architecture pros and cons](https://gramli.github.io//posts/architecture/clean-architecture-pros-and-cons)
+* [Minimal API pros and cons](https://gramli.github.io/posts/code/aspnet/minimap-api-pros-and-cons)
 
 ## Technologies
 * [ASP.NET Core 8](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-8.0)

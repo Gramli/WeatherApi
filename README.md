@@ -10,6 +10,8 @@ This REST API solution demonstrates how to create a clean, modern API (from my p
 The example API allows users to retrieve current and forecasted weather data by location from [Weatherbit](https://www.weatherbit.io/) via [RapidAPI](https://rapidapi.com). It also allows users to add favorite locations to an [in memory database](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli) and retrieve weather data for those stored locations.
 
 ## Menu
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
 * [Get Started](#get-started)
 * [Motivation](#motivation)
 * [Architecture](#architecture)
@@ -17,6 +19,25 @@ The example API allows users to retrieve current and forecasted weather data by 
  	* [Pros and Cons](#pros-and-cons) 
 * [Technologies](#technologies)
 
+## Prerequisites
+* **.NET SDK 9.0.x**
+
+## Installation
+
+To install the project using Git Bash:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Gramli/WeatherApi.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd WeatherApi/src
+   ```
+3. Install the backend dependencies:
+   ```bash
+   dotnet restore
+   ```
 
 ## Get Started
 1. Register on [RapidAPI](https://rapidapi.com)
@@ -58,22 +79,32 @@ To ensure the REST API works as expected for end users, we write **system tests*
 
 ### Clean Architecture Layers
 
-The solution consists of four layers:
-* **WeatherAPI** - entry point of the application, top layer
-	*  Endpoints
-	*  Middlewares (or Filters)
-	*  API Configuration
-* **Weather.Infrastructure** - layer for communication with external resources like database, cache, web service.. 
-	*  Repositories Implementation - access to database
-	*  External Services Proxies - proxy classes implementation - to obtain data from external web services
-	*  Infastructure Specific Services - services which are needed to interact with external libraries and frameworks
-	* **Weatherbit.Client** - standalone project for communication with RapidAPI/Weatherbit
-* **Weather.Core** - business logic of the application
-	*  Request Handlers/Managers/.. - business implementation
-	*  Abstractions - besides abstractions for business logic are there abstractions for Infrastructure layer (Service, Repository, ..) to be able use them in this (core) layer
-* **Weather.Domain** - all what should be shared across all projects
-	* DTOs
-	* General Extensions
+* **WeatherAPI**
+    This is the entry point of the application and the top layer, containing:
+
+    * Endpoints: Define and expose application routes.
+    * Middlewares (or Filters): Handle cross-cutting concerns like exception handling and logging.
+    * API Configuration: Centralized setup for services, routes, and middleware.
+
+* **Weather.Infrastructure**
+    This layer handles communication with external resources, such as databases, caches, and web services. It includes:
+
+    * Repositories Implementation: Provides access to the database.
+    * External Services Proxies: Proxy classes for obtaining data from external web services.
+    	* ** Weatherbit.Client** - A standalone project dedicated to communication with RapidAPI/Weatherbit.
+    * Infrastructure-Specific Services: Services required to interact with external libraries and frameworks.
+
+* **Weather.Core**
+    This layer contains the application's business logic, including:
+
+    * Request Handlers/Managers: Implement business operations and workflows.
+    * Abstractions: Define interfaces and contracts, including abstractions for the infrastructure layer (e.g., services, repositories) to ensure their usability in the core layer.
+
+* **Weather.Domain**
+    Contains shared components that are used across all projects, such as:
+
+    * DTOs: Data Transfer Objects for communication between layers.
+    * General Extensions: Common utilities and extension methods.
 
 #### Horizontal Diagram (references)
 ![Project Clean Architecture Diagram](./doc/img/cleanArchitecture.jpg)
@@ -85,6 +116,7 @@ The solution consists of four layers:
 ## Technologies
 * [ASP.NET Core 9](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0)
 * [Entity Framework Core InMemory](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli)
+* [SmallApiToolkit](https://github.com/Gramli/SmallApiToolkit)
 * [AutoMapper](https://github.com/AutoMapper/AutoMapper)
 * [FluentResuls](https://github.com/altmann/FluentResults)
 * [Validot](https://github.com/bartoszlenar/Validot)

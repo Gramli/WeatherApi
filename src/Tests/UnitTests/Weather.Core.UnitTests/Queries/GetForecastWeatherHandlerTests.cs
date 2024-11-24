@@ -59,7 +59,7 @@ namespace Weather.Core.UnitTests.Queries
             var getForecastWeatherQuery = new GetForecastWeatherQuery(1, 1);
 
             _getForecastWeatherQueryValidatorMock.Setup(x => x.Validate(It.IsAny<GetForecastWeatherQuery>())).Returns(new RequestValidationResult { IsValid = true });
-            _weatherServiceMock.Setup(x => x.GetForecastWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(errorMessage));
+            _weatherServiceMock.Setup(x => x.GetSixteenDayForecastWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(errorMessage));
             //Act
             var result = await _uut.HandleAsync(getForecastWeatherQuery, CancellationToken.None);
 
@@ -69,7 +69,7 @@ namespace Weather.Core.UnitTests.Queries
             Assert.Equal(ErrorMessages.ExternalApiError, result.Errors.Single());
             Assert.Null(result.Data);
             _getForecastWeatherQueryValidatorMock.Verify(x => x.Validate(It.Is<GetForecastWeatherQuery>(y => y.Equals(getForecastWeatherQuery))), Times.Once);
-            _weatherServiceMock.Verify(x => x.GetForecastWeather(It.Is<LocationDto>(y => y.Equals(getForecastWeatherQuery.Location)), It.IsAny<CancellationToken>()), Times.Once);
+            _weatherServiceMock.Verify(x => x.GetSixteenDayForecastWeather(It.Is<LocationDto>(y => y.Equals(getForecastWeatherQuery.Location)), It.IsAny<CancellationToken>()), Times.Once);
             _loggerMock.VerifyLog(LogLevel.Error, LogEvents.ForecastWeathersGet, errorMessage, Times.Once());
         }
 
@@ -81,7 +81,7 @@ namespace Weather.Core.UnitTests.Queries
             var forecastWeather = new ForecastWeatherDto();
 
             _getForecastWeatherQueryValidatorMock.Setup(x => x.Validate(It.IsAny<GetForecastWeatherQuery>())).Returns(new RequestValidationResult { IsValid = true });
-            _weatherServiceMock.Setup(x => x.GetForecastWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(forecastWeather));
+            _weatherServiceMock.Setup(x => x.GetSixteenDayForecastWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(forecastWeather));
             _forecastWeatherValidatorMock.Setup(x => x.Validate(It.IsAny<ForecastWeatherDto>())).Returns(new RequestValidationResult { IsValid = false });
 
             //Act
@@ -92,7 +92,7 @@ namespace Weather.Core.UnitTests.Queries
             Assert.Single(result.Errors);
             Assert.Null(result.Data);
             _getForecastWeatherQueryValidatorMock.Verify(x => x.Validate(It.Is<GetForecastWeatherQuery>(y => y.Equals(getForecastWeatherQuery))), Times.Once);
-            _weatherServiceMock.Verify(x => x.GetForecastWeather(It.Is<LocationDto>(y => y.Equals(getForecastWeatherQuery.Location)), It.IsAny<CancellationToken>()), Times.Once);
+            _weatherServiceMock.Verify(x => x.GetSixteenDayForecastWeather(It.Is<LocationDto>(y => y.Equals(getForecastWeatherQuery.Location)), It.IsAny<CancellationToken>()), Times.Once);
             _forecastWeatherValidatorMock.Verify(x => x.Validate(It.Is<ForecastWeatherDto>(y => y.Equals(forecastWeather))), Times.Once);
             _loggerMock.VerifyLog(LogLevel.Error, LogEvents.ForecastWeathersValidation, Times.Once());
         }
@@ -105,7 +105,7 @@ namespace Weather.Core.UnitTests.Queries
             var forecastWeather = new ForecastWeatherDto();
 
             _getForecastWeatherQueryValidatorMock.Setup(x => x.Validate(It.IsAny<GetForecastWeatherQuery>())).Returns(new RequestValidationResult { IsValid = true });
-            _weatherServiceMock.Setup(x => x.GetForecastWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(forecastWeather));
+            _weatherServiceMock.Setup(x => x.GetSixteenDayForecastWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(forecastWeather));
             _forecastWeatherValidatorMock.Setup(x => x.Validate(It.IsAny<ForecastWeatherDto>())).Returns(new RequestValidationResult { IsValid = true });
 
             //Act
@@ -117,7 +117,7 @@ namespace Weather.Core.UnitTests.Queries
             Assert.NotNull(result.Data);
             Assert.Equal(forecastWeather, result.Data);
             _getForecastWeatherQueryValidatorMock.Verify(x => x.Validate(It.Is<GetForecastWeatherQuery>(y => y.Equals(getForecastWeatherQuery))), Times.Once);
-            _weatherServiceMock.Verify(x => x.GetForecastWeather(It.Is<LocationDto>(y => y.Equals(getForecastWeatherQuery.Location)), It.IsAny<CancellationToken>()), Times.Once);
+            _weatherServiceMock.Verify(x => x.GetSixteenDayForecastWeather(It.Is<LocationDto>(y => y.Equals(getForecastWeatherQuery.Location)), It.IsAny<CancellationToken>()), Times.Once);
             _forecastWeatherValidatorMock.Verify(x => x.Validate(It.Is<ForecastWeatherDto>(y => y.Equals(forecastWeather))), Times.Once);
         }
     }

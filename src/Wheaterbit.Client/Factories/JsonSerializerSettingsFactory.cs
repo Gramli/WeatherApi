@@ -12,5 +12,13 @@ namespace Wheaterbit.Client.Factories
                 DateFormatString = "yyyy-MM-dd hh:mm"
             };
         }
+
+        public JsonSerializerSettings CreateWithHoursOnly()
+        {
+            return new JsonSerializerSettings
+            {
+                DateFormatString = "yyyy-MM-dd:HH",
+            };
+        }
     }
 }

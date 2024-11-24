@@ -14,6 +14,7 @@
     <PackageReference Include="Ardalis.GuardClauses" Version="5.0.0" />
     <PackageReference Include="FluentResults" Version="3.16.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Microsoft.FeatureManagement" Version="4.0.0" />
     <PackageReference Include="SmallApiToolkit.Core" Version="1.0.0.7" />
     <PackageReference Include="Validot" Version="2.5.0" />
   </ItemGroup>

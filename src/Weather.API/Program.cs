@@ -1,8 +1,8 @@
 using Scalar.AspNetCore;
 using SmallApiToolkit.Middleware;
-using Weather.API.Configuration;
 using Weather.API.EndpointBuilders;
 using Weather.Core.Configuration;
+using Weather.Domain.FeatureFlags;
 using Weather.Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +12,19 @@ builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddCore();
 
 builder.Services.AddOpenApi();
+
+var corsPolicyName = builder.Services.AddCorsByConfiguration(builder.Configuration);
+
+builder.Services.AddFeatureManagement(builder.Configuration.GetSection(FeatureFlagKeys.FeatureFlagsKey));
+
+/*builder.Configuration.AddAzureAppConfiguration(options =>
+{
+    options.Connect("")
+    .UseFeatureFlags(featureFlagOptions =>
+    {
+        featureFlagOptions.SetRefreshInterval(TimeSpan.FromMinutes(1));
+    });
+});*/
 
 var app = builder.Build();
 
@@ -26,6 +39,8 @@ if (app.Environment.IsDevelopment())
             .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient);
     });
 }
+
+app.UseCors(corsPolicyName);
 
 app.UseHttpsRedirection();
 

@@ -133,7 +133,7 @@ namespace Weather.Infrastructure.UnitTests.Services
 
             _weatherbiClientMock.Setup(x => x.GetSixteenDayForecast(It.IsAny<double>(), It.IsAny<double>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failedMessage));
             //Act
-            var result = await _uut.GetForecastWeather(location, CancellationToken.None);
+            var result = await _uut.GetSixteenDayForecastWeather(location, CancellationToken.None);
             //Assert
             Assert.True(result.IsFailed);
             Assert.Single(result.Errors);
@@ -149,7 +149,7 @@ namespace Weather.Infrastructure.UnitTests.Services
 
             _weatherbiClientMock.Setup(x => x.GetSixteenDayForecast(It.IsAny<double>(), It.IsAny<double>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok((Wheaterbit.Client.Dtos.ForecastWeatherDto)null));
             //Act
-            var result = await _uut.GetForecastWeather(location, CancellationToken.None);
+            var result = await _uut.GetSixteenDayForecastWeather(location, CancellationToken.None);
             //Assert
             Assert.True(result.IsFailed);
             Assert.Single(result.Errors);
@@ -165,7 +165,7 @@ namespace Weather.Infrastructure.UnitTests.Services
 
             _weatherbiClientMock.Setup(x => x.GetSixteenDayForecast(It.IsAny<double>(), It.IsAny<double>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(new Wheaterbit.Client.Dtos.ForecastWeatherDto()));
             //Act
-            var result = await _uut.GetForecastWeather(location, CancellationToken.None);
+            var result = await _uut.GetSixteenDayForecastWeather(location, CancellationToken.None);
             //Assert
             Assert.True(result.IsFailed);
             Assert.Single(result.Errors);
@@ -193,7 +193,7 @@ namespace Weather.Infrastructure.UnitTests.Services
             _mapperMock.Setup(x => x.Map<Domain.Dtos.ForecastWeatherDto>(It.IsAny<Wheaterbit.Client.Dtos.ForecastWeatherDto>())).Returns(mapResult);
 
             //Act
-            var result = await _uut.GetForecastWeather(location, CancellationToken.None);
+            var result = await _uut.GetSixteenDayForecastWeather(location, CancellationToken.None);
 
             //Assert
             Assert.True(result.IsSuccess);

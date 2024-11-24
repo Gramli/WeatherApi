@@ -7,5 +7,6 @@ namespace Wheaterbit.Client.Abstractions
     {
         Task<Result<ForecastWeatherDto>> GetSixteenDayForecast(double latitude, double longitude, CancellationToken cancellationToken);
         Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(double latitude, double longitude, CancellationToken cancellationToken);
+        Task<Result<ForecastWeatherDto>> GetFiveDayForecast(double latitude, double longitude, CancellationToken cancellationToken);
     }
 }

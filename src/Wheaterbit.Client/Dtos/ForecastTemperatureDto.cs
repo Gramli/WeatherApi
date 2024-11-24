@@ -2,7 +2,7 @@
 {
     public sealed class ForecastTemperatureDto
     {
-        public double temp { get; init; }
-        public DateTime datetime { get; init; }
+        public double? temp { get; init; }
+        public DateTime? datetime { get; init; }
     }
 }

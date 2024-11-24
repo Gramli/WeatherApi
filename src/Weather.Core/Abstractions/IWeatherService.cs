@@ -7,6 +7,7 @@ namespace Weather.Core.Abstractions
     {
         Task<Result<CurrentWeatherDto>> GetCurrentWeather(LocationDto locationDto, CancellationToken cancellationToken);
 
-        Task<Result<ForecastWeatherDto>> GetForecastWeather(LocationDto locationDto, CancellationToken cancellationToken);
+        Task<Result<ForecastWeatherDto>> GetSixteenDayForecastWeather(LocationDto locationDto, CancellationToken cancellationToken);
+        Task<Result<ForecastWeatherDto>> GetFiveDayForecastWeather(LocationDto locationDto, CancellationToken cancellationToken);
     }
 }

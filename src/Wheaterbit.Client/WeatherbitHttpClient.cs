@@ -53,7 +53,23 @@ namespace Wheaterbit.Client
                 }
             };
 
-            return await SendAsyncSave<ForecastWeatherDto>(request, cancellationToken);
+            return await SendAsyncSave<ForecastWeatherDto>(request, _jsonSerializerSettingsFactory.Create(), cancellationToken);
+        }
+
+        public async Task<Result<ForecastWeatherDto>> GetFiveDayForecast(double latitude, double longitude, CancellationToken cancellationToken)
+        {
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Get,
+                RequestUri = new Uri($"{_options.Value.BaseUrl}/forecast/3hourly?lat={latitude}&lon={longitude}&units=imperial&lang=en"),
+                Headers =
+                {
+                    { XRapidAPIHostHeader, _options.Value.XRapidAPIHost },
+                    { XRapidAPIKeyHeader, _options.Value.XRapidAPIKey },
+                }
+            };
+
+            return await SendAsyncSave<ForecastWeatherDto>(request, _jsonSerializerSettingsFactory.CreateWithHoursOnly(), cancellationToken);
         }
 
         public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(double latitude, double longitude, CancellationToken cancellationToken)
@@ -69,14 +85,14 @@ namespace Wheaterbit.Client
                 }
             };
 
-            return await SendAsyncSave<CurrentWeatherDataDto>(request, cancellationToken);
+            return await SendAsyncSave<CurrentWeatherDataDto>(request, _jsonSerializerSettingsFactory.Create(), cancellationToken);
         }
 
-        private async Task<Result<T>> SendAsyncSave<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+        private async Task<Result<T>> SendAsyncSave<T>(HttpRequestMessage requestMessage, JsonSerializerSettings jsonSerializerSettings, CancellationToken cancellationToken)
         {
             try
             {
-                return await SendAsync<T>(requestMessage, cancellationToken);
+                return await SendAsync<T>(requestMessage, jsonSerializerSettings, cancellationToken);
             }
             catch (Exception ex)
             {
@@ -84,7 +100,7 @@ namespace Wheaterbit.Client
             }
         }
 
-        private async Task<Result<T>> SendAsync<T>(HttpRequestMessage requestMessage, CancellationToken cancellationToken)
+        private async Task<Result<T>> SendAsync<T>(HttpRequestMessage requestMessage, JsonSerializerSettings jsonSerializerSettings, CancellationToken cancellationToken)
         {
             using var response = await _httpClient.SendAsync(requestMessage, cancellationToken);
             if (!response.IsSuccessStatusCode)
@@ -94,7 +110,7 @@ namespace Wheaterbit.Client
 
             var resultContent = await response.Content.ReadAsStringAsync();
 
-            var result = JsonConvert.DeserializeObject<T>(resultContent, _jsonSerializerSettingsFactory.Create());
+            var result = JsonConvert.DeserializeObject<T>(resultContent, jsonSerializerSettings);
             if(result is null)
             {
                 return Result.Fail($"Failed to deserialize response.");

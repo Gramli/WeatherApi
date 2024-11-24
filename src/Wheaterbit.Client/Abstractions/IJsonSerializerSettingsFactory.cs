@@ -5,5 +5,6 @@ namespace Wheaterbit.Client.Abstractions
     public interface IJsonSerializerSettingsFactory
     {
         JsonSerializerSettings Create();
+        JsonSerializerSettings CreateWithHoursOnly();
     }
 }

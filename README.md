@@ -113,6 +113,18 @@ To ensure the REST API works as expected for end users, we write **system tests*
 * [Clean Architecture pros and cons](https://gramli.github.io//posts/architecture/clean-architecture-pros-and-cons)
 * [Minimal API pros and cons](https://gramli.github.io/posts/code/aspnet/minimap-api-pros-and-cons)
 
+## Feature Management
+
+## Options Pattern
+### IOptionsMonitor<T> 
+Use when you need real time values. SINGLETON
+
+### IOptionsSnaphot<T> 
+when you are expecting your values to change but want it to be consistent for the entirety of a request. SCOPED, TRANSIENT, RETRY POLICY FOR WEATHERBIT CLIENT
+
+### IOptions<T> 
+when you are not expecting your config values to change. - USED IN Wheaterbit.Client
+
 ## Technologies
 * [ASP.NET Core 9](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0)
 * [Entity Framework Core InMemory](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli)

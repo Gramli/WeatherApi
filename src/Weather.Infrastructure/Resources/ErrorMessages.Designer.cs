@@ -70,6 +70,15 @@ namespace Weather.Infrastructure.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Can&apos;t get data from external source..
+        /// </summary>
+        internal static string ExternalClientGetDataFailed {
+            get {
+                return ResourceManager.GetString("ExternalClientGetDataFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Can&apos;t retrieve data properly from external service. Not expected data. Invalid Count: {0}.
         /// </summary>
         internal static string ExternalClientGetDataFailed_CorruptedData_InvalidCount {

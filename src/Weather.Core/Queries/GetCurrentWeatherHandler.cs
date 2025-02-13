@@ -1,5 +1,6 @@
 ﻿using Ardalis.GuardClauses;
 using Microsoft.Extensions.Logging;
+using Microsoft.FeatureManagement;
 using SmallApiToolkit.Core.Extensions;
 using SmallApiToolkit.Core.RequestHandlers;
 using SmallApiToolkit.Core.Response;
@@ -8,6 +9,7 @@ using Weather.Core.Abstractions;
 using Weather.Core.Resources;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
+using Weather.Domain.FeatureFlags;
 using Weather.Domain.Logging;
 using Weather.Domain.Queries;
 using Weather.Domain.Resources;
@@ -19,15 +21,18 @@ namespace Weather.Core.Queries
         private readonly IRequestValidator<CurrentWeatherDto> _currentWeatherValidator;
         private readonly IWeatherService _weatherService;
         private readonly ILogger<GetCurrentWeatherHandler> _logger;
+        private readonly IFeatureManager _featureManager;
         public GetCurrentWeatherHandler(IRequestValidator<GetCurrentWeatherQuery> getCurrentWeatherQueryValidator,
             IRequestValidator<CurrentWeatherDto> currentWeatherValidator,
             IWeatherService weatherService,
-            ILogger<GetCurrentWeatherHandler> logger)
+            ILogger<GetCurrentWeatherHandler> logger,
+            IFeatureManager featureManager)
             : base(getCurrentWeatherQueryValidator)
         {
             _weatherService = Guard.Against.Null(weatherService);
             _currentWeatherValidator = Guard.Against.Null(currentWeatherValidator);
             _logger = Guard.Against.Null(logger);
+            _featureManager = Guard.Against.Null(featureManager);
         }
 
         protected override HttpDataResponse<CurrentWeatherDto> CreateInvalidResponse(GetCurrentWeatherQuery request, RequestValidationResult validationResult)
@@ -50,6 +55,19 @@ namespace Weather.Core.Queries
             {
                 _logger.LogError(LogEvents.CurrentWeathersValidation, ErrorLogMessages.ValidationErrorLog, validationResult.ToString());
                 return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);
+            }
+
+            //TODO ADD EXTENSION METHOD
+            if (await _featureManager.IsEnabledAsync(FeatureFlagKeys.UseCelsiusForTemperature))
+            {
+                return HttpDataResponses.AsOK(new CurrentWeatherDto
+                {
+                    CityName = getCurrentWeatherResult.Value.CityName,
+                    Temperature = getCurrentWeatherResult.Value.Temperature.ToCelsius(),
+                    DateTime = getCurrentWeatherResult.Value.DateTime,
+                    Sunrise = getCurrentWeatherResult.Value.Sunrise,
+                    Sunset = getCurrentWeatherResult.Value.Sunset
+                });
             }
 
             return HttpDataResponses.AsOK(getCurrentWeatherResult.Value);

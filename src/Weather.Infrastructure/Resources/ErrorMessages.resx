@@ -126,4 +126,7 @@
   <data name="ExternalClientGetDataFailed_EmptyOrNull" xml:space="preserve">
     <value>Can't retrieve data properly from external service. Data are empty or null.</value>
   </data>
+  <data name="ExternalClientGetDataFailed" xml:space="preserve">
+    <value>Can't get data from external source.</value>
+  </data>
 </root>

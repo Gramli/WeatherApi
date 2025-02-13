@@ -53,7 +53,7 @@ namespace Wheaterbit.Client
                 }
             };
 
-            return await SendAsyncSave<ForecastWeatherDto>(request, _jsonSerializerSettingsFactory.Create(), cancellationToken);
+            return await SendAsync<ForecastWeatherDto>(request, _jsonSerializerSettingsFactory.Create(), cancellationToken);
         }
 
         public async Task<Result<ForecastWeatherDto>> GetFiveDayForecast(double latitude, double longitude, CancellationToken cancellationToken)
@@ -69,7 +69,7 @@ namespace Wheaterbit.Client
                 }
             };
 
-            return await SendAsyncSave<ForecastWeatherDto>(request, _jsonSerializerSettingsFactory.CreateWithHoursOnly(), cancellationToken);
+            return await SendAsync<ForecastWeatherDto>(request, _jsonSerializerSettingsFactory.CreateWithHoursOnly(), cancellationToken);
         }
 
         public async Task<Result<CurrentWeatherDataDto>> GetCurrentWeather(double latitude, double longitude, CancellationToken cancellationToken)
@@ -85,19 +85,7 @@ namespace Wheaterbit.Client
                 }
             };
 
-            return await SendAsyncSave<CurrentWeatherDataDto>(request, _jsonSerializerSettingsFactory.Create(), cancellationToken);
-        }
-
-        private async Task<Result<T>> SendAsyncSave<T>(HttpRequestMessage requestMessage, JsonSerializerSettings jsonSerializerSettings, CancellationToken cancellationToken)
-        {
-            try
-            {
-                return await SendAsync<T>(requestMessage, jsonSerializerSettings, cancellationToken);
-            }
-            catch (Exception ex)
-            {
-                return Result.Fail(ex.Message);
-            }
+            return await SendAsync<CurrentWeatherDataDto>(request, _jsonSerializerSettingsFactory.Create(), cancellationToken);
         }
 
         private async Task<Result<T>> SendAsync<T>(HttpRequestMessage requestMessage, JsonSerializerSettings jsonSerializerSettings, CancellationToken cancellationToken)

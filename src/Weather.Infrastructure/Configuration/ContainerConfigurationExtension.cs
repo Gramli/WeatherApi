@@ -5,6 +5,7 @@ using Weather.Core.Abstractions;
 using Weather.Infrastructure.Database.EFContext;
 using Weather.Infrastructure.Database.Repositories;
 using Weather.Infrastructure.Mapping.Profiles;
+using Weather.Infrastructure.Options;
 using Weather.Infrastructure.Services;
 using Wheaterbit.Client.Configuration;
 
@@ -17,8 +18,12 @@ namespace Weather.Infrastructure.Configuration
                 .AddMapping()
                 .AddDatabase()
                 .AddExternalHttpServices(configuration)
-                .AddServices();
+                .AddServices()
+                .AddInfraOptions(configuration);
 
+        private static IServiceCollection AddInfraOptions(this IServiceCollection serviceCollection, IConfiguration configuration)
+            => serviceCollection
+                .Configure<WeatherServiceRetryPolicyOptions>(configuration.GetSection(WeatherServiceRetryPolicyOptions.Key));
         private static IServiceCollection AddServices(this IServiceCollection serviceCollection)
             => serviceCollection
                 .AddScoped<IWeatherService, WeatherService>();

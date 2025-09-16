@@ -52,8 +52,8 @@ To install the project using Git Bash:
 ```
 4. Run Weather.API 
 
-### Try it in SwaggerUI
-![SwaggerUI](./doc/img/weatherApiSwagger.gif)
+### Try it in Scalar
+![Scalar API Reference](./doc/img/weatherApiScalar.gif)
 
 ### Try it using .http file (VS2022)
  * Go to Tests/Debug folder and open **debug-tests.http** file (in VS2022)

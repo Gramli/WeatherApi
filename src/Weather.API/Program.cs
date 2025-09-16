@@ -1,3 +1,4 @@
+using Scalar.AspNetCore;
 using SmallApiToolkit.Middleware;
 using Weather.API.Configuration;
 using Weather.API.EndpointBuilders;
@@ -10,15 +11,20 @@ builder.AddLogging();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddCore();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.MapOpenApi();
+    app.MapScalarApiReference(options =>
+    {
+        options
+            .WithTitle("Weather API")
+            .WithTheme(ScalarTheme.Mars)
+            .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient);
+    });
 }
 
 app.UseHttpsRedirection();

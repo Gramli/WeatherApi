@@ -20,7 +20,7 @@ The example API allows users to retrieve current and forecasted weather data by 
 * [Technologies](#technologies)
 
 ## Prerequisites
-* **.NET SDK 9.0.x**
+* **.NET SDK 10.0.x**
 
 ## Installation
 
@@ -114,7 +114,7 @@ To ensure the REST API works as expected for end users, we write **system tests*
 * [Minimal API pros and cons](https://gramli.github.io/posts/code/aspnet/minimap-api-pros-and-cons)
 
 ## Technologies
-* [ASP.NET Core 9](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-9.0)
+* [ASP.NET Core 10](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-10.0)
 * [Entity Framework Core InMemory](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli)
 * [SmallApiToolkit](https://github.com/Gramli/SmallApiToolkit)
 * [AutoMapper](https://github.com/AutoMapper/AutoMapper)

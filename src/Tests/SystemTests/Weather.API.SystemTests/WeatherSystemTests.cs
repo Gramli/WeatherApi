@@ -93,7 +93,7 @@ namespace Weather.API.SystemTests
             var content = await addResponse.Content.ReadAsStringAsync();
             var addResult = JsonConvert.DeserializeObject<DataResponse<int>>(content);
             //Act
-            var response = await _httpClient.DeleteAsync($"weather/v1/favorite/{addResult!.Data}");
+            var response = await _httpClient.DeleteAsync($"weather/v1/favorites/{addResult!.Data}");
 
             //Assert
             response.EnsureSuccessStatusCode();
@@ -117,7 +117,7 @@ namespace Weather.API.SystemTests
             var content = new StringContent(body, Encoding.UTF8, "application/json");
 
             //Act
-            return await _httpClient.PostAsync("weather/v1/favorite", content);
+            return await _httpClient.PostAsync("weather/v1/favorites", content);
         }
     }
 }

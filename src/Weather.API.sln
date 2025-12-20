@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.32916.344
+# Visual Studio Version 18
+VisualStudioVersion = 18.1.11304.174 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weather.API", "Weather.API\Weather.API.csproj", "{F87A6E06-2DB3-40BB-8831-6C12E828DA11}"
 EndProject
@@ -44,6 +44,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpDebug", "HttpDebug", "{799572B7-2EF0-498A-ABD0-7AAA963286F5}"
 	ProjectSection(SolutionItems) = preProject
 		Tests\HttpDebug\debug-tests.http = Tests\HttpDebug\debug-tests.http
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E834AC05-A42D-4605-840F-90A863436680}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
 Global

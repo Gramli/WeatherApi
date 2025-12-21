@@ -1,7 +1,5 @@
-﻿using SmallApiToolkit.Core.RequestHandlers;
-using SmallApiToolkit.Core.Validation;
-using Validot.Results;
-using Weather.Core.Abstractions;
+﻿using Weather.Core.Abstractions;
+using Weather.Core.HandlerModel;
 using Weather.Core.Queries;
 using Weather.Core.Resources;
 using Weather.Domain.Dtos;
@@ -18,7 +16,7 @@ namespace Weather.Core.UnitTests.Queries
         private readonly Mock<IWeatherService> _weatherServiceMock;
         private readonly Mock<ILogger<GetForecastWeatherHandler>> _loggerMock;
 
-        private readonly IHttpRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery> _uut;
+        private readonly ICoreRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery> _uut;
         public GetForecastWeatherHandlerTests()
         {
             _getForecastWeatherQueryValidatorMock = new();
@@ -45,7 +43,7 @@ namespace Weather.Core.UnitTests.Queries
             var result = await _uut.HandleAsync(getForecastWeatherQuery, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.BadRequest, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.ValidationError, result.StatusCode);
             Assert.Single(result.Errors);
             Assert.Null(result.Data);
             _getForecastWeatherQueryValidatorMock.Verify(x => x.Validate(It.Is<GetForecastWeatherQuery>(y => y.Equals(getForecastWeatherQuery))), Times.Once);
@@ -64,7 +62,7 @@ namespace Weather.Core.UnitTests.Queries
             var result = await _uut.HandleAsync(getForecastWeatherQuery, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.InternalError, result.StatusCode);
             Assert.Single(result.Errors);
             Assert.Equal(ErrorMessages.ExternalApiError, result.Errors.Single());
             Assert.Null(result.Data);
@@ -88,7 +86,7 @@ namespace Weather.Core.UnitTests.Queries
             var result = await _uut.HandleAsync(getForecastWeatherQuery, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.InternalError, result.StatusCode);
             Assert.Single(result.Errors);
             Assert.Null(result.Data);
             _getForecastWeatherQueryValidatorMock.Verify(x => x.Validate(It.Is<GetForecastWeatherQuery>(y => y.Equals(getForecastWeatherQuery))), Times.Once);
@@ -112,7 +110,7 @@ namespace Weather.Core.UnitTests.Queries
             var result = await _uut.HandleAsync(getForecastWeatherQuery, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.Success, result.StatusCode);
             Assert.Empty(result.Errors);
             Assert.NotNull(result.Data);
             Assert.Equal(forecastWeather, result.Data);

@@ -1,7 +1,5 @@
-﻿using SmallApiToolkit.Core.RequestHandlers;
-using SmallApiToolkit.Core.Response;
-using SmallApiToolkit.Core.Validation;
-using Weather.Core.Abstractions;
+﻿using Weather.Core.Abstractions;
+using Weather.Core.HandlerModel;
 using Weather.Core.Queries;
 using Weather.Domain.BusinessEntities;
 using Weather.Domain.Dtos;
@@ -18,7 +16,7 @@ namespace Weather.Core.UnitTests.Queries
         private readonly Mock<IRequestValidator<LocationDto>> _locationValidatorMock;
         private readonly Mock<IRequestValidator<CurrentWeatherDto>> _currentWeatherValidatorMock;
 
-        private readonly IHttpRequestHandler<FavoritesWeatherDto, EmptyRequest> _uut;
+        private readonly ICoreRequestHandler<FavoritesWeatherDto, EmptyRequest> _uut;
         public GetFavoritesHandlerTests() 
         { 
             _weatherRepositoryMock = new();
@@ -42,10 +40,10 @@ namespace Weather.Core.UnitTests.Queries
                 .ReturnsAsync(new List<FavoriteLocation>());
 
             //Act
-            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
+            var result = await _uut.HandleAsync(new EmptyRequest(), CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.NoContent, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.SuccessWithEmptyResult, result.StatusCode);
             Assert.Empty(result.Errors);
             _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
         }
@@ -65,10 +63,10 @@ namespace Weather.Core.UnitTests.Queries
             _locationValidatorMock.Setup(x => x.Validate(It.IsAny<LocationDto>())).Returns(new RequestValidationResult { IsValid = false});
 
             //Act
-            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
+            var result = await _uut.HandleAsync(new EmptyRequest(), CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.InternalError, result.StatusCode);
             Assert.Single(result.Errors);
             Assert.Null(result.Data);
             _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
@@ -93,10 +91,10 @@ namespace Weather.Core.UnitTests.Queries
 
             _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failMessage));
             //Act
-            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
+            var result = await _uut.HandleAsync(new EmptyRequest(), CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.InternalError, result.StatusCode);
             Assert.Single(result.Errors);
             _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
             _weatherServiceMock.Verify(x => x.GetCurrentWeather(It.Is<LocationDto>(y=>y.Equals(locationDto)), It.IsAny<CancellationToken>()), Times.Once);
@@ -127,10 +125,10 @@ namespace Weather.Core.UnitTests.Queries
             _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.Is<FavoriteLocation>(y=> y.Equals(locationDto)), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Fail(failMessage));
             _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.Is<FavoriteLocation>(y => !y.Equals(locationDto)), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(currentWeather));
             //Act
-            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
+            var result = await _uut.HandleAsync(new EmptyRequest(), CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.Success, result.StatusCode);
             Assert.Single(result.Errors);
             Assert.NotNull(result.Data);
             Assert.Single(result.Data.FavoriteWeathers);
@@ -160,10 +158,10 @@ namespace Weather.Core.UnitTests.Queries
 
             _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(currentWeather));
             //Act
-            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
+            var result = await _uut.HandleAsync(new EmptyRequest(), CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.InternalError, result.StatusCode);
             Assert.Single(result.Errors);
             Assert.Null(result.Data);
             _weatherRepositoryMock.Verify(x => x.GetFavorites(It.IsAny<CancellationToken>()), Times.Once);
@@ -190,10 +188,10 @@ namespace Weather.Core.UnitTests.Queries
 
             _weatherServiceMock.Setup(x => x.GetCurrentWeather(It.IsAny<LocationDto>(), It.IsAny<CancellationToken>())).ReturnsAsync(Result.Ok(currentWeather));
             //Act
-            var result = await _uut.HandleAsync(EmptyRequest.Instance, CancellationToken.None);
+            var result = await _uut.HandleAsync(new EmptyRequest(), CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.Success, result.StatusCode);
             Assert.Empty(result.Errors);
             Assert.NotNull(result.Data);
             Assert.Single(result.Data.FavoriteWeathers);

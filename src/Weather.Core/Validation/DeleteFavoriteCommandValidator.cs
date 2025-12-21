@@ -1,5 +1,6 @@
-﻿using SmallApiToolkit.Core.Validation;
-using Validot;
+﻿using Validot;
+using Weather.Core.Abstractions;
+using Weather.Core.HandlerModel;
 using Weather.Domain.Commands;
 
 namespace Weather.Core.Validation

@@ -1,7 +1,6 @@
-﻿using SmallApiToolkit.Core.RequestHandlers;
-using SmallApiToolkit.Core.Validation;
-using Weather.Core.Abstractions;
+﻿using Weather.Core.Abstractions;
 using Weather.Core.Commands;
+using Weather.Core.HandlerModel;
 using Weather.Core.Resources;
 using Weather.Domain.Commands;
 using Weather.Domain.Logging;
@@ -15,7 +14,7 @@ namespace Weather.Core.UnitTests.Commands
         private readonly Mock<IRequestValidator<AddFavoriteCommand>> _addFavoriteCommandValidatorMock;
         private readonly Mock<ILogger<AddFavoriteHandler>> _loggerMock;
 
-        private readonly IHttpRequestHandler<int, AddFavoriteCommand> _uut;
+        private readonly ICoreRequestHandler<int, AddFavoriteCommand> _uut;
         public AddFavoriteHandlerTests()
         {
             _weatherCommandsRepositoryMock = new();
@@ -38,7 +37,7 @@ namespace Weather.Core.UnitTests.Commands
             var result = await _uut.HandleAsync(addFavoriteCommand, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.BadRequest, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.ValidationError, result.StatusCode);
             Assert.Single(result.Errors);
             _addFavoriteCommandValidatorMock.Verify(x => x.Validate(It.Is<AddFavoriteCommand>(y => y.Equals(addFavoriteCommand))), Times.Once);
         }
@@ -57,7 +56,7 @@ namespace Weather.Core.UnitTests.Commands
             var result = await _uut.HandleAsync(addFavoriteCommand, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.InternalError, result.StatusCode);
             Assert.Single(result.Errors);
             Assert.Equal(ErrorMessages.CantStoreLocation, result.Errors.Single());
             _addFavoriteCommandValidatorMock.Verify(x => x.Validate(It.Is<AddFavoriteCommand>(y => y.Equals(addFavoriteCommand))), Times.Once);
@@ -79,7 +78,7 @@ namespace Weather.Core.UnitTests.Commands
             var result = await _uut.HandleAsync(addFavoriteCommand, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.Success, result.StatusCode);
             Assert.Empty(result.Errors);
             Assert.Equal(locationId, result.Data);
             _addFavoriteCommandValidatorMock.Verify(x => x.Validate(It.Is<AddFavoriteCommand>(y => y.Equals(addFavoriteCommand))), Times.Once);

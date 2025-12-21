@@ -1,10 +1,7 @@
 ﻿using Ardalis.GuardClauses;
 using Microsoft.Extensions.Logging;
-using SmallApiToolkit.Core.Extensions;
-using SmallApiToolkit.Core.RequestHandlers;
-using SmallApiToolkit.Core.Response;
-using SmallApiToolkit.Core.Validation;
 using Weather.Core.Abstractions;
+using Weather.Core.HandlerModel;
 using Weather.Core.Resources;
 using Weather.Domain.Dtos;
 using Weather.Domain.Extensions;
@@ -14,7 +11,7 @@ using Weather.Domain.Resources;
 
 namespace Weather.Core.Queries
 {
-    internal sealed class GetCurrentWeatherHandler : ValidationHttpRequestHandler<CurrentWeatherDto, GetCurrentWeatherQuery>
+    internal sealed class GetCurrentWeatherHandler : ValidationCoreRequestHandler<CurrentWeatherDto, GetCurrentWeatherQuery>
     {
         private readonly IRequestValidator<CurrentWeatherDto> _currentWeatherValidator;
         private readonly IWeatherService _weatherService;
@@ -30,29 +27,29 @@ namespace Weather.Core.Queries
             _logger = Guard.Against.Null(logger);
         }
 
-        protected override HttpDataResponse<CurrentWeatherDto> CreateInvalidResponse(GetCurrentWeatherQuery request, RequestValidationResult validationResult)
+        protected override HandlerResponse<CurrentWeatherDto> CreateInvalidResponse(GetCurrentWeatherQuery request, RequestValidationResult validationResult)
         {
             _logger.LogError(LogEvents.CurrentWeathersValidation, validationResult.ToString());
-            return HttpDataResponses.AsBadRequest<CurrentWeatherDto>(string.Format(ErrorMessages.RequestValidationError, request));
+            return HandlerResponses.AsValidationError<CurrentWeatherDto>(string.Format(ErrorMessages.RequestValidationError, request));
         }
 
-        protected override async Task<HttpDataResponse<CurrentWeatherDto>> HandleValidRequestAsync(GetCurrentWeatherQuery request, CancellationToken cancellationToken)
+        protected override async Task<HandlerResponse<CurrentWeatherDto>> HandleValidRequestAsync(GetCurrentWeatherQuery request, CancellationToken cancellationToken)
         {
             var getCurrentWeatherResult = await _weatherService.GetCurrentWeather(request.Location, cancellationToken);
             if (getCurrentWeatherResult.IsFailed)
             {
                 _logger.LogError(LogEvents.CurrentWeathersGet, getCurrentWeatherResult.Errors.JoinToMessage());
-                return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);
+                return HandlerResponses.AsInternalError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);
             }
 
             var validationResult = _currentWeatherValidator.Validate(getCurrentWeatherResult.Value);
             if (!validationResult.IsValid)
             {
                 _logger.LogError(LogEvents.CurrentWeathersValidation, ErrorLogMessages.ValidationErrorLog, validationResult.ToString());
-                return HttpDataResponses.AsInternalServerError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);
+                return HandlerResponses.AsInternalError<CurrentWeatherDto>(ErrorMessages.ExternalApiError);
             }
 
-            return HttpDataResponses.AsOK(getCurrentWeatherResult.Value);
+            return HandlerResponses.AsSuccess(getCurrentWeatherResult.Value);
         }
     }
 }

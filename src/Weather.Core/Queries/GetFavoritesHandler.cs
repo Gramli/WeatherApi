@@ -1,11 +1,8 @@
 ﻿using Ardalis.GuardClauses;
 using FluentResults;
 using Microsoft.Extensions.Logging;
-using SmallApiToolkit.Core.Extensions;
-using SmallApiToolkit.Core.RequestHandlers;
-using SmallApiToolkit.Core.Response;
-using SmallApiToolkit.Core.Validation;
 using Weather.Core.Abstractions;
+using Weather.Core.HandlerModel;
 using Weather.Core.Resources;
 using Weather.Domain.BusinessEntities;
 using Weather.Domain.Dtos;
@@ -15,7 +12,7 @@ using Weather.Domain.Resources;
 
 namespace Weather.Core.Queries
 {
-    internal sealed class GetFavoritesHandler : IHttpRequestHandler<FavoritesWeatherDto, EmptyRequest>
+    internal sealed class GetFavoritesHandler : ICoreRequestHandler<FavoritesWeatherDto, EmptyRequest>
     {
         private readonly IRequestValidator<LocationDto> _locationValidator;
         private readonly IRequestValidator<CurrentWeatherDto> _currentWeatherValidator;
@@ -36,20 +33,20 @@ namespace Weather.Core.Queries
             _logger = Guard.Against.Null(logger);
         }
 
-        public async Task<HttpDataResponse<FavoritesWeatherDto>> HandleAsync(EmptyRequest request, CancellationToken cancellationToken)
+        public async Task<HandlerResponse<FavoritesWeatherDto>> HandleAsync(EmptyRequest request, CancellationToken cancellationToken)
         {
             var favoriteLocationsResult = await _weatherQueriesRepository.GetFavorites(cancellationToken);
 
             if(!favoriteLocationsResult.HasAny())
             {
-                return HttpDataResponses.AsNoContent<FavoritesWeatherDto>();
+                return HandlerResponses.AsSuccessWithEmptyResult<FavoritesWeatherDto>();
             }
 
             return await GetFavoritesAsync(favoriteLocationsResult, cancellationToken);
 
         }
 
-        private async Task<HttpDataResponse<FavoritesWeatherDto>> GetFavoritesAsync(IEnumerable<FavoriteLocation> favoriteLocationsResult, CancellationToken cancellationToken)
+        private async Task<HandlerResponse<FavoritesWeatherDto>> GetFavoritesAsync(IEnumerable<FavoriteLocation> favoriteLocationsResult, CancellationToken cancellationToken)
         {
             var result = new List<FavoriteCurrentWeatherDto>();
             var errorMessages = new List<string>();
@@ -76,8 +73,8 @@ namespace Weather.Core.Queries
             });
 
             return result.Any() ?
-                HttpDataResponses.AsOK(new FavoritesWeatherDto { FavoriteWeathers = result, }, errorMessages) :
-                HttpDataResponses.AsInternalServerError<FavoritesWeatherDto>(errorMessages);
+                HandlerResponses.AsSuccess(new FavoritesWeatherDto { FavoriteWeathers = result, }, errorMessages) :
+                HandlerResponses.AsInternalError<FavoritesWeatherDto>(errorMessages);
         }
 
         private async Task<Result<CurrentWeatherDto>> GetWeatherAsync(LocationDto location, CancellationToken cancellationToken)

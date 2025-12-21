@@ -1,7 +1,7 @@
 using Scalar.AspNetCore;
-using SmallApiToolkit.Middleware;
 using Weather.API.Configuration;
 using Weather.API.EndpointBuilders;
+using Weather.API.Middlewares;
 using Weather.Core.Configuration;
 using Weather.Infrastructure.Configuration;
 
@@ -30,7 +30,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseMiddleware<ExceptionMiddleware>();
-app.UseMiddleware<LoggingMiddleware>();
 
 app.BuildWeatherEndpoints();
 

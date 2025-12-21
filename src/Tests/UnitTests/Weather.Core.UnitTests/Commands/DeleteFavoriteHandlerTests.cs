@@ -1,7 +1,6 @@
-﻿using SmallApiToolkit.Core.RequestHandlers;
-using SmallApiToolkit.Core.Validation;
-using Weather.Core.Abstractions;
+﻿using Weather.Core.Abstractions;
 using Weather.Core.Commands;
+using Weather.Core.HandlerModel;
 using Weather.Domain.Commands;
 
 namespace Weather.Core.UnitTests.Commands
@@ -11,7 +10,7 @@ namespace Weather.Core.UnitTests.Commands
         private readonly Mock<IWeatherCommandsRepository> _weatherCommandsRepositoryMock;
         private readonly Mock<IRequestValidator<DeleteFavoriteCommand>> _validatorMock;
 
-        private readonly IHttpRequestHandler<bool, DeleteFavoriteCommand> _uut;
+        private readonly ICoreRequestHandler<bool, DeleteFavoriteCommand> _uut;
         public DeleteFavoriteHandlerTests()
         {
             _weatherCommandsRepositoryMock = new();
@@ -32,7 +31,7 @@ namespace Weather.Core.UnitTests.Commands
             var result = await _uut.HandleAsync(deleteFavoriteCommand, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.BadRequest, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.ValidationError, result.StatusCode);
             Assert.Single(result.Errors);
             _validatorMock.Verify(x => x.Validate(It.Is<DeleteFavoriteCommand>(y => y.Equals(deleteFavoriteCommand))), Times.Once);
         }
@@ -51,7 +50,7 @@ namespace Weather.Core.UnitTests.Commands
             var result = await _uut.HandleAsync(deleteFavoriteCommand, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.InternalServerError, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.InternalError, result.StatusCode);
             Assert.Single(result.Errors);
             _validatorMock.Verify(x => x.Validate(deleteFavoriteCommand), Times.Once);
             _weatherCommandsRepositoryMock.Verify(x => x.DeleteFavoriteLocationSafeAsync(deleteFavoriteCommand, CancellationToken.None), Times.Once);
@@ -71,7 +70,7 @@ namespace Weather.Core.UnitTests.Commands
             var result = await _uut.HandleAsync(deleteFavoriteCommand, CancellationToken.None);
 
             //Assert
-            Assert.Equal(HttpStatusCode.OK, result.StatusCode);
+            Assert.Equal(HandlerStatusCode.Success, result.StatusCode);
             Assert.Empty(result.Errors);
             _validatorMock.Verify(x => x.Validate(deleteFavoriteCommand), Times.Once);
             _weatherCommandsRepositoryMock.Verify(x => x.DeleteFavoriteLocationSafeAsync(deleteFavoriteCommand, CancellationToken.None), Times.Once);

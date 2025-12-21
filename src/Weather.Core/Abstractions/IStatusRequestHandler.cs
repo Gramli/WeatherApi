@@ -2,7 +2,7 @@
 
 namespace Weather.Core.Abstractions
 {
-    public interface ICoreRequestHandler<TResponse, in TRequest> : IRequestHandler<HandlerResponse<TResponse>, TRequest>
+    public interface IStatusRequestHandler<TResponse, in TRequest> : IRequestHandler<HandlerResponse<TResponse>, TRequest>
     {
     }
 }

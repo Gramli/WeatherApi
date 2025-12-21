@@ -9,7 +9,7 @@ namespace Weather.API.Extensions
         /// <summary>
         /// Executes a request handler and maps the response to an appropriate HTTP result.
         /// </summary>
-        public static async Task<IResult> SendAsync<TResponse, TRequest>(this ICoreRequestHandler<TResponse, TRequest> requestHandler, TRequest request, CancellationToken cancellationToken)
+        public static async Task<IResult> SendAsync<TResponse, TRequest>(this IStatusRequestHandler<TResponse, TRequest> requestHandler, TRequest request, CancellationToken cancellationToken)
         {
             var response = await requestHandler.HandleAsync(request, cancellationToken);
 

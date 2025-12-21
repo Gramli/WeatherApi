@@ -2,13 +2,13 @@
 
 namespace Weather.Core.Abstractions
 {
-    public abstract class ValidationCoreRequestHandler<TResponse, TRequest> : IStatusRequestHandler<TResponse, TRequest>
+    public abstract class ValidationStatusRequestHandler<TResponse, TRequest> : IStatusRequestHandler<TResponse, TRequest>
     {
         protected virtual string BadRequestMessage { get { return "Invalid request"; } }
 
         protected readonly IRequestValidator<TRequest> _validator;
 
-        protected ValidationCoreRequestHandler(IRequestValidator<TRequest> validator)
+        protected ValidationStatusRequestHandler(IRequestValidator<TRequest> validator)
         {
             _validator = validator ?? throw new ArgumentNullException(nameof(validator));
         }

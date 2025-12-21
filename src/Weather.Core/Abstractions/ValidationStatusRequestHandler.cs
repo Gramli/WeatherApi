@@ -2,7 +2,7 @@
 
 namespace Weather.Core.Abstractions
 {
-    public abstract class ValidationCoreRequestHandler<TResponse, TRequest> : ICoreRequestHandler<TResponse, TRequest>
+    public abstract class ValidationCoreRequestHandler<TResponse, TRequest> : IStatusRequestHandler<TResponse, TRequest>
     {
         protected virtual string BadRequestMessage { get { return "Invalid request"; } }
 

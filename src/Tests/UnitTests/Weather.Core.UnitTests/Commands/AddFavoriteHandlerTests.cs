@@ -14,7 +14,7 @@ namespace Weather.Core.UnitTests.Commands
         private readonly Mock<IRequestValidator<AddFavoriteCommand>> _addFavoriteCommandValidatorMock;
         private readonly Mock<ILogger<AddFavoriteHandler>> _loggerMock;
 
-        private readonly ICoreRequestHandler<int, AddFavoriteCommand> _uut;
+        private readonly IStatusRequestHandler<int, AddFavoriteCommand> _uut;
         public AddFavoriteHandlerTests()
         {
             _weatherCommandsRepositoryMock = new();

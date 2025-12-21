@@ -5,7 +5,7 @@ using Weather.Domain.Commands;
 
 namespace Weather.Core.Commands
 {
-    internal sealed class DeleteFavoriteHandler : ValidationCoreRequestHandler<bool, DeleteFavoriteCommand>
+    internal sealed class DeleteFavoriteHandler : ValidationStatusRequestHandler<bool, DeleteFavoriteCommand>
     {
         private readonly IWeatherCommandsRepository _weatherCommandsRepository;
 

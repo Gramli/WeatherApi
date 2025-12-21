@@ -9,7 +9,7 @@ using Weather.Domain.Logging;
 
 namespace Weather.Core.Commands
 {
-    internal sealed class AddFavoriteHandler : ValidationCoreRequestHandler<int, AddFavoriteCommand>
+    internal sealed class AddFavoriteHandler : ValidationStatusRequestHandler<int, AddFavoriteCommand>
     {
         private readonly ILogger<AddFavoriteHandler> _logger;
         private readonly IWeatherCommandsRepository _weatherCommandsRepository;

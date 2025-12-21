@@ -16,7 +16,7 @@ namespace Weather.Core.UnitTests.Queries
         private readonly Mock<IWeatherService> _weatherServiceMock;
         private readonly Mock<ILogger<GetForecastWeatherHandler>> _loggerMock;
 
-        private readonly ICoreRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery> _uut;
+        private readonly IStatusRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery> _uut;
         public GetForecastWeatherHandlerTests()
         {
             _getForecastWeatherQueryValidatorMock = new();

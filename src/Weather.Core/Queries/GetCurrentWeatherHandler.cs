@@ -11,7 +11,7 @@ using Weather.Domain.Resources;
 
 namespace Weather.Core.Queries
 {
-    internal sealed class GetCurrentWeatherHandler : ValidationCoreRequestHandler<CurrentWeatherDto, GetCurrentWeatherQuery>
+    internal sealed class GetCurrentWeatherHandler : ValidationStatusRequestHandler<CurrentWeatherDto, GetCurrentWeatherQuery>
     {
         private readonly IRequestValidator<CurrentWeatherDto> _currentWeatherValidator;
         private readonly IWeatherService _weatherService;

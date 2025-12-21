@@ -16,7 +16,7 @@ namespace Weather.Core.UnitTests.Queries
         private readonly Mock<IRequestValidator<LocationDto>> _locationValidatorMock;
         private readonly Mock<IRequestValidator<CurrentWeatherDto>> _currentWeatherValidatorMock;
 
-        private readonly ICoreRequestHandler<FavoritesWeatherDto, EmptyRequest> _uut;
+        private readonly IStatusRequestHandler<FavoritesWeatherDto, EmptyRequest> _uut;
         public GetFavoritesHandlerTests() 
         { 
             _weatherRepositoryMock = new();

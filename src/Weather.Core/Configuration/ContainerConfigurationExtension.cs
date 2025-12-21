@@ -19,11 +19,11 @@ namespace Weather.Core.Configuration
 
         private static IServiceCollection AddHandlers(this IServiceCollection serviceCollection) 
             => serviceCollection
-                .AddScoped<ICoreRequestHandler<CurrentWeatherDto, GetCurrentWeatherQuery>, GetCurrentWeatherHandler>()
-                .AddScoped<ICoreRequestHandler<FavoritesWeatherDto, EmptyRequest>, GetFavoritesHandler>()
-                .AddScoped<ICoreRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery>, GetForecastWeatherHandler>()
-                .AddScoped<ICoreRequestHandler<int, AddFavoriteCommand>, AddFavoriteHandler>()
-                .AddScoped<ICoreRequestHandler<bool, DeleteFavoriteCommand>, DeleteFavoriteHandler>();
+                .AddScoped<IStatusRequestHandler<CurrentWeatherDto, GetCurrentWeatherQuery>, GetCurrentWeatherHandler>()
+                .AddScoped<IStatusRequestHandler<FavoritesWeatherDto, EmptyRequest>, GetFavoritesHandler>()
+                .AddScoped<IStatusRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery>, GetForecastWeatherHandler>()
+                .AddScoped<IStatusRequestHandler<int, AddFavoriteCommand>, AddFavoriteHandler>()
+                .AddScoped<IStatusRequestHandler<bool, DeleteFavoriteCommand>, DeleteFavoriteHandler>();
 
         private static IServiceCollection AddValidation(this IServiceCollection serviceCollection) 
             => serviceCollection

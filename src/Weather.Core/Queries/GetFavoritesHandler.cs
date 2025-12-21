@@ -12,7 +12,7 @@ using Weather.Domain.Resources;
 
 namespace Weather.Core.Queries
 {
-    internal sealed class GetFavoritesHandler : ICoreRequestHandler<FavoritesWeatherDto, EmptyRequest>
+    internal sealed class GetFavoritesHandler : IStatusRequestHandler<FavoritesWeatherDto, EmptyRequest>
     {
         private readonly IRequestValidator<LocationDto> _locationValidator;
         private readonly IRequestValidator<CurrentWeatherDto> _currentWeatherValidator;

@@ -10,7 +10,7 @@ namespace Weather.Core.UnitTests.Commands
         private readonly Mock<IWeatherCommandsRepository> _weatherCommandsRepositoryMock;
         private readonly Mock<IRequestValidator<DeleteFavoriteCommand>> _validatorMock;
 
-        private readonly ICoreRequestHandler<bool, DeleteFavoriteCommand> _uut;
+        private readonly IStatusRequestHandler<bool, DeleteFavoriteCommand> _uut;
         public DeleteFavoriteHandlerTests()
         {
             _weatherCommandsRepositoryMock = new();

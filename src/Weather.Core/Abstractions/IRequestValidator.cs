@@ -2,7 +2,7 @@
 
 namespace Weather.Core.Abstractions
 {
-    public interface IRequestValidator<TRequest>
+    public interface IRequestValidator<in TRequest>
     {
         RequestValidationResult Validate(TRequest request);
     }

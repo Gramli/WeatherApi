@@ -10,14 +10,19 @@ This REST API solution demonstrates how to create a clean, modern API (from my p
 The example API allows users to retrieve current and forecasted weather data by location from [Weatherbit](https://www.weatherbit.io/) via [RapidAPI](https://rapidapi.com). It also allows users to add favorite locations to an [in memory database](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli) and retrieve weather data for those stored locations.
 
 ## Menu
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
-* [Get Started](#get-started)
-* [Motivation](#motivation)
-* [Architecture](#architecture)
-	* [Clean Architecture Layers](#clean-architecture-layers)
- 	* [Pros and Cons](#pros-and-cons) 
-* [Technologies](#technologies)
+- [Clean Architecture WeatherApi](#clean-architecture-weatherapi)
+  - [Menu](#menu)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Get Started](#get-started)
+    - [Try it in Scalar](#try-it-in-scalar)
+    - [Try it using .http file (VS2022)](#try-it-using-http-file-vs2022)
+  - [Motivation](#motivation)
+  - [Architecture](#architecture)
+    - [Clean Architecture Layers](#clean-architecture-layers)
+      - [Horizontal Diagram (references)](#horizontal-diagram-references)
+    - [Pros and Cons](#pros-and-cons)
+  - [Technologies](#technologies)
 
 ## Prerequisites
 * **.NET SDK 10.0.x**
@@ -67,9 +72,9 @@ This project follows **[Clean Architecture](https://learn.microsoft.com/en-us/do
 
 Since Minimal API allows injecting handlers into endpoint mapping methods, I decided not to use **[MediatR](https://github.com/jbogard/MediatR)**. Instead, each endpoint has its own request and handler. The solution follows the **[CQRS pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs)**, where handlers are separated into commands and queries. Command handlers handle command requests, while query handlers handle query requests. Additionally, repositories (**[Repository pattern](https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)**) are also separated into command and query repositories.
 
-Instead of throwing exceptions, the project uses the **[Result pattern](https://www.forevolve.com/en/articles/2018/03/19/operation-result/)** (using the [FluentResuls package](https://github.com/altmann/FluentResults)). Every handler returns data wrapped in an HttpDataResponse object, which also contains a collection of error messages and an HTTP status code.
+Instead of throwing exceptions, the project uses the **[Result pattern](https://www.forevolve.com/en/articles/2018/03/19/operation-result/)** (using the [FluentResuls package](https://github.com/altmann/FluentResults)). Every handler returns a HandlerResponse<T> object, which contains the result data, error messages, and a HandlerStatusCode enum value that represents the operation's outcome (Success, ValidationError, InternalError, etc.).
 
-Each HTTP status code's response is wrapped in a DataResponse<T> class, which holds the result data and any errors. This approach allows, for example, returning error messages alongside an "OK" status code.
+All API responses are wrapped in a DataResponse<T> class, which holds the result data and any errors. The HandlerStatusCode is then mapped to appropriate HTTP status codes at the API layer, separating business logic outcomes from HTTP protocol concerns.
 
 An important aspect of any project is **[testing](https://github.com/Gramli/WeatherApi/tree/main/src/Tests)**. When writing tests, we aim for [optimal code coverage](https://stackoverflow.com/questions/90002/what-is-a-reasonable-code-coverage-for-unit-tests-and-why). I believe every project has its own optimal coverage based on its needs. My rule is: cover your code enough to confidently refactor without worrying about functionality changes.
 

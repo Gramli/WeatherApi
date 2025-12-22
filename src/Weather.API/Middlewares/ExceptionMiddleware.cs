@@ -39,7 +39,7 @@ namespace Weather.API.Middlewares
         /// </summary>
         protected virtual string CreateResponseJson(string errorMessage)
         {
-            var response = new DataResponse<object>()
+            var response = new DataResponse<object>
             {
                 Errors = [errorMessage]
             };

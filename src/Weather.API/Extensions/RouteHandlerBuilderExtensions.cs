@@ -7,8 +7,12 @@ namespace Weather.API.Extensions
         public static RouteHandlerBuilder ProducesDataResponse<TResponse>(
             this RouteHandlerBuilder builder,
             int statusCode = StatusCodes.Status200OK,
-            string? contentType = null,
             params string[] additionalContentTypes)
-        => builder.Produces<DataResponse<TResponse>>(statusCode, contentType, additionalContentTypes);
+            => builder.Produces<DataResponse<TResponse>>(statusCode, null, additionalContentTypes);
+
+        public static RouteHandlerBuilder ProducesDataResponse<TResponse>(
+            this RouteHandlerBuilder builder,
+            params string[] additionalContentTypes)
+            => builder.Produces<DataResponse<TResponse>>(StatusCodes.Status200OK, null, additionalContentTypes);
     }
 }

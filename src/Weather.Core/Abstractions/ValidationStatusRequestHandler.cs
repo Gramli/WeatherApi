@@ -1,4 +1,5 @@
-﻿using Weather.Core.HandlerModel;
+﻿using Ardalis.GuardClauses;
+using Weather.Core.HandlerModel;
 
 namespace Weather.Core.Abstractions
 {
@@ -10,7 +11,7 @@ namespace Weather.Core.Abstractions
 
         protected ValidationStatusRequestHandler(IRequestValidator<TRequest> validator)
         {
-            _validator = validator ?? throw new ArgumentNullException(nameof(validator));
+            _validator = Guard.Against.Null(validator);
         }
         public async Task<HandlerResponse<TResponse>> HandleAsync(TRequest request, CancellationToken cancellationToken)
         {

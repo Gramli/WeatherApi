@@ -14,7 +14,6 @@
     <PackageReference Include="Ardalis.GuardClauses" />
     <PackageReference Include="FluentResults" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
-    <PackageReference Include="SmallApiToolkit.Core" />
     <PackageReference Include="Validot" />
   </ItemGroup>
 

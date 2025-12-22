@@ -1,10 +1,7 @@
 ﻿using Ardalis.GuardClauses;
 using Microsoft.Extensions.Logging;
-using SmallApiToolkit.Core.Extensions;
-using SmallApiToolkit.Core.RequestHandlers;
-using SmallApiToolkit.Core.Response;
-using SmallApiToolkit.Core.Validation;
 using Weather.Core.Abstractions;
+using Weather.Core.HandlerModel;
 using Weather.Core.Resources;
 using Weather.Domain.Commands;
 using Weather.Domain.Extensions;
@@ -12,7 +9,7 @@ using Weather.Domain.Logging;
 
 namespace Weather.Core.Commands
 {
-    internal sealed class AddFavoriteHandler : ValidationHttpRequestHandler<int, AddFavoriteCommand>
+    internal sealed class AddFavoriteHandler : ValidationStatusRequestHandler<int, AddFavoriteCommand>
     {
         private readonly ILogger<AddFavoriteHandler> _logger;
         private readonly IWeatherCommandsRepository _weatherCommandsRepository;
@@ -26,16 +23,16 @@ namespace Weather.Core.Commands
             _logger = Guard.Against.Null(logger);
         }
 
-        protected override async Task<HttpDataResponse<int>> HandleValidRequestAsync(AddFavoriteCommand request, CancellationToken cancellationToken)
+        protected override async Task<HandlerResponse<int>> HandleValidRequestAsync(AddFavoriteCommand request, CancellationToken cancellationToken)
         {
             var addResult = await _weatherCommandsRepository.AddFavoriteLocation(request, cancellationToken);
             if(addResult.IsFailed)
             {
                 _logger.LogError(LogEvents.FavoriteWeathersStoreToDatabase, addResult.Errors.JoinToMessage());
-                return HttpDataResponses.AsInternalServerError<int>(ErrorMessages.CantStoreLocation);
+                return HandlerResponses.AsInternalError<int>(ErrorMessages.CantStoreLocation);
             }
 
-            return HttpDataResponses.AsOK(addResult.Value);
+            return HandlerResponses.AsSuccess(addResult.Value);
         }
     }
 }

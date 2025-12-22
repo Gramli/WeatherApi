@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
-using SmallApiToolkit.Core.Response;
 using System.Text;
+using Weather.Core.HandlerModel;
 using Weather.Domain.Commands;
 using Weather.Domain.Dtos;
 

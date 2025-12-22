@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SmallApiToolkit.Core.RequestHandlers;
-using SmallApiToolkit.Core.Response;
-using SmallApiToolkit.Core.Validation;
+using Weather.Core.Abstractions;
 using Weather.Core.Commands;
+using Weather.Core.HandlerModel;
 using Weather.Core.Queries;
 using Weather.Core.Validation;
 using Weather.Domain.Commands;
@@ -20,11 +19,11 @@ namespace Weather.Core.Configuration
 
         private static IServiceCollection AddHandlers(this IServiceCollection serviceCollection) 
             => serviceCollection
-                .AddScoped<IHttpRequestHandler<CurrentWeatherDto, GetCurrentWeatherQuery>, GetCurrentWeatherHandler>()
-                .AddScoped<IHttpRequestHandler<FavoritesWeatherDto, EmptyRequest>, GetFavoritesHandler>()
-                .AddScoped<IHttpRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery>, GetForecastWeatherHandler>()
-                .AddScoped<IHttpRequestHandler<int, AddFavoriteCommand>, AddFavoriteHandler>()
-                .AddScoped<IHttpRequestHandler<bool, DeleteFavoriteCommand>, DeleteFavoriteHandler>();
+                .AddScoped<IStatusRequestHandler<CurrentWeatherDto, GetCurrentWeatherQuery>, GetCurrentWeatherHandler>()
+                .AddScoped<IStatusRequestHandler<FavoritesWeatherDto, EmptyRequest>, GetFavoritesHandler>()
+                .AddScoped<IStatusRequestHandler<ForecastWeatherDto, GetForecastWeatherQuery>, GetForecastWeatherHandler>()
+                .AddScoped<IStatusRequestHandler<int, AddFavoriteCommand>, AddFavoriteHandler>()
+                .AddScoped<IStatusRequestHandler<bool, DeleteFavoriteCommand>, DeleteFavoriteHandler>();
 
         private static IServiceCollection AddValidation(this IServiceCollection serviceCollection) 
             => serviceCollection

@@ -1,0 +1,32 @@
+<Solution>
+  <Folder Name="/ExternalClients/">
+    <Project Path="Wheaterbit.Client/Wheaterbit.Client.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/Tests/" />
+  <Folder Name="/Tests/HttpDebug/">
+    <File Path="Tests/HttpDebug/debug-tests.http" />
+  </Folder>
+  <Folder Name="/Tests/IntegrationTests/">
+    <Project Path="Tests/IntegrationTests/Weather.Infrastructure.IntegrationTests/Weather.Infrastructure.IntegrationTests.csproj" />
+  </Folder>
+  <Folder Name="/Tests/SystemTests/">
+    <Project Path="Tests/SystemTests/Weather.API.SystemTests/Weather.API.SystemTests.csproj" />
+  </Folder>
+  <Folder Name="/Tests/UnitTests/">
+    <Project Path="Tests/UnitTests/Weather.API.UnitTests/Weather.API.UnitTests.csproj" />
+    <Project Path="Tests/UnitTests/Weather.Core.UnitTests/Weather.Core.UnitTests.csproj" />
+    <Project Path="Tests/UnitTests/Weather.Domain.UnitTests/Weather.Domain.UnitTests.csproj" />
+    <Project Path="Tests/UnitTests/Weather.Infrastructure.UnitTests/Weather.Infrastructure.UnitTests.csproj" />
+    <Project Path="Tests/UnitTests/Weather.UnitTests.Common/Weather.UnitTests.Common.csproj" />
+  </Folder>
+  <Folder Name="/Tests/UnitTests/ExternalClients/">
+    <Project Path="Tests/UnitTests/Wheaterbit.Client.UnitTests/Wheaterbit.Client.UnitTests.csproj" />
+  </Folder>
+  <Project Path="Weather.API/Weather.API.csproj" />
+  <Project Path="Weather.Core/Weather.Core.csproj" />
+  <Project Path="Weather.Domain/Weather.Domain.csproj" />
+  <Project Path="Weather.Infrastructure/Weather.Infrastructure.csproj" />
+</Solution>

@@ -4,9 +4,9 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageVersion Include="Ardalis.GuardClauses" Version="5.0.0" />
-		<PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0" />
-		<PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
-		<PackageVersion Include="Scalar.AspNetCore" Version="2.8.4" />
+		<PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
+		<PackageVersion Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.23.0" />
+		<PackageVersion Include="Scalar.AspNetCore" Version="2.12.36" />
 		<PackageVersion Include="FluentResults" Version="3.16.0" />
 		<PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.2" />
 		<PackageVersion Include="Validot" Version="2.6.0" />

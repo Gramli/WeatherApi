@@ -10,7 +10,7 @@
 		<PackageVersion Include="FluentResults" Version="4.0.0" />
 		<PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.5" />
 		<PackageVersion Include="Validot" Version="2.6.0" />
-		<PackageVersion Include="AutoMapper" Version="13.0.1" />
+		<PackageVersion Include="AutoMapper" Version="16.1.1" />
 		<PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.5" />
 		<PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.5" />
 		<PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.5" />
